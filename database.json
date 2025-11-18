@@ -403,7 +403,7 @@
         "hourly": 1761410306389,
         "ps": 1762700247519
       },
-      "pandacoins": 65755,
+      "pandacoins": 69255,
       "exp": 10135,
       "personajes": [
         "Snorlax ☯️",
@@ -412,11 +412,16 @@
         "Snorlax Shiny 💀",
         "Snorlax Shiny",
         "Snorlax Shiny",
-        "meditite"
+        "meditite",
+        "yamask-galar",
+        "ribombee-totem",
+        "glameow",
+        "cresselia",
+        "wigglytuff"
       ],
       "ultimoSell": 1762839406326,
       "inventario": [],
-      "ultimoBuy": 1763427739406,
+      "ultimoBuy": 1763428265350,
       "vip": true,
       "vipExpiration": 5361443669437,
       "id": 16,
@@ -429,10 +434,11 @@
         "unlocked": [
           "first_steps",
           "coin_collector_1",
-          "buyer_1"
+          "buyer_1",
+          "collector_1"
         ],
         "progress": {},
-        "points": 25,
+        "points": 40,
         "titles": [
           "Novato"
         ],
@@ -440,11 +446,11 @@
         "stats": {
           "minar_count": 0,
           "trabajar_count": 0,
-          "buy_count": 1,
+          "buy_count": 6,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 8,
+          "commands_used": 18,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763418612031,
@@ -9199,5 +9205,8 @@
   ],
   "monetization": {
     "adCount": 2
+  },
+  "_meta": {
+    "savesWithoutBackup": 11
   }
 }
