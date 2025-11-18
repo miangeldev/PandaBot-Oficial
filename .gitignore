@@ -36,3 +36,9 @@ sessions/
 venv/
 __pycache__/
 *.pyc
+
+#PandaLove project
+PandaLove/
+
+#auth_info
+auth_info/
