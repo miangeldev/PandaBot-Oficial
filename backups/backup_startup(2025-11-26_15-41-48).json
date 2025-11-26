@@ -82,7 +82,7 @@
           "apostar_count": 3,
           "robos_exitosos": 21,
           "robos_fallidos": 7,
-          "commands_used": 1587,
+          "commands_used": 1595,
           "cm_tiradas": 501,
           "cm_ataques": 51,
           "registered_date": 1763314511093,
@@ -3648,7 +3648,6 @@
         "OSKART",
         "Everything 🇧🇷 💤",
         "Everything 💤 🎄",
-        "Everything 💀 💩",
         "Everything ❄️",
         "Everything 🇨🇴 💤",
         "Everything 🇧🇷 💤",
@@ -5689,7 +5688,7 @@
         "Santa PandaBot"
       ],
       "id": 144,
-      "pandacoins": 11556951738.076805,
+      "pandacoins": 0,
       "ultimoApostar": 1762144019310,
       "achievements": {
         "unlocked": [
@@ -5721,11 +5720,11 @@
         "stats": {
           "minar_count": 3,
           "trabajar_count": 1,
-          "buy_count": 127,
+          "buy_count": 128,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 839,
+          "commands_used": 844,
           "cm_tiradas": 4,
           "cm_ataques": 1,
           "registered_date": 1763603264099,
@@ -5738,8 +5737,10 @@
         }
       },
       "ultimoSell": 1764180960232,
-      "inventario": [],
-      "ultimoBuy": 1764180457379,
+      "inventario": [
+        "Xmas Lucky Block"
+      ],
+      "ultimoBuy": 1764180999079,
       "robos": {
         "exitosos": 5,
         "fallidos": 5
@@ -5772,8 +5773,8 @@
           "inversionTotal": 0
         },
         "MOONSHOT": {
-          "cantidad": 0,
-          "inversionTotal": 0
+          "cantidad": 90576327075.52103,
+          "inversionTotal": 11256951738.076805
         },
         "SAFEGEM": {
           "cantidad": 0,
@@ -10312,7 +10313,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 5,
+          "commands_used": 6,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764030421929,
@@ -16022,7 +16023,7 @@
       }
     },
     "125675138736203@lid": {
-      "pandacoins": 541701063,
+      "pandacoins": 99446015975.95305,
       "exp": 177419,
       "diamantes": 858,
       "piedras": 0,
@@ -16037,10 +16038,10 @@
       "ultimoBuy": 1764180700657,
       "vip": true,
       "ultimoSell": 1764180737282,
-      "robarpsCooldown": 1764180732650,
+      "robarpsCooldown": 1764181152939,
       "robos": {
         "exitosos": 36,
-        "fallidos": 13
+        "fallidos": 14
       },
       "achievements": {
         "unlocked": [
@@ -16094,7 +16095,7 @@
           "apostar_count": 15,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 3266,
+          "commands_used": 3275,
           "cm_tiradas": 802,
           "cm_ataques": 55,
           "registered_date": 1763418602648,
@@ -16133,8 +16134,8 @@
           "inversionTotal": 0
         },
         "UNISTAR": {
-          "cantidad": 4222461155.7009892,
-          "inversionTotal": 91459094009.0131
+          "cantidad": 0,
+          "inversionTotal": 0
         },
         "MOONSHOT": {
           "cantidad": 0,
@@ -18026,7 +18027,7 @@
       }
     },
     "33677157355747@lid": {
-      "pandacoins": 640914277,
+      "pandacoins": 0,
       "achievements": {
         "unlocked": [
           "first_steps",
@@ -18053,7 +18054,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 43,
+          "commands_used": 53,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764053012570,
@@ -18067,7 +18068,7 @@
       },
       "robos": {
         "exitosos": 5,
-        "fallidos": 2
+        "fallidos": 3
       },
       "inversiones": {
         "LILANCOIN": {
@@ -18079,24 +18080,26 @@
           "inversionTotal": 0
         },
         "UNISTAR": {
-          "cantidad": 1105846508.884192,
-          "inversionTotal": 23952788690.31718
+          "cantidad": 1144564256.927658,
+          "inversionTotal": 24878466820.680214
         },
         "MOONSHOT": {
           "cantidad": 0,
           "inversionTotal": 0
         },
         "SAFEGEM": {
-          "cantidad": 6239322.554859172,
-          "inversionTotal": 289003133
+          "cantidad": 0,
+          "inversionTotal": 0
         },
         "NEUTRON": {
           "cantidad": 0,
           "inversionTotal": 0
         }
       },
-      "robarpsCooldown": 1764180951444,
-      "personajes": [],
+      "robarpsCooldown": 1764181247614,
+      "personajes": [
+        "Everything 💀 💩"
+      ],
       "ultimoSell": 1764180753932,
       "exp": null
     },
@@ -18557,7 +18560,7 @@
     "adCount": 2
   },
   "_meta": {
-    "savesWithoutBackup": 24
+    "savesWithoutBackup": 17
   },
   "bossGlobal": {
     "activo": true,
@@ -18668,10 +18671,10 @@
           "capacidad": 12500000000,
           "tiempo": 480,
           "ultimaColecta": 1764080557816,
-          "acumulado": 6955146493.127972,
+          "acumulado": 7120767772.901977,
           "mejora": 2.5,
           "produccionPorSegundo": 108506,
-          "ultimaActualizacion": 1764180971515
+          "ultimaActualizacion": 1764182497894
         },
         {
           "tipo": 4,
@@ -18679,7 +18682,7 @@
           "produccionPorSegundo": 295776,
           "capacidad": 5324000000,
           "acumulado": 5324000000,
-          "ultimaActualizacion": 1764180971515,
+          "ultimaActualizacion": 1764182497894,
           "mejora": 2.2
         }
       ],
@@ -18694,7 +18697,7 @@
           "acumulado": 3200000000,
           "mejora": 2,
           "produccionPorSegundo": 55554,
-          "ultimaActualizacion": 1764180971515
+          "ultimaActualizacion": 1764182497894
         }
       ],
       "99561821479092@lid": [
@@ -18705,10 +18708,10 @@
           "capacidad": 5324000000,
           "tiempo": 240,
           "ultimaColecta": 1764080574609,
-          "acumulado": 4742088264.338006,
+          "acumulado": 4854947201.219006,
           "mejora": 2.2,
           "produccionPorSegundo": 73939,
-          "ultimaActualizacion": 1764180971515
+          "ultimaActualizacion": 1764182497894
         },
         {
           "tipo": 1,
@@ -18716,7 +18719,7 @@
           "produccionPorSegundo": 1389,
           "capacidad": 10000000,
           "acumulado": 10000000,
-          "ultimaActualizacion": 1764180971515,
+          "ultimaActualizacion": 1764182497894,
           "mejora": 1.5
         }
       ],
@@ -18731,7 +18734,7 @@
           "acumulado": 10000000,
           "mejora": 1.5,
           "produccionPorSegundo": 2777.777777777778,
-          "ultimaActualizacion": 1764180971515
+          "ultimaActualizacion": 1764182497894
         }
       ]
     }

@@ -82,7 +82,7 @@
           "apostar_count": 3,
           "robos_exitosos": 21,
           "robos_fallidos": 7,
-          "commands_used": 1587,
+          "commands_used": 1593,
           "cm_tiradas": 501,
           "cm_ataques": 51,
           "registered_date": 1763314511093,
@@ -3648,7 +3648,6 @@
         "OSKART",
         "Everything 🇧🇷 💤",
         "Everything 💤 🎄",
-        "Everything 💀 💩",
         "Everything ❄️",
         "Everything 🇨🇴 💤",
         "Everything 🇧🇷 💤",
@@ -16024,7 +16023,7 @@
       }
     },
     "125675138736203@lid": {
-      "pandacoins": 541701063,
+      "pandacoins": 99446015975.95305,
       "exp": 177419,
       "diamantes": 858,
       "piedras": 0,
@@ -16039,10 +16038,10 @@
       "ultimoBuy": 1764180700657,
       "vip": true,
       "ultimoSell": 1764180737282,
-      "robarpsCooldown": 1764181019269,
+      "robarpsCooldown": 1764181152939,
       "robos": {
         "exitosos": 36,
-        "fallidos": 13
+        "fallidos": 14
       },
       "achievements": {
         "unlocked": [
@@ -16096,7 +16095,7 @@
           "apostar_count": 15,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 3269,
+          "commands_used": 3275,
           "cm_tiradas": 802,
           "cm_ataques": 55,
           "registered_date": 1763418602648,
@@ -16135,8 +16134,8 @@
           "inversionTotal": 0
         },
         "UNISTAR": {
-          "cantidad": 4222461155.7009892,
-          "inversionTotal": 91459094009.0131
+          "cantidad": 0,
+          "inversionTotal": 0
         },
         "MOONSHOT": {
           "cantidad": 0,
@@ -18028,7 +18027,7 @@
       }
     },
     "33677157355747@lid": {
-      "pandacoins": 640914277,
+      "pandacoins": 0,
       "achievements": {
         "unlocked": [
           "first_steps",
@@ -18055,7 +18054,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 45,
+          "commands_used": 53,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764053012570,
@@ -18069,7 +18068,7 @@
       },
       "robos": {
         "exitosos": 5,
-        "fallidos": 2
+        "fallidos": 3
       },
       "inversiones": {
         "LILANCOIN": {
@@ -18081,24 +18080,26 @@
           "inversionTotal": 0
         },
         "UNISTAR": {
-          "cantidad": 1105846508.884192,
-          "inversionTotal": 23952788690.31718
+          "cantidad": 1144564256.927658,
+          "inversionTotal": 24878466820.680214
         },
         "MOONSHOT": {
           "cantidad": 0,
           "inversionTotal": 0
         },
         "SAFEGEM": {
-          "cantidad": 6239322.554859172,
-          "inversionTotal": 289003133
+          "cantidad": 0,
+          "inversionTotal": 0
         },
         "NEUTRON": {
           "cantidad": 0,
           "inversionTotal": 0
         }
       },
-      "robarpsCooldown": 1764181091159,
-      "personajes": [],
+      "robarpsCooldown": 1764181247614,
+      "personajes": [
+        "Everything 💀 💩"
+      ],
       "ultimoSell": 1764180753932,
       "exp": null
     },
@@ -18670,10 +18671,10 @@
           "capacidad": 12500000000,
           "tiempo": 480,
           "ultimaColecta": 1764080557816,
-          "acumulado": 6967119370.685973,
+          "acumulado": 7022075381.059974,
           "mejora": 2.5,
           "produccionPorSegundo": 108506,
-          "ultimaActualizacion": 1764181081858
+          "ultimaActualizacion": 1764181588337
         },
         {
           "tipo": 4,
@@ -18681,7 +18682,7 @@
           "produccionPorSegundo": 295776,
           "capacidad": 5324000000,
           "acumulado": 5324000000,
-          "ultimaActualizacion": 1764181081858,
+          "ultimaActualizacion": 1764181588337,
           "mejora": 2.2
         }
       ],
@@ -18696,7 +18697,7 @@
           "acumulado": 3200000000,
           "mejora": 2,
           "produccionPorSegundo": 55554,
-          "ultimaActualizacion": 1764181081858
+          "ultimaActualizacion": 1764181588337
         }
       ],
       "99561821479092@lid": [
@@ -18707,10 +18708,10 @@
           "capacidad": 5324000000,
           "tiempo": 240,
           "ultimaColecta": 1764080574609,
-          "acumulado": 4750246915.415006,
+          "acumulado": 4787695466.196006,
           "mejora": 2.2,
           "produccionPorSegundo": 73939,
-          "ultimaActualizacion": 1764181081858
+          "ultimaActualizacion": 1764181588337
         },
         {
           "tipo": 1,
@@ -18718,7 +18719,7 @@
           "produccionPorSegundo": 1389,
           "capacidad": 10000000,
           "acumulado": 10000000,
-          "ultimaActualizacion": 1764181081858,
+          "ultimaActualizacion": 1764181588337,
           "mejora": 1.5
         }
       ],
@@ -18733,7 +18734,7 @@
           "acumulado": 10000000,
           "mejora": 1.5,
           "produccionPorSegundo": 2777.777777777778,
-          "ultimaActualizacion": 1764181081858
+          "ultimaActualizacion": 1764181588337
         }
       ]
     }
