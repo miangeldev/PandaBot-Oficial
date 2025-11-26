@@ -8,9 +8,10 @@ export async function run(sock, msg, args) {
   const texto = `
 ┏━━━━━━━━━━━━━━━━━━━┓
 👑 *Owners:*
-+56 9 5350 8566
-+57 302 3181375
-+52 55 3883 0665
++56 9 5350 8566 > Lukas
++57 302 3181375 > Josefino
++52 55 3883 0665 > Miguelito
++52 951 316 4242 > Lilan
 
 🌐 *Instagram:*
 Bot🐼:
@@ -26,12 +27,8 @@ https://www.instagram.com/josedavid.martinezarrieta?igsh=bmRmeG01ZDcxNGkx
 https://www.instagram.com/miangelnevado?igsh=MWk5cGcxem5zN3p3bA==
 > Miguelito
 
-Playtesters🛡:
-
 https://www.instagram.com/awendoperez?igsh=MWZqeDQzYWYyN2JrMw==
 > Lilan
-
--Y Pool pero no tiene Instagran🥹🥹
 
 > Gracias por todo.💗
 ┗━━━━━━━━━━━━━━━━━━━┛

@@ -74,14 +74,14 @@ export async function run(sock, msg, args) {
 
         const posibles = [
             ["Santa PandaBot", 75],
-            ["Xmas Zeus", 3],
+            ["Cirilo Navideño", 3],
             ["Xmas Lukas", 3],
             ["Xmas Nyan Cat", 6],
-            ["Xmas El Anti-Cristo", 6],
-            ["Xmas 67", 5],
+            ["Rodolfo el Reno", 6],
+            ["Xmas Lilan", 5],
             ["Xmas Everything", 1],
             ["Santa Claus Legendario", 0.8],
-            ["Rudolph el Reno", 0.2]
+            ["Jesucristo", 0.1]
         ];
 
         function elegir() {
@@ -96,7 +96,7 @@ export async function run(sock, msg, args) {
 
         let mostrando = await sock.sendMessage(from, { text: `🎁 Abriendo...` });
 
-        const anim = ["🎄","🎅","❄️","☃️","🌟","🎁","✨"];
+        const anim = ["🎄","🎅"];
 
         for (let i = 0; i < anim.length; i++) {
             await new Promise(r => setTimeout(r, 500));

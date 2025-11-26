@@ -1,0 +1,346 @@
+{
+  "titles": [
+    {
+      "id": "rey_pandacoins",
+      "name": "👑 Rey de Pandacoins",
+      "displayName": "👑 Rey de Pandacoins",
+      "description": "Título comprable creado por owners",
+      "price": 1000000,
+      "emoji": "👑",
+      "createdBy": "system"
+    },
+    {
+      "id": "maestro_aventuras",
+      "name": "⚔️ Maestro de Aventuras",
+      "displayName": "⚔️ Maestro de Aventuras",
+      "description": "Título comprable creado por owners",
+      "price": 500000,
+      "emoji": "⚔️",
+      "createdBy": "system"
+    },
+    {
+      "id": "dios_memes",
+      "name": "😂 Dios de los Memes",
+      "displayName": "😂 Dios de los Memes",
+      "description": "Título comprable creado por owners",
+      "price": 300000,
+      "emoji": "😂",
+      "createdBy": "system"
+    },
+    {
+      "id": "leyenda_oscura",
+      "name": "🌑 Leyenda Oscura",
+      "displayName": "🌑 Leyenda Oscura",
+      "description": "Título comprable creado por owners",
+      "price": 750000,
+      "emoji": "🌑",
+      "createdBy": "system"
+    },
+    {
+      "id": "guardian_nocturno",
+      "name": "🌙 Guardián Nocturno",
+      "displayName": "🌙 Guardián Nocturno",
+      "description": "Título comprable creado por owners",
+      "price": 400000,
+      "emoji": "🌙",
+      "createdBy": "system"
+    },
+    {
+      "id": "emperador_dragon",
+      "name": "🐉 Emperador Dragón",
+      "displayName": "🐉 Emperador Dragón",
+      "description": "Título comprable creado por owners",
+      "price": 1500000,
+      "emoji": "🐉",
+      "createdBy": "system"
+    },
+    {
+      "id": "sabio_ancestral",
+      "name": "📜 Sabio Ancestral",
+      "displayName": "📜 Sabio Ancestral",
+      "description": "Título comprable creado por owners",
+      "price": 600000,
+      "emoji": "📜",
+      "createdBy": "system"
+    },
+    {
+      "id": "cazador_recompensas",
+      "name": "🎯 Cazador de Recompensas",
+      "displayName": "🎯 Cazador de Recompensas",
+      "description": "Título comprable creado por owners",
+      "price": 450000,
+      "emoji": "🎯",
+      "createdBy": "system"
+    },
+    {
+      "id": "alquimista",
+      "name": "🧪 Alquimista",
+      "displayName": "🧪 Alquimista",
+      "description": "Título comprable creado por owners",
+      "price": 550000,
+      "emoji": "🧪",
+      "createdBy": "system"
+    },
+    {
+      "id": "___amante_del_porno",
+      "name": "🔞 Amante del porno",
+      "displayName": "🔞 Amante del porno",
+      "description": "Título comprable creado por owners",
+      "price": 10000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___top_global",
+      "name": "🏆 Top Global",
+      "displayName": "🏆 Top Global",
+      "description": "Título comprable creado por owners",
+      "price": 100000000000,
+      "emoji": "\ud83c",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "femboy___",
+      "name": "Femboy 🎀",
+      "displayName": "Femboy 🎀",
+      "description": "Título comprable creado por owners",
+      "price": 2000000000,
+      "emoji": "F",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "sigma___",
+      "name": "Sigma 🗿",
+      "displayName": "Sigma 🗿",
+      "description": "Título comprable creado por owners",
+      "price": 5000000000,
+      "emoji": "S",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___programador",
+      "name": "⌨️ Programador",
+      "displayName": "⌨️ Programador",
+      "description": "Título comprable creado por owners",
+      "price": 10000000000,
+      "emoji": "⌨",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___manager",
+      "name": "🪪 Manager",
+      "displayName": "🪪 Manager",
+      "description": "Título comprable creado por owners",
+      "price": 10000000000,
+      "emoji": "\ud83e",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___fan_de_diddy",
+      "name": "🤭 Fan De Diddy",
+      "displayName": "🤭 Fan De Diddy",
+      "description": "Título comprable creado por owners",
+      "price": 5000000000,
+      "emoji": "\ud83e",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___sad_boy",
+      "name": "💔 Sad Boy",
+      "displayName": "💔 Sad Boy",
+      "description": "Título comprable creado por owners",
+      "price": 10000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___simp",
+      "name": "💞 Simp",
+      "displayName": "💞 Simp",
+      "description": "Título comprable creado por owners",
+      "price": 10000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___skibidi_toilet",
+      "name": "🚽 Skibidi Toilet",
+      "displayName": "🚽 Skibidi Toilet",
+      "description": "Título comprable creado por owners",
+      "price": 10000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___enamorado",
+      "name": "💘 Enamorado",
+      "displayName": "💘 Enamorado",
+      "description": "Título comprable creado por owners",
+      "price": 10000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___artista",
+      "name": "🎨 Artista",
+      "displayName": "🎨 Artista",
+      "description": "Título comprable creado por owners",
+      "price": 10000000000,
+      "emoji": "\ud83c",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___panda",
+      "name": "🐼 Panda",
+      "displayName": "🐼 Panda",
+      "description": "Título comprable creado por owners",
+      "price": 50000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___soltero",
+      "name": "💔 Soltero",
+      "displayName": "💔 Soltero",
+      "description": "Título comprable creado por owners",
+      "price": 10000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___alien",
+      "name": "👽 Alien",
+      "displayName": "👽 Alien",
+      "description": "Título comprable creado por owners",
+      "price": 30000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___zombi",
+      "name": "🧟 Zombie",
+      "displayName": "🧟 Zombi",
+      "description": "Título comprable creado por owners",
+      "price": 25000000000,
+      "emoji": "\ud83e",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "______cocinero",
+      "name": "👨‍🍳 Cocinero",
+      "displayName": "👨‍🍳 Cocinero",
+      "description": "Título comprable creado por owners",
+      "price": 10000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___creyente",
+      "name": "✝️ Creyente",
+      "displayName": "✝️ Creyente",
+      "description": "Título comprable creado por owners",
+      "price": 100000000000,
+      "emoji": "✝",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___furro",
+      "name": "🦊 Furro",
+      "displayName": "🦊 Furro",
+      "description": "Título comprable creado por owners",
+      "price": 5000000000,
+      "emoji": "\ud83e",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___lesbiana",
+      "name": "💋 Lesbiana",
+      "displayName": "💋 Lesbiana",
+      "description": "Título comprable creado por owners",
+      "price": 1000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___qu_mico_profesional",
+      "name": "🧠 Químico Profesional",
+      "displayName": "🧠 Químico Profesional",
+      "description": "Título comprable creado por owners",
+      "price": 5000000000,
+      "emoji": "\ud83e",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___owner",
+      "name": "🐼 Owner",
+      "displayName": "🐼 Owner",
+      "description": "Título comprable creado por owners",
+      "price": 1000000000000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "______educador_de_perras",
+      "name": "👨‍🏫 Educador de perras",
+      "displayName": "👨‍🏫 Educador de perras",
+      "description": "Título comprable creado por owners",
+      "price": 50000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "______de_calle_pero_elegante",
+      "name": "🤵‍♂️ De calle pero elegante",
+      "displayName": "🤵‍♂️ De calle pero elegante",
+      "description": "Título comprable creado por owners",
+      "price": 40000000000,
+      "emoji": "\ud83e",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "_____fan_de_hitler",
+      "name": "🇩🇪 Fan de Hitler",
+      "displayName": "🇩🇪 Fan de Hitler",
+      "description": "Título comprable creado por owners",
+      "price": 30000000000,
+      "emoji": "\ud83c",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___semental",
+      "name": "🥛 Semental",
+      "displayName": "🥛 Semental",
+      "description": "Título comprable creado por owners",
+      "price": 30000000000,
+      "emoji": "\ud83e",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___licenciado_en_pornograf_a",
+      "name": "🔞 Licenciado en pornografía",
+      "displayName": "🔞 Licenciado en pornografía",
+      "description": "Título comprable creado por owners",
+      "price": 30000000000,
+      "emoji": "\ud83d",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "_____che",
+      "name": "🇦🇷 Che",
+      "displayName": "🇦🇷 Che",
+      "description": "Título comprable creado por owners",
+      "price": 25000000000,
+      "emoji": "\ud83c",
+      "createdBy": "166164298780822"
+    },
+    {
+      "id": "___gorreado",
+      "name": "🧢 Gorreado",
+      "displayName": "🧢 Gorreado",
+      "description": "Título comprable creado por owners",
+      "price": 1,
+      "emoji": "\ud83e",
+      "createdBy": "166164298780822"
+    }
+  ]
+}

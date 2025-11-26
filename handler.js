@@ -13,6 +13,29 @@ import { initializeAchievements } from './data/achievementsDB.js';
 const pluginsMap = new Map();
 const aliasMap = new Map();
 
+/**
+ * Envía al grupo los errores de importación de plugins.
+ * Requiere que globalThis.sock exista (setearlo en index.js).
+ */
+async function sendErrorToGroup(file, error) {
+  try {
+    if (!globalThis.sock) return;
+
+    await globalThis.sock.sendMessage(
+      '120363421024393324@g.us',
+      {
+        text:
+`❌ *ERROR IMPORTANDO PLUGIN*
+📄 Archivo: *${file}*
+🧩 Tipo: ${error?.name || "Error"}
+📋 Mensaje: ${error?.message || String(error)}`
+      }
+    );
+  } catch (e) {
+    console.error(chalk.red('❌ No se pudo enviar el error al grupo:'), e);
+  }
+}
+
 async function loadPlugins() {
   console.log(chalk.yellow('📦 ===== CARGA DE PLUGINS - DEBUG ====='));
   const pluginsPath = path.join(process.cwd(), 'plugins');
@@ -59,6 +82,9 @@ async function loadPlugins() {
       console.error(error.stack);
       
       errors.push({ file, error: error.message, stack: error.stack });
+
+      // 🔥 NUEVO: ENVIAR ERROR AL GRUPO
+      await sendErrorToGroup(file, error);
     }
   }
 
@@ -78,6 +104,7 @@ async function loadPlugins() {
     console.log(chalk.cyan(`   • ${cmd}`));
   }
 }
+
 // Cargar plugins al inicio
 await loadPlugins();
 

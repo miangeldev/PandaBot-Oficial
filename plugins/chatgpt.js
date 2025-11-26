@@ -2,6 +2,7 @@ import fetch from 'node-fetch';
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 
 export const command = 'chatgpt';
+export const aliases = ['🐼'];
 
 // 🔑 API key
 const API_KEY = '96bde0ae57397e48';

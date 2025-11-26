@@ -1,7 +1,7 @@
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 
 export const command = 'addvip';
-
+export const aliases = ['darvip'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;

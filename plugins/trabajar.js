@@ -4,7 +4,7 @@ import { trackTrabajar, checkSpecialAchievements } from '../middleware/trackAchi
 import { initializeAchievements } from '../data/achievementsDB.js';
 
 export const command = 'trabajar';
-
+export const aliases = ['work', 'w'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;

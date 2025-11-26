@@ -1,3 +1,5 @@
+import { trackDildear } from '../middleware/trackAchievements.js';
+
 export const command = 'dildear';
 
 export async function run(sock, msg, args) {
@@ -54,4 +56,6 @@ export async function run(sock, msg, args) {
       mentions: [sender, target]
     });
   }
+
+  trackDildear(sender, sock, from);
 }

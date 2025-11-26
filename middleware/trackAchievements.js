@@ -10,6 +10,21 @@ export function trackMinar(userJid, sock, from) {
   trackProgress(userJid, 'minar_count', 1, sock, from);
 }
 
+export function trackPaja(userJid, sock, from) {
+  console.log(`✊ trackPaja llamado para: ${userJid}`);
+  trackProgress(userJid, 'paja_count', 1, sock, from);
+}
+
+export function trackSexo(userJid, sock, from) {
+  console.log(`😏 trackSexo llamado para: ${userJid}`);
+  trackProgress(userJid, 'sexo_count', 1, sock, from);
+}
+
+export function trackDildear(userJid, sock, from) {
+  console.log(`🦄 trackDildear llamado para: ${userJid}`);
+  trackProgress(userJid, 'dildear_count', 1, sock, from);
+}
+
 export function trackTrabajar(userJid, sock, from) {
   trackProgress(userJid, 'trabajar_count', 1, sock, from);
 }
@@ -46,6 +61,7 @@ export function trackSpotify(userJid, sock, from) {
   console.log(`🎵 trackSpotify llamado para: ${userJid.split('@')[0]}`);
   trackProgress(userJid, 'spotify_count', 1, sock, from);
 }
+
 /**
  * Verificar logros especiales que dependen de estados
  */

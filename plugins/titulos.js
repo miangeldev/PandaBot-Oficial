@@ -1,7 +1,7 @@
 import { getUserAchievementStats, selectTitle } from '../data/achievementsDB.js';
 
 export const command = 'titulos';
-export const aliases = ['titulo', 'titles'];
+export const aliases = ['.....'];
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;

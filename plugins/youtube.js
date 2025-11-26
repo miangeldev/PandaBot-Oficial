@@ -1,7 +1,7 @@
 import yts from 'yt-search';
 
 export const command = 'youtube';
-
+export const aliases = ['yt'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
 

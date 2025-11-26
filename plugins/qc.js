@@ -21,13 +21,11 @@ function numberWithFlag(num) {
   return num;
 }
 
-async function niceName(jid, conn, msg, fallback = '') {
+async function niceName(jid, conn, fallback = '') {
   try {
     const name = await conn.getName(jid);
     if (name) return name;
   } catch {}
-
-  if (msg.pushName) return msg.pushName;
 
   return numberWithFlag(jid.split('@')[0]);
 }
@@ -42,6 +40,7 @@ export const command = 'qc';
 
 export async function run(sock, msg, args) {
   try {
+    const from = msg.key.remoteJid;
     const sender = msg.key.participant || msg.key.remoteJid;
 
     if (!isVip(sender)) {
@@ -53,19 +52,25 @@ export async function run(sock, msg, args) {
     const ctx = msg.message?.extendedTextMessage?.contextInfo;
     const quoted = ctx?.quotedMessage;
 
-    let targetJid = msg.key.participant || msg.key.remoteJid;
+    let targetJid = sender; // Por defecto el que ejecuta el comando
     let textQuoted = '';
+    let isQuotedMessage = false;
 
+    // Si hay mensaje citado, usar los datos del usuario citado
     if (quoted && ctx?.participant) {
       targetJid = ctx.participant;
-      textQuoted = quoted.conversation || quoted.extendedTextMessage?.text || '';
+      textQuoted = quoted.conversation || 
+                   quoted.extendedTextMessage?.text || 
+                   quoted.imageMessage?.caption || 
+                   '';
+      isQuotedMessage = true;
     }
 
     const contentFull = (args.join(' ').trim() || '').trim();
 
     if (!contentFull && !textQuoted) {
       await sock.sendMessage(chatId, {
-        text: `✏️ Usa qc así:\n\n*• qc [texto]*\n*• qc [color] [texto]*\n\nColores disponibles:\nrojo, azul, morado, verde, amarillo, naranja, celeste, rosado, negro`
+        text: `✏️ Usa qc así:\n\n*• qc [texto]*\n*• qc [color] [texto]*\n*• Responde a un mensaje con qc [color]*\n\nColores disponibles:\nrojo, azul, morado, verde, amarillo, naranja, celeste, rosado, negro`
       }, { quoted: msg });
       return;
     }
@@ -80,6 +85,7 @@ export async function run(sock, msg, args) {
       if (afterColor.length > 0) {
         content = afterColor;
       } else {
+        // Si no hay texto después del color, usar el mensaje citado o texto vacío
         content = textQuoted || ' ';
       }
     } else {
@@ -87,10 +93,16 @@ export async function run(sock, msg, args) {
     }
 
     const plain = content.replace(/@[\d\-]+/g, '');
-    const displayName = await niceName(targetJid, sock, msg, null);
+    
+    // Obtener nombre del usuario correcto - SIN pasar msg para evitar confusión
+    const displayName = await niceName(targetJid, sock);
 
     let avatar = 'https://telegra.ph/file/24fa902ead26340f3df2c.png';
-    try { avatar = await sock.profilePictureUrl(targetJid, 'image'); } catch {}
+    try { 
+      avatar = await sock.profilePictureUrl(targetJid, 'image'); 
+    } catch (e) {
+      console.log('❌ No se pudo obtener avatar, usando default:', e.message);
+    }
 
     await sock.sendMessage(chatId, { react: { text: '🎨', key: msg.key } });
 
@@ -100,17 +112,32 @@ export async function run(sock, msg, args) {
       messages: [{
         entities: [],
         avatar: true,
-        from: { id: 1, name: displayName, photo: { url: avatar } },
+        from: { 
+          id: 1, 
+          name: displayName, 
+          photo: { url: avatar }
+        },
         text: plain,
         replyMessage: {}
       }]
     };
 
+    console.log(`🎨 Generando quote para: ${displayName} (${targetJid})`);
+    console.log(`📝 Texto: ${plain}`);
+    console.log(`🖼️ Avatar: ${avatar}`);
+
     const res = await axios.post(
       'https://bot.lyo.su/quote/generate',
       quoteData,
-      { headers: { 'Content-Type': 'application/json' } }
+      { 
+        headers: { 'Content-Type': 'application/json' },
+        timeout: 30000
+      }
     );
+
+    if (!res.data || !res.data.result || !res.data.result.image) {
+      throw new Error('Respuesta inválida del servidor de quotes');
+    }
 
     const stickerBuf = Buffer.from(res.data.result.image, 'base64');
     const sticker = await writeExifImg(stickerBuf, {
@@ -123,7 +150,8 @@ export async function run(sock, msg, args) {
 
   } catch (e) {
     console.error('❌ Error en qc:', e);
-    await sock.sendMessage(msg.key.remoteJid, { text: '❌ Error: Este comando es solo para VIPs XD\n> Paga el vip ratita.' }, { quoted: msg });
+    await sock.sendMessage(msg.key.remoteJid, { 
+      text: '❌ Error al generar la quote.\n> Verifica que el mensaje citado tenga texto.' 
+    }, { quoted: msg });
   }
 }
-

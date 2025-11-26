@@ -46,7 +46,7 @@ export const multiplicadores = {
     '🎨': 3       // Paleta de Arte (Raro)
 };
 export const command = 'activate';
-
+export const aliases = ['activar', 'iniciar'];
 export const getEfectosBoost = fetchBoosts;
 
 const pedoUrls = ['https://files.catbox.moe/otuozc.mp4', 'https://files.catbox.moe/su2l4w.mp4'];

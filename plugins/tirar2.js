@@ -6,7 +6,7 @@ export async function run(sock, msg, args) {
   const user = sender.split('@')[0];
 
   if (!global.cmDB[user]) {
-    global.cmDB[user] = { spins: 5, coins: 0, shields: 0, villageLevel: 1, creditos: 0 };
+    global.cmDB[user] = { spins: 5, coins: 300, shields: 1, villageLevel: 1, creditos: 1 };
   }
 
   const data = global.cmDB[user];
@@ -22,7 +22,7 @@ export async function run(sock, msg, args) {
 
   const rewards = [
     { emoji: '🪙', action: () => { data.coins += 8000; return 'Ganaste *8,000 monedas* 🪙'; } },
-    { emoji: '🛡', action: () => { if (data.shields >= 2) return '⚠️ Ya tienes *2 escudos*, no puedes obtener más 🛡'; data.shields += 1; return 'Obtuviste *1 escudo* 🛡'; } },
+    { emoji: '🛡', action: () => { if (data.shields >= 1) return '⚠️ Ya tienes *un escudo*, no puedes obtener más 🛡'; data.shields += 1; return 'Obtuviste *1 escudo* 🛡'; } },
     {
      emoji: '🎫',
      action: () => {

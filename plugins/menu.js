@@ -1,7 +1,7 @@
 import fs from 'fs';
 
 export const command = 'menu';
-
+export const aliases = ['help', 'ayuda'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
 
@@ -12,7 +12,7 @@ export async function run(sock, msg, args) {
     const menu = `
 ┏━━━━🐼 *『 𝙋𝙖𝙣𝙙𝙖𝘽𝙤𝙩 』* 🐼━━━━┓
 ✨ *Canal Oficial:* ${pandaChannel}
-🌸 *Versión:* 2.4
+🌸 *Versión:* 2.7
 👥️ *Grupo Oficial:* https://chat.whatsapp.com/IrHQqHBP47Y4cINAzAhFWh?mode=ac_t
 📦 *Página Web:* https://bio.site/PandaBot
 📎 *Gmail:* pandabotcl@gmail.com
@@ -47,7 +47,7 @@ sigueme en ig bro es totalmente gratis :)
 
 -Los usuarios no deben spammear comandos.
 
--Los usuarios no deben llamar al Bot.
+-Los usuarios no deben llamar al Bot, tampoco invitarlo a alguna llamada grupal al interior del grupo.
 
 -Los usuarios no deben abusar de ningún bug o glitch.
 
@@ -58,27 +58,52 @@ sigueme en ig bro es totalmente gratis :)
 ┣━━━━━━━━━━━━━━━━━━━┫
  ✅️ *MENÚS DINÁMICOS*
 
-- .clan
+🛡 • .clan
 
-- .menuaudios
+🎶 • .menuaudios
 
-- .menupizzeria
+🍕 • .menupizzeria
 
-- .menuvip (VIP💸)
+💸 • .menuvip
 
-- .menujuegos
+🎮 • .menujuegos
 
-- .menulove
+💗 • .menulove
 
-- .menurpg
+🔝 • .menurpg
 
-- .menucm
+💱 • .menucm
 
-- .menubrainrots
+🧠 • .menubrainrots
 
-- .menufutbol
+⚽️ • .menufutbol
 
 ┣━━━━━━━━━━━━━━━━━━━┫
+💰 • Sistema de inversiones:
+
+*.inversion*
+> Inviertes Pandacoins en alguna moneda digital del bot.
+
+*.miinversion*
+> Revisas el estado de tu inversion creada.
+
+┣━━━━━━━━━━━━━━━━━━━┫
+📜 • Sistema de logros:
+
+*.logros*
+> Revisas todos los logros que hay en el bot, con estos puedes ganar títulos y Pandacoins.
+
+*.titulos*
+> Revisas tus titulos actuales, los cuales puedes equipar y se mostrarán en .perfil.
+
+┣━━━━━━━━━━━━━━━━━━━┫
+🐼 • Sistema de trabajo en equipo global en PandaBot:
+
+*.boss*
+> Atacas al boss actual del bot, todos los ataques de cualquier usuario del bot cuentan, si derrotas al boss consigues Pandacoins.
+
+┣━━━━━━━━━━━━━━━━━━━┫
+
 *QUEREMOS QUE EXPRESES TUS IDEAS✨️*
 
 *Comandos para enviarle un mensaje al creador:

@@ -6,7 +6,7 @@ export async function run(sock, msg, args) {
   const user = sender.split('@')[0];
 
   if (!global.cmDB[user]) {
-    global.cmDB[user] = { spins: 5, coins: 0, shields: 0, villageLevel: 1, creditos: 0 };
+    global.cmDB[user] = { spins: 5, coins: 300, shields: 1, villageLevel: 1, creditos: 10 };
   }
 
   const data = global.cmDB[user];
@@ -51,7 +51,7 @@ export async function run(sock, msg, args) {
           rewardSummary.coins += reward.value;
           break;
         case 'shields':
-          if (data.shields < 2) data.shields += reward.value;
+          if (data.shields < 1) data.shields += reward.value;
           rewardSummary.shields += reward.value;
           break;
         case 'creditos':

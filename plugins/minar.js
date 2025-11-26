@@ -5,23 +5,23 @@ import { trackMinar, checkSpecialAchievements } from '../middleware/trackAchieve
 import { initializeAchievements } from '../data/achievementsDB.js';
 
 export const command = 'minar';
-
+export const aliases = ['mine'];
 export async function run(sock, msg) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
-  
+
   const cdPath = path.resolve('./data/cooldowns.json');
   if (!fs.existsSync(cdPath)) fs.writeFileSync(cdPath, '{}');
-  
+
   const cooldowns = JSON.parse(fs.readFileSync(cdPath));
   const lastTime = cooldowns[sender]?.aventura || 0;
   const now = Date.now();
-  const cooldownTime = 120 * 60 * 1000;
+  const cooldownTime = 10 * 60 * 1000; // 🔥 Cambiado de 120 a 10 minutos
 
   if (now - lastTime < cooldownTime) {
-    const hoursLeft = Math.ceil((cooldownTime - (now - lastTime)) / 3600000);
+    const minutesLeft = Math.ceil((cooldownTime - (now - lastTime)) / 60000); // 🔥 Cambiado a minutos
     await sock.sendMessage(from, {
-      text: `🕒 *Cooldown activo*\n Espera *${hoursLeft} hora(s)* antes de minar otra vez.`
+      text: `🕒 *Cooldown activo*\n Espera *${minutesLeft} minuto(s)* antes de minar otra vez.` // 🔥 Cambiado a minutos
     }, { quoted: msg });
     return;
   }
@@ -29,7 +29,7 @@ export async function run(sock, msg) {
   const db = cargarDatabase();
   db.users = db.users || {};
   db.users[sender] = db.users[sender] || { pandacoins: 0, exp: 0, diamantes: 0, piedras: 0, carne: 0, pescado: 0, oro: 0 };
-  
+
   // ✅ Inicializar achievements si no existen
   if (!db.users[sender].achievements) {
     initializeAchievements(sender);

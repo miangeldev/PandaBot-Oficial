@@ -22,7 +22,7 @@ export async function run(sock, msg, args) {
 
   const rewards = [
     { emoji: '🪙', action: () => { data.coins += 8000; return 'Ganaste *8,000 monedas* 🪙'; } },
-    { emoji: '🛡', action: () => { if (data.shields >= 2) return '⚠️ Ya tienes *2 escudos*, no puedes obtener más 🛡'; data.shields += 1; return 'Obtuviste *1 escudo* 🛡'; } },
+    { emoji: '🛡', action: () => { if (data.shields >= 1) return '⚠️ Ya tienes *un escudo*, no puedes obtener más 🛡'; data.shields += 1; return 'Obtuviste *1 escudo* 🛡'; } },
     {
      emoji: '🎫',
      action: () => {

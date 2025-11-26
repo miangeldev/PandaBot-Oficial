@@ -1,5 +1,5 @@
 export const command = 'ping';
-
+export const aliases = ['p', 'pinga', 'pingo', 'pong'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
     const start = new Date().getTime();

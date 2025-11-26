@@ -20,6 +20,69 @@ function ensureMeta(data) {
   }
 }
 
+// 🔥 SISTEMA BOSS GLOBAL - Función para inicializar boss automático
+export function iniciarSistemaBossAutomatico(data) {
+  if (!data) return;
+  
+  // Inicializar estructura del boss si no existe
+  if (!data.bossGlobal) {
+    data.bossGlobal = {
+      activo: false,
+      nombre: "",
+      vidaActual: 0,
+      vidaMaxima: 0,
+      recompensaBase: 0,
+      fechaInicio: null,
+      ataquesRecibidos: 0,
+      ataquesNecesarios: 0,
+      derrotado: false,
+      historicoAtaques: {}
+    };
+    logEvento('🐉 Sistema boss global inicializado');
+  }
+
+  // Verificar y crear boss automático cada 24h
+  const ahora = Date.now();
+  const ultimoBoss = data.ultimoBossTimestamp || 0;
+  
+  // Si no hay boss activo y han pasado 24 horas desde el último
+  if ((!data.bossGlobal.activo || data.bossGlobal.derrotado) && 
+      (ahora - ultimoBoss >= 24 * 60 * 60 * 1000)) {
+    
+    const nombresBoss = [
+      "Dragón Infernal", "Titan de Hielo", "Golem Ancestral", 
+      "Serpiente Marina", "Fénix Renacido", "Ciclope Gigante",
+      "Kraken Abisal", "Minotauro Legendario", "Hidra Venenosa",
+      "Dragón Diario", "Guardián Nocturno", "Bestia Celestial"
+    ];
+    
+    const bossElegido = nombresBoss[Math.floor(Math.random() * nombresBoss.length)];
+    const vidaBase = 500;
+    const ataquesNecesarios = 50;
+    const recompensaBase = 2000;
+    
+    data.bossGlobal = {
+      activo: true,
+      nombre: bossElegido,
+      vidaActual: vidaBase,
+      vidaMaxima: vidaBase,
+      recompensaBase: recompensaBase,
+      fechaInicio: ahora,
+      ataquesRecibidos: 0,
+      ataquesNecesarios: ataquesNecesarios,
+      derrotado: false,
+      historicoAtaques: {}
+    };
+    
+    data.ultimoBossTimestamp = ahora;
+    logEvento(`🐉 Nuevo boss automático creado: ${bossElegido}`);
+    
+    return true; // Indica que se creó un nuevo boss
+  }
+  
+  return false;
+}
+
 export function cargarDatabase() {
   if (!fs.existsSync(dbFile)) {
     logEvento('⚠️ database.json no existe. Se requiere restauración manual.');
@@ -29,6 +92,10 @@ export function cargarDatabase() {
   try {
     const data = JSON.parse(fs.readFileSync(dbFile));
     ensureMeta(data);
+    
+    // 🔥 Inicializar sistema boss al cargar la base de datos
+    iniciarSistemaBossAutomatico(data);
+    
     logEvento('✅ Base de datos cargada correctamente.');
     return data;
   } catch (err) {
@@ -85,4 +152,47 @@ export function guardarDatabase(data, sock = null) {
 export function guardarPersonajes(personajes) {
   fs.writeFileSync('./data/personajes.json', JSON.stringify({ characters: personajes }, null, 2));
   logEvento('📁 Personajes guardados.');
+}
+
+// 🔥 Función auxiliar para crear boss manualmente (para admins)
+export function crearBossManual(data, nombre, vida = 500, ataquesNecesarios = 50, recompensa = 2000) {
+  if (!data) return false;
+  
+  data.bossGlobal = {
+    activo: true,
+    nombre: nombre,
+    vidaActual: vida,
+    vidaMaxima: vida,
+    recompensaBase: recompensa,
+    fechaInicio: Date.now(),
+    ataquesRecibidos: 0,
+    ataquesNecesarios: ataquesNecesarios,
+    derrotado: false,
+    historicoAtaques: {}
+  };
+  
+  data.ultimoBossTimestamp = Date.now();
+  logEvento(`🐉 Boss manual creado: ${nombre}`);
+  
+  return true;
+}
+
+// 🔥 Función para obtener estadísticas del boss
+export function obtenerEstadisticasBoss(data) {
+  if (!data || !data.bossGlobal) {
+    return null;
+  }
+  
+  return {
+    activo: data.bossGlobal.activo,
+    nombre: data.bossGlobal.nombre,
+    vidaActual: data.bossGlobal.vidaActual,
+    vidaMaxima: data.bossGlobal.vidaMaxima,
+    progreso: (data.bossGlobal.ataquesRecibidos / data.bossGlobal.ataquesNecesarios) * 100,
+    ataquesRecibidos: data.bossGlobal.ataquesRecibidos,
+    ataquesNecesarios: data.bossGlobal.ataquesNecesarios,
+    recompensaBase: data.bossGlobal.recompensaBase,
+    participantes: Object.keys(data.bossGlobal.historicoAtaques || {}).length,
+    derrotado: data.bossGlobal.derrotado
+  };
 }

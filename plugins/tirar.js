@@ -18,8 +18,8 @@ export async function run(sock, msg, args) {
     initializeAchievements(sender);
   }
 
-  if (cooldowns[user] && now - cooldowns[user] < 7000) {
-    const timeLeft = ((7000 - (now - cooldowns[user])) / 1000).toFixed(1);
+  if (cooldowns[user] && now - cooldowns[user] < 2000) {
+    const timeLeft = ((2000 - (now - cooldowns[user])) / 1000).toFixed(1);
     await sock.sendMessage(from, { text: `⏳ Espera *${timeLeft}s* para usar este comando de nuevo, *@${user}*.` }, { quoted: msg, mentions: [sender] });
     return;
   }
@@ -30,10 +30,10 @@ export async function run(sock, msg, args) {
   if (!global.cmDB[user]) {
     global.cmDB[user] = {
       spins: 5,
-      coins: 0,
-      shields: 0,
+      coins: 300,
+      shields: 1,
       villageLevel: 1,
-      creditos: 0
+      creditos: 1
     };
   }
 
@@ -60,7 +60,7 @@ export async function run(sock, msg, args) {
     {
       emoji: '🛡',
       action: () => {
-        if (data.shields >= 2) return '⚠️ Ya tienes *2 escudos*, no puedes obtener más 🛡';
+        if (data.shields >= 1) return '⚠️ Ya tienes *un escudo*, no puedes obtener más 🛡';
         data.shields += 1;
         return 'Obtuviste *1 escudo* 🛡';
       }
@@ -114,3 +114,4 @@ ${rewardMessages}
   trackCMTirada(sender, sock, from);
   checkSpecialAchievements(sender, sock, from);
 }
+

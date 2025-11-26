@@ -1066,5 +1066,43 @@
     "status": "replied",
     "reply": "muchas gracias por tu sugerencia amigo, usa `.code graciasportusugerencia` en algún grupo. Añadiré los animatronicos al bot. Thx",
     "replyTimestamp": 1763600520650
+  },
+  {
+    "id": 117,
+    "type": "sugerencia",
+    "senderJid": "54164235231390@lid",
+    "content": "coloquen un comando que diga .agarrarlapala y que tú puedas elegir quien la va agarrar *_ejemplo_* .agarrarlapala @usuario",
+    "timestamp": 1763774650253,
+    "status": "replied",
+    "reply": "especifíca mejor la función del comando, quieres que sea un simple comando de juego? o que tenga otra función más robusta?",
+    "replyTimestamp": 1763774719705
+  },
+  {
+    "id": 118,
+    "type": "sugerencia",
+    "senderJid": "17514994090156@lid",
+    "content": "HAGAN CASINOOOO",
+    "timestamp": 1763838072793,
+    "status": "replied",
+    "reply": "amigo el .apostar y el sistema de coin máster no están dibujados",
+    "replyTimestamp": 1763839500598
+  },
+  {
+    "id": 119,
+    "type": "reporte",
+    "senderJid": "85569287807014@lid",
+    "content": "@35691664830563",
+    "timestamp": 1764099579555,
+    "status": "replied",
+    "reply": "???",
+    "replyTimestamp": 1764100890182
+  },
+  {
+    "id": 120,
+    "type": "pregunta",
+    "senderJid": "35948943376589@lid",
+    "content": "pq no eres como nuestro primer bot💔",
+    "timestamp": 1764122431385,
+    "status": "pending"
   }
 ]

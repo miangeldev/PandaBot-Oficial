@@ -1,7 +1,7 @@
 {
-  "multiplicadorGeneral": 10,
-  "precioMinimoParaMultiplicar": 5000000,
-  "ultimaActualizacion": "2025-11-19T23:23:46.363Z",
+  "multiplicadorGeneral": 2,
+  "precioMinimoParaMultiplicar": 1000000,
+  "ultimaActualizacion": "2025-11-21T12:55:53.978Z",
   "activo": true,
   "excepciones": [
     "Spooky Lucky Block",

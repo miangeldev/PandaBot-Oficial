@@ -3,7 +3,7 @@ import { initializeAchievements } from '../data/achievementsDB.js';
 import { cargarDatabase } from '../data/database.js';
 
 export const command = 'atacar';
-const cooldown = 15 * 60 * 1000; // 15 minutos en milisegundos
+const cooldown = 1 * 60 * 1000; // 15 minutos en milisegundos
 let attackCooldown = {};
 
 export async function run(sock, msg, args) {

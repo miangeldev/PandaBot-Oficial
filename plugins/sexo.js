@@ -1,3 +1,5 @@
+import { trackSexo } from '../middleware/trackAchievements.js';
+
 export const command = 'sexo';
 
 export async function run(sock, msg, args) {
@@ -55,4 +57,7 @@ export async function run(sock, msg, args) {
       mentions: [sender, target]
     });
   }
+
+  // 🔥 TRACKEAR LOGRO
+  trackSexo(sender, sock, from);
 }

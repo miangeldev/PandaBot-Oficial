@@ -8,7 +8,7 @@ export const command = 'apostar';
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
-  const COOLDOWN_MS = 30 * 60 * 1000;
+  const COOLDOWN_MS = 1 * 60 * 1000;
 
   // Validación
   if (args.length < 2) {

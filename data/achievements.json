@@ -672,6 +672,145 @@
         "title": "DJ Master"
       },
       "points": 50
-    }
+    },
+{
+  "id": "paja_1",
+  "name": "Pajero Principiante",
+  "description": "Usa .paja 10 veces",
+  "category": "juegos",
+  "icon": "✊",
+  "requirement": {
+    "type": "paja_count",
+    "value": 10
+  },
+  "reward": {
+    "coins": 3000
+  },
+  "points": 15
+},
+{
+  "id": "paja_2",
+  "name": "Mr. Pajas",
+  "description": "Usa .paja 100 veces",
+  "category": "juegos",
+  "icon": "💦",
+  "requirement": {
+    "type": "paja_count",
+    "value": 100
+  },
+  "reward": {
+    "coins": 15000
+  },
+  "points": 35
+},
+{
+  "id": "paja_3",
+  "name": "Maestro de la Paja",
+  "description": "Usa .paja 300 veces",
+  "category": "juegos",
+  "icon": "🔥",
+  "requirement": {
+    "type": "paja_count",
+    "value": 300
+  },
+  "reward": {
+    "coins": 50000,
+    "title": "Maestro de la Paja"
+  },
+  "points": 75
+},
+{
+  "id": "sexo_1",
+  "name": "Ponerla",
+  "description": "Usa .sexo por primera vez",
+  "category": "social",
+  "icon": "😏",
+  "requirement": {
+    "type": "sexo_count",
+    "value": 1
+  },
+  "reward": {
+    "coins": 5000
+  },
+  "points": 20
+},
+{
+  "id": "sexo_2",
+  "name": "Amante del Sexo",
+  "description": "Usa .sexo 50 veces",
+  "category": "social",
+  "icon": "🍆",
+  "requirement": {
+    "type": "sexo_count",
+    "value": 50
+  },
+  "reward": {
+    "coins": 25000
+  },
+  "points": 45
+},
+{
+  "id": "sexo_3",
+  "name": "Violador",
+  "description": "Usa .sexo 150 veces",
+  "category": "social",
+  "icon": "⚖️",
+  "requirement": {
+    "type": "sexo_count",
+    "value": 150
+  },
+  "reward": {
+    "coins": 75000,
+    "title": "Violador"
+  },
+  "points": 100,
+  "hidden": true
+},
+{
+  "id": "dildear_1",
+  "name": "Conociendo Dildos",
+  "description": "Usa .dildear por primera vez",
+  "category": "juegos",
+  "icon": "🦄",
+  "requirement": {
+    "type": "dildear_count",
+    "value": 1
+  },
+  "reward": {
+    "coins": 4000
+  },
+  "points": 15
+},
+{
+  "id": "dildear_2",
+  "name": "Dildero",
+  "description": "Usa .dildear 50 veces",
+  "category": "juegos",
+  "icon": "💜",
+  "requirement": {
+    "type": "dildear_count",
+    "value": 50
+  },
+  "reward": {
+    "coins": 20000
+  },
+  "points": 35
+},
+{
+  "id": "dildear_3",
+  "name": "Amante del Dildo 🔥",
+  "description": "Usa .dildear 100 veces",
+  "category": "juegos",
+  "icon": "🔥",
+  "requirement": {
+    "type": "dildear_count",
+    "value": 100
+  },
+  "reward": {
+    "coins": 60000,
+    "title": "Amante del dildo 🔥"
+  },
+  "points": 80
+}
   ]
 }

@@ -5,7 +5,7 @@ const data = JSON.parse(fs.readFileSync('./data/personajes.json', 'utf8'));
 const personajes = data.characters;
 
 export const command = 'viewps';
-
+export const aliases = ['allps', 'viewpersonajes', 'viewcharacters']
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const stock = cargarStock();

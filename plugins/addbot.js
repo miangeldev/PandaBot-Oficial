@@ -17,7 +17,7 @@ function saveRequests(requests) {
 }
 
 export const command = 'addbot';
-
+export const command = ['unete', 'join'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;

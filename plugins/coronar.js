@@ -1,42 +1,56 @@
 import { ownerNumber } from '../config.js';
 
 export const command = 'coronar';
+export const aliases = ['crown', 'makeadmin'];
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
-  if (!from.endsWith('@g.us')) {
-    await sock.sendMessage(from, { text: '❌ Este comando solo puede usarse en grupos.' });
-    return;
-  }
-
   const sender = msg.key.participant || msg.key.remoteJid;
-  const senderNumber = '+' + sender.split('@')[0];
+  const senderNumber = sender.split('@')[0];
 
-  // Solo el owner puede usarlo
-  if (!ownerNumber.includes(senderNumber)) {
-    await sock.sendMessage(from, {
-      text: '⛔ Solo los *dueños del bot* puede usar este comando.'
+  // Verificar si es owner
+  const isOwner = ownerNumber.includes(`+${senderNumber}`);
+
+  if (!isOwner) {
+    await sock.sendMessage(from, { 
+      text: '❌ Solo los owners pueden usar este comando.' 
     }, { quoted: msg });
     return;
   }
 
-  const ownerJid = senderNumber.replace('+', '') + '@s.whatsapp.net';
+  // Verificar que sea un grupo
+  if (!from.endsWith('@g.us')) {
+    await sock.sendMessage(from, { 
+      text: '❌ Este comando solo funciona en grupos.' 
+    }, { quoted: msg });
+    return;
+  }
 
   try {
-    await sock.groupParticipantsUpdate(from, [ownerJid], 'promote');
+    // Intentar promover directamente sin verificar permisos
+    await sock.groupParticipantsUpdate(from, [sender], 'promote');
 
-    await sock.sendMessage(from, {
-      react: { text: '👑', key: msg.key }
-    });
-
-    await sock.sendMessage(from, {
-      text: `👑 *Fuiste coronado con éxito.*\nAhora eres *administrador* del grupo.`,
-      mentions: [ownerJid]
+    await sock.sendMessage(from, { 
+      text: `👑 *¡CORONADO!*\n\nAhora eres administrador del grupo.\n\n¡Larga vida al rey! 🎉` 
     }, { quoted: msg });
-  } catch (err) {
-    console.error('❌ Error al promover al owner:', err);
-    await sock.sendMessage(from, {
-      text: '❌ No se pudo otorgar admin. Asegúrate de que el bot tenga permisos.'
+
+  } catch (error) {
+    console.error('Error en comando coronar:', error);
+    
+    let errorMessage = '❌ No se pudo coronar. ';
+    
+    if (error.message?.includes('not authorized')) {
+      errorMessage += 'El bot no es administrador o no tiene permisos.';
+    } else if (error.message?.includes('401')) {
+      errorMessage += 'El bot fue removido como administrador.';
+    } else if (error.message?.includes('403')) {
+      errorMessage += 'No tienes permisos para ser administrador.';
+    } else {
+      errorMessage += 'El bot necesita ser administrador.';
+    }
+    
+    await sock.sendMessage(from, { 
+      text: errorMessage 
     }, { quoted: msg });
   }
 }

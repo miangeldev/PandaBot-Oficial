@@ -25,12 +25,13 @@ function loadAchievements() {
 export function initializeAchievements(userJid) {
   const db = cargarDatabase();
   db.users = db.users || {};
-  
+
   if (!db.users[userJid]) {
     db.users[userJid] = {};
   }
-  
+
   if (!db.users[userJid].achievements) {
+    // Usuario NUEVO - crear desde cero
     db.users[userJid].achievements = {
       unlocked: [],
       progress: {},
@@ -50,12 +51,36 @@ export function initializeAchievements(userJid) {
         registered_date: Date.now(),
         was_broke: false,
         comeback: false,
-        spotify_count: 0
+        spotify_count: 0,
+        paja_count: 0,
+        sexo_count: 0,
+        dildear_count: 0
       }
     };
-    guardarDatabase(db);
+    console.log(`✅ Achievements creados para usuario nuevo: ${userJid}`);
+  } else {
+    const stats = db.users[userJid].achievements.stats;
+    const newStats = {
+      paja_count: 0,
+      sexo_count: 0,
+      dildear_count: 0
+    };
+    
+    let updated = false;
+    for (const [key, defaultValue] of Object.entries(newStats)) {
+      if (stats[key] === undefined) {
+        stats[key] = defaultValue;
+        console.log(`✅ Añadido ${key} a usuario existente: ${userJid}`);
+        updated = true;
+      }
+    }
+    
+    if (updated) {
+      console.log(`📝 Usuario actualizado: ${userJid}`);
+    }
   }
-  
+
+  guardarDatabase(db);
   return db.users[userJid].achievements;
 }
 
@@ -202,10 +227,13 @@ export function trackProgress(userJid, actionType, value = 1, sock = null, from 
   }
 
   const stats = user.achievements.stats;
-
+  console.log(`📊 Antes - ${actionType}: ${stats[actionType]}`);
   // Actualizar estadística
-  if (stats[actionType] !== undefined) {
+if (stats[actionType] !== undefined) {
     stats[actionType] += value;
+    console.log(`📊 Después - ${actionType}: ${stats[actionType]}`);
+  } else {
+    console.log(`❌ ${actionType} no existe en stats`);
   }
 
   guardarDatabase(db);
@@ -322,7 +350,14 @@ export function checkAchievements(userJid, sock = null, from = null) {
       case 'spotify_count':
   completed = (stats[req.type] || 0) >= req.value;
   break;
-    }
+
+  case 'paja_count':
+  case 'sexo_count': 
+  case 'dildear_count':
+    console.log(`🔍 Verificando ${req.type}: ${stats[req.type] || 0} >= ${req.value}`);
+    completed = (stats[req.type] || 0) >= req.value;
+    break;
+  }
 
     if (completed) {
       const result = unlockAchievement(userJid, achievement.id, sock, from);

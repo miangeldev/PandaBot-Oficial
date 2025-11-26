@@ -266,7 +266,7 @@ export async function run(sock, msg, args) {
         user.inventario.push("Xmas Lucky Block");
         user.ultimoBuy = ahora;
         guardarDatabase(db);
-        const frames = ['🎄','🎅','❄️','☃️','🌟'];
+        const frames = ['📨'];
         let i = 0;
         const m = await sock.sendMessage(from, { text: `🛒 Comprando 🎄 Xmas Lucky Block...` });
         const intervalo = setInterval(async () => {

@@ -1,10 +1,18 @@
+import { trackProgress } from '../data/achievementsDB.js';
+import { cargarDatabase } from '../data/database.js';
+
 export const command = 'paja';
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
   const who = sender;
-  const m = msg;
+
+  // DEBUG: Ver stats antes
+  const dbBefore = cargarDatabase();
+  const userBefore = dbBefore.users[sender];
+  const pajaCountBefore = userBefore?.achievements?.stats?.paja_count || 0;
+  console.log(`🔴 paja.js - ANTES: paja_count = ${pajaCountBefore}`);
 
   const mentioned = msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.[0];
   const target = mentioned || who;
@@ -23,11 +31,25 @@ export async function run(sock, msg, args) {
   });
 
   for (let i = 1; i < frames.length; i++) {
-    await new Promise(res => setTimeout(res, 1000)); // 1 segundo entre frames
+    await new Promise(res => setTimeout(res, 1000));
     await sock.sendMessage(from, {
       text: frames[i],
       edit: key,
       mentions: [who, ...(mentioned ? [mentioned] : [])]
     });
   }
+
+  // 🔥 LLAMADA DIRECTA A trackProgress
+  console.log(`🟡 paja.js - Llamando trackProgress directamente...`);
+  trackProgress(sender, 'paja_count', 1, sock, from);
+  console.log(`🟡 paja.js - trackProgress llamado`);
+
+  // DEBUG: Ver stats después
+  setTimeout(() => {
+    const dbAfter = cargarDatabase();
+    const userAfter = dbAfter.users[sender];
+    const pajaCountAfter = userAfter?.achievements?.stats?.paja_count || 0;
+    console.log(`🟢 paja.js - DESPUÉS: paja_count = ${pajaCountAfter}`);
+    console.log(`🟢 paja.js - ¿Cambió?: ${pajaCountAfter > pajaCountBefore ? 'SÍ' : 'NO'}`);
+  }, 2000);
 }

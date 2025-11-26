@@ -1,7 +1,7 @@
 import { performance } from 'perf_hooks';
 
 export const command = 'doxx';
-//export const aliases = ['doxeo', 'doxxeo'];
+export const aliases = ['doxeo', 'doxxeo'];
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
@@ -38,7 +38,7 @@ export async function run(sock, msg, args) {
   // Fake info generada
   const doxeo = `
  Nombre: ${text}
-Ip: $$$Solo mi creador puede ver este apartado$$$.
+Ip: Solo mi creador puede ver este apartado.
 N: 43 7462
 W: 12.4893
 SS NUMBER: 6979191519182016
