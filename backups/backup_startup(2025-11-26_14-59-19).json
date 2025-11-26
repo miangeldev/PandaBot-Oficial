@@ -82,7 +82,7 @@
           "apostar_count": 3,
           "robos_exitosos": 21,
           "robos_fallidos": 7,
-          "commands_used": 1573,
+          "commands_used": 1585,
           "cm_tiradas": 501,
           "cm_ataques": 51,
           "registered_date": 1763314511093,
@@ -943,7 +943,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 262,
+          "commands_used": 265,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763418612031,
@@ -5240,7 +5240,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 37,
+          "commands_used": 38,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763523544708,
@@ -5721,7 +5721,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 766,
+          "commands_used": 767,
           "cm_tiradas": 4,
           "cm_ataques": 1,
           "registered_date": 1763603264099,
@@ -7308,7 +7308,7 @@
           "apostar_count": 1,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 74,
+          "commands_used": 79,
           "cm_tiradas": 9,
           "cm_ataques": 0,
           "registered_date": 1763418672847,
@@ -9726,7 +9726,32 @@
         "Patito De Josefino",
         "Dildo",
         "Dildo"
-      ]
+      ],
+      "achievements": {
+        "unlocked": [],
+        "progress": {},
+        "points": 0,
+        "titles": [],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 0,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764179472905,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      }
     },
     "41953425105011@lid": {
       "alias": "Benii",
@@ -12199,7 +12224,32 @@
       "personajes": [
         "Dildo",
         "Dildo"
-      ]
+      ],
+      "achievements": {
+        "unlocked": [],
+        "progress": {},
+        "points": 0,
+        "titles": [],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 0,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764178770045,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      }
     },
     "88012503408866@lid": {
       "alias": "Facundo Carreño",
@@ -15945,13 +15995,13 @@
       }
     },
     "125675138736203@lid": {
-      "pandacoins": 15799,
-      "exp": 171685,
+      "pandacoins": 98062354620.0131,
+      "exp": 174771,
       "diamantes": 858,
       "piedras": 0,
       "carne": 0,
       "pescado": 0,
-      "oro": 11,
+      "oro": 12,
       "personajes": [
         "Milo j 🕷",
         "GOOD BOY 🇧🇷 💤"
@@ -15959,11 +16009,11 @@
       "inventario": [],
       "ultimoBuy": 1764175854027,
       "vip": true,
-      "ultimoSell": 1764175857905,
+      "ultimoSell": 1764179516545,
       "robarpsCooldown": 1764140629422,
       "robos": {
         "exitosos": 34,
-        "fallidos": 12
+        "fallidos": 13
       },
       "achievements": {
         "unlocked": [
@@ -16011,13 +16061,13 @@
         ],
         "selectedTitle": "Maestro del Spin",
         "stats": {
-          "minar_count": 52,
-          "trabajar_count": 75,
+          "minar_count": 53,
+          "trabajar_count": 76,
           "buy_count": 708,
-          "apostar_count": 14,
+          "apostar_count": 15,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 3210,
+          "commands_used": 3230,
           "cm_tiradas": 802,
           "cm_ataques": 55,
           "registered_date": 1763418602648,
@@ -16032,7 +16082,7 @@
       "intentosFallidosClaim": 3,
       "vipExpiration": 1766445306616,
       "cooldowns": {
-        "dropvip": 1764133834019,
+        "dropvip": 1764179503320,
         "magicbox": 1764125695426,
         "superminar": 1764175951916,
         "daily": 1764030574697,
@@ -16056,8 +16106,8 @@
           "inversionTotal": 0
         },
         "UNISTAR": {
-          "cantidad": 4922220347.572429,
-          "inversionTotal": 99742290539.42117
+          "cantidad": 0,
+          "inversionTotal": 0
         },
         "MOONSHOT": {
           "cantidad": 0,
@@ -16072,7 +16122,7 @@
           "inversionTotal": 0
         }
       },
-      "ultimoApostar": 1764176011458,
+      "ultimoApostar": 1764179678777,
       "ultimoTransfer": 1764132924709,
       "creditos": 9
     },
@@ -17974,7 +18024,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 27,
+          "commands_used": 28,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764053012570,
@@ -18474,7 +18524,7 @@
     "adCount": 2
   },
   "_meta": {
-    "savesWithoutBackup": 24
+    "savesWithoutBackup": 20
   },
   "bossGlobal": {
     "activo": true,
@@ -18585,10 +18635,10 @@
           "capacidad": 12500000000,
           "tiempo": 480,
           "ultimaColecta": 1764080557816,
-          "acumulado": 6690299731.533982,
+          "acumulado": 6843761611.935975,
           "mejora": 2.5,
           "produccionPorSegundo": 108506,
-          "ultimaActualizacion": 1764178530666
+          "ultimaActualizacion": 1764179944983
         },
         {
           "tipo": 4,
@@ -18596,7 +18646,7 @@
           "produccionPorSegundo": 295776,
           "capacidad": 5324000000,
           "acumulado": 5324000000,
-          "ultimaActualizacion": 1764178530666,
+          "ultimaActualizacion": 1764179944983,
           "mejora": 2.2
         }
       ],
@@ -18611,7 +18661,7 @@
           "acumulado": 3200000000,
           "mejora": 2,
           "produccionPorSegundo": 55554,
-          "ultimaActualizacion": 1764178530666
+          "ultimaActualizacion": 1764179944983
         }
       ],
       "99561821479092@lid": [
@@ -18622,10 +18672,10 @@
           "capacidad": 5324000000,
           "tiempo": 240,
           "ultimaColecta": 1764080574609,
-          "acumulado": 4561614330.127001,
+          "acumulado": 4666187514.790003,
           "mejora": 2.2,
           "produccionPorSegundo": 73939,
-          "ultimaActualizacion": 1764178530666
+          "ultimaActualizacion": 1764179944983
         },
         {
           "tipo": 1,
@@ -18633,7 +18683,7 @@
           "produccionPorSegundo": 1389,
           "capacidad": 10000000,
           "acumulado": 10000000,
-          "ultimaActualizacion": 1764178530666,
+          "ultimaActualizacion": 1764179944983,
           "mejora": 1.5
         }
       ],
@@ -18648,7 +18698,7 @@
           "acumulado": 10000000,
           "mejora": 1.5,
           "produccionPorSegundo": 2777.777777777778,
-          "ultimaActualizacion": 1764178530666
+          "ultimaActualizacion": 1764179944983
         }
       ]
     }

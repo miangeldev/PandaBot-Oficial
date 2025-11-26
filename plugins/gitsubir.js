@@ -287,14 +287,27 @@ async function ejecutarComandosGit(commitMessage) {
     await execAsync(`git commit -m "${commitMessage.replace(/"/g, '\\"')}"`);
     resultados.commit = 'OK';
 
-    // 4. git push origin master (o main)
+    // 4. git push - PRIMERO intentar con master, LUEGO con main
     try {
+      // Intentar con master primero
       await execAsync('git push origin master');
+      resultados.push = 'OK (master)';
+      resultados.rama = 'master';
     } catch (masterError) {
-      // Intentar con main si master falla
-      await execAsync('git push origin main');
+      // Si master falla, intentar con main
+      try {
+        await execAsync('git push origin main');
+        resultados.push = 'OK (main)';
+        resultados.rama = 'main';
+      } catch (mainError) {
+        // Si ambas fallan, mostrar error específico
+        if (masterError.message.includes('src refspec master does not match any') && 
+            mainError.message.includes('src refspec main does not match any')) {
+          throw new Error('No hay ramas "master" ni "main". Crea una rama primero.');
+        }
+        throw masterError; // Mostrar el error original de master
+      }
     }
-    resultados.push = 'OK';
 
     return resultados;
 
@@ -303,6 +316,12 @@ async function ejecutarComandosGit(commitMessage) {
     if (error.message.includes('nothing to commit') || error.message.includes('no changes added to commit')) {
       throw new Error('No hay cambios para subir. Todo está actualizado.');
     }
+    
+    // Error específico de rama
+    if (error.message.includes('src refspec')) {
+      throw new Error(`Rama no encontrada. Tu repositorio usa "master".\n\n💡 Solución: git push origin master`);
+    }
+    
     throw error;
   }
 }

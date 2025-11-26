@@ -82,7 +82,7 @@
           "apostar_count": 3,
           "robos_exitosos": 21,
           "robos_fallidos": 7,
-          "commands_used": 1584,
+          "commands_used": 1586,
           "cm_tiradas": 501,
           "cm_ataques": 51,
           "registered_date": 1763314511093,
@@ -943,7 +943,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 262,
+          "commands_used": 265,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763418612031,
@@ -5240,7 +5240,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 37,
+          "commands_used": 38,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763523544708,
@@ -16067,7 +16067,7 @@
           "apostar_count": 15,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 3226,
+          "commands_used": 3230,
           "cm_tiradas": 802,
           "cm_ataques": 55,
           "registered_date": 1763418602648,
@@ -18524,7 +18524,7 @@
     "adCount": 2
   },
   "_meta": {
-    "savesWithoutBackup": 8
+    "savesWithoutBackup": 23
   },
   "bossGlobal": {
     "activo": true,
@@ -18635,10 +18635,10 @@
           "capacidad": 12500000000,
           "tiempo": 480,
           "ultimaColecta": 1764080557816,
-          "acumulado": 6815547881.815976,
+          "acumulado": 6847256047.665975,
           "mejora": 2.5,
           "produccionPorSegundo": 108506,
-          "ultimaActualizacion": 1764179684963
+          "ultimaActualizacion": 1764179977188
         },
         {
           "tipo": 4,
@@ -18646,7 +18646,7 @@
           "produccionPorSegundo": 295776,
           "capacidad": 5324000000,
           "acumulado": 5324000000,
-          "ultimaActualizacion": 1764179684963,
+          "ultimaActualizacion": 1764179977188,
           "mejora": 2.2
         }
       ],
@@ -18661,7 +18661,7 @@
           "acumulado": 3200000000,
           "mejora": 2,
           "produccionPorSegundo": 55554,
-          "ultimaActualizacion": 1764179684963
+          "ultimaActualizacion": 1764179977188
         }
       ],
       "99561821479092@lid": [
@@ -18672,10 +18672,10 @@
           "capacidad": 5324000000,
           "tiempo": 240,
           "ultimaColecta": 1764080574609,
-          "acumulado": 4646961896.010002,
+          "acumulado": 4668568720.285003,
           "mejora": 2.2,
           "produccionPorSegundo": 73939,
-          "ultimaActualizacion": 1764179684963
+          "ultimaActualizacion": 1764179977188
         },
         {
           "tipo": 1,
@@ -18683,7 +18683,7 @@
           "produccionPorSegundo": 1389,
           "capacidad": 10000000,
           "acumulado": 10000000,
-          "ultimaActualizacion": 1764179684963,
+          "ultimaActualizacion": 1764179977188,
           "mejora": 1.5
         }
       ],
@@ -18698,7 +18698,7 @@
           "acumulado": 10000000,
           "mejora": 1.5,
           "produccionPorSegundo": 2777.777777777778,
-          "ultimaActualizacion": 1764179684963
+          "ultimaActualizacion": 1764179977188
         }
       ]
     }
