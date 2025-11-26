@@ -2,14 +2,10 @@
   "monedas": {
     "LILANCOIN": {
       "nombre": "LilanCoin",
-      "precioActual": 0.6861226340364835,
-      "precioAnterior": 0.6803643417247147,
+      "precioActual": 0.696589909976806,
+      "precioAnterior": 0.6861226340364835,
       "volatilidad": 0.02,
       "historial": [
-        {
-          "precio": 0.6913962945857887,
-          "timestamp": "2025-11-25T20:59:59.173Z"
-        },
         {
           "precio": 0.6990814458010476,
           "timestamp": "2025-11-25T21:09:38.689Z"
@@ -101,6 +97,10 @@
         {
           "precio": 0.6861226340364835,
           "timestamp": "2025-11-26T17:52:08.175Z"
+        },
+        {
+          "precio": 0.696589909976806,
+          "timestamp": "2025-11-26T18:05:23.024Z"
         }
       ],
       "color": "🟡",
@@ -108,14 +108,10 @@
     },
     "DRAGONTOKEN": {
       "nombre": "DragonToken",
-      "precioActual": 21.02403594165724,
-      "precioAnterior": 20.496790106181482,
+      "precioActual": 20.30994348869897,
+      "precioAnterior": 21.02403594165724,
       "volatilidad": 0.08,
       "historial": [
-        {
-          "precio": 19.672325906302003,
-          "timestamp": "2025-11-25T20:59:59.173Z"
-        },
         {
           "precio": 19.35639467460404,
           "timestamp": "2025-11-25T21:09:38.689Z"
@@ -207,6 +203,10 @@
         {
           "precio": 21.02403594165724,
           "timestamp": "2025-11-26T17:52:08.175Z"
+        },
+        {
+          "precio": 20.30994348869897,
+          "timestamp": "2025-11-26T18:05:23.024Z"
         }
       ],
       "color": "🔴",
@@ -214,14 +214,10 @@
     },
     "UNISTAR": {
       "nombre": "UniStar",
-      "precioActual": 19.921360370706207,
-      "precioAnterior": 21.76072002706687,
+      "precioActual": 19.56253899305024,
+      "precioAnterior": 19.921360370706207,
       "volatilidad": 0.12,
       "historial": [
-        {
-          "precio": 20.974632165209467,
-          "timestamp": "2025-11-25T20:59:59.173Z"
-        },
         {
           "precio": 21.9774133304664,
           "timestamp": "2025-11-25T21:09:38.689Z"
@@ -313,6 +309,10 @@
         {
           "precio": 19.921360370706207,
           "timestamp": "2025-11-26T17:52:08.175Z"
+        },
+        {
+          "precio": 19.56253899305024,
+          "timestamp": "2025-11-26T18:05:23.024Z"
         }
       ],
       "color": "🔵",
@@ -320,14 +320,10 @@
     },
     "MOONSHOT": {
       "nombre": "MoonShot",
-      "precioActual": 0.13974501257630625,
-      "precioAnterior": 0.12323085608140916,
+      "precioActual": 0.14382439218388818,
+      "precioAnterior": 0.13974501257630625,
       "volatilidad": 0.25,
       "historial": [
-        {
-          "precio": 0.16376189871974858,
-          "timestamp": "2025-11-25T20:59:59.173Z"
-        },
         {
           "precio": 0.16277102028861842,
           "timestamp": "2025-11-25T21:09:38.689Z"
@@ -419,6 +415,10 @@
         {
           "precio": 0.13974501257630625,
           "timestamp": "2025-11-26T17:52:08.175Z"
+        },
+        {
+          "precio": 0.14382439218388818,
+          "timestamp": "2025-11-26T18:05:23.024Z"
         }
       ],
       "color": "🚀",
@@ -426,14 +426,10 @@
     },
     "SAFEGEM": {
       "nombre": "SafeGem",
-      "precioActual": 45.07533161245927,
-      "precioAnterior": 47.14959836793478,
+      "precioActual": 44.34418228732088,
+      "precioAnterior": 45.07533161245927,
       "volatilidad": 0.05,
       "historial": [
-        {
-          "precio": 50.6327577270085,
-          "timestamp": "2025-11-25T20:59:59.173Z"
-        },
         {
           "precio": 50.19038254360296,
           "timestamp": "2025-11-25T21:09:38.689Z"
@@ -525,6 +521,10 @@
         {
           "precio": 45.07533161245927,
           "timestamp": "2025-11-26T17:52:08.175Z"
+        },
+        {
+          "precio": 44.34418228732088,
+          "timestamp": "2025-11-26T18:05:23.024Z"
         }
       ],
       "color": "💎",
@@ -532,14 +532,10 @@
     },
     "NEUTRON": {
       "nombre": "Neutron",
-      "precioActual": 16.051587602174557,
-      "precioAnterior": 17.551574821754816,
+      "precioActual": 17.517657850843566,
+      "precioAnterior": 16.051587602174557,
       "volatilidad": 0.15,
       "historial": [
-        {
-          "precio": 24.805825499400004,
-          "timestamp": "2025-11-25T20:59:59.173Z"
-        },
         {
           "precio": 24.30673092347518,
           "timestamp": "2025-11-25T21:09:38.689Z"
@@ -631,12 +627,16 @@
         {
           "precio": 16.051587602174557,
           "timestamp": "2025-11-26T17:52:08.175Z"
+        },
+        {
+          "precio": 17.517657850843566,
+          "timestamp": "2025-11-26T18:05:23.024Z"
         }
       ],
       "color": "⚛️",
       "descripcion": "Tecnología avanzada, crecimiento moderado"
     }
   },
-  "ultimaActualizacion": "2025-11-26T17:52:08.175Z",
+  "ultimaActualizacion": "2025-11-26T18:05:23.024Z",
   "actualizacionesPorHora": 12
 }

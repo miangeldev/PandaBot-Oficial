@@ -42,4 +42,6 @@ PandaLove/
 
 #auth_info
 auth_info/
-auth_info
+
+#ignorar credenciales
+./data/git_credentials.json
