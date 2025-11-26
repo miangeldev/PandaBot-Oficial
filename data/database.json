@@ -82,7 +82,7 @@
           "apostar_count": 3,
           "robos_exitosos": 21,
           "robos_fallidos": 7,
-          "commands_used": 1563,
+          "commands_used": 1598,
           "cm_tiradas": 501,
           "cm_ataques": 51,
           "registered_date": 1763314511093,
@@ -943,7 +943,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 262,
+          "commands_used": 268,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763418612031,
@@ -1448,7 +1448,7 @@
           "apostar_count": 3,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 300,
+          "commands_used": 301,
           "cm_tiradas": 10,
           "cm_ataques": 0,
           "registered_date": 1763418650239,
@@ -3648,7 +3648,6 @@
         "OSKART",
         "Everything 🇧🇷 💤",
         "Everything 💤 🎄",
-        "Everything 💀 💩",
         "Everything ❄️",
         "Everything 🇨🇴 💤",
         "Everything 🇧🇷 💤",
@@ -3798,7 +3797,7 @@
     },
     "258166407360658@lid": {
       "alias": ".",
-      "pandacoins": 11111098693,
+      "pandacoins": 11022195560,
       "exp": 4448,
       "oro": 0,
       "diamantes": 0,
@@ -3869,7 +3868,7 @@
         "Xmas Lukas"
       ],
       "id": 91,
-      "pandacoins": 41325346322.00711,
+      "pandacoins": 37821515005.00711,
       "exp": 8185,
       "oro": 0,
       "diamantes": 300,
@@ -4165,8 +4164,8 @@
         "Dildo"
       ],
       "id": 95,
-      "pandacoins": 28551,
-      "exp": 542,
+      "pandacoins": 42657,
+      "exp": 943,
       "oro": 0,
       "diamantes": 0,
       "achievements": {
@@ -4182,14 +4181,14 @@
         ],
         "selectedTitle": null,
         "stats": {
-          "minar_count": 1,
+          "minar_count": 2,
           "trabajar_count": 0,
           "buy_count": 0,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 24,
-          "cm_tiradas": 9,
+          "commands_used": 41,
+          "cm_tiradas": 25,
           "cm_ataques": 0,
           "registered_date": 1763580327199,
           "was_broke": false,
@@ -4319,7 +4318,32 @@
         "Dildo",
         "Dildo"
       ],
-      "id": 102
+      "id": 102,
+      "achievements": {
+        "unlocked": [],
+        "progress": {},
+        "points": 0,
+        "titles": [],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 0,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764140924029,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      }
     },
     "160275311362276@lid": {
       "alias": "matt",
@@ -5215,7 +5239,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 37,
+          "commands_used": 38,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763523544708,
@@ -5657,10 +5681,14 @@
     "228260516507722@lid": {
       "alias": "Pedro",
       "personajes": [
-        "Every BOY 🌙"
+        "Every BOY 🌙",
+        "Santa PandaBot",
+        "Santa PandaBot",
+        "Xmas Lilan",
+        "Santa PandaBot"
       ],
       "id": 144,
-      "pandacoins": 3951436830.0768056,
+      "pandacoins": 0,
       "ultimoApostar": 1762144019310,
       "achievements": {
         "unlocked": [
@@ -5692,11 +5720,11 @@
         "stats": {
           "minar_count": 3,
           "trabajar_count": 1,
-          "buy_count": 98,
+          "buy_count": 128,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 762,
+          "commands_used": 844,
           "cm_tiradas": 4,
           "cm_ataques": 1,
           "registered_date": 1763603264099,
@@ -5708,19 +5736,14 @@
           "dildear_count": 4
         }
       },
-      "ultimoSell": 1763921445008,
+      "ultimoSell": 1764180960232,
       "inventario": [
-        "Xmas Lucky Block",
-        "Xmas Lucky Block",
-        "Xmas Lucky Block",
-        "Xmas Lucky Block",
-        "Xmas Lucky Block",
         "Xmas Lucky Block"
       ],
-      "ultimoBuy": 1763921997558,
+      "ultimoBuy": 1764180999079,
       "robos": {
-        "exitosos": 3,
-        "fallidos": 4
+        "exitosos": 5,
+        "fallidos": 5
       },
       "exp": 3095,
       "oro": 0,
@@ -5750,8 +5773,8 @@
           "inversionTotal": 0
         },
         "MOONSHOT": {
-          "cantidad": 0,
-          "inversionTotal": 0
+          "cantidad": 90576327075.52103,
+          "inversionTotal": 11256951738.076805
         },
         "SAFEGEM": {
           "cantidad": 0,
@@ -6095,8 +6118,8 @@
       "alias": "Mica",
       "personajes": [],
       "id": 158,
-      "pandacoins": 500222609,
-      "exp": 31353,
+      "pandacoins": 500225602,
+      "exp": 33266,
       "achievements": {
         "unlocked": [
           "first_steps",
@@ -6124,12 +6147,12 @@
         "selectedTitle": null,
         "stats": {
           "minar_count": 12,
-          "trabajar_count": 11,
+          "trabajar_count": 12,
           "buy_count": 9,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 268,
+          "commands_used": 270,
           "cm_tiradas": 38,
           "cm_ataques": 0,
           "registered_date": 1763504811197,
@@ -6151,7 +6174,8 @@
       "robos": {
         "exitosos": 4,
         "fallidos": 4
-      }
+      },
+      "pescado": null
     },
     "281093110521884@lid": {
       "alias": "Diablo Loco‼️🗣️🔥",
@@ -6237,8 +6261,8 @@
         "Dildo"
       ],
       "id": 162,
-      "pandacoins": 13943,
-      "exp": 8699,
+      "pandacoins": 16546,
+      "exp": 11120,
       "oro": null,
       "diamantes": null,
       "achievements": {
@@ -6255,12 +6279,12 @@
         "selectedTitle": null,
         "stats": {
           "minar_count": 0,
-          "trabajar_count": 1,
+          "trabajar_count": 2,
           "buy_count": 0,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 11,
+          "commands_used": 13,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1763503445362,
@@ -7283,7 +7307,7 @@
           "apostar_count": 1,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 74,
+          "commands_used": 79,
           "cm_tiradas": 9,
           "cm_ataques": 0,
           "registered_date": 1763418672847,
@@ -8028,7 +8052,7 @@
         "weekly": 1763798986798,
         "monthly": 1761410326349
       },
-      "pandacoins": 21598328006.78795,
+      "pandacoins": 21235783900.78795,
       "exp": 130420,
       "oro": 0,
       "diamantes": 1,
@@ -8849,6 +8873,36 @@
             "Tom: Führer: palabra alemana que significa 'líder' o 'guía' y está fuertemente asociada con Adolf Hitler y el nazismo."
           ],
           "timestamp": 1764116157389
+        },
+        {
+          "name": "Miguelito 麦可",
+          "prompt": "holi, cuánto tiempo pasó desde la última vez que hablamos?",
+          "response_full": "¡Holi, Miguelito 麦可! Qué alegría verte por aquí 😊. No tengo la marca de tiempo exacta de la última vez que hablamos, pero recuerdo que la última vez me saludaste y me dijiste te amo —me sacó una sonrisa—. ¿Cómo has estado? ¿Qué te apetece hacer hoy: charlar, que te cuente algo o que hagamos alguna tontería juntos?",
+          "response_short": "¡Holi, Miguelito 麦可! Qué alegría verte por aquí 😊. No tengo…",
+          "memory_fragments": [
+            "Miguelito 麦可 dijo: \"holi, cuánto tiempo pasó desde la última vez que hablamos?\""
+          ],
+          "timestamp": 1764180011856
+        },
+        {
+          "name": "Miguelito 麦可",
+          "prompt": "Sí que tiene la marca de tiempo niño rata",
+          "response_full": "Jajaja, me pillaste —tienes ojo. Puede que el sistema sí guarde la marca de tiempo aunque yo no la vea desde aquí 😅. ¿Qué tal, Miguelito 麦可? ¿Cómo vas? ¿Charlar, que te cuente algo o hacemos alguna tontería juntos?",
+          "response_short": "Jajaja, me pillaste —tienes ojo. Puede que el sistema sí gua…",
+          "memory_fragments": [
+            "Miguelito 麦可: Usuario Miguelito 麥可 respondió 'Sí que tiene la marca de tiempo niño rata' (broma/teasing)"
+          ],
+          "timestamp": 1764180044879
+        },
+        {
+          "name": "Miguelito 麦可",
+          "prompt": "Pero si te la pongo en el json del prompt, qué dices",
+          "response_full": "¡Ah, buena idea, Miguelito 麦可! Si me pones la marca de tiempo en el JSON del prompt, la veré y podré usarla en esta conversación (por ejemplo: “hace X tiempo” o “esto pasó el día Y”). Eso sí: solo la uso durante el intercambio actual; no la guardo en mi memoria a largo plazo a menos que me pidas explícitamente que la recuerde. Si quieres que la anote para futuras charlas, dime “guarda esto” y la añadiré. ¿La pones ahora y la uso para referirme a algo concreto?",
+          "response_short": "¡Ah, buena idea, Miguelito 麦可! Si me pones la marca de tiemp…",
+          "memory_fragments": [
+            "Miguelito 麦可: Usuario Miguelito 麦可: preguntó si al poner la marca de tiempo en el JSON del prompt, el bot la vería y qué pasaría"
+          ],
+          "timestamp": 1764180088399
         }
       ],
       "resumenes": [
@@ -9701,7 +9755,32 @@
         "Patito De Josefino",
         "Dildo",
         "Dildo"
-      ]
+      ],
+      "achievements": {
+        "unlocked": [],
+        "progress": {},
+        "points": 0,
+        "titles": [],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 0,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764179472905,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      }
     },
     "41953425105011@lid": {
       "alias": "Benii",
@@ -10235,7 +10314,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 5,
+          "commands_used": 6,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764030421929,
@@ -12075,7 +12154,32 @@
       "personajes": [
         "Dildo",
         "Dildo"
-      ]
+      ],
+      "achievements": {
+        "unlocked": [],
+        "progress": {},
+        "points": 0,
+        "titles": [],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 0,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764170069353,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      }
     },
     "5493795334430@s.whatsapp.net": {
       "alias": "𝐉𝚘𝚜𝚎𝚏𝚒𝚗𝚊𝚊ᥫ᭡",
@@ -12149,7 +12253,32 @@
       "personajes": [
         "Dildo",
         "Dildo"
-      ]
+      ],
+      "achievements": {
+        "unlocked": [],
+        "progress": {},
+        "points": 0,
+        "titles": [],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 0,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764178770045,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      }
     },
     "88012503408866@lid": {
       "alias": "Facundo Carreño",
@@ -14446,11 +14575,11 @@
         "ps": 1763511959564,
         "hourly": 1763952404215
       },
-      "pandacoins": 2271156232,
+      "pandacoins": 8943657520,
       "exp": 142347,
       "personajes": [],
       "robos": {
-        "exitosos": 6,
+        "exitosos": 7,
         "fallidos": 7
       },
       "achievements": {
@@ -14480,8 +14609,8 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 188,
-          "cm_tiradas": 13,
+          "commands_used": 224,
+          "cm_tiradas": 36,
           "cm_ataques": 2,
           "registered_date": 1763511882080,
           "was_broke": false,
@@ -15895,28 +16024,25 @@
       }
     },
     "125675138736203@lid": {
-      "pandacoins": 30756,
-      "exp": 163887,
-      "diamantes": 808,
+      "pandacoins": 99446015975.95305,
+      "exp": 177419,
+      "diamantes": 858,
       "piedras": 0,
       "carne": 0,
-      "pescado": 2,
-      "oro": 10,
+      "pescado": 0,
+      "oro": 12,
       "personajes": [
         "Milo j 🕷",
-        "GOOD BOY 🇧🇷 💤",
-        "Ale 🧉 💤",
-        "Josexo",
-        "PandaBot-Mesero"
+        "GOOD BOY 🇧🇷 💤"
       ],
       "inventario": [],
-      "ultimoBuy": 1764133625407,
+      "ultimoBuy": 1764180700657,
       "vip": true,
-      "ultimoSell": 1764126824675,
-      "robarpsCooldown": 1763925286019,
+      "ultimoSell": 1764180737282,
+      "robarpsCooldown": 1764181152939,
       "robos": {
-        "exitosos": 30,
-        "fallidos": 12
+        "exitosos": 36,
+        "fallidos": 14
       },
       "achievements": {
         "unlocked": [
@@ -15964,15 +16090,15 @@
         ],
         "selectedTitle": "Maestro del Spin",
         "stats": {
-          "minar_count": 49,
-          "trabajar_count": 72,
-          "buy_count": 668,
-          "apostar_count": 13,
+          "minar_count": 54,
+          "trabajar_count": 77,
+          "buy_count": 725,
+          "apostar_count": 15,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 3116,
-          "cm_tiradas": 800,
-          "cm_ataques": 54,
+          "commands_used": 3275,
+          "cm_tiradas": 802,
+          "cm_ataques": 55,
           "registered_date": 1763418602648,
           "was_broke": true,
           "comeback": true,
@@ -15985,32 +16111,18 @@
       "intentosFallidosClaim": 3,
       "vipExpiration": 1766445306616,
       "cooldowns": {
-        "dropvip": 1764133834019,
+        "dropvip": 1764179503320,
         "magicbox": 1764125695426,
-        "superminar": 1764137558237,
+        "superminar": 1764175951916,
         "daily": 1764030574697,
         "hourly": 1764030579381
       },
-      "ultimoAtaqueBoss": 1764104125810,
+      "ultimoAtaqueBoss": 1764180956789,
       "favorito": "Ale 🧉",
       "expediciones": {
-        "activas": [
-          {
-            "id": "1764126743726",
-            "personaje": "Everyy BOY",
-            "calidad": "Ultra-Legendario",
-            "inicio": 1764126743726,
-            "fin": 1764141143726,
-            "duracion": 14400000,
-            "recompensa": {
-              "monedas": 10000000,
-              "probabilidadEfecto": 0.35,
-              "probabilidadItem": 0.15
-            }
-          }
-        ],
-        "completadas": 2,
-        "tiempoTotal": 36000000,
+        "activas": [],
+        "completadas": 3,
+        "tiempoTotal": 50400000,
         "itemsObtenidos": {}
       },
       "inversiones": {
@@ -16031,15 +16143,15 @@
           "inversionTotal": 0
         },
         "SAFEGEM": {
-          "cantidad": 2008072999.8541636,
-          "inversionTotal": 101087018818.99463
+          "cantidad": 0,
+          "inversionTotal": 0
         },
         "NEUTRON": {
           "cantidad": 0,
           "inversionTotal": 0
         }
       },
-      "ultimoApostar": 1764119580444,
+      "ultimoApostar": 1764179678777,
       "ultimoTransfer": 1764132924709,
       "creditos": 9
     },
@@ -17924,29 +18036,31 @@
           "coin_collector_2",
           "coin_collector_3",
           "coin_collector_4",
-          "broke"
+          "broke",
+          "comeback_kid"
         ],
         "progress": {},
-        "points": 190,
+        "points": 240,
         "titles": [
           "Novato",
           "Millonario",
-          "Magnate"
+          "Magnate",
+          "Fenix"
         ],
         "selectedTitle": null,
         "stats": {
           "minar_count": 0,
-          "trabajar_count": 0,
+          "trabajar_count": 1,
           "buy_count": 0,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 26,
+          "commands_used": 53,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764053012570,
           "was_broke": true,
-          "comeback": false,
+          "comeback": true,
           "spotify_count": 0,
           "paja_count": 0,
           "sexo_count": 0,
@@ -17954,8 +18068,8 @@
         }
       },
       "robos": {
-        "exitosos": 3,
-        "fallidos": 2
+        "exitosos": 5,
+        "fallidos": 3
       },
       "inversiones": {
         "LILANCOIN": {
@@ -17967,22 +18081,28 @@
           "inversionTotal": 0
         },
         "UNISTAR": {
-          "cantidad": 0,
-          "inversionTotal": 0
+          "cantidad": 1144564256.927658,
+          "inversionTotal": 24878466820.680214
         },
         "MOONSHOT": {
           "cantidad": 0,
           "inversionTotal": 0
         },
         "SAFEGEM": {
-          "cantidad": 594713039.1496403,
-          "inversionTotal": 30575577722.51913
+          "cantidad": 0,
+          "inversionTotal": 0
         },
         "NEUTRON": {
           "cantidad": 0,
           "inversionTotal": 0
         }
-      }
+      },
+      "robarpsCooldown": 1764181247614,
+      "personajes": [
+        "Everything 💀 💩"
+      ],
+      "ultimoSell": 1764180753932,
+      "exp": null
     },
     "172164368080901@lid": {
       "pandacoins": 10054470084,
@@ -18083,7 +18203,32 @@
           "timestamp": 1764105627974
         }
       ],
-      "resumenes": []
+      "resumenes": [],
+      "achievements": {
+        "unlocked": [],
+        "progress": {},
+        "points": 0,
+        "titles": [],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 0,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764175283947,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      }
     },
     "255078611062906@lid": {
       "achievements": {
@@ -18243,6 +18388,42 @@
         }
       },
       "pandacoins": 3000
+    },
+    "162680493047913@lid": {
+      "pandacoins": 2543,
+      "robos": {
+        "exitosos": 1,
+        "fallidos": 0
+      },
+      "achievements": {
+        "unlocked": [
+          "first_steps"
+        ],
+        "progress": {},
+        "points": 5,
+        "titles": [
+          "Novato"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 1,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1764170079651,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      }
     }
   },
   "juegos": {
@@ -18380,16 +18561,16 @@
     "adCount": 2
   },
   "_meta": {
-    "savesWithoutBackup": 16
+    "savesWithoutBackup": 15
   },
   "bossGlobal": {
     "activo": true,
     "nombre": "Titan de Hielo",
-    "vidaActual": 35180,
+    "vidaActual": 35072,
     "vidaMaxima": 40000,
     "recompensaBase": 100000,
     "fechaInicio": 1763747942386,
-    "ataquesRecibidos": 91,
+    "ataquesRecibidos": 93,
     "ataquesNecesarios": 200,
     "derrotado": false,
     "historicoAtaques": {
@@ -18399,7 +18580,7 @@
       "166164298780822@lid": 23,
       "54164235231390@lid": 1,
       "180444930768966@lid": 2,
-      "125675138736203@lid": 21,
+      "125675138736203@lid": 23,
       "99561821479092@lid": 1,
       "231949943713943@lid": 1,
       "22042241953940@lid": 2,
@@ -18452,9 +18633,9 @@
       "125675138736203@lid": {
         "nombre": "Ale 🧉",
         "mencion": "@125675138736203",
-        "totalAtaques": 21,
+        "totalAtaques": 23,
         "primerAtaque": 1763923591453,
-        "ultimoAtaque": 1764104125810
+        "ultimoAtaque": 1764180956789
       },
       "247815737446572@lid": {
         "nombre": "Roier",
@@ -18491,10 +18672,10 @@
           "capacidad": 12500000000,
           "tiempo": 480,
           "ultimaColecta": 1764080557816,
-          "acumulado": 2251380251.906,
+          "acumulado": 7139205871.963976,
           "mejora": 2.5,
           "produccionPorSegundo": 108506,
-          "ultimaActualizacion": 1764137621228
+          "ultimaActualizacion": 1764182667821
         },
         {
           "tipo": 4,
@@ -18502,7 +18683,7 @@
           "produccionPorSegundo": 295776,
           "capacidad": 5324000000,
           "acumulado": 5324000000,
-          "ultimaActualizacion": 1764137621228,
+          "ultimaActualizacion": 1764182667821,
           "mejora": 2.2
         }
       ],
@@ -18514,10 +18695,10 @@
           "capacidad": 3200000000,
           "tiempo": 120,
           "ultimaColecta": 1764080559619,
-          "acumulado": 1152992215.3140008,
+          "acumulado": 3200000000,
           "mejora": 2,
           "produccionPorSegundo": 55554,
-          "ultimaActualizacion": 1764137621228
+          "ultimaActualizacion": 1764182667821
         }
       ],
       "99561821479092@lid": [
@@ -18528,10 +18709,10 @@
           "capacidad": 5324000000,
           "tiempo": 240,
           "ultimaColecta": 1764080574609,
-          "acumulado": 1536811393.8449993,
+          "acumulado": 4867511433.672006,
           "mejora": 2.2,
           "produccionPorSegundo": 73939,
-          "ultimaActualizacion": 1764137621228
+          "ultimaActualizacion": 1764182667821
         },
         {
           "tipo": 1,
@@ -18539,7 +18720,7 @@
           "produccionPorSegundo": 1389,
           "capacidad": 10000000,
           "acumulado": 10000000,
-          "ultimaActualizacion": 1764137621228,
+          "ultimaActualizacion": 1764182667821,
           "mejora": 1.5
         }
       ],
@@ -18554,7 +18735,7 @@
           "acumulado": 10000000,
           "mejora": 1.5,
           "produccionPorSegundo": 2777.777777777778,
-          "ultimaActualizacion": 1764137621228
+          "ultimaActualizacion": 1764182667821
         }
       ]
     }

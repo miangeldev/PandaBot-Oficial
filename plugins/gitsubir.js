@@ -331,31 +331,42 @@ async function ejecutarComandosGit(commitMessage) {
   try {
     console.log('🚀 Ejecutando comandos Git...');
 
+    // 1. git add .
     await execAsync('git add .');
     resultados.add = 'Todos los archivos';
 
+    // 2. Verificar archivos modificados
     const status = await execAsync('git status --short');
     resultados.archivos = status.stdout ? status.stdout.split('\n').filter(l => l).length : 0;
 
+    // 3. git commit
     await execAsync(`git commit -m "${commitMessage.replace(/"/g, '\\"')}"`);
     resultados.commit = 'OK';
 
-    try {
-      await execAsync('git push origin master');
-      resultados.push = 'OK';
-      resultados.rama = 'master';
-    } catch (masterError) {
-      await execAsync('git push origin main');
-      resultados.push = 'OK';
-      resultados.rama = 'main';
-    }
+    // 4. git push SOLO con master (tu rama principal)
+    console.log('🌿 Haciendo push a master...');
+    await execAsync('git push origin master');
+    resultados.push = 'OK';
+    resultados.rama = 'master';
 
     return resultados;
 
   } catch (error) {
+    console.error('❌ Error en comandos git:', error);
+    
+    // Manejar errores específicos
     if (error.message.includes('nothing to commit') || error.message.includes('no changes added to commit')) {
       throw new Error('No hay cambios para subir.');
     }
+    
+    if (error.message.includes('src refspec main does not match any')) {
+      throw new Error('Rama "main" no existe. Tu repositorio usa "master".');
+    }
+    
+    if (error.message.includes('src refspec master does not match any')) {
+      throw new Error('No hay commits en la rama master. Haz al menos un commit primero.');
+    }
+    
     throw error;
   }
 }

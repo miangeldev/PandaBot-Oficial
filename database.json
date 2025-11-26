@@ -82,7 +82,7 @@
           "apostar_count": 3,
           "robos_exitosos": 21,
           "robos_fallidos": 7,
-          "commands_used": 1597,
+          "commands_used": 1601,
           "cm_tiradas": 501,
           "cm_ataques": 51,
           "registered_date": 1763314511093,
@@ -6118,8 +6118,8 @@
       "alias": "Mica",
       "personajes": [],
       "id": 158,
-      "pandacoins": 500222609,
-      "exp": 31353,
+      "pandacoins": 500238106,
+      "exp": 33483,
       "achievements": {
         "unlocked": [
           "first_steps",
@@ -6146,14 +6146,14 @@
         ],
         "selectedTitle": null,
         "stats": {
-          "minar_count": 12,
-          "trabajar_count": 11,
+          "minar_count": 13,
+          "trabajar_count": 12,
           "buy_count": 9,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 268,
-          "cm_tiradas": 38,
+          "commands_used": 275,
+          "cm_tiradas": 41,
           "cm_ataques": 0,
           "registered_date": 1763504811197,
           "was_broke": true,
@@ -18560,7 +18560,7 @@
     "adCount": 2
   },
   "_meta": {
-    "savesWithoutBackup": 24
+    "savesWithoutBackup": 21
   },
   "bossGlobal": {
     "activo": true,
@@ -18671,10 +18671,10 @@
           "capacidad": 12500000000,
           "tiempo": 480,
           "ultimaColecta": 1764080557816,
-          "acumulado": 7127351916.981976,
+          "acumulado": 7159354351.103978,
           "mejora": 2.5,
           "produccionPorSegundo": 108506,
-          "ultimaActualizacion": 1764182558574
+          "ultimaActualizacion": 1764182853511
         },
         {
           "tipo": 4,
@@ -18682,7 +18682,7 @@
           "produccionPorSegundo": 295776,
           "capacidad": 5324000000,
           "acumulado": 5324000000,
-          "ultimaActualizacion": 1764182558574,
+          "ultimaActualizacion": 1764182853511,
           "mejora": 2.2
         }
       ],
@@ -18697,7 +18697,7 @@
           "acumulado": 3200000000,
           "mejora": 2,
           "produccionPorSegundo": 55554,
-          "ultimaActualizacion": 1764182558574
+          "ultimaActualizacion": 1764182853511
         }
       ],
       "99561821479092@lid": [
@@ -18708,10 +18708,10 @@
           "capacidad": 5324000000,
           "tiempo": 240,
           "ultimaColecta": 1764080574609,
-          "acumulado": 4859433819.739005,
+          "acumulado": 4881241166.582005,
           "mejora": 2.2,
           "produccionPorSegundo": 73939,
-          "ultimaActualizacion": 1764182558574
+          "ultimaActualizacion": 1764182853511
         },
         {
           "tipo": 1,
@@ -18719,7 +18719,7 @@
           "produccionPorSegundo": 1389,
           "capacidad": 10000000,
           "acumulado": 10000000,
-          "ultimaActualizacion": 1764182558574,
+          "ultimaActualizacion": 1764182853511,
           "mejora": 1.5
         }
       ],
@@ -18734,7 +18734,7 @@
           "acumulado": 10000000,
           "mejora": 1.5,
           "produccionPorSegundo": 2777.777777777778,
-          "ultimaActualizacion": 1764182558574
+          "ultimaActualizacion": 1764182853511
         }
       ]
     }

@@ -82,7 +82,7 @@
           "apostar_count": 3,
           "robos_exitosos": 21,
           "robos_fallidos": 7,
-          "commands_used": 1590,
+          "commands_used": 1598,
           "cm_tiradas": 501,
           "cm_ataques": 51,
           "registered_date": 1763314511093,
@@ -3648,7 +3648,6 @@
         "OSKART",
         "Everything 🇧🇷 💤",
         "Everything 💤 🎄",
-        "Everything 💀 💩",
         "Everything ❄️",
         "Everything 🇨🇴 💤",
         "Everything 🇧🇷 💤",
@@ -6119,8 +6118,8 @@
       "alias": "Mica",
       "personajes": [],
       "id": 158,
-      "pandacoins": 500222609,
-      "exp": 31353,
+      "pandacoins": 500238106,
+      "exp": 33483,
       "achievements": {
         "unlocked": [
           "first_steps",
@@ -6147,14 +6146,14 @@
         ],
         "selectedTitle": null,
         "stats": {
-          "minar_count": 12,
-          "trabajar_count": 11,
+          "minar_count": 13,
+          "trabajar_count": 12,
           "buy_count": 9,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 268,
-          "cm_tiradas": 38,
+          "commands_used": 275,
+          "cm_tiradas": 41,
           "cm_ataques": 0,
           "registered_date": 1763504811197,
           "was_broke": true,
@@ -10314,7 +10313,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 5,
+          "commands_used": 6,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764030421929,
@@ -16024,7 +16023,7 @@
       }
     },
     "125675138736203@lid": {
-      "pandacoins": 101493852095.95305,
+      "pandacoins": 99446015975.95305,
       "exp": 177419,
       "diamantes": 858,
       "piedras": 0,
@@ -16042,7 +16041,7 @@
       "robarpsCooldown": 1764181152939,
       "robos": {
         "exitosos": 36,
-        "fallidos": 13
+        "fallidos": 14
       },
       "achievements": {
         "unlocked": [
@@ -16096,7 +16095,7 @@
           "apostar_count": 15,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 3273,
+          "commands_used": 3275,
           "cm_tiradas": 802,
           "cm_ataques": 55,
           "registered_date": 1763418602648,
@@ -18055,7 +18054,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 50,
+          "commands_used": 53,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764053012570,
@@ -18069,7 +18068,7 @@
       },
       "robos": {
         "exitosos": 5,
-        "fallidos": 2
+        "fallidos": 3
       },
       "inversiones": {
         "LILANCOIN": {
@@ -18097,8 +18096,10 @@
           "inversionTotal": 0
         }
       },
-      "robarpsCooldown": 1764181091159,
-      "personajes": [],
+      "robarpsCooldown": 1764181247614,
+      "personajes": [
+        "Everything 💀 💩"
+      ],
       "ultimoSell": 1764180753932,
       "exp": null
     },
@@ -18559,7 +18560,7 @@
     "adCount": 2
   },
   "_meta": {
-    "savesWithoutBackup": 24
+    "savesWithoutBackup": 7
   },
   "bossGlobal": {
     "activo": true,
@@ -18670,10 +18671,10 @@
           "capacidad": 12500000000,
           "tiempo": 480,
           "ultimaColecta": 1764080557816,
-          "acumulado": 6978368621.729975,
+          "acumulado": 7146812902.105975,
           "mejora": 2.5,
           "produccionPorSegundo": 108506,
-          "ultimaActualizacion": 1764181185532
+          "ultimaActualizacion": 1764182737928
         },
         {
           "tipo": 4,
@@ -18681,7 +18682,7 @@
           "produccionPorSegundo": 295776,
           "capacidad": 5324000000,
           "acumulado": 5324000000,
-          "ultimaActualizacion": 1764181185532,
+          "ultimaActualizacion": 1764182737928,
           "mejora": 2.2
         }
       ],
@@ -18696,7 +18697,7 @@
           "acumulado": 3200000000,
           "mejora": 2,
           "produccionPorSegundo": 55554,
-          "ultimaActualizacion": 1764181185532
+          "ultimaActualizacion": 1764182737928
         }
       ],
       "99561821479092@lid": [
@@ -18707,10 +18708,10 @@
           "capacidad": 5324000000,
           "tiempo": 240,
           "ultimaColecta": 1764080574609,
-          "acumulado": 4757912467.301005,
+          "acumulado": 4872695075.145004,
           "mejora": 2.2,
           "produccionPorSegundo": 73939,
-          "ultimaActualizacion": 1764181185532
+          "ultimaActualizacion": 1764182737928
         },
         {
           "tipo": 1,
@@ -18718,7 +18719,7 @@
           "produccionPorSegundo": 1389,
           "capacidad": 10000000,
           "acumulado": 10000000,
-          "ultimaActualizacion": 1764181185532,
+          "ultimaActualizacion": 1764182737928,
           "mejora": 1.5
         }
       ],
@@ -18733,7 +18734,7 @@
           "acumulado": 10000000,
           "mejora": 1.5,
           "produccionPorSegundo": 2777.777777777778,
-          "ultimaActualizacion": 1764181185532
+          "ultimaActualizacion": 1764182737928
         }
       ]
     }
