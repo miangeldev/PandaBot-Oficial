@@ -14,7 +14,7 @@ export async function run(sock, msg) {
   const cooldowns = JSON.parse(fs.readFileSync(cdPath));
   const lastTime = cooldowns[sender]?.cazar || 0;
   const now = Date.now();
-  const cooldownTime = 0 * 60 * 1000;
+  const cooldownTime = 3 * 60 * 1000;
 
   if (now - lastTime < cooldownTime) {
     const minutesLeft = Math.ceil((cooldownTime - (now - lastTime)) / 60000);

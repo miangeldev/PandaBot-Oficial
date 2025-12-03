@@ -12,7 +12,7 @@ export async function run(sock, msg, args) {
     const user = db.users[sender];
 
     if (!user) {
-        await sock.sendMessage(from, { text: '❌ No estás registrado. Usa .registrar para empezar.' });
+        await sock.sendMessage(from, { text: '❌ No estás registrado. Usa minar para empezar.' });
         return;
     }
 

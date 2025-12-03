@@ -18294,6 +18294,57 @@
         "👑"
       ],
       "base": "Garama And Madundung"
+    },
+    {
+      "nombre": "Ateney BOY 🪳",
+      "calidad": "Ultra-Legendario con Efectos",
+      "precio": 30000000000,
+      "efectos": [
+        "🪳"
+      ],
+      "base": "Ateney BOY",
+      "creadoEn": "2025-12-03T13:39:39.156Z"
+    },
+    {
+      "nombre": "Ateney BOY 💤",
+      "calidad": "Ultra-Legendario con Efectos",
+      "precio": 7500000000,
+      "efectos": [
+        "💤"
+      ],
+      "base": "Ateney BOY",
+      "creadoEn": "2025-12-03T13:41:39.034Z"
+    },
+    {
+      "nombre": "Snorlax Shiny 🇨🇴 💤",
+      "calidad": "OG con Efectos",
+      "precio": 100000000,
+      "efectos": [
+        "🇨🇴",
+        "💤"
+      ],
+      "base": "Snorlax Shiny",
+      "creadoEn": "2025-12-03T16:48:25.512Z"
+    },
+    {
+      "nombre": "Snorlax Shiny 🇨🇴",
+      "calidad": "OG con Efectos",
+      "precio": 200000000,
+      "efectos": [
+        "🇨🇴"
+      ],
+      "base": "Snorlax Shiny",
+      "creadoEn": "2025-12-03T16:48:36.524Z"
+    },
+    {
+      "nombre": "Cukii 💤",
+      "calidad": "Ultra-Legendario con Efectos",
+      "precio": 50000000,
+      "efectos": [
+        "💤"
+      ],
+      "base": "Cukii",
+      "creadoEn": "2025-12-03T17:11:24.087Z"
     }
   ]
 }

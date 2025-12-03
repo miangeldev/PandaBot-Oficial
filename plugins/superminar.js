@@ -17,7 +17,7 @@ export async function run(sock, msg) {
   
   user.cooldowns = user.cooldowns || {};
   const now = Date.now();
-  const cooldownTime = 1 * 60 * 60 * 1000;
+  const cooldownTime = 24 * 60 * 60 * 1000;
   
   if (now - (user.cooldowns.superminar || 0) < cooldownTime) {
     const timeLeft = cooldownTime - (now - (user.cooldowns.superminar || 0));

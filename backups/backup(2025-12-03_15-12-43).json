@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "savesWithoutBackup": 11
+    "savesWithoutBackup": 24
   },
   "bossGlobal": {
     "activo": true,
@@ -17,7 +17,7 @@
   "ultimoBossTimestamp": 1764780137340,
   "users": {
     "166164298780822@lid": {
-      "pandacoins": 1340061282,
+      "pandacoins": 427203369,
       "exp": 259,
       "diamantes": 0,
       "piedras": 0,
@@ -50,7 +50,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 36,
+          "commands_used": 27,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764780137694,
@@ -63,7 +63,7 @@
         }
       },
       "robos": {
-        "exitosos": 2,
+        "exitosos": 1,
         "fallidos": 0
       }
     },
@@ -192,7 +192,7 @@
           "apostar_count": 1,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 22,
+          "commands_used": 21,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764780248052,
@@ -239,11 +239,11 @@
       }
     },
     "125675138736203@lid": {
-      "pandacoins": 9726726741,
-      "exp": 8578,
+      "pandacoins": 9726711435,
+      "exp": 7143,
       "diamantes": 50,
       "piedras": 0,
-      "carne": 1,
+      "carne": 0,
       "pescado": 0,
       "oro": 2,
       "achievements": {
@@ -267,13 +267,13 @@
         ],
         "selectedTitle": null,
         "stats": {
-          "minar_count": 4,
-          "trabajar_count": 4,
+          "minar_count": 3,
+          "trabajar_count": 3,
           "buy_count": 0,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 179,
+          "commands_used": 174,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764780248882,
@@ -371,7 +371,7 @@
       "vipExpiration": 1764866812913
     },
     "12833748193431@lid": {
-      "pandacoins": 8265217785,
+      "pandacoins": 9177075698,
       "exp": 7019,
       "diamantes": 51,
       "piedras": 0,
@@ -404,7 +404,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 41,
+          "commands_used": 37,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764780380923,
@@ -746,28 +746,16 @@
       "vipExpiration": 1764870856770
     },
     "35610177859722@lid": {
-      "pandacoins": 160472986,
+      "pandacoins": 165295493,
       "robos": {
         "exitosos": 1,
-        "fallidos": 1
+        "fallidos": 0
       },
       "achievements": {
-        "unlocked": [
-          "first_steps",
-          "coin_collector_1",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4",
-          "married"
-        ],
+        "unlocked": [],
         "progress": {},
-        "points": 210,
-        "titles": [
-          "Novato",
-          "Millonario",
-          "Magnate",
-          "Casado"
-        ],
+        "points": 0,
+        "titles": [],
         "selectedTitle": null,
         "stats": {
           "minar_count": 0,
@@ -776,7 +764,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 3,
+          "commands_used": 0,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764785261296,

@@ -1,5 +1,5 @@
 {
-  "multiplicadorGeneral": 2,
+  "multiplicadorGeneral": 0.5,
   "precioMinimoParaMultiplicar": 1000000000000000,
   "ultimaActualizacion": "2025-11-27T22:01:34.036Z",
   "activo": true,

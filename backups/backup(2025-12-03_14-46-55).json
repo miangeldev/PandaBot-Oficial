@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "savesWithoutBackup": 11
+    "savesWithoutBackup": 24
   },
   "bossGlobal": {
     "activo": true,
@@ -17,7 +17,7 @@
   "ultimoBossTimestamp": 1764780137340,
   "users": {
     "166164298780822@lid": {
-      "pandacoins": 1340061282,
+      "pandacoins": 427203369,
       "exp": 259,
       "diamantes": 0,
       "piedras": 0,
@@ -50,7 +50,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 36,
+          "commands_used": 12,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764780137694,
@@ -63,7 +63,7 @@
         }
       },
       "robos": {
-        "exitosos": 2,
+        "exitosos": 1,
         "fallidos": 0
       }
     },
@@ -104,8 +104,8 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 34,
-          "cm_tiradas": 6,
+          "commands_used": 28,
+          "cm_tiradas": 2,
           "cm_ataques": 0,
           "registered_date": 1764780197537,
           "was_broke": false,
@@ -159,7 +159,7 @@
       "vipExpiration": 37764776628370
     },
     "97027992080542@lid": {
-      "pandacoins": 10320564577,
+      "pandacoins": 9598510488,
       "exp": 365,
       "diamantes": 0,
       "piedras": 0,
@@ -173,11 +173,10 @@
           "coin_collector_1",
           "coin_collector_2",
           "coin_collector_3",
-          "coin_collector_4",
-          "gambler_1"
+          "coin_collector_4"
         ],
         "progress": {},
-        "points": 215,
+        "points": 205,
         "titles": [
           "Novato",
           "Millonario",
@@ -189,10 +188,10 @@
           "minar_count": 1,
           "trabajar_count": 0,
           "buy_count": 0,
-          "apostar_count": 1,
+          "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 22,
+          "commands_used": 18,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764780248052,
@@ -231,19 +230,14 @@
         "completadas": 0,
         "tiempoTotal": 0,
         "itemsObtenidos": {}
-      },
-      "ultimoApostar": 1764784932790,
-      "robos": {
-        "exitosos": 1,
-        "fallidos": 0
       }
     },
     "125675138736203@lid": {
-      "pandacoins": 9726726741,
-      "exp": 8578,
+      "pandacoins": 9726711435,
+      "exp": 7143,
       "diamantes": 50,
       "piedras": 0,
-      "carne": 1,
+      "carne": 0,
       "pescado": 0,
       "oro": 2,
       "achievements": {
@@ -267,13 +261,13 @@
         ],
         "selectedTitle": null,
         "stats": {
-          "minar_count": 4,
-          "trabajar_count": 4,
+          "minar_count": 3,
+          "trabajar_count": 3,
           "buy_count": 0,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 179,
+          "commands_used": 174,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764780248882,
@@ -371,9 +365,9 @@
       "vipExpiration": 1764866812913
     },
     "12833748193431@lid": {
-      "pandacoins": 8265217785,
-      "exp": 7019,
-      "diamantes": 51,
+      "pandacoins": 9899110895,
+      "exp": 4058,
+      "diamantes": 50,
       "piedras": 0,
       "carne": 0,
       "pescado": 0,
@@ -398,13 +392,13 @@
         ],
         "selectedTitle": null,
         "stats": {
-          "minar_count": 2,
-          "trabajar_count": 3,
+          "minar_count": 1,
+          "trabajar_count": 2,
           "buy_count": 0,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 41,
+          "commands_used": 31,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764780380923,
@@ -427,7 +421,7 @@
       "ultimoSell": 1764780510759
     },
     "66787295129695@lid": {
-      "pandacoins": 10834704507,
+      "pandacoins": 11000000000,
       "inventory": {},
       "achievements": {
         "titles": [
@@ -731,95 +725,6 @@
           "inversionTotal": 0
         }
       }
-    },
-    "126014944481374@lid": {
-      "pandacoins": 10000000000,
-      "inventory": {},
-      "achievements": {
-        "titles": [
-          "🍀 Suertudo"
-        ],
-        "selectedTitle": null
-      },
-      "personajes": [],
-      "vip": true,
-      "vipExpiration": 1764870856770
-    },
-    "35610177859722@lid": {
-      "pandacoins": 160472986,
-      "robos": {
-        "exitosos": 1,
-        "fallidos": 1
-      },
-      "achievements": {
-        "unlocked": [
-          "first_steps",
-          "coin_collector_1",
-          "coin_collector_2",
-          "coin_collector_3",
-          "coin_collector_4",
-          "married"
-        ],
-        "progress": {},
-        "points": 210,
-        "titles": [
-          "Novato",
-          "Millonario",
-          "Magnate",
-          "Casado"
-        ],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 0,
-          "trabajar_count": 0,
-          "buy_count": 0,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 3,
-          "cm_tiradas": 0,
-          "cm_ataques": 0,
-          "registered_date": 1764785261296,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0,
-          "paja_count": 0,
-          "sexo_count": 0,
-          "dildear_count": 0
-        }
-      }
-    },
-    "33677157355747@lid": {
-      "pandacoins": 0,
-      "robos": {
-        "exitosos": 0,
-        "fallidos": 1
-      },
-      "achievements": {
-        "unlocked": [],
-        "progress": {},
-        "points": 0,
-        "titles": [],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 0,
-          "trabajar_count": 0,
-          "buy_count": 0,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 0,
-          "cm_tiradas": 0,
-          "cm_ataques": 0,
-          "registered_date": 1764785513328,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0,
-          "paja_count": 0,
-          "sexo_count": 0,
-          "dildear_count": 0
-        }
-      }
     }
   },
   "adviento": {
@@ -878,15 +783,6 @@
         ],
         "primerReclamo": "2025-12-03T16:47:29.921Z",
         "ultimoReclamo": "2025-12-03T16:47:44.634Z"
-      },
-      "126014944481374@lid": {
-        "diasReclamados": [
-          3,
-          2,
-          1
-        ],
-        "primerReclamo": "2025-12-03T17:54:16.770Z",
-        "ultimoReclamo": "2025-12-03T17:55:11.941Z"
       }
     }
   }

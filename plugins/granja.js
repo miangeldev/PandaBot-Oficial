@@ -4,8 +4,8 @@ const tiposGranjas = {
   1: {
     nombre: "🌾 Granja Básica",
     nivel: 1,
-    costo: 500000000,
-    produccionPorSegundo: 1389,
+    costo: 1000000000,
+    produccionPorSegundo: 1000,
     capacidad: 5000000,
     mejora: 1.5
   },
@@ -13,33 +13,33 @@ const tiposGranjas = {
     nombre: "🚜 Granja Avanzada", 
     nivel: 1,
     costo: 2000000000,
-    produccionPorSegundo: 2700,
+    produccionPorSegundo: 2000,
     capacidad: 25000000,
-    mejora: 1.8
+    mejora: 1.5
   },
   3: {
     nombre: "🏭 Fábrica de Monedas",
     nivel: 1,
     costo: 5000000000,
-    produccionPorSegundo: 6500,
+    produccionPorSegundo: 3000,
     capacidad: 100000000,
-    mejora: 2.0
+    mejora: 1.5
   },
   4: {
     nombre: "💎 Mina de Diamantes",
     nivel: 1,
     costo: 10000000000,
-    produccionPorSegundo: 13500,
+    produccionPorSegundo: 6000,
     capacidad: 250000000,
-    mejora: 2.2
+    mejora: 1.7
   },
   5: {
     nombre: "🚀 Centro Espacial",
     nivel: 1,
     costo: 25000000000,
-    produccionPorSegundo: 69000,
+    produccionPorSegundo: 25000,
     capacidad: 2000000000,
-    mejora: 2.5
+    mejora: 1.9
   }
 };
 
