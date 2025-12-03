@@ -21,11 +21,13 @@ function numberWithFlag(num) {
   return num;
 }
 
-async function niceName(jid, conn, fallback = '') {
+async function niceName(jid, conn, msg, fallback = '') {
   try {
     const name = await conn.getName(jid);
     if (name) return name;
   } catch {}
+
+  if (msg.pushName) return msg.pushName;
 
   return numberWithFlag(jid.split('@')[0]);
 }
@@ -94,8 +96,8 @@ export async function run(sock, msg, args) {
 
     const plain = content.replace(/@[\d\-]+/g, '');
     
-    // Obtener nombre del usuario correcto - SIN pasar msg para evitar confusión
-    const displayName = await niceName(targetJid, sock);
+    // Obtener nombre del usuario correcto (citado o ejecutor)
+    const displayName = await niceName(targetJid, sock, msg);
 
     let avatar = 'https://telegra.ph/file/24fa902ead26340f3df2c.png';
     try { 
@@ -121,10 +123,6 @@ export async function run(sock, msg, args) {
         replyMessage: {}
       }]
     };
-
-    console.log(`🎨 Generando quote para: ${displayName} (${targetJid})`);
-    console.log(`📝 Texto: ${plain}`);
-    console.log(`🖼️ Avatar: ${avatar}`);
 
     const res = await axios.post(
       'https://bot.lyo.su/quote/generate',

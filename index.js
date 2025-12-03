@@ -1,6 +1,92 @@
 import { reiniciarStock } from './plugins/addstock.js';
 import { migrarStockPlano } from './plugins/addstock.js';
-migrarStockPlano();
+import { limpiarPersonajes } from "./limpiarPersonajes.js";
+import baileys from "@whiskeysockets/baileys";
+import { Boom } from "@hapi/boom";
+import qrcode from "qrcode-terminal";
+import { handleMessage } from './handler.js';
+import chalk from 'chalk';
+import NodeCache from 'node-cache';
+import pino from 'pino';
+import { createDatabaseBackup } from './tools/createBackup.js';
+import {
+  makeWASocket,
+  useMultiFileAuthState,
+  fetchLatestBaileysVersion,
+  DisconnectReason,
+  makeCacheableSignalKeyStore
+} from "@whiskeysockets/baileys";
+import fs from 'fs';
+
+// ============================================
+// CONFIGURACIÓN DE LOGS - SILENCIAR BAILEYS
+// ============================================
+
+// Logger personalizado que filtra logs innecesarios
+const filteredLogger = pino({
+  level: 'error', // Solo mostrar errores
+  transport: {
+    target: 'pino-pretty',
+    options: {
+      colorize: true,
+      translateTime: 'HH:MM:ss',
+      ignore: 'pid,hostname',
+      levelFirst: true,
+      messageFormat: '{msg}'
+    }
+  }
+});
+
+// Sobrescribir console.log para filtrar logs de Baileys
+const originalConsoleLog = console.log;
+const originalConsoleError = console.error;
+
+console.log = (...args) => {
+  const message = args.join(' ');
+  
+  // Filtrar logs internos de Baileys
+  if (message.includes('Closing open session') ||
+      message.includes('Closing session: SessionEntry') ||
+      message.includes('_chains:') ||
+      message.includes('registrationId:') ||
+      message.includes('currentRatchet:') ||
+      message.includes('indexInfo:') ||
+      message.includes('baseKey:') ||
+      message.includes('remoteIdentityKey:')) {
+    return; // No mostrar estos logs
+  }
+  
+  // Mostrar solo logs importantes
+  if (message.includes('✅') || 
+      message.includes('❌') || 
+      message.includes('⚠️') || 
+      message.includes('🔄') ||
+      message.includes('📱') ||
+      message.includes('📊') ||
+      message.startsWith('╔') ||
+      message.startsWith('║') ||
+      message.startsWith('╚')) {
+    originalConsoleLog.apply(console, args);
+  }
+};
+
+console.error = (...args) => {
+  const message = args.join(' ');
+  
+  // Filtrar errores no críticos de Baileys
+  if (message.includes('SessionEntry') || 
+      message.includes('prekey bundle') ||
+      message.includes('_chains') ||
+      message.includes('ratchet')) {
+    return; // Silenciar estos errores
+  }
+  
+  originalConsoleError.apply(console, args);
+};
+
+// ============================================
+// VARIABLES GLOBALES OPTIMIZADAS
+// ============================================
 
 global.psSpawn = {
   activo: false,
@@ -9,527 +95,476 @@ global.psSpawn = {
   reclamadoPor: null
 };
 
-import { limpiarPersonajes } from "./limpiarPersonajes.js";
-import baileys from "@whiskeysockets/baileys";
-import { Boom } from "@hapi/boom";
-import qrcode from "qrcode-terminal";
-import { handleMessage } from './handler.js';
-import readline from 'readline';
-import chalk from 'chalk';
-import NodeCache from 'node-cache';
-import pino from 'pino';
-import { cargarDatabase, guardarDatabase } from './data/database.js';
-import { createDatabaseBackup } from './tools/createBackup.js';
-import {
-  makeWASocket,
-  useMultiFileAuthState,
-  fetchLatestBaileysVersion,
-  DisconnectReason,
-  jidNormalizedUser,
-  makeCacheableSignalKeyStore
-} from "@whiskeysockets/baileys";
+// Rate Limiter optimizado
+class OptimizedRateLimiter {
+  constructor() {
+    this.userLimits = new Map();
+    this.globalCount = 0;
+    this.lastReset = Date.now();
+    this.stats = { total: 0, success: 0, errors: 0, rateLimited: 0 };
+    
+    // Limpieza automática
+    setInterval(() => this.cleanup(), 60000);
+  }
 
-// ============================================
-// SISTEMA DE PROTECCIÓN MEJORADO CONTRA ERROR 429
-// ============================================
-
-// Rate Limiting global mejorado
-global.rateLimit = new Map();
-global.MAX_REQUESTS_PER_MINUTE = 50; // REDUCIDO: 50 requests por minuto por usuario
-global.MAX_MESSAGES_PER_SECOND = 20; // REDUCIDO: 20 mensajes por segundo global
-global.MAX_CONCURRENT_REQUESTS = 5; // Máximo de solicitudes concurrentes
-
-// Contadores de rate limiting global
-let globalRequestCount = 0;
-let lastResetTime = Date.now();
-
-// Sistema de cola mejorado con prioridades
-global.messageQueue = [];
-global.processingQueue = false;
-global.concurrentRequests = 0;
-
-// Estadísticas para monitoreo
-global.requestStats = {
-  total: 0,
-  success: 0,
-  errors: 0,
-  rateLimited: 0,
-  lastError: null
-};
-
-// Resetear contadores cada minuto
-setInterval(() => {
-  globalRequestCount = 0;
-  lastResetTime = Date.now();
-}, 60000);
-
-// Función mejorada para verificar rate limiting
-function checkRateLimit(userId) {
-  const now = Date.now();
-  
-  // Rate limiting global
-  if (globalRequestCount >= global.MAX_MESSAGES_PER_SECOND * 60) {
-    global.requestStats.rateLimited++;
-    return false;
+  check(userId) {
+    const now = Date.now();
+    
+    // Reset global cada minuto
+    if (now - this.lastReset > 60000) {
+      this.globalCount = 0;
+      this.lastReset = now;
+    }
+    
+    // Límite global (15/seg)
+    if (this.globalCount >= 900) {
+      this.stats.rateLimited++;
+      return false;
+    }
+    
+    // Límite por usuario
+    const userKey = userId || 'unknown';
+    let userData = this.userLimits.get(userKey);
+    
+    if (!userData || now - userData.lastReset > 60000) {
+      userData = { count: 0, lastReset: now };
+    }
+    
+    if (userData.count >= 30) {
+      this.stats.rateLimited++;
+      return false;
+    }
+    
+    userData.count++;
+    this.userLimits.set(userKey, userData);
+    this.globalCount++;
+    this.stats.total++;
+    
+    return true;
   }
   
-  // Rate limiting por usuario
-  const userRequests = global.rateLimit.get(userId) || [];
-  const recentRequests = userRequests.filter(time => now - time < 60000);
-  
-  if (recentRequests.length >= global.MAX_REQUESTS_PER_MINUTE) {
-    global.requestStats.rateLimited++;
-    return false;
+  cleanup() {
+    const now = Date.now();
+    for (const [key, data] of this.userLimits.entries()) {
+      if (now - data.lastReset > 120000) {
+        this.userLimits.delete(key);
+      }
+    }
   }
-  
-  // Actualizar contadores
-  recentRequests.push(now);
-  global.rateLimit.set(userId, recentRequests);
-  globalRequestCount++;
-  global.requestStats.total++;
-  
-  return true;
 }
 
-// Función con backoff exponencial para manejar errores 429
-async function executeWithRetry(operation, maxRetries = 3) {
-  for (let attempt = 0; attempt < maxRetries; attempt++) {
+global.rateLimiter = new OptimizedRateLimiter();
+
+// Cola de mensajes optimizada (non-blocking)
+class AsyncMessageQueue {
+  constructor(maxConcurrent = 2) {
+    this.queue = [];
+    this.processing = false;
+    this.activeCount = 0;
+    this.maxConcurrent = maxConcurrent;
+    this.stats = { processed: 0, dropped: 0 };
+  }
+  
+  async add(message, type) {
+    // Limitar tamaño de cola para no consumir mucha memoria
+    if (this.queue.length > 50) {
+      this.stats.dropped++;
+      return;
+    }
+    
+    this.queue.push({ message, type, timestamp: Date.now() });
+    
+    if (!this.processing) {
+      this.processing = true;
+      // Usar setImmediate para no bloquear el event loop
+      setImmediate(() => this.process());
+    }
+  }
+  
+  async process() {
+    if (this.queue.length === 0 || this.activeCount >= this.maxConcurrent) {
+      this.processing = false;
+      return;
+    }
+    
+    this.activeCount++;
+    const item = this.queue.shift();
+    
     try {
-      // Verificar límite de solicitudes concurrentes
-      while (global.concurrentRequests >= global.MAX_CONCURRENT_REQUESTS) {
-        await new Promise(resolve => setTimeout(resolve, 100));
+      if (item.type === 'messages.upsert' && global.sock) {
+        await this.handleMessage(item.message);
       }
-      
-      global.concurrentRequests++;
-      const result = await operation();
-      global.concurrentRequests--;
-      global.requestStats.success++;
-      return result;
-      
+      this.stats.processed++;
     } catch (error) {
-      global.concurrentRequests--;
-      global.requestStats.errors++;
-      global.requestStats.lastError = error.message;
+      console.error('❌ Error en cola:', error.message);
+    } finally {
+      this.activeCount--;
       
-      if (error.message?.includes('429') || error.message?.includes('Too Many Requests')) {
-        const delay = Math.min(1000 * Math.pow(2, attempt), 10000); // Backoff exponencial hasta 10 segundos
-        console.log(chalk.yellow(`⚠️ Error 429, reintentando en ${delay}ms (intento ${attempt + 1}/${maxRetries})`));
-        await new Promise(resolve => setTimeout(resolve, delay));
-        continue;
-      }
-      
-      // Para otros errores, no reintentar
-      throw error;
+      // Procesar siguiente con pequeño delay
+      setTimeout(() => this.process(), 10);
     }
   }
   
-  throw new Error('Máximo número de reintentos alcanzado');
-}
-
-// Función mejorada para procesar cola de mensajes
-async function processMessageQueue(sock) {
-  if (global.processingQueue || global.messageQueue.length === 0) return;
-  
-  global.processingQueue = true;
-  
-  try {
-    // Procesar máximo 5 mensajes por lote (REDUCIDO)
-    const batch = global.messageQueue.splice(0, Math.min(5, global.messageQueue.length));
+  async handleMessage({ messages, type }) {
+    if (type !== 'notify' || !messages) return;
     
-    for (const { msg, type } of batch) {
+    for (const msg of messages) {
+      if (!msg.message || msg.key?.fromMe) continue;
+      
+      const userId = msg.key?.participant || msg.key?.remoteJid;
+      if (!userId || !global.rateLimiter.check(userId)) continue;
+      
       try {
-        await executeWithRetry(async () => {
-          if (type === 'group-participants.update') {
-            await handleGroupUpdate(sock, msg);
-          } else if (type === 'messages.upsert') {
-            await handleMessagesUpsert(sock, msg);
-          }
-        });
-        
-        // Pequeña pausa entre mensajes para evitar 429
-        await new Promise(resolve => setTimeout(resolve, 50));
-        
+        await handleMessage(global.sock, msg);
+        global.rateLimiter.stats.success++;
       } catch (error) {
-        console.error('❌ Error procesando mensaje de la cola:', error.message);
-        
-        // Reintentar el mensaje más tarde si es error 429
-        if (error.message?.includes('429')) {
-          global.messageQueue.unshift({ msg, type });
-          await new Promise(resolve => setTimeout(resolve, 1000));
-          break;
-        }
+        console.error('❌ Error en handleMessage:', error.message);
+        global.rateLimiter.stats.errors++;
       }
-    }
-  } catch (error) {
-    console.error('❌ Error en processMessageQueue:', error);
-  } finally {
-    global.processingQueue = false;
-    
-    // Si aún hay mensajes en cola, procesar siguiente lote con delay
-    if (global.messageQueue.length > 0) {
-      setTimeout(() => processMessageQueue(sock), 100);
     }
   }
 }
 
-// Función segura para manejar actualizaciones de grupo
-async function handleGroupUpdate(sock, update) {
-  return executeWithRetry(async () => {
-    const { id, participants, action } = update;
-    let texto = '';
+global.messageQueue = new AsyncMessageQueue();
 
-    if (action === 'add') {
-      texto = `👋 Bienvenido @${participants[0].split('@')[0]} al grupo!\n\nRecuerda leer la descripción del grupo, si quieres usar al bot envía *.menu* o *.help* para ver los comandos totales.`;
-    } else if (action === 'remove') {
-      texto = `@${participants[0].split('@')[0]} Salió del grupo. 👎`;
-    } else if (action === 'promote') {
-      texto = `🎉 @${participants[0].split('@')[0]} ahora es admin del grupo.`;
-    } else if (action === 'demote') {
-      texto = `⚠️ @${participants[0].split('@')[0]} ha sido removido como admin.`;
-    }
+// Cache optimizado
+global.cache = new NodeCache({
+  stdTTL: 300,
+  checkperiod: 120,
+  maxKeys: 300,
+  useClones: false // Mejor rendimiento
+});
 
-    if (texto) {
-      await sock.sendMessage(id, { 
-        text: texto, 
-        mentions: participants 
-      });
-    }
-  });
-}
-
-// Función segura para manejar mensajes
-async function handleMessagesUpsert(sock, { messages, type }) {
-  if (type !== 'notify') return;
-
-  for (const msg of messages) {
-    if (!msg.message) continue;
-
-    try {
-      // Rate limiting por usuario
-      const userId = msg.key.participant || msg.key.remoteJid;
-      if (!checkRateLimit(userId)) {
-        console.log(`⏰ Rate limit excedido para usuario: ${userId}`);
-        continue;
-      }
-
-      await executeWithRetry(async () => {
-        await handleMessage(sock, msg);
-      });
-      
-    } catch (e) {
-      console.error('❌ Error en handleMessage:', e.message);
-    }
+// Cargar coinmaster
+try {
+  if (fs.existsSync('./coinmaster.json')) {
+    global.cmDB = JSON.parse(fs.readFileSync('./coinmaster.json', 'utf8'));
+  } else {
+    global.cmDB = {};
   }
+} catch (error) {
+  global.cmDB = {};
+  console.error('❌ Error cargando coinmaster');
 }
 
-// ============================================
-// CONFIGURACIÓN INICIAL
-// ============================================
-
-global.cmDB = JSON.parse(fs.readFileSync('./coinmaster.json'));
 global.guardarCM = () => {
   try {
     fs.writeFileSync('./coinmaster.json', JSON.stringify(global.cmDB, null, 2));
   } catch (error) {
-    console.error('❌ Error guardando coinmaster:', error);
+    console.error('❌ Error guardando coinmaster');
   }
 };
 
 global.recolectarCooldown = {};
 
-// Logs pandabot con protección
-global.terminalLogs = [];
-const logLimit = 20;
-const originalConsoleLog = console.log;
-console.log = (...args) => {
-  try {
-    const message = args.join(' ');
-    originalConsoleLog.apply(console, args);
-    if (message.includes('.buy')) {
-      global.terminalLogs.push(message);
-      if (global.terminalLogs.length > logLimit) {
-        global.terminalLogs.shift();
-      }
-    }
-  } catch (error) {
-    originalConsoleLog('❌ Error en console.log personalizado:', error);
-  }
-};
+// ============================================
+// SISTEMA DE MONITOREO Y REINICIO
+// ============================================
 
-const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-const question = (texto) => new Promise((resolver) => rl.question(texto, resolver));
-
-// Limpieza con manejo de errores
-import fs from 'fs';
-try {
-  const resultado = limpiarPersonajes("./data/personajes.json");
-  console.log("Personajes únicos:", resultado.length);
-} catch (error) {
-  console.error('❌ Error en limpiarPersonajes:', error);
-}
-
-// Configuración
-const msgRetryCounterCache = new NodeCache();
-const sessions = 'auth_info';
-const nameqr = 'PandaBot';
-const methodCodeQR = process.argv.includes("qr");
-const methodCode = process.argv.includes("code");
-let startupBackupCreated = false;
-let reconnectAttempts = 0;
-const MAX_RECONNECT_ATTEMPTS = 10;
-
-function ensureStartupBackup() {
-  if (startupBackupCreated) return;
-  try {
-    const { backupPath } = createDatabaseBackup({
-      filenameFormatter: (timestamp) => `backup_startup(${timestamp}).json`,
-      filenamePrefix: 'backup',
-      maxBackups: 10
-    });
-    console.log(`📦 Backup inicial creado: ${backupPath}`);
-  } catch (error) {
-    console.error('❌ No se pudo crear el backup inicial:', error.message);
-  } finally {
-    startupBackupCreated = true;
-  }
-}
-
-// Función de reconexión con backoff exponencial
-async function delayedReconnect(attempt) {
-  const delay = Math.min(1000 * Math.pow(2, attempt), 30000);
-  console.log(chalk.bold.yellowBright(`🔄 Reconectando en ${delay/1000} segundos... (Intento ${attempt + 1}/${MAX_RECONNECT_ATTEMPTS})`));
-  
-  await new Promise(resolve => setTimeout(resolve, delay));
-  await startBot();
-}
-
-// Función para mostrar estadísticas
-function showStats() {
-  const stats = global.requestStats;
-  console.log(chalk.cyan('\n📊 ESTADÍSTICAS DE SOLICITUDES:'));
-  console.log(chalk.cyan(`✅ Exitosa: ${stats.success}`));
-  console.log(chalk.cyan(`❌ Errores: ${stats.errors}`));
-  console.log(chalk.cyan(`⏰ Rate Limited: ${stats.rateLimited}`));
-  console.log(chalk.cyan(`📝 Total: ${stats.total}`));
-  if (stats.lastError) {
-    console.log(chalk.red(`Último error: ${stats.lastError}`));
-  }
-}
-
-// Mostrar estadísticas cada 5 minutos
-setInterval(showStats, 5 * 60 * 1000);
-
-async function startBot() {
-  try {
-    ensureStartupBackup();
-    const { version } = await fetchLatestBaileysVersion();
-    const { state, saveCreds } = await useMultiFileAuthState(sessions);
-
-    const auth = {
-      creds: state.creds,
-      keys: makeCacheableSignalKeyStore(state.keys, pino({ level: 'fatal' }).child({ level: 'fatal' })),
-    };
-
-    // ============================================
-    // DETERMINAR MÉTODO DE CONEXIÓN
-    // ============================================
-    let connectionMethod = 'qr';
-
-    if (methodCode) {
-      connectionMethod = 'code';
-    } else if (!fs.existsSync(`./${sessions}/creds.json`)) {
-      console.log(chalk.bold.magentaBright(`\n⌨ Selecciona una opción:`));
-      console.log(chalk.bold.greenBright(`1. Con código QR`));
-      console.log(chalk.bold.cyanBright(`2. Con código de texto de 8 dígitos`));
-      
-      try {
-        const choice = await question(chalk.bold.yellowBright(`--> `));
-        connectionMethod = choice === '2' ? 'code' : 'qr';
-      } catch (error) {
-        console.error('❌ Error en selección de método:', error);
-        connectionMethod = 'qr';
-      }
-    }
-
-    // ============================================
-    // CREAR SOCKET CON CONFIGURACIONES MÁS SEGURAS
-    // ============================================
-    const sock = makeWASocket({
-      version,
-      auth,
-      printQRInTerminal: connectionMethod === 'qr',
-      browser: connectionMethod === 'qr'
-        ? [nameqr, 'Chrome', '20.0.04']
-        : ['Ubuntu', 'Edge', '110.0.1587.56'],
-      msgRetryCounterCache,
-      logger: pino({ level: 'error' }), // Solo errores para mejor performance
-      markOnlineOnConnect: false,
-      syncFullHistory: false,
-      transactionOpts: {
-        maxCommitRetries: 2, // REDUCIDO
-        delayBetweenTries: 2000 // AUMENTADO
-      },
-      // Configuraciones adicionales para evitar 429
-      retryRequestDelayMs: 2000,
-      maxRetries: 2,
-      getMessage: async (clave) => {
-        try {
-          let jid = jidNormalizedUser(clave.remoteJid);
-          let msg = await store.loadMessage(jid, clave.id);
-          return msg?.message || "";
-        } catch (error) {
-          console.error('❌ Error en getMessage:', error);
-          return "";
-        }
-      },
-    });
-
-    globalThis.sock = sock;
-
-    sock.ev.on('creds.update', saveCreds);
-
-    // ============================================
-    // EVENTOS CON PROTECCIÓN MEJORADA
-    // ============================================
-
-    // Eventos de grupo con cola
-    sock.ev.on('group-participants.update', async (update) => {
-      global.messageQueue.push({ msg: update, type: 'group-participants.update' });
-      processMessageQueue(sock);
-    });
-
-    // Mensajes con cola y rate limiting
-    sock.ev.on('messages.upsert', async (data) => {
-      global.messageQueue.push({ msg: data, type: 'messages.upsert' });
-      processMessageQueue(sock);
-    });
-
-    // ============================================
-    // CONEXIÓN MEJORADA
-    // ============================================
-    sock.ev.on('connection.update', async (update) => {
-      const { connection, lastDisconnect, qr } = update;
-
-      try {
-        // ✅ Mostrar QR si es necesario
-        if (qr && connectionMethod === 'qr') {
-          console.log(chalk.bold.yellowBright('\n📱 Escanea este QR para vincular el bot:\n'));
-          qrcode.generate(qr, { small: true });
-        }
-
-        // ✅ PEDIR PAIRING CODE
-        if (connection === 'connecting' && connectionMethod === 'code') {
-          await new Promise(resolve => setTimeout(resolve, 2000)); // AUMENTADO
-
-          if (!sock.authState.creds.registered) {
-            console.log(chalk.bold.cyanBright('\n🔐 Modo de emparejamiento con código'));
-            
-            try {
-              const phoneNumber = await question(chalk.bold.magentaBright(`\n📱 Ingresa tu número (ej: 56912345678)\n--> `));
-
-              if (phoneNumber && phoneNumber.replace(/\D/g, '').length >= 10) {
-                const code = await sock.requestPairingCode(phoneNumber.replace(/\D/g, ''));
-                console.log(chalk.bold.white(chalk.bgMagenta(`\n✞ CÓDIGO DE VINCULACIÓN ✞ `)), chalk.bold.white(code));
-                console.log(chalk.bold.yellowBright(`\n📲 Ingresa este código en WhatsApp -> Dispositivos vinculados -> Vincular dispositivo`));
-              } else {
-                console.log(chalk.bold.redBright(`❌ Número de teléfono inválido.`));
-              }
-            } catch (error) {
-              console.log(chalk.bold.redBright(`❌ Error al solicitar código: ${error.message}`));
-            }
-          }
-        }
-
-        // ✅ Conexión establecida
-        if (connection === 'open') {
-          console.log(chalk.bold.greenBright('\n✅ Bot conectado correctamente!'));
-          console.log(chalk.bold.cyanBright(`📱 Dispositivo: ${sock.user.id}`));
-          console.log(chalk.bold.yellowBright(`🤖 Bot listo para recibir comandos\n`));
-          
-          reconnectAttempts = 0;
-
-          // Iniciar sistemas con manejo de errores
-          try {
-            setInterval(() => {
-              try {
-                reiniciarStock();
-              } catch (error) {
-                console.error('❌ Error en reiniciarStock:', error);
-              }
-            }, 60 * 1000);
-
-            const db = cargarDatabase();
-            setInterval(() => {
-              try {
-                iniciarSistemaBossAutomatico(db);
-              } catch (error) {
-                console.error('❌ Error en iniciarSistemaBossAutomatico:', error);
-              }
-            }, 60 * 60 * 1000);
-          } catch (error) {
-            console.error('❌ Error iniciando sistemas automáticos:', error);
-          }
-        }
-
-        // ⚠️ Conexión cerrada
-        if (connection === 'close') {
-          const statusCode = new Boom(lastDisconnect?.error)?.output?.statusCode;
-          const shouldReconnect = statusCode !== DisconnectReason.loggedOut;
-
-          console.log(chalk.bold.yellowBright('⚠️ Conexión cerrada'));
-          console.log(chalk.bold.cyanBright(`Código: ${statusCode}`));
-          console.log(chalk.bold.magentaBright(`Reconectar: ${shouldReconnect}`));
-
-          if (shouldReconnect && reconnectAttempts < MAX_RECONNECT_ATTEMPTS) {
-            reconnectAttempts++;
-            await delayedReconnect(reconnectAttempts);
-          } else {
-            console.log(chalk.bold.redBright('❌ Bot deslogueado. Borra la carpeta auth_info y vuelve a iniciar.'));
-            process.exit(1);
-          }
-        }
-      } catch (error) {
-        console.error('❌ Error en connection.update:', error);
-      }
-    });
-
-  } catch (error) {
-    console.error('❌ Error crítico en startBot:', error);
+class BotMonitor {
+  constructor() {
+    this.startTime = Date.now();
+    this.lastActivity = Date.now();
+    this.messageCount = 0;
+    this.restartHours = 6; // Reiniciar cada 6 horas
+    this.maxInactivity = 5; // Minutos de inactividad para reinicio
     
-    if (reconnectAttempts < MAX_RECONNECT_ATTEMPTS) {
-      reconnectAttempts++;
-      await delayedReconnect(reconnectAttempts);
-    } else {
-      console.log(chalk.bold.redBright('❌ Máximo número de intentos de reconexión alcanzado.'));
+    console.log(chalk.blue(`🕐 Monitor activo - Reinicio cada ${this.restartHours}h`));
+    
+    // Health check cada 30 segundos
+    setInterval(() => this.healthCheck(), 30000);
+    
+    // Reinicio programado
+    setTimeout(() => {
+      console.log(chalk.yellow('🔄 Reinicio programado iniciando...'));
+      process.exit(0);
+    }, this.restartHours * 60 * 60 * 1000);
+  }
+  
+  recordActivity() {
+    this.lastActivity = Date.now();
+    this.messageCount++;
+  }
+  
+  healthCheck() {
+    const now = Date.now();
+    const inactiveMinutes = (now - this.lastActivity) / 60000;
+    
+    if (inactiveMinutes > this.maxInactivity) {
+      console.log(chalk.yellow(`⚠️ Inactivo por ${Math.round(inactiveMinutes)}m - Reiniciando...`));
       process.exit(1);
     }
+    
+    // Limpieza de memoria cada hora
+    if (global.gc && now - this.startTime > 3600000) {
+      global.gc();
+    }
+  }
+  
+  getStats() {
+    const uptime = Date.now() - this.startTime;
+    return {
+      uptime: `${Math.floor(uptime / 3600000)}h ${Math.floor((uptime % 3600000) / 60000)}m`,
+      messages: this.messageCount,
+      lastActivity: new Date(this.lastActivity).toLocaleTimeString()
+    };
+  }
+}
+
+global.monitor = new BotMonitor();
+
+// ============================================
+// CONEXIÓN OPTIMIZADA DE WHATSAPP
+// ============================================
+
+async function connectWhatsApp() {
+  const sessions = 'auth_info';
+  const methodCode = process.argv.includes("code");
+  const methodQR = !methodCode && !fs.existsSync(`./${sessions}/creds.json`);
+  
+  try {
+    // Configuración ultra optimizada de Baileys
+    const { version } = await fetchLatestBaileysVersion();
+    const { state, saveCreds } = await useMultiFileAuthState(sessions);
+    
+    const sock = makeWASocket({
+      version,
+      auth: {
+        creds: state.creds,
+        keys: makeCacheableSignalKeyStore(state.keys, filteredLogger),
+      },
+      printQRInTerminal: methodQR,
+      browser: ['Ubuntu', 'Chrome', '120.0.0.0'],
+      logger: filteredLogger, // Logger filtrado
+      markOnlineOnConnect: false, // Más rápido
+      syncFullHistory: false, // No cargar historial
+      transactionOpts: {
+        maxCommitRetries: 1,
+        delayBetweenTries: 1000
+      },
+      retryRequestDelayMs: 1000,
+      maxRetries: 2,
+      connectTimeoutMs: 20000,
+      keepAliveIntervalMs: 25000,
+      emitOwnEvents: false,
+      defaultQueryTimeoutMs: 10000,
+      msgRetryCounterCache: new NodeCache(),
+      getMessage: async () => ({})
+    });
+    
+    global.sock = sock;
+    
+    // Eventos optimizados
+    sock.ev.on('creds.update', saveCreds);
+    
+    sock.ev.on('messages.upsert', async (data) => {
+      global.monitor.recordActivity();
+      await global.messageQueue.add(data, 'messages.upsert');
+    });
+    
+    sock.ev.on('connection.update', async (update) => {
+      const { connection, lastDisconnect, qr } = update;
+      
+      if (qr && methodQR) {
+        console.log(chalk.yellow('\n📱 Escanea este QR en WhatsApp:'));
+        qrcode.generate(qr, { small: true });
+      }
+      
+      if (connection === 'open') {
+        console.log(chalk.green.bold('\n✅ CONECTADO - Bot listo!'));
+        console.log(chalk.cyan(`👤 ${sock.user?.id?.split(':')[0] || 'Usuario'}`));
+        
+        // Iniciar tareas periódicas
+        startBackgroundTasks();
+        
+        // Mostrar estadísticas periódicas
+        setInterval(showStats, 300000);
+      }
+      
+      if (connection === 'close') {
+        const statusCode = lastDisconnect?.error?.output?.statusCode;
+        const shouldReconnect = statusCode !== DisconnectReason.loggedOut;
+        
+        if (shouldReconnect) {
+          console.log(chalk.yellow('🔄 Reconectando en 5s...'));
+          setTimeout(connectWhatsApp, 5000);
+        } else {
+          console.log(chalk.red('❌ Sesión expirada - Elimina auth_info/'));
+          process.exit(1);
+        }
+      }
+    });
+    
+    return sock;
+    
+  } catch (error) {
+    console.error(chalk.red('❌ Error de conexión:'), error.message);
+    
+    // Reintentar en 10 segundos
+    setTimeout(connectWhatsApp, 10000);
   }
 }
 
 // ============================================
-// MANEJO DE ERRORES GLOBALES MEJORADO
+// TAREAS EN SEGUNDO PLANO
+// ============================================
+
+function startBackgroundTasks() {
+  // Stock cada minuto
+  setInterval(() => {
+    try {
+      reiniciarStock();
+    } catch (error) {
+      console.error('❌ Error en stock');
+    }
+  }, 60000);
+  
+  // Guardar coinmaster cada 3 minutos
+  setInterval(() => {
+    try {
+      global.guardarCM();
+    } catch (error) {
+      console.error('❌ Error guardando datos');
+    }
+  }, 180000);
+  
+  // Limpiar caché cada 15 minutos
+  setInterval(() => {
+    global.cache.flushAll();
+  }, 900000);
+  
+  console.log(chalk.gray('🔧 Tareas programadas iniciadas'));
+}
+
+// ============================================
+// ESTADÍSTICAS Y MONITOREO
+// ============================================
+
+function showStats() {
+  const rateStats = global.rateLimiter.stats;
+  const queueStats = global.messageQueue.stats;
+  const monitorStats = global.monitor.getStats();
+  
+  console.log(chalk.magenta(`
+┌─────────────────────────────┐
+│ 📊 ESTADÍSTICAS DEL BOT     │
+├─────────────────────────────┤
+│ ⏱️  Uptime: ${monitorStats.uptime.padEnd(12)} │
+│ 📨 Mensajes: ${monitorStats.messages.toString().padEnd(11)} │
+│ ✅ Exitósas: ${rateStats.success.toString().padEnd(11)} │
+│ ❌ Errores: ${rateStats.errors.toString().padEnd(12)} │
+│ ⏰ Limitados: ${rateStats.rateLimited.toString().padEnd(10)} │
+│ 📥 Procesados: ${queueStats.processed.toString().padEnd(9)} │
+└─────────────────────────────┘
+  `));
+}
+
+// ============================================
+// INICIALIZACIÓN
+// ============================================
+
+async function initializeBot() {
+  console.log(chalk.magenta(`
+╔══════════════════════════╗
+║     🐼 PANDABOT 🐼       ║
+║   ⚡ ULTRA OPTIMIZADO    ║
+║   🔇 LOGS SILENCIADOS   ║
+╚══════════════════════════╝
+  `));
+  
+  // Crear backup inicial
+  try {
+    if (!fs.existsSync('./backups')) {
+      fs.mkdirSync('./backups', { recursive: true });
+    }
+    createDatabaseBackup();
+    console.log(chalk.green('📦 Backup inicial creado'));
+  } catch (error) {
+    console.error('❌ Error en backup');
+  }
+  
+  // Limpiar personajes
+  try {
+    const result = limpiarPersonajes("./data/personajes.json");
+    console.log(chalk.green(`🧹 ${result?.length || 0} personajes limpiados`));
+  } catch (error) {
+    console.error('❌ Error limpiando personajes');
+  }
+  
+  // Ejecutar migración
+  try {
+    migrarStockPlano();
+  } catch (error) {
+    console.error('❌ Error en migración');
+  }
+  
+  // Conectar a WhatsApp
+  await connectWhatsApp();
+}
+
+// ============================================
+// MANEJO DE ERRORES GLOBALES
 // ============================================
 
 process.on('uncaughtException', (error) => {
-  console.error('❌ Uncaught Exception:', error.message);
-  // No salir del proceso para mantener el bot vivo
+  const message = error.message || String(error);
+  
+  // Ignorar errores internos de Baileys
+  if (message.includes('SessionEntry') || 
+      message.includes('prekey bundle') ||
+      message.includes('ratchet') ||
+      message.includes('_chains')) {
+    return;
+  }
+  
+  console.error(chalk.red('🔥 Error crítico:'), message.substring(0, 100));
+  
+  // No salir inmediatamente, intentar recuperar
+  setTimeout(() => {
+    if (global.sock) {
+      console.log(chalk.yellow('🔄 Intentando recuperación...'));
+    }
+  }, 5000);
 });
 
-process.on('unhandledRejection', (reason, promise) => {
-  console.error('❌ Unhandled Rejection at:', promise, 'reason:', reason);
-  // No salir del proceso para mantener el bot vivo
+process.on('unhandledRejection', (reason) => {
+  const message = reason?.message || String(reason);
+  
+  // Ignorar rechazos no críticos
+  if (message.includes('session') || message.includes('timeout')) {
+    return;
+  }
+  
+  console.error(chalk.yellow('⚠️ Promesa rechazada:'), message.substring(0, 80));
+});
+
+process.on('SIGINT', () => {
+  console.log(chalk.yellow('\n\n🛑 Apagando bot...'));
+  console.log(chalk.green('✅ Sesión guardada correctamente'));
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log(chalk.yellow('\n⚡ Reinicio rápido...'));
+  process.exit(0);
 });
 
 // ============================================
 // INICIAR BOT
 // ============================================
-console.log(chalk.bold.magentaBright(`
-╔═══════════════════════════════════════╗
-║                                       ║
-║         🐼 PANDABOT INICIANDO 🐼      ║
-║          🔒 PROTECCIÓN 429 🔒         ║
-║                                       ║
-╚═══════════════════════════════════════╝
-`));
 
-startBot();
+// Optimizar Node.js para mejor rendimiento
+if (global.gc) {
+  console.log(chalk.gray('🧠 GC manual habilitado'));
+}
+
+// Aumentar límites de memoria
+process.setMaxListeners(20);
+
+// Iniciar bot con retardo para estabilidad
+setTimeout(() => {
+  initializeBot().catch(error => {
+    console.error(chalk.red('❌ Error fatal al iniciar:'), error.message);
+    process.exit(1);
+  });
+}, 1000);

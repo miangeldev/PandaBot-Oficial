@@ -7,16 +7,11 @@ export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
 
-  if (isVip(sender)) {
-    await sock.sendMessage(from, { text: '❌ ¡Ya eres un usuario VIP! No necesitas comprar un ticket.' });
-    return;
-  }
-
   const db = cargarDatabase();
   db.users = db.users || {};
   const user = db.users[sender] || { pandacoins: 0 };
   
-  const ticketCost = 300000;
+  const ticketCost = 500000000;
   const subCommand = args[0]?.toLowerCase();
 
   if (subCommand === 'ticket') {
@@ -65,4 +60,3 @@ Para comprar:
 
   await sock.sendMessage(from, { text: message });
 }
-

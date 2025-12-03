@@ -7,20 +7,20 @@
     "creditos": 1
   },
   "157243618136231": {
-    "spins": 99999999989683,
-    "coins": 88557,
-    "creditos": 6805,
+    "spins": 99999999989724,
+    "coins": 1053018,
+    "creditos": 8010,
     "lastDaily": 1764029941274,
     "shields": 1,
     "villageLevel": 34
   },
   "125675138736203": {
-    "spins": 6,
-    "coins": 156950,
+    "spins": 5,
+    "coins": 220950,
     "shields": 1,
     "villageLevel": 27,
-    "creditos": 5385,
-    "lastDaily": 1764125964063
+    "creditos": 5445,
+    "lastDaily": 1764292924336
   },
   "60645256990926": {
     "spins": 5,
@@ -50,7 +50,7 @@
     "shields": 1,
     "villageLevel": 1,
     "lastDaily": 1764097308807,
-    "creditos": 105
+    "creditos": 5
   },
   "117901247918201": {
     "spins": 7,
@@ -100,9 +100,9 @@
     "creditos": 0
   },
   "16445832454279": {
-    "spins": 30,
-    "coins": 233927,
-    "creditos": 465,
+    "spins": 38,
+    "coins": 353927,
+    "creditos": 615,
     "lastDaily": 1764125986220,
     "shields": 1
   },
@@ -157,9 +157,12 @@
     "creditos": 90
   },
   "126014944481374": {
-    "spins": 0,
-    "coins": 0,
-    "creditos": 0
+    "spins": 49,
+    "coins": 96000,
+    "creditos": 525,
+    "lastDaily": 1764399861939,
+    "shields": 1,
+    "villageLevel": null
   },
   "120363402489463260": {
     "spins": 0,
@@ -252,18 +255,19 @@
     "creditos": 16
   },
   "109723999285363": {
-    "spins": 4,
-    "coins": 8300,
+    "spins": 7,
+    "coins": 603366,
     "shields": 1,
-    "villageLevel": 1,
-    "creditos": 25
+    "villageLevel": 8,
+    "creditos": 985,
+    "lastDaily": 1764471220642
   },
   "190099748851913": {
-    "spins": 15,
-    "coins": 878099,
+    "spins": 10,
+    "coins": 1310099,
     "shields": 1,
     "villageLevel": 13,
-    "creditos": 2851
+    "creditos": 3721
   },
   "236536851361948": {
     "spins": 5,
@@ -273,11 +277,11 @@
     "creditos": 10
   },
   "68999270371333": {
-    "spins": 5,
-    "coins": 8300,
+    "spins": 4,
+    "coins": 16300,
     "shields": 1,
     "villageLevel": 1,
-    "creditos": 16
+    "creditos": 46
   },
   "76334839664657": {
     "spins": 11,
@@ -292,11 +296,11 @@
     "creditos": 0
   },
   "151956546945228": {
-    "spins": 22,
-    "coins": 152000,
+    "spins": 23,
+    "coins": 168000,
     "shields": 1,
     "villageLevel": 1,
-    "creditos": 235
+    "creditos": 50
   },
   "99561821479092": {
     "spins": 0,
@@ -324,23 +328,133 @@
   },
   "267800203546694": {
     "spins": 14,
-    "coins": 176300,
+    "coins": 248300,
     "shields": 1,
     "villageLevel": 1,
-    "creditos": 241
+    "creditos": 391
   },
   "120363421083491291": {
-    "spins": 6,
-    "coins": 8300,
+    "spins": 7,
+    "coins": 32300,
     "shields": 1,
     "villageLevel": 1,
-    "creditos": 16
+    "creditos": 31
   },
   "179238162411763": {
+    "spins": 3,
+    "coins": 16300,
+    "shields": 1,
+    "villageLevel": 1,
+    "creditos": 46
+  },
+  "230004726169681": {
+    "spins": 0,
+    "coins": 0,
+    "creditos": 0
+  },
+  "276020972282056": {
+    "spins": 6,
+    "coins": 8000,
+    "shields": 0,
+    "villageLevel": 1,
+    "creditos": 15
+  },
+  "71550413840387": {
+    "spins": 5,
+    "coins": 0,
+    "shields": 0,
+    "villageLevel": 1,
+    "creditos": 0
+  },
+  "51916596367": {
+    "spins": 8,
+    "coins": 72000,
+    "shields": 1,
+    "villageLevel": 1,
+    "creditos": 50
+  },
+  "33677157355747": {
+    "spins": 0,
+    "coins": 0,
+    "creditos": 0
+  },
+  "119769508376657": {
+    "spins": 5,
+    "coins": 0,
+    "shields": 0,
+    "villageLevel": 1
+  },
+  "191302457123023": {
+    "spins": 9,
+    "coins": 16000,
+    "shields": 1,
+    "villageLevel": 1,
+    "creditos": 25
+  },
+  "196039722160317": {
     "spins": 4,
     "coins": 300,
     "shields": 1,
     "villageLevel": 1,
-    "creditos": 46
+    "creditos": 31
+  },
+  "238968322928831": {
+    "spins": 3,
+    "coins": 300,
+    "shields": 1,
+    "villageLevel": 1,
+    "creditos": 61
+  },
+  "31366532055076": {
+    "spins": 0,
+    "coins": 0,
+    "creditos": 0
+  },
+  "165141945557171": {
+    "spins": 0,
+    "coins": 0,
+    "creditos": 0
+  },
+  "259003707855053": {
+    "spins": 6,
+    "coins": 0,
+    "shields": 1,
+    "villageLevel": 1,
+    "creditos": 15
+  },
+  "55504416043195": {
+    "spins": 3,
+    "coins": 128000,
+    "creditos": 240,
+    "lastDaily": 1764729203331,
+    "shields": null
+  },
+  "184856063512597": {
+    "spins": 2,
+    "coins": 56300,
+    "shields": 1,
+    "villageLevel": 1,
+    "creditos": 26
+  },
+  "23953099772102": {
+    "spins": 9,
+    "coins": 64000,
+    "shields": 1,
+    "villageLevel": 1,
+    "creditos": 25
+  },
+  "17514994090156": {
+    "spins": 5,
+    "coins": 48000,
+    "shields": 0,
+    "villageLevel": 1,
+    "creditos": 10
+  },
+  "172056574439537": {
+    "spins": 5,
+    "coins": 300,
+    "shields": 1,
+    "villageLevel": 1,
+    "creditos": 10
   }
 }

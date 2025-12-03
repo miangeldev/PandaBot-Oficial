@@ -1,5 +1,6 @@
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 import { cargarDatos } from '../lib/cacheManager.js'; // Usar caché centralizada
+import { isVip } from '../utils/vip.js';
 
 export const command = 'sellall';
 
@@ -10,6 +11,11 @@ export async function run(sock, msg, args) {
     const db = cargarDatabase();
     db.users = db.users || {};
     const user = db.users[sender];
+
+  if (!isVip(sender)) {
+    await sock.sendMessage(from, { text: '❌ Este comando es solo para usuarios VIP.' });
+    return;
+  }
 
     if (!user) {
         await sock.sendMessage(from, { text: '❌ No estás registrado. Usa .registrar para empezar.' });

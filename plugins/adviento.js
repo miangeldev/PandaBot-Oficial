@@ -29,31 +29,6 @@ const premiosAdviento = {
   24: { tipo: 'premio_especial', mensaje: "🎄 ¡FELIZ NAVIDAD! 🎅 - Premio Especial Navideño: 100,000,000,000 Pandacoins + 100 diamantes + Título 🎄 Navideño ✨" }
 };
 
-function getPremioRandomizado(dia) {
-  const premiosPosibles = [
-    { tipo: 'pandacoins', cantidad: 10000000000 + (dia * 1000000000), probabilidad: 0.3 },
-    { tipo: 'vip', duracion: 24, probabilidad: 0.1 },
-    { tipo: 'giros', cantidad: 200 + (dia * 20), probabilidad: 0.15 },
-    { tipo: 'diamantes', cantidad: 10 + dia, probabilidad: 0.1 },
-    { tipo: 'nada', probabilidad: 0.05 },
-    { tipo: 'titulo', titulo: getTituloRandom(), probabilidad: 0.1 },
-    { tipo: 'personaje', personaje: getPersonajeRandom(), probabilidad: 0.1 },
-    { tipo: 'creditos', cantidad: 1000 + (dia * 100), probabilidad: 0.1 }
-  ];
-
-  return premiosAdviento[dia] || premiosAdviento[1];
-}
-
-function getTituloRandom() {
-  const titulos = ["🎄 Navideño", "⭐ Estrella", "🎁 Regalero", "❄️ Nevado", "🔥 Hogareño"];
-  return titulos[Math.floor(Math.random() * titulos.length)];
-}
-
-function getPersonajeRandom() {
-  const personajes = ["Xmas Nyan Cat", "Xmas Everything", "Xmas Lukas", "Rodolfo el Reno"];
-  return personajes[Math.floor(Math.random() * personajes.length)];
-}
-
 export const command = 'adviento';
 export const aliases = ['calendario', 'navidad'];
 
@@ -61,16 +36,6 @@ export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
   const senderNumber = sender.split('@')[0];
-
-  // CORREGIDO: Verificación simple como en el ejemplo
-  const isOwner = ownerNumber.includes('+' + senderNumber);
-
-  if (!isOwner) {
-    await sock.sendMessage(from, {
-      text: '🎄 El calendario de adviento estará disponible en *Diciembre*.\n\n¡Vuelve en Navidad! 🎅'
-    }, { quoted: msg });
-    return;
-  }
 
   const db = cargarDatabase();
 
@@ -82,8 +47,32 @@ export async function run(sock, msg, args) {
     };
   }
 
+  // Obtener fecha actual
+  const ahora = new Date();
+  const mesActual = ahora.getMonth() + 1; // 1-12
+  const diaActual = ahora.getDate(); // 1-31
+
+  // Verificar que sea diciembre
+  if (mesActual !== 12) {
+    await sock.sendMessage(from, {
+      text: '🎄 El calendario de adviento solo está disponible en *Diciembre*.\n\n¡Vuelve en Navidad! 🎅'
+    }, { quoted: msg });
+    return;
+  }
+
+  // Verificar que no sea diciembre del próximo año
+  if (db.adviento.año !== ahora.getFullYear()) {
+    // Reiniciar sistema para nuevo año
+    db.adviento = {
+      activo: true,
+      año: ahora.getFullYear(),
+      usuarios: {}
+    };
+    guardarDatabase(db);
+  }
+
   if (!args[0]) {
-    await mostrarInfoAdviento(sock, from, sender, db);
+    await mostrarInfoAdviento(sock, from, sender, db, diaActual);
     return;
   }
 
@@ -96,33 +85,53 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  await reclamarDiaAdviento(sock, from, sender, db, diaSolicitado);
+  // Verificar fecha del día solicitado
+  if (diaSolicitado > diaActual) {
+    await sock.sendMessage(from, {
+      text: `❌ ¡Todavía no es el día ${diaSolicitado}!\n\n📅 Hoy es *${diaActual} de Diciembre*.\n🎁 Vuelve el día ${diaSolicitado} para reclamar tu premio.`
+    }, { quoted: msg });
+    return;
+  }
+
+  await reclamarDiaAdviento(sock, from, sender, db, diaSolicitado, diaActual, msg);
 }
 
-async function mostrarInfoAdviento(sock, from, sender, db) {
+async function mostrarInfoAdviento(sock, from, sender, db, diaActual) {
   const usuario = db.adviento.usuarios[sender] || { diasReclamados: [] };
   const diasReclamados = usuario.diasReclamados || [];
 
-  let texto = `🎄 *CALENDARIO DE ADVIENTO NAVIDEÑO* 🎅\n\n`;
-  texto += `📅 Sistema de prueba para owners\n`;
+  let texto = `🎄 *CALENDARIO DE ADVIENTO NAVIDEÑO ${new Date().getFullYear()}* 🎅\n\n`;
+  texto += `📅 Hoy es: *${diaActual} de Diciembre*\n`;
   texto += `🎁 Días reclamados: *${diasReclamados.length}/24*\n\n`;
 
   texto += `📋 *Cómo funciona:*\n`;
   texto += `• Usa *.adviento <día>* para reclamar premios\n`;
-  texto += `• En diciembre solo podrás reclamar días pasados\n`;
+  texto += `• Solo puedes reclamar días que ya hayan pasado\n`;
   texto += `• ¡Cada día tiene una sorpresa diferente!\n\n`;
 
   if (diasReclamados.length > 0) {
     texto += `✅ *Días reclamados:* ${diasReclamados.sort((a, b) => a - b).join(', ')}\n\n`;
   }
 
-  texto += `🎯 *Comando:* .adviento <1-24>\n`;
-  texto += `Ejemplo: .adviento 1`;
+  // Mostrar próximos días disponibles
+  const diasDisponibles = [];
+  for (let i = 1; i <= diaActual; i++) {
+    if (!diasReclamados.includes(i)) {
+      diasDisponibles.push(i);
+    }
+  }
+
+  if (diasDisponibles.length > 0) {
+    texto += `🎯 *Días disponibles para reclamar:* ${diasDisponibles.join(', ')}\n\n`;
+  }
+
+  texto += `⚡ *Comando:* .adviento <1-24>\n`;
+  texto += `Ejemplo: .adviento ${Math.min(diaActual, 24)}`;
 
   await sock.sendMessage(from, { text: texto });
 }
 
-async function reclamarDiaAdviento(sock, from, sender, db, diaSolicitado) {
+async function reclamarDiaAdviento(sock, from, sender, db, diaSolicitado, diaActual, msg) {
   if (!db.adviento.usuarios[sender]) {
     db.adviento.usuarios[sender] = {
       diasReclamados: [],
@@ -270,8 +279,22 @@ async function reclamarDiaAdviento(sock, from, sender, db, diaSolicitado) {
       const totalReclamados = diasReclamados.length;
       texto += `📊 Progreso: ${totalReclamados}/24 días\n`;
 
+      // Mostrar días pendientes
+      const diasPendientes = [];
+      for (let i = 1; i <= 24; i++) {
+        if (i <= diaActual && !diasReclamados.includes(i)) {
+          diasPendientes.push(i);
+        }
+      }
+
+      if (diasPendientes.length > 0) {
+        texto += `⏰ Días pendientes: ${diasPendientes.join(', ')}\n`;
+      }
+
       if (totalReclamados === 24) {
-        texto += `🎉 ¡FELICIDADES! Has completado todo el calendario de adviento! ✨`;
+        texto += `\n🎉 ¡FELICIDADES! Has completado todo el calendario de adviento! ✨`;
+      } else if (totalReclamados === diaActual) {
+        texto += `\n✅ ¡Has reclamado todos los premios disponibles hasta hoy!`;
       }
 
       await sock.sendMessage(from, { text: texto });
@@ -294,7 +317,6 @@ export async function adminAdviento(sock, msg, args) {
   const sender = msg.key.participant || msg.key.remoteJid;
   const senderNumber = sender.split('@')[0];
 
-  // CORREGIDO: Verificación simple como en el ejemplo
   const isOwner = ownerNumber.includes('+' + senderNumber);
 
   if (!isOwner) {
@@ -313,6 +335,10 @@ export async function adminAdviento(sock, msg, args) {
     return;
   }
 
+  const ahora = new Date();
+  const mesActual = ahora.getMonth() + 1;
+  const diaActual = ahora.getDate();
+
   const usuarios = Object.keys(db.adviento.usuarios);
   const totalUsuarios = usuarios.length;
   let totalReclamaciones = 0;
@@ -321,9 +347,11 @@ export async function adminAdviento(sock, msg, args) {
     totalReclamaciones += db.adviento.usuarios[userId].diasReclamados.length;
   });
 
-  let texto = `📊 *ESTADÍSTICAS ADVIENTO - MODO PRUEBA* 🎄\n\n`;
-  texto += `👥 Usuarios en prueba: ${totalUsuarios}\n`;
-  texto += `🎁 Total reclamaciones: ${totalReclamaciones}\n\n`;
+  let texto = `📊 *ESTADÍSTICAS ADVIENTO ${new Date().getFullYear()}* 🎄\n\n`;
+  texto += `📅 Hoy: ${diaActual} de Diciembre\n`;
+  texto += `👥 Usuarios participantes: ${totalUsuarios}\n`;
+  texto += `🎁 Total reclamaciones: ${totalReclamaciones}\n`;
+  texto += `📈 Promedio por usuario: ${totalUsuarios > 0 ? (totalReclamaciones / totalUsuarios).toFixed(1) : 0}\n\n`;
 
   texto += `🏆 Top participantes:\n`;
 

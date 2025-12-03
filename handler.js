@@ -7,402 +7,279 @@ import { prefix, ownerNumber } from './config.js';
 import { trackCommand } from './middleware/trackAchievements.js';
 import { initializeAchievements } from './data/achievementsDB.js';
 
-// ============================================
-// SISTEMA DE CARGA AUTOMÁTICA DE PLUGINS
-// ============================================
-const pluginsMap = new Map();
-const aliasMap = new Map();
+class CacheManager {
+  constructor() {
+    this.cache = new Map();
+    this.timestamps = new Map();
+  }
 
-/**
- * Envía al grupo los errores de importación de plugins.
- * Requiere que globalThis.sock exista (setearlo en index.js).
- */
-async function sendErrorToGroup(file, error) {
-  try {
-    if (!globalThis.sock) return;
+  set(key, value, ttl = 5000) {
+    this.cache.set(key, value);
+    this.timestamps.set(key, Date.now() + ttl);
+  }
 
-    await globalThis.sock.sendMessage(
-      '120363421024393324@g.us',
-      {
-        text:
-`❌ *ERROR IMPORTANDO PLUGIN*
-📄 Archivo: *${file}*
-🧩 Tipo: ${error?.name || "Error"}
-📋 Mensaje: ${error?.message || String(error)}`
-      }
-    );
-  } catch (e) {
-    console.error(chalk.red('❌ No se pudo enviar el error al grupo:'), e);
+  get(key) {
+    const timestamp = this.timestamps.get(key);
+    if (timestamp && Date.now() > timestamp) {
+      this.delete(key);
+      return null;
+    }
+    return this.cache.get(key);
+  }
+
+  delete(key) {
+    this.cache.delete(key);
+    this.timestamps.delete(key);
+  }
+
+  clear() {
+    this.cache.clear();
+    this.timestamps.clear();
   }
 }
 
+const cache = new CacheManager();
+
+const pluginsMap = new Map();
+const aliasMap = new Map();
+
 async function loadPlugins() {
-  console.log(chalk.yellow('📦 ===== CARGA DE PLUGINS - DEBUG ====='));
+  console.log(chalk.yellow('📦 CARGANDO PLUGINS...'));
+
   const pluginsPath = path.join(process.cwd(), 'plugins');
   const files = fs.readdirSync(pluginsPath).filter(f => f.endsWith('.js'));
 
   let loaded = 0;
   let errors = [];
-  
-  // Ordenar para cargar primero los problemáticos
-  const problemFiles = ['activate.js', 'buy.js', 'spawn.js'];
-  const otherFiles = files.filter(f => !problemFiles.includes(f));
-  const sortedFiles = [...problemFiles.filter(f => files.includes(f)), ...otherFiles];
 
-  for (const file of sortedFiles) {
+  const loadPromises = files.map(async (file) => {
     try {
-      console.log(chalk.blue(`\n🔄 [${new Date().toISOString()}] Cargando: ${file}`));
-      
-      // Importar con cache busting
-      const filePath = `./plugins/${file}?update=${Date.now()}`;
+      const filePath = `./plugins/${file}`;
       const plugin = await import(filePath);
-      
-      console.log(chalk.green(`✅ ${file} importado exitosamente`));
-      
+
       if (plugin.command) {
-        console.log(chalk.cyan(`   📝 Comando: "${plugin.command}"`));
         pluginsMap.set(plugin.command.toLowerCase(), plugin);
         loaded++;
-        
+
         if (plugin.aliases) {
-          console.log(chalk.cyan(`   🔤 Aliases: ${plugin.aliases.join(', ')}`));
           for (const alias of plugin.aliases) {
             aliasMap.set(alias.toLowerCase(), plugin.command.toLowerCase());
           }
         }
-      } else {
-        console.log(chalk.yellow(`   ⚠️  Sin 'command' exportado`));
+
+        console.log(chalk.green(`✅ ${file}`));
       }
-      
     } catch (error) {
-      console.error(chalk.red(`\n❌❌❌ ERROR CRÍTICO en ${file}:`));
-      console.error(chalk.red(`   📋 Mensaje: ${error.message}`));
-      console.error(chalk.red(`   🏷️  Tipo: ${error.name}`));
-      console.error(chalk.red(`   📍 Stack:`));
-      console.error(error.stack);
-      
-      errors.push({ file, error: error.message, stack: error.stack });
-
-      // 🔥 NUEVO: ENVIAR ERROR AL GRUPO
-      await sendErrorToGroup(file, error);
+      errors.push({ file, error: error.message });
+      console.error(chalk.red(`❌ ${file}: ${error.message}`));
     }
-  }
+  });
 
-  console.log(chalk.yellow('\n📊 ===== RESUMEN FINAL ====='));
-  console.log(chalk.green(`✅ ${loaded} plugins cargados correctamente`));
-  console.log(chalk.red(`❌ ${errors.length} errores`));
-  
-  if (errors.length > 0) {
-    console.log(chalk.red('\n📋 ERRORES DETALLADOS:'));
-    errors.forEach(({ file, error }) => {
-      console.log(chalk.red(`   🚫 ${file}: ${error}`));
-    });
-  }
-  
-  console.log(chalk.cyan('\n🎯 COMANDOS DISPONIBLES:'));
-  for (const [cmd] of pluginsMap) {
-    console.log(chalk.cyan(`   • ${cmd}`));
-  }
+  await Promise.allSettled(loadPromises);
+
+  console.log(chalk.yellow(`\n📊 RESUMEN: ${loaded} plugins cargados, ${errors.length} errores`));
 }
 
-// Cargar plugins al inicio
 await loadPlugins();
 
-// ============================================
-// CACHE DE ARCHIVOS (evita lecturas repetidas)
-// ============================================
-let configCache = null;
-let configLastModified = 0;
-let blockedWordsCache = {};
-let blockedWordsLastCheck = 0;
-let afkCache = {};
-let afkLastCheck = 0;
-let muteadosCache = {};
-let muteadosLastCheck = 0;
-
 function getConfig() {
+  const cached = cache.get('config');
+  if (cached) return cached;
+
   const configPath = './config.json';
-  const stats = fs.statSync(configPath);
-
-  if (!configCache || stats.mtimeMs > configLastModified) {
-    configCache = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-    configLastModified = stats.mtimeMs;
-  }
-
-  return configCache;
+  const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+  cache.set('config', config, 10000);
+  return config;
 }
 
 function getBlockedWords() {
-  const now = Date.now();
+  const cached = cache.get('blockedWords');
+  if (cached) return cached;
+
   const blockedWordsPath = path.resolve('./data/blockedWords.json');
-
-  if (!fs.existsSync(blockedWordsPath)) return {};
-
-  // Actualizar cache cada 5 segundos
-  if (now - blockedWordsLastCheck > 5000) {
-    blockedWordsCache = JSON.parse(fs.readFileSync(blockedWordsPath, 'utf8'));
-    blockedWordsLastCheck = now;
-  }
-
-  return blockedWordsCache;
-}
-
-function getAfkData() {
-  const now = Date.now();
-  const afkFile = './data/afk.json';
-
-  if (!fs.existsSync(afkFile)) return {};
-
-  if (now - afkLastCheck > 3000) {
-    afkCache = JSON.parse(fs.readFileSync(afkFile, 'utf8'));
-    afkLastCheck = now;
-  }
-
-  return afkCache;
-}
-
-function getMuteados() {
-  const now = Date.now();
-  const muteadosFile = './data/muteados.json';
-
-  if (!fs.existsSync(muteadosFile)) {
-    fs.writeFileSync(muteadosFile, '{}');
+  if (!fs.existsSync(blockedWordsPath)) {
+    cache.set('blockedWords', {}, 5000);
     return {};
   }
 
-  if (now - muteadosLastCheck > 3000) {
-    muteadosCache = JSON.parse(fs.readFileSync(muteadosFile, 'utf8'));
-    muteadosLastCheck = now;
-  }
-
-  return muteadosCache;
+  const data = JSON.parse(fs.readFileSync(blockedWordsPath, 'utf8'));
+  cache.set('blockedWords', data, 5000);
+  return data;
 }
 
-// ============================================
-// FUNCIONES AUXILIARES
-// ============================================
+function getAfkData() {
+  const cached = cache.get('afkData');
+  if (cached) return cached;
+
+  const afkFile = './data/afk.json';
+  if (!fs.existsSync(afkFile)) {
+    cache.set('afkData', {}, 3000);
+    return {};
+  }
+
+  const data = JSON.parse(fs.readFileSync(afkFile, 'utf8'));
+  cache.set('afkData', data, 3000);
+  return data;
+}
+
+function getMuteados() {
+  const cached = cache.get('muteados');
+  if (cached) return cached;
+
+  const muteadosFile = './data/muteados.json';
+  if (!fs.existsSync(muteadosFile)) {
+    fs.writeFileSync(muteadosFile, '{}');
+    cache.set('muteados', {}, 3000);
+    return {};
+  }
+
+  const data = JSON.parse(fs.readFileSync(muteadosFile, 'utf8'));
+  cache.set('muteados', data, 3000);
+  return data;
+}
+
 function normalizeNumber(raw) {
   return raw.split('@')[0].replace(/[^\d+]/g, '');
 }
 
-// ============================================
-// HANDLER PRINCIPAL
-// ============================================
+function extractMessageBody(msg) {
+  if (msg.message?.conversation) return msg.message.conversation;
+  if (msg.message?.extendedTextMessage?.text) return msg.message.extendedTextMessage.text;
+  if (msg.message?.imageMessage?.caption) return msg.message.imageMessage.caption;
+  if (msg.message?.videoMessage?.caption) return msg.message.videoMessage.caption;
+  return '';
+}
+
+const userCooldowns = new Map();
+const COMMAND_COOLDOWN = 1000;
+
+function checkCooldown(sender) {
+  const now = Date.now();
+  const lastCommand = userCooldowns.get(sender);
+
+  if (lastCommand && (now - lastCommand) < COMMAND_COOLDOWN) {
+    return false;
+  }
+
+  userCooldowns.set(sender, now);
+  return true;
+}
+
 export async function handleMessage(sock, msg) {
-  try {
-    // Extraer información básica
-    const body = msg.message?.conversation || msg.message?.extendedTextMessage?.text;
-    if (!body) return;
+  if (msg.key.fromMe) return;
 
-    const from = msg.key.remoteJid;
-    const isGroup = from.endsWith('@g.us');
-    const sender = msg.key.participant || msg.key.remoteJid;
-    const senderNumber = normalizeNumber(sender);
+  const body = extractMessageBody(msg);
+  if (!body) return;
 
-    // ============================================
-    // VALIDACIÓN TEMPRANA (early returns)
-    // ============================================
+  const from = msg.key.remoteJid;
+  const isGroup = from.endsWith('@g.us');
+  const sender = msg.key.participant || msg.key.remoteJid;
+  const senderNumber = normalizeNumber(sender);
 
-    // 1. Ignorar mensajes propios
-    if (msg.key.fromMe) return;
+  const db = cargarDatabase();
+  db.users = db.users || {};
+  db.bannedUsers = db.bannedUsers || [];
 
-    // 2. Cargar database
-    const db = cargarDatabase();
-    db.users = db.users || {};
-    db.bannedUsers = db.bannedUsers || [];
+  if (db.bannedUsers.includes(sender)) {
+    console.log(chalk.red(`🚫 Baneado: ${senderNumber}`));
+    return;
+  }
 
-    // 3. Verificar ban
-    if (db.bannedUsers.includes(sender)) {
-      console.log(chalk.red(`🚫 Usuario baneado: ${sender}`));
+  const isCommand = body.startsWith(prefix);
+  if (!isCommand) {
+    return;
+  }
+
+  if (!checkCooldown(sender)) {
+    console.log(chalk.yellow(`⏰ Ratelimit: ${senderNumber}`));
+    return;
+  }
+
+  if (isGroup) {
+    const muteados = getMuteados();
+    if (muteados[from]?.includes(sender)) {
+      await sock.sendMessage(from, { delete: msg.key }).catch(() => {});
       return;
     }
+  }
 
-    // ✅ INICIALIZAR ACHIEVEMENTS SI NO EXISTEN
-    if (db.users[sender] && !db.users[sender].achievements) {
-      initializeAchievements(sender);
-      console.log(chalk.cyan(`🎯 Achievements inicializados para: ${senderNumber}`));
-    }
+  const config = getConfig();
+  config.global = config.global || {
+    modoowner: false,
+    grupos: true,
+    chatsprivados: true,
+    ownerNumber
+  };
 
-    // 4. Verificar muteo
-    if (isGroup) {
-      const muteados = getMuteados();
-      if (muteados[from]?.includes(sender)) {
-        console.log(chalk.yellow(`🔇 Mensaje eliminado por muteo: ${sender}`));
-        await sock.sendMessage(from, { delete: msg.key });
-        return;
-      }
-    }
+  const isOwner = ownerNumber.includes(`+${senderNumber}`);
 
-    // 5. Verificar palabras bloqueadas
-    const blockedWords = getBlockedWords();
-    if (blockedWords[from] && blockedWords[from].length > 0) {
-      const texto = body.toLowerCase();
-      const contiene = blockedWords[from].some(word => texto.includes(word));
-      if (contiene) {
-        await sock.sendMessage(from, { delete: msg.key });
-        return;
-      }
-    }
+  if (config.global.modoowner && !isOwner) return;
+  if (isGroup && !config.global.grupos) return;
+  if (!isGroup && !config.global.chatsprivados) return;
 
-    // 6. Verificar menciones AFK
-    if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid) {
-      const afkData = getAfkData();
-      const mentioned = msg.message.extendedTextMessage.contextInfo.mentionedJid;
+  const args = body.slice(prefix.length).trim().split(/\s+/);
+  const cmdName = args.shift().toLowerCase();
 
-      for (const mentionedId of mentioned) {
-        const cleanId = mentionedId.split('@')[0];
-        if (afkData[cleanId]) {
-          await sock.sendMessage(from, { delete: msg.key });
-          await sock.sendMessage(from, {
-            text: `🚫 No molestes al usuario, está AFK: *${afkData[cleanId].reason}*`,
-            mentions: [mentionedId]
-          });
-          break;
-        }
-      }
-    }
+  let plugin = pluginsMap.get(cmdName) || pluginsMap.get(aliasMap.get(cmdName));
 
-    // ============================================
-    // VERIFICAR SI ES OWNER
-    // ============================================
-    const isOwner = ownerNumber.includes(`+${senderNumber}`);
+  if (!plugin) {
+    console.log(chalk.yellow(`❓ Comando no encontrado: ${cmdName}`));
+    return;
+  }
 
-    // ============================================
-    // MODO OWNER / GRUPOS / PRIVADOS
-    // ============================================
-    const config = getConfig();
-    config.global = config.global || { modoowner: false, grupos: true, chatsprivados: true, ownerNumber };
+  const groupName = isGroup ? 'Grupo' : 'Privado';
+  const senderName = msg.pushName || senderNumber;
 
-    if (config.global.modoowner && !isOwner) return;
-    if (isGroup && !config.global.grupos) return;
-    if (!isGroup && !config.global.chatsprivados) return;
+  console.log(chalk.gray('⚡ '), chalk.cyan(senderName), chalk.gray('->'), chalk.yellow(cmdName));
 
-    // ============================================
-    // ANTILINK (solo en grupos)
-    // ============================================
-    if (isGroup && config.groups?.[from]?.antilink) {
-      if (/(https?:\/\/[^\s]+)/i.test(body)) {
-        try {
-          const metadata = await sock.groupMetadata(from);
-          const isAdmin = metadata.participants.some(p =>
-            p.id.startsWith(senderNumber) && (p.admin === 'admin' || p.admin === 'superadmin')
-          );
+  try {
+    await plugin.run(sock, msg, args);
 
-          if (!isOwner && !isAdmin) {
-            await sock.sendMessage(from, { delete: msg.key });
-            await sock.groupParticipantsUpdate(from, [sender], 'remove');
-            await sock.sendMessage(from, {
-              text: `🚫 Usuario @${senderNumber} eliminado por enviar link.`,
-              mentions: [sender]
-            });
-          }
-        } catch (e) {
-          console.error(chalk.red('❌ Error en antilink:'), e.message);
-        }
-      }
-    }
-
-    // ============================================
-    // SISTEMA DE CUMPLEAÑOS
-    // ============================================
-    const user = db.users[sender];
-    if (user?.birthday) {
-      const [day, month] = user.birthday.split('/').map(Number);
-      const today = DateTime.now().setZone('America/Santiago');
-
-      if (today.day === day && today.month === month && user.birthdayMessageSent !== today.year) {
-        await sock.sendMessage(from, {
-          react: { text: '🎉', key: msg.key }
-        });
-
-        await sock.sendMessage(from, {
-          text: `🎂 ¡Feliz cumpleaños, @${senderNumber}! Gracias por formar parte de esta familia.`,
-          mentions: [sender]
-        });
-
-        user.birthdayMessageSent = today.year;
-        guardarDatabase(db);
-      }
-    }
-
-    // ============================================
-    // LOGGING DE MENSAJES
-    // ============================================
-    const groupName = isGroup ? (await sock.groupMetadata(from)).subject : 'Chat Privado';
-    const senderName = msg.pushName || senderNumber;
-    const isCommand = body.startsWith(prefix);
-
-    if (isCommand) {
-      console.log(chalk.gray('=============================='));
-      console.log(`🤖 ${chalk.bold.yellow('Comando Recibido:')}`);
-      console.log(`- ${chalk.white('Usuario:')} ${chalk.cyan(senderName)}`);
-      console.log(`- ${chalk.white('Número:')} +${senderNumber}`);
-      console.log(`- ${chalk.white('Grupo:')} ${chalk.green(groupName)}`);
-      console.log(`- ${chalk.white('Comando:')} ${chalk.yellow(body)}`);
-      console.log(chalk.gray('=============================='));
-    } else {
-      console.log(chalk.gray('=============================='));
-      console.log(`💬 ${chalk.bold.blue('Mensaje de Texto:')}`);
-      console.log(`- ${chalk.white('Usuario:')} ${chalk.cyan(senderName)}`);
-      console.log(`- ${chalk.white('Grupo:')} ${chalk.green(groupName)}`);
-      console.log(`- ${chalk.white('Mensaje:')} ${chalk.white(body.substring(0, 50))}...`);
-      console.log(chalk.gray('=============================='));
-    }
-
-    // ============================================
-    // PROCESAMIENTO DE COMANDOS
-    // ============================================
-    if (!isCommand) return;
-
-    const args = body.slice(prefix.length).trim().split(/\s+/);
-    const cmdName = args.shift().toLowerCase();
-
-    // Buscar comando (incluyendo aliases)
-    let plugin = pluginsMap.get(cmdName);
-
-    // Si no se encuentra, buscar en aliases
-    if (!plugin) {
-      const mainCommand = aliasMap.get(cmdName);
-      if (mainCommand) {
-        plugin = pluginsMap.get(mainCommand);
-      }
-    }
-
-    // Ejecutar plugin
-    if (plugin) {
-      try {
-        await plugin.run(sock, msg, args);
-        
-        // ✅ TRACKEAR USO DE COMANDO (después de ejecución exitosa)
-        trackCommand(sender, sock, from);
-        console.log(chalk.green(`🎯 Comando trackeado para logros: ${cmdName}`));
-        
-      } catch (error) {
-        console.error(chalk.red('❌ Error ejecutando comando:'), error);
-        await sock.sendMessage(from, {
-          text: `⚠️ Error ejecutando el comando. Por favor, inténtalo de nuevo.`
-        });
-        // Send error a el grupo 120363421024393324@g.us
-        await sock.sendMessage('120363421024393324@g.us', {
-          text: `❌ Error en comando ${cmdName} por ${sender}:\n${error}`
-        });
-      }
-    } else {
-      // Comando no encontrado
-      console.log(chalk.yellow(`⚠️ Comando no encontrado: ${cmdName}`));
-    }
+    trackCommand(sender, sock, from);
 
   } catch (error) {
-    console.error(chalk.red('❌ Error en handeleMessage:'), error);
+    console.error(chalk.red(`❌ Error en ${cmdName}:`), error.message);
+
+    if (isOwner) {
+      sock.sendMessage('120363421024393324@g.us', {
+        text: `❌ Error en ${cmdName} por ${senderNumber}:\n${error.message}`
+      }).catch(() => {});
+    }
   }
 }
 
-// ============================================
-// FUNCIÓN PARA RECARGAR PLUGINS (útil para desarrollo)
-// ============================================
+export async function handleOtherEvents(sock, event) {
+  switch (event.type) {
+    case 'react':
+      break;
+    case 'group-participants-update':
+      break;
+    default:
+      break;
+  }
+}
+
 export async function reloadPlugins() {
   pluginsMap.clear();
   aliasMap.clear();
+  cache.clear();
+  userCooldowns.clear();
+
   await loadPlugins();
-  console.log(chalk.green('✅ Plugins recargados'));
+  console.log(chalk.green('✅ Plugins recargados y cache limpiado'));
 }
+
+export function clearCache() {
+  cache.clear();
+  userCooldowns.clear();
+  console.log(chalk.green('✅ Cache limpiado'));
+}
+
+setInterval(() => {
+  const now = Date.now();
+  for (const [key, timestamp] of userCooldowns.entries()) {
+    if (now - timestamp > 3600000) {
+      userCooldowns.delete(key);
+    }
+  }
+}, 60000);

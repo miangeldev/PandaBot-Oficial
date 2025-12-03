@@ -642,5 +642,43 @@
     "groupLink": "https://chat.whatsapp.com/CN1BRg2xgLa6vPH8mm6zGU?mode=hqrc",
     "status": "pending",
     "timestamp": 1763528482520
+  },
+  {
+    "id": 93,
+    "senderJid": "166164298780822@lid",
+    "senderNumber": "166164298780822",
+    "groupLink": "https://chat.whatsapp.com/GNrAPcgTcvR6hMOFnv3nGO?mode=hqrt3",
+    "status": "rejected",
+    "timestamp": 1764393880792,
+    "senderName": "Lukas",
+    "rejectedAt": 1764394207540
+  },
+  {
+    "id": 94,
+    "senderJid": "166164298780822@lid",
+    "senderNumber": "166164298780822",
+    "groupLink": "https://chat.whatsapp.com/GNrAPcgTcvR6hMOFnv3nGO?mode=hqrt3",
+    "status": "rejected",
+    "timestamp": 1764394221850,
+    "senderName": "Lukas",
+    "rejectedAt": 1764394292884
+  },
+  {
+    "id": 95,
+    "senderJid": "166164298780822@lid",
+    "senderNumber": "166164298780822",
+    "groupLink": "https://chat.whatsapp.com/GNrAPcgTcvR6hMOFnv3nGO?mode=hqrt3",
+    "status": "pending",
+    "timestamp": 1764394301053,
+    "senderName": "Lukas"
+  },
+  {
+    "id": 96,
+    "senderJid": "248726488645797@lid",
+    "senderNumber": "248726488645797",
+    "groupLink": "https://chat.whatsapp.com/DaQVOIJ0YUUHrvq3Clq5OE?mode=hqrc",
+    "status": "pending",
+    "timestamp": 1764452023055,
+    "senderName": "sleither¹⁶⁶"
   }
 ]

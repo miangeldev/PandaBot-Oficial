@@ -2,9 +2,9 @@ import { cargarDatabase, guardarDatabase } from '../data/database.js';
 import { ownerNumber } from '../config.js'; // asegúrate de tener aquí tus números de owner
 
 export const command = 'transferir';
-
-const COOLDOWN_MS = 20 * 60 * 1000;
-const MAX_TRANSFERENCIA = 5_000_000;
+export const aliases = ['tr', 'pagar'];
+const COOLDOWN_MS = 5 * 60 * 1000;
+const MAX_TRANSFERENCIA = 10_000_000_000;
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;

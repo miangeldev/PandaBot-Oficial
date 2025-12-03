@@ -17,7 +17,7 @@ export async function run(sock, msg) {
   
   user.cooldowns = user.cooldowns || {};
   const now = Date.now();
-  const cooldownTime = 2 * 60 * 60 * 1000; // 6 horas
+  const cooldownTime = 1 * 60 * 60 * 1000;
   
   if (now - (user.cooldowns.superminar || 0) < cooldownTime) {
     const timeLeft = cooldownTime - (now - (user.cooldowns.superminar || 0));
@@ -27,8 +27,8 @@ export async function run(sock, msg) {
     return;
   }
 
-  const coinsGanados = 20000; // Doble que el minado normal
-  const diamantesGanados = 50; // Bonus de diamantes
+  const coinsGanados = 1000000000;
+  const diamantesGanados = 50;
   
   user.pandacoins = (user.pandacoins || 0) + coinsGanados;
   user.diamantes = (user.diamantes || 0) + diamantesGanados;

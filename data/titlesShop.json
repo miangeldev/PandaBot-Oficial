@@ -341,6 +341,15 @@
       "price": 1,
       "emoji": "\ud83e",
       "createdBy": "166164298780822"
+    },
+    {
+      "id": "palabra",
+      "name": "Palabra",
+      "displayName": "Palabra",
+      "description": "Título comprable creado por owners",
+      "price": 200000000,
+      "emoji": "P",
+      "createdBy": "166164298780822"
     }
   ]
 }

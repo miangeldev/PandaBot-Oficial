@@ -1104,5 +1104,227 @@
     "content": "pq no eres como nuestro primer bot💔",
     "timestamp": 1764122431385,
     "status": "pending"
+  },
+  {
+    "id": 121,
+    "type": "sugerencia",
+    "senderJid": "60645256990926@lid",
+    "content": "Agreguen el título \"fantasmal\" y se conseguiría así: no escribir por una semana en el grupo",
+    "timestamp": 1764279755993,
+    "status": "pending"
+  },
+  {
+    "id": 122,
+    "type": "sugerencia",
+    "senderJid": "33677157355747@lid",
+    "content": "un ranking de las inversiones",
+    "timestamp": 1764279761926,
+    "status": "replied",
+    "reply": "no entiendo a qué te refieres",
+    "replyTimestamp": 1764279881582
+  },
+  {
+    "id": 123,
+    "type": "sugerencia",
+    "senderJid": "33677157355747@lid",
+    "content": "añadir una especie de banco q haiga q hackearlo para robar pandacoins para q no te roben",
+    "timestamp": 1764279986320,
+    "status": "pending"
+  },
+  {
+    "id": 124,
+    "type": "sugerencia",
+    "senderJid": "34622859714@s.whatsapp.net",
+    "content": "osea al q le haya ido mejor en las inversiones",
+    "timestamp": 1764280061903,
+    "status": "replied",
+    "reply": "mmm puede ser",
+    "replyTimestamp": 1764280098438
+  },
+  {
+    "id": 125,
+    "type": "sugerencia",
+    "senderJid": "34622859714@s.whatsapp.net",
+    "content": "osea al q le haya ido mejor en las inversiones",
+    "timestamp": 1764280065304,
+    "status": "pending"
+  },
+  {
+    "id": 126,
+    "type": "sugerencia",
+    "senderJid": "125675138736203@lid",
+    "content": "me la pueden comer todos",
+    "timestamp": 1764280156265,
+    "status": "pending"
+  },
+  {
+    "id": 127,
+    "type": "sugerencia",
+    "senderJid": "254808061665486@lid",
+    "content": "que a los nuevos le den un poco de tutorial",
+    "timestamp": 1764280230466,
+    "status": "replied",
+    "reply": "cómo sería el tutorial y donde lo ponemos?",
+    "replyTimestamp": 1764280282801
+  },
+  {
+    "id": 128,
+    "type": "sugerencia",
+    "senderJid": "99561821479092@lid",
+    "content": "comando para top grupal de pandacoins",
+    "timestamp": 1764280250467,
+    "status": "pending"
+  },
+  {
+    "id": 129,
+    "type": "sugerencia",
+    "senderJid": "270575020863689@lid",
+    "content": "pongan una ruleta mágica con ps y coins para q los usuarios no estén pobres",
+    "timestamp": 1764280292350,
+    "status": "replied",
+    "reply": "como que pobres amigo si la plata sobra en el bot",
+    "replyTimestamp": 1764280338599
+  },
+  {
+    "id": 130,
+    "type": "sugerencia",
+    "senderJid": "34622859714@s.whatsapp.net",
+    "content": "crear una ciudad estilo ma pizzería q te genere pandacoins y tienes q manejar impuestos etc... Y si lo haces mal la gente se revela y pierdes tus pandacoins",
+    "timestamp": 1764280508771,
+    "status": "pending"
+  },
+  {
+    "id": 131,
+    "type": "sugerencia",
+    "senderJid": "60645256990926@lid",
+    "content": "hacer un nuevo comando .removebg, el usuario manda una imagen y el bot le devuelve la imagen sin fondo",
+    "timestamp": 1764280580339,
+    "status": "pending"
+  },
+  {
+    "id": 132,
+    "type": "sugerencia",
+    "senderJid": "60645256990926@lid",
+    "content": "nuevo comando .tr que traduce cualquier mensaje de cualquier idioma en español",
+    "timestamp": 1764280635132,
+    "status": "pending"
+  },
+  {
+    "id": 133,
+    "type": "sugerencia",
+    "senderJid": "228260516507722@lid",
+    "content": "sugiero El Truco es un juego de cartas Objetivo del juego: El objetivo es ganar puntos jugando cartas y haciendo apuestas. Número de jugadores: 2-4 jugadores. Mecanica del juego 1. Reparto de cartas:Se reparten 3 cartas a cada jugador. 2. Apuestas:Los jugadores pueden apostar puntos (tantos) en cada ronda. 3. Juego de cartas: Los jugadores juegan cartas en orden, intentando ganar la mano. 4. Truco:Un jugador puede cantar \"Truco\" para desafiar a los demás a subir la apuesta. 5. Puntos: Se otorgan puntos al jugador que gana la mano o al que acepta el Truco. Comandos posibles: .truco iniciar .truco desafiar -- jugar [carta]: Juega una carta de tu mano. - !apuesta [plata]*: Apuesta puntos en la ronda actual. - .truco*: Canta Truco para desafiar a los demás. - .acepto: Acepta el Truco. - .no acepto: Rechaza el Truco. .envido .envido aceptar .envido rechazar .real envido .real envido rechazar .real envido aceptar .falta envido .falta envido aceptar .falta envido rechazar Reglas adicionales: - Se puede agregar un sistema de \"envido\" para agregar complejidad al juego. - Se puede implementar un sistema de puntuación para llevar la cuenta de los puntos. Las cartas se pueden dar como en el impostor que te llega un mensaje al privado",
+    "timestamp": 1764280637110,
+    "status": "pending"
+  },
+  {
+    "id": 134,
+    "type": "sugerencia",
+    "senderJid": "60645256990926@lid",
+    "content": "hacer un comando .toaudio que convierta texto a audio",
+    "timestamp": 1764280699142,
+    "status": "pending"
+  },
+  {
+    "id": 135,
+    "type": "sugerencia",
+    "senderJid": "60645256990926@lid",
+    "content": "Agreguen un comando con calculadora .c (operacion)",
+    "timestamp": 1764280795095,
+    "status": "replied",
+    "reply": "ya me pongo a hacerlo",
+    "replyTimestamp": 1764280843597
+  },
+  {
+    "id": 136,
+    "type": "sugerencia",
+    "senderJid": "60645256990926@lid",
+    "content": "nuevo comando para los admins .spam borra los últimos 20 mensajes",
+    "timestamp": 1764280828377,
+    "status": "replied",
+    "reply": "innecesario",
+    "replyTimestamp": 1764280853495
+  },
+  {
+    "id": 137,
+    "type": "sugerencia",
+    "senderJid": "60645256990926@lid",
+    "content": "nuevo comando .invertir invierte los colores de una imagen",
+    "timestamp": 1764280904736,
+    "status": "pending"
+  },
+  {
+    "id": 138,
+    "type": "sugerencia",
+    "senderJid": "60645256990926@lid",
+    "content": "nuevo comando .collage con varias fotos pandabot hace un collage 2x2 o 3x3",
+    "timestamp": 1764281122430,
+    "status": "pending"
+  },
+  {
+    "id": 139,
+    "type": "sugerencia",
+    "senderJid": "60645256990926@lid",
+    "content": "comando nuevo .duelo en donde hacen un 1v1 con personajes o no se mrd",
+    "timestamp": 1764281218755,
+    "status": "pending"
+  },
+  {
+    "id": 140,
+    "type": "sugerencia",
+    "senderJid": "228260516507722@lid",
+    "content": "El truco Comandos posibles: .truco iniciar .truco desafiar Las cartas se podrían dividir por coordenadas como .tirar lejos (la carta de la derecha) .tirar medio (la carta del medio) .tirar cerca ( la carta de la izquierda) (Todo esto te llegaría al priv) .apuesta (dinero) .acepto .no acepto .envido .envido aceptar .envido rechazar .real envido .real envido rechazar .real envido aceptar .falta envido .falta envido aceptar .falta envido rechazar Las cartas se pueden dar como en el impostor que te llega un mensaje al privado",
+    "timestamp": 1764281244812,
+    "status": "pending"
+  },
+  {
+    "id": 141,
+    "type": "sugerencia",
+    "senderJid": "33677157355747@lid",
+    "content": "piedra papel y tijeras",
+    "timestamp": 1764281253703,
+    "status": "pending"
+  },
+  {
+    "id": 142,
+    "type": "sugerencia",
+    "senderJid": "60645256990926@lid",
+    "content": "nuevo comando ❗️.confesión o .anónimo se le envía al privado a pandabot un mensaje y el mismo lo reenvia al grupo sin decir la identidad",
+    "timestamp": 1764282451909,
+    "status": "pending"
+  },
+  {
+    "id": 143,
+    "type": "sugerencia",
+    "senderJid": "157243618136231@lid",
+    "content": "que le den un tipo de recompensa a los primeros 3 clanes y que con esas \"fichas\" puedas reclamar o pandacoins, ps o lo que sea",
+    "timestamp": 1764282524141,
+    "status": "pending"
+  },
+  {
+    "id": 144,
+    "type": "sugerencia",
+    "senderJid": "34617215765@s.whatsapp.net",
+    "content": "que por ejemplo cuando alguien añada al bot salga el tutorial pero que haya un apartado con todo lo del bot (chat, inversiones y todo eso) y cuando alguien se una a uno de esos grupos le salga un tutorial muy sencillo para que pueda entender todo",
+    "timestamp": 1764282534627,
+    "status": "pending"
+  },
+  {
+    "id": 145,
+    "type": "sugerencia",
+    "senderJid": "35610177859722@lid",
+    "content": "has un Buy con los diamantes q salen en superminar nadie sabe su utilidad, como unos potenciadores de 2h de en la moneda q uno invirtió suba un poco o no se, algo se te pueda ocurrir Pero q sean de utilidad esos diamantes",
+    "timestamp": 1764375377808,
+    "status": "replied",
+    "reply": "muchas gracias Oscar, lo tendré en cuenta. Usa el código que te voy a pasar por privado para reclamar una recompensa.",
+    "replyTimestamp": 1764379467460
+  },
+  {
+    "id": 146,
+    "type": "sugerencia",
+    "senderJid": "17514994090156@lid",
+    "content": "Devuelvan al ruleta rusa",
+    "timestamp": 1764733025456,
+    "status": "pending"
   }
 ]

@@ -1,145 +1,9 @@
 {
   "codes": {
-    "1234": {
-      "recompensa": 500000000,
-      "usosMaximos": 100,
-      "usosActuales": 0,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-20T01:22:11.318Z",
-      "activo": true
-    },
-    "2013": {
-      "recompensa": 500000000,
-      "usosMaximos": 100,
-      "usosActuales": 6,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-20T00:30:56.602Z",
-      "activo": true
-    },
-    "2025": {
-      "recompensa": -1000000000,
-      "usosMaximos": 100,
-      "usosActuales": 0,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-21T01:34:15.022Z",
-      "activo": true
-    },
-    "1022011": {
-      "recompensa": 10999999999,
-      "usosMaximos": 100,
-      "usosActuales": 0,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-20T00:33:56.321Z",
-      "activo": true
-    },
-    "BIENVENIDA": {
-      "recompensa": 10000,
-      "usosMaximos": 100,
-      "usosActuales": 2,
-      "creadoPor": "owner",
-      "fechaCreacion": "2024-01-01T00:00:00.000Z",
-      "activo": true
-    },
-    "LEGENDARIO": {
-      "recompensa": 50000,
-      "usosMaximos": 50,
-      "usosActuales": 1,
-      "creadoPor": "owner",
-      "fechaCreacion": "2024-01-01T00:00:00.000Z",
-      "activo": true
-    },
-    "PANDABOT": {
-      "recompensa": 1000000,
-      "usosMaximos": 100,
-      "usosActuales": 24,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-19T22:56:57.491Z",
-      "activo": true
-    },
-    "PENE": {
-      "recompensa": 10000000,
-      "usosMaximos": 100,
-      "usosActuales": 20,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-19T23:00:36.356Z",
-      "activo": true
-    },
-    "LUKAS": {
-      "recompensa": 50000000,
-      "usosMaximos": 100,
-      "usosActuales": 20,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-19T23:01:16.040Z",
-      "activo": true
-    },
-    "BATHBOT": {
-      "recompensa": 50000000,
-      "usosMaximos": 100,
-      "usosActuales": 10,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-19T23:01:24.481Z",
-      "activo": true
-    },
-    "DILDO": {
-      "recompensa": 50000000,
-      "usosMaximos": 100,
-      "usosActuales": 11,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-19T23:01:33.675Z",
-      "activo": true
-    },
-    "GRR": {
-      "recompensa": 50000000,
-      "usosMaximos": 100,
-      "usosActuales": 0,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-19T23:01:47.227Z",
-      "activo": true
-    },
-    "MIGUELITO": {
-      "recompensa": 50000000,
-      "usosMaximos": 100,
-      "usosActuales": 17,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-20T00:21:10.555Z",
-      "activo": true
-    },
-    "TRALALERO": {
-      "recompensa": 50000000,
-      "usosMaximos": 100,
-      "usosActuales": 10,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-20T00:21:31.117Z",
-      "activo": true
-    },
-    "TUNG": {
-      "recompensa": 50000000,
-      "usosMaximos": 100,
-      "usosActuales": 0,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-20T00:21:46.007Z",
-      "activo": true
-    },
-    "SKIBIDI": {
-      "recompensa": 50000000,
-      "usosMaximos": 100,
-      "usosActuales": 14,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-20T00:22:14.134Z",
-      "activo": true
-    },
-    "MINAR": {
-      "recompensa": 50000000,
-      "usosMaximos": 100,
-      "usosActuales": 0,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-20T00:22:33.971Z",
-      "activo": true
-    },
     "CODIGO": {
       "recompensa": 50000000,
       "usosMaximos": 100,
-      "usosActuales": 9,
+      "usosActuales": 10,
       "creadoPor": "+166164298780822",
       "fechaCreacion": "2025-11-20T00:22:50.523Z",
       "activo": true
@@ -163,7 +27,7 @@
     "PORNO": {
       "recompensa": 300000000,
       "usosMaximos": 100,
-      "usosActuales": 16,
+      "usosActuales": 19,
       "creadoPor": "+166164298780822",
       "fechaCreacion": "2025-11-20T00:27:06.218Z",
       "activo": true
@@ -219,7 +83,7 @@
     "CP": {
       "recompensa": 500000000,
       "usosMaximos": 100,
-      "usosActuales": 10,
+      "usosActuales": 13,
       "creadoPor": "+166164298780822",
       "fechaCreacion": "2025-11-20T00:30:42.831Z",
       "activo": true
@@ -262,22 +126,6 @@
       "usosActuales": 1,
       "creadoPor": "+166164298780822",
       "fechaCreacion": "2025-11-20T00:32:28.789Z",
-      "activo": true
-    },
-    "SAI": {
-      "recompensa": 10000000000,
-      "usosMaximos": 100,
-      "usosActuales": 18,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-20T00:36:00.621Z",
-      "activo": true
-    },
-    "MALE": {
-      "recompensa": 10000000000,
-      "usosMaximos": 100,
-      "usosActuales": 18,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-20T00:36:23.769Z",
       "activo": true
     },
     "SALSA": {
@@ -603,7 +451,7 @@
     "AYUDA": {
       "recompensa": 500000000,
       "usosMaximos": 100,
-      "usosActuales": 9,
+      "usosActuales": 10,
       "creadoPor": "+12833748193431",
       "fechaCreacion": "2025-11-20T02:31:41.870Z",
       "activo": true
@@ -783,14 +631,6 @@
       "creadoPor": "+166164298780822",
       "fechaCreacion": "2025-11-25T01:13:33.961Z",
       "activo": true
-    },
-    "LAVIEJACONFIABLE": {
-      "recompensa": 10000000000,
-      "usosMaximos": 9,
-      "usosActuales": 6,
-      "creadoPor": "+166164298780822",
-      "fechaCreacion": "2025-11-25T20:25:36.902Z",
-      "activo": true
     }
   },
   "usuariosCanjeados": {
@@ -859,7 +699,8 @@
       "FUTBOL",
       "PORNO",
       "PENE",
-      "VIP"
+      "VIP",
+      "MIGUELITO2"
     ],
     "31976551628967@lid": [
       "PANDABOT"
@@ -868,7 +709,8 @@
       "PANDABOT"
     ],
     "119769508376657@lid": [
-      "PANDABOT"
+      "PANDABOT",
+      "MIGUELITO2"
     ],
     "99561821479092@lid": [
       "PANDABOT",
@@ -902,7 +744,8 @@
       "UH",
       "MIAU",
       "FANTASMAL",
-      "LAVIEJACONFIABLE"
+      "LAVIEJACONFIABLE",
+      "MIGUELITO2"
     ],
     "125675138736203@lid": [
       "LUKAS",
@@ -945,7 +788,9 @@
       "BATHBOT",
       "FANTASMAL",
       "MIAU",
-      "BIENVENIDA"
+      "BIENVENIDA",
+      "XXXX-XXXX",
+      "MIGUELITO2"
     ],
     "236536851361948@lid": [
       "LUKAS",
@@ -998,7 +843,9 @@
       "TRALALERO",
       "VIP",
       "MIAU",
-      "TERMUX"
+      "TERMUX",
+      "FOROSCAR",
+      "XXXX-XXXX"
     ],
     "31366532055076@lid": [
       "HARRY",
@@ -1124,7 +971,9 @@
       "PENDEJOS",
       "UH",
       "TERMUX",
-      "MIGUELITO"
+      "MIGUELITO",
+      "XXXX-XXXX",
+      "MIGUELITO2"
     ],
     "92977468833839@lid": [
       "PENE",
@@ -1154,7 +1003,8 @@
       "ESPAÑA",
       "HENTAI",
       "ARGENTINA",
-      "TERMUX"
+      "TERMUX",
+      "SAI"
     ],
     "166164298780822@lid": [
       "TANQUE",
@@ -1189,10 +1039,12 @@
       "SAI",
       "GD",
       "67",
-      "TERMUX"
+      "TERMUX",
+      "AYUDA"
     ],
     "82867669438579@lid": [
-      "SAI"
+      "SAI",
+      "CODIGO"
     ],
     "21569980072176@lid": [
       "SAI",
@@ -1240,7 +1092,8 @@
       "SENDER"
     ],
     "120363402403091432@g.us": [
-      "TERMUX"
+      "TERMUX",
+      "CP"
     ],
     "214461239546098@lid": [
       "SAI",
@@ -1253,7 +1106,8 @@
       "KIT",
       "SKIBIDI",
       "HARRY",
-      "AYUDA"
+      "AYUDA",
+      "XXXX-XXXX"
     ],
     "24507603505309@lid": [
       "UH"
@@ -1283,7 +1137,9 @@
       "BATHBOT",
       "HARRY",
       "LOLA",
-      "OWNERS"
+      "OWNERS",
+      "XXXX-XXXX",
+      "MIGUELITO2"
     ],
     "117901247918201@lid": [
       "SAI",
@@ -1318,13 +1174,16 @@
       "MALE",
       "HARRY",
       "OWNERS",
-      "AYUDA"
+      "AYUDA",
+      "CP"
     ],
     "66787295129695@lid": [
       "AÑONUEVO",
       "LAVIEJACONFIABLE",
       "AYUDA",
-      "TERMUX"
+      "TERMUX",
+      "PORNO",
+      "MIGUELITO2"
     ],
     "175763332591625@lid": [
       "KIT",
@@ -1348,6 +1207,23 @@
       "HARRY",
       "TERMUX",
       "LOLA"
+    ],
+    "254808061665486@lid": [
+      "CP",
+      "PORNO"
+    ],
+    "33677157355747@lid": [
+      "PORNO",
+      "MIGUELITO2"
+    ],
+    "34617215765@s.whatsapp.net": [
+      "BIENVENIDA"
+    ],
+    "126014944481374@lid": [
+      "MIGUELITO2"
+    ],
+    "109723999285363@lid": [
+      "MIGUELITO2"
     ]
   }
 }
