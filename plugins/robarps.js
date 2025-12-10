@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { ownerNumber } from '../config.js';
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
+import { puedeRobar, puedeSerRobado, registrarRoboPrevenido } from '../plugins/afk.js';
 
 const data = JSON.parse(fs.readFileSync('./data/personajes.json', 'utf8'));
 const personajes = data.characters;
@@ -12,6 +13,15 @@ export async function run(sock, msg, args) {
   const sender = msg.key.participant || msg.key.remoteJid;
   const senderId = sender.split('@')[0];
   const esOwner = ownerNumber.includes(`+${senderId}`);
+
+  if (!puedeRobar(sender)) {
+    return await sock.sendMessage(from, {
+      text: `❌ No puedes robar personajes mientras estás en modo AFK.\n\n` +
+            `🔒 Tu protección AFK está activa.\n` +
+            `💎 Para desactivar: .afk off\n` +
+            `📊 Ver tu estado: .afk estado`
+    }, { quoted: msg });
+  }
 
   const db = cargarDatabase();
   db.users = db.users || {};
@@ -43,6 +53,7 @@ export async function run(sock, msg, args) {
 
   let success = false;
   let robado = null;
+  let mencionado = null;
 
   if (args[0].toLowerCase() === 'lista') {
     const chance = Math.random();
@@ -59,13 +70,27 @@ export async function run(sock, msg, args) {
       }
     }
   } else {
-    const mentioned = msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.[0];
-    if (!mentioned) {
+    mencionado = msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.[0];
+    if (!mencionado) {
       await sock.sendMessage(from, { text: '❌ Debes mencionar al usuario al que quieres robar.' });
       return;
     }
 
-    const target = db.users[mentioned];
+    if (!puedeSerRobado(mencionado)) {
+      registrarRoboPrevenido(mencionado);
+      
+      return await sock.sendMessage(from, {
+        text: `🛡️ *PROTECCIÓN AFK ACTIVA*\n\n` +
+              `No puedes robar personajes a @${mencionado.split('@')[0]} porque está en modo AFK.\n\n` +
+              `🔒 *Protección VIP activa*\n` +
+              `🎭 Personajes protegidos\n` +
+              `💰 Pandacoins protegidos\n\n` +
+              `💎 El modo AFK es una protección exclusiva para usuarios VIP.`,
+        mentions: [mencionado]
+      }, { quoted: msg });
+    }
+
+    const target = db.users[mencionado];
     if (!target || !target.personajes || target.personajes.length === 0) {
       await sock.sendMessage(from, { text: '❌ El usuario mencionado no tiene personajes para robar.' });
       return;
@@ -98,8 +123,22 @@ export async function run(sock, msg, args) {
   guardarDatabase(db);
 
   if (success) {
-    await sock.sendMessage(from, { text: `✅ ¡Robaste con éxito a *${robado}*!` });
+    if (args[0].toLowerCase() === 'lista') {
+      await sock.sendMessage(from, { text: `✅ ¡Robaste con éxito a *${robado}* de la lista global!` });
+    } else {
+      await sock.sendMessage(from, { 
+        text: `✅ ¡Robaste con éxito a *${robado}* de @${mencionado.split('@')[0]}!`,
+        mentions: [mencionado]
+      });
+    }
   } else {
-    await sock.sendMessage(from, { text: '❌ El robo falló. Mejor suerte la próxima vez.' });
+    if (args[0].toLowerCase() === 'lista') {
+      await sock.sendMessage(from, { text: '❌ El robo de la lista global falló. Mejor suerte la próxima vez.' });
+    } else {
+      await sock.sendMessage(from, { 
+        text: `❌ El robo a @${mencionado.split('@')[0]} falló. Mejor suerte la próxima vez.`,
+        mentions: [mencionado]
+      });
+    }
   }
 }

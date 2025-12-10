@@ -66,7 +66,7 @@ const probBase = {
     '💀': 0.00025,
     '🌮': 0.00075,
     '💧': 0.0009,
-    '💤': 0.08,
+    '💤': 0.005,
     '💩': 0.0001,
     '🦆': 0.0003,
     '🎄': 0.00008,
@@ -362,7 +362,7 @@ export async function run(sock, msg, args) {
             return;
         } else {
             // Compra simple (código original)
-            const price = 3000000000;
+            const price = 300000;
             if (!consumirStock('xmas lucky block')) {
                 await sock.sendMessage(from, { text: `❌ El 🎄 *Xmas Lucky Block* está agotado.` }, { quoted: msg });
                 return;

@@ -3,6 +3,7 @@ import { isVip } from '../utils/vip.js';
 import { trackRoboExitoso, trackRoboFallido, checkSpecialAchievements } from '../middleware/trackAchievements.js';
 import { initializeAchievements } from '../data/achievementsDB.js';
 import { ownerNumber } from '../config.js';
+import { puedeRobar, puedeSerRobado, registrarRoboPrevenido } from '../plugins/afk.js';
 
 const cooldowns = {};
 
@@ -13,7 +14,7 @@ export async function run(sock, msg, args) {
   const sender = msg.key.participant || msg.key.remoteJid;
   const senderNumber = (msg.key.participant || msg.key.remoteJid).split('@')[0];
   const now = Date.now();
-  const COOLDOWN_MS = 5 * 60 * 1000; // 5 minutos reducido
+  const COOLDOWN_MS = 5 * 60 * 1000; // 5 minutos
 
   if (cooldowns[sender] && now - cooldowns[sender] < COOLDOWN_MS) {
     const restante = COOLDOWN_MS - (now - cooldowns[sender]);
@@ -25,22 +26,80 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  const contextInfo = msg.message?.extendedTextMessage?.contextInfo;
-  const mencionado = msg.mentionedJid?.[0] || contextInfo?.mentionedJid?.[0];
+  if (!puedeRobar(sender)) {
+    return await sock.sendMessage(from, {
+      text: `❌ No puedes robar mientras estás en modo AFK.\n\n` +
+            `🔒 Tu protección AFK está activa.\n` +
+            `💎 Para desactivar y poder robar: .afk off\n` +
+            `📊 Ver tu estado: .afk estado`
+    }, { quoted: msg });
+  }
+
+  let mencionado = null;
+  
+  if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.[0]) {
+    mencionado = msg.message.extendedTextMessage.contextInfo.mentionedJid[0];
+  }
+  else if (msg.message?.extendedTextMessage?.contextInfo?.mentionedJid) {
+    const menciones = msg.message.extendedTextMessage.contextInfo.mentionedJid;
+    if (menciones.length > 0) {
+      mencionado = menciones[0];
+    }
+  }
+  else if (msg.message?.extendedTextMessage?.contextInfo?.quotedMessage) {
+    const quotedParticipant = msg.message.extendedTextMessage.contextInfo.participant;
+    if (quotedParticipant && quotedParticipant !== sender) {
+      mencionado = quotedParticipant;
+    }
+  }
+  else if (args.length > 0) {
+    const mentionedJid = msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.[0];
+    if (mentionedJid) {
+      mencionado = mentionedJid;
+    }
+  }
 
   if (!mencionado || mencionado === sender) {
     await sock.sendMessage(from, {
-      text: `❌ Especifica a quién le quieres robar usando una mención.`,
+      text: `❌ Debes mencionar a alguien para robarle.\n\n💡 *Formas de usar:*\n1. .robar @usuario\n2. Responder a un mensaje con .robar\n3. .robar (mencionando en el texto)`,
     }, { quoted: msg });
     return;
   }
 
+  if (!puedeSerRobado(mencionado)) {
+    registrarRoboPrevenido(mencionado);
+    
+    return await sock.sendMessage(from, {
+      text: `🛡️ *PROTECCIÓN AFK ACTIVA*\n\n` +
+            `No puedes robar a @${mencionado.split('@')[0]} porque está en modo AFK.\n\n` +
+            `🔒 *Protección VIP activa*\n` +
+            `💰 Pandacoins protegidos\n` +
+            `🎭 Personajes protegidos\n\n` +
+            `💎 El modo AFK es una protección exclusiva para usuarios VIP.`,
+      mentions: [mencionado]
+    }, { quoted: msg });
+  }
+
   const db = cargarDatabase();
-  db.users = db.users || {};
-  db.users[sender] = db.users[sender] || { pandacoins: 0 };
-  db.users[mencionado] = db.users[mencionado] || { pandacoins: 0 };
   
-  // ✅ Inicializar achievements si no existen
+  if (!db.users) db.users = {};
+  
+  if (!db.users[sender]) {
+    db.users[sender] = { 
+      pandacoins: 0,
+      robos: { exitosos: 0, fallidos: 0 },
+      achievements: {}
+    };
+  }
+  
+  if (!db.users[mencionado]) {
+    db.users[mencionado] = { 
+      pandacoins: 0,
+      robos: { exitosos: 0, fallidos: 0 },
+      achievements: {}
+    };
+  }
+
   if (!db.users[sender].achievements) {
     initializeAchievements(sender);
   }
@@ -48,41 +107,35 @@ export async function run(sock, msg, args) {
   const atacante = db.users[sender];
   const victima = db.users[mencionado];
 
-  // ✅ CORREGIDO: Inicializar contador de robos SIN SOBREESCRIBIR
   if (!atacante.robos) {
     atacante.robos = { exitosos: 0, fallidos: 0 };
   }
 
-  // Verificar si el atacante es el owner
   const esOwner = ownerNumber.includes('+' + senderNumber);
   const vip = isVip(sender);
-  
-  // Calcular probabilidad de éxito según el tipo de usuario
+
   let probabilidadExito;
-  let tipoUsuario = '';
-  
   if (esOwner) {
-    probabilidadExito = 0.99; // 99% para owner
-    tipoUsuario = 'OWNER';
+    probabilidadExito = 0.99;
   } else if (vip) {
-    probabilidadExito = 0.7; // 70% para VIP
-    tipoUsuario = 'VIP';
+    probabilidadExito = 0.7;
   } else {
-    probabilidadExito = 0.5; // 50% para normal
-    tipoUsuario = 'NORMAL';
+    probabilidadExito = 0.5;
   }
 
   const resultado = Math.random() < probabilidadExito;
 
-  // Calcular cantidad a robar (hasta 10% del total de la víctima)
   const maximoRobo = Math.floor(victima.pandacoins * 0.10);
   const cantidad = Math.floor(Math.random() * maximoRobo) + 1;
 
   let texto = '';
+  let robosExitososPrevios = atacante.robos.exitosos || 0;
+  let robosFallidosPrevios = atacante.robos.fallidos || 0;
+  let nuevoLogro = false;
+
   if (resultado) {
     const robado = Math.min(cantidad, victima.pandacoins);
-    
-    // Verificar que la víctima tenga suficientes pandacoins
+
     if (victima.pandacoins <= 0 || robado <= 0) {
       await sock.sendMessage(from, {
         text: `❌ @${mencionado.split('@')[0]} no tiene suficientes pandacoins para robar.`,
@@ -94,14 +147,13 @@ export async function run(sock, msg, args) {
     atacante.pandacoins += robado;
     victima.pandacoins -= robado;
     
-    // ✅ CORREGIDO: Incrementar contador existente
-    atacante.robos.exitosos = (atacante.robos.exitosos || 0) + 1;
-    
+    atacante.robos.exitosos = robosExitososPrevios + 1;
+
     texto = `🕵️‍♂️ *Robo exitoso*\n\n`;
     texto += `@${sender.split('@')[0]} robó *${robado.toLocaleString()} pandacoins* a @${mencionado.split('@')[0]}.\n`;
     texto += `💰 Máximo posible: ${maximoRobo.toLocaleString()} (10% del total)\n`;
-    texto += `📊 Robos exitosos: ${atacante.robos.exitosos}\n`;
-    
+    texto += `📊 Robos exitosos totales: ${atacante.robos.exitosos}\n`;
+
     if (esOwner) {
       texto += '👑 *OWNER DEL BOT* - 99% de probabilidad (prioridad máxima)\n';
     } else if (vip) {
@@ -109,24 +161,24 @@ export async function run(sock, msg, args) {
     } else {
       texto += '🎲 *Usuario normal* - 50% de probabilidad\n';
     }
+
+    if (robosExitososPrevios === 0) {
+      nuevoLogro = true;
+    }
     
-    // ✅ Trackear robo exitoso
-    trackRoboExitoso(sender, sock, from);
   } else {
-    // Calcular multa (hasta 5% de los pandacoins del atacante)
-    const maximoMulta = Math.floor(atacante.pandacoins * 0.05);
+    const maximoMulta = Math.floor(atacante.pandacoins * 0.1);
     const perdido = Math.floor(Math.random() * maximoMulta) + 1;
-    
+
     atacante.pandacoins = Math.max(0, atacante.pandacoins - perdido);
     
-    // ✅ CORREGIDO: Incrementar contador existente
-    atacante.robos.fallidos = (atacante.robos.fallidos || 0) + 1;
-    
+    atacante.robos.fallidos = robosFallidosPrevios + 1;
+
     texto = `🚨 *Robo fallido*\n\n`;
     texto += `La policía atrapó a @${sender.split('@')[0]} intentando robar a @${mencionado.split('@')[0]}.\n`;
     texto += `💸 Multa: *${perdido.toLocaleString()} pandacoins*\n`;
-    texto += `📊 Robos fallidos: ${atacante.robos.fallidos}\n`;
-    
+    texto += `📊 Robos fallidos totales: ${atacante.robos.fallidos}\n`;
+
     if (esOwner) {
       texto += '👑 *OWNER DEL BOT* - Aunque tenías 99% de probabilidad, fuiste el 1% desafortunado\n';
     } else if (vip) {
@@ -134,12 +186,10 @@ export async function run(sock, msg, args) {
     } else {
       texto += '🎲 *Usuario normal* - 50% de probabilidad de fallar\n';
     }
-    
-    // ✅ Trackear robo fallido
-    trackRoboFallido(sender, sock, from);
   }
 
   guardarDatabase(db);
+  
   cooldowns[sender] = now;
 
   await sock.sendMessage(from, {
@@ -147,6 +197,23 @@ export async function run(sock, msg, args) {
     mentions: [sender, mencionado],
   }, { quoted: msg });
 
-  // ✅ Verificar logros especiales
-  checkSpecialAchievements(sender, sock, from);
+  if (resultado && robosExitososPrevios === 0) {
+    await sock.sendMessage(from, {
+      text: `🎉 *¡LOGRO DESBLOQUEADO!*\n🏆 *Primer robo exitoso*\n✨ Has completado tu primer robo exitoso. ¡Sigue así!\n\n💎 Recompensa: +100 pandacoins`,
+      mentions: [sender]
+    });
+    
+    atacante.pandacoins += 100;
+    guardarDatabase(db);
+  }
+
+  try {
+    if (resultado) {
+      trackRoboExitoso(sender, sock, from, atacante.robos.exitosos);
+    } else {
+      trackRoboFallido(sender, sock, from, atacante.robos.fallidos);
+    }
+  } catch (error) {
+    console.log(`⚠️ Error en tracking de robos: ${error.message}`);
+  }
 }

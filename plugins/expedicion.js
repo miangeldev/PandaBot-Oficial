@@ -12,9 +12,9 @@ const CONFIG_EXPEDICION = {
         'épico': 3 * 60 * 60 * 1000,           // 4 horas
         'mítico': 3 * 60 * 60 * 1000,          // 8 horas
         'legendario': 4 * 60 * 60 * 1000,     // 12 horas
-        'Ultra-Legendario': 4 * 60 * 60 * 1000, // 18 horas
-        'Secret': 6 * 60 * 60 * 1000,         // 24 horas
-        'OG': 6 * 60 * 60 * 1000,             // 36 horas
+        'Ultra-Legendario': 2 * 60 * 60 * 1000, // 9 horas
+        'Secret': 2 * 60 * 60 * 1000,         // 8 horas
+        'OG': 3 * 60 * 60 * 1000,             // 18 horas
         'custom': 6 * 60 * 60 * 1000           // 6 horas (por defecto)
     },
     recompensas: {
@@ -22,11 +22,11 @@ const CONFIG_EXPEDICION = {
         'raro': { monedas: 1000, probabilidadEfecto: 0.03, probabilidadItem: 0.01 },
         'épico': { monedas: 1500, probabilidadEfecto: 0.08, probabilidadItem: 0.02 },
         'mítico': { monedas: 2000, probabilidadEfecto: 0.15, probabilidadItem: 0.04 },
-        'legendario': { monedas: 2500, probabilidadEfecto: 0.25, probabilidadItem: 0.08 },
-        'Ultra-Legendario': { monedas: 3000, probabilidadEfecto: 0.35, probabilidadItem: 0.15 },
-        'Secret': { monedas: 3500, probabilidadEfecto: 0.50, probabilidadItem: 0.25 },
-        'OG': { monedas: 4000, probabilidadEfecto: 0.75, probabilidadItem: 0.40 },
-        'GOD': { monedas: 4500, probabilidadEfecto: 0.8, probabilidadItem: 0.40 },
+        'legendario': { monedas: 5000, probabilidadEfecto: 0.25, probabilidadItem: 0.08 },
+        'Ultra-Legendario': { monedas: 15000, probabilidadEfecto: 0.35, probabilidadItem: 0.15 },
+        'Secret': { monedas: 200000, probabilidadEfecto: 0.50, probabilidadItem: 0.25 },
+        'OG': { monedas: 400000, probabilidadEfecto: 0.75, probabilidadItem: 0.40 },
+        'GOD': { monedas: 450000, probabilidadEfecto: 0.8, probabilidadItem: 0.40 },
         'custom': { monedas: 3500, probabilidadEfecto: 0.05, probabilidadItem: 0.02 }
     },
     itemsEspeciales: {

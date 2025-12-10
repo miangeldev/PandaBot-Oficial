@@ -1,9 +1,18 @@
 import fs from 'fs';
-
+import { ownerNumber } from '../config.js';
 export const command = 'menu';
 export const aliases = ['help', 'ayuda'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
+  const sender = msg.key.participant || msg.key.remoteJid;
+  const senderNumber = sender.split('@')[0];
+  const metadata = await sock.groupMetadata(from);
+  const isOwner = ownerNumber.includes(`+${senderNumber}`);
+
+  if (!isOwner) {
+    await sock.sendMessage(from, { text: '❌ Este comando se encuentra en remodelación, intenta otro día.' });
+    return;
+  }
 
   try {
     const pandaBotPhoto = 'http://localhost:8000/upload/file_0000000034d061f8a7a755cd2eebdbd6.png';

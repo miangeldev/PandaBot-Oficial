@@ -101,15 +101,15 @@
         "12833748193431@lid"
       ],
       "level": 1,
-      "exp": 20,
+      "exp": 85,
       "expToNextLevel": 100,
       "health": 65,
       "maxHealth": 65,
-      "happiness": 80,
-      "hunger": 35,
-      "energy": 100,
+      "happiness": 100,
+      "hunger": 0,
+      "energy": 90,
       "birthDate": "2025-12-03T20:01:08.583Z",
-      "lastInteraction": "2025-12-03T20:27:36.200Z",
+      "lastInteraction": "2025-12-07T02:55:44.438Z",
       "status": "awake",
       "location": "home",
       "inventory": {
@@ -117,8 +117,8 @@
         "toys": {}
       },
       "stats": {
-        "timesFed": 2,
-        "timesPlayed": 0,
+        "timesFed": 4,
+        "timesPlayed": 1,
         "timesWalked": 0,
         "timesSlept": 0,
         "totalExp": 0
@@ -163,16 +163,16 @@
         "97027992080542@lid"
       ],
       "level": 1,
-      "exp": 25,
+      "exp": 50,
       "expToNextLevel": 100,
       "health": 70,
       "maxHealth": 70,
       "happiness": 100,
-      "hunger": 50,
-      "energy": 85,
+      "hunger": 30,
+      "energy": 70,
       "birthDate": "2025-12-04T13:14:17.515Z",
-      "lastInteraction": "2025-12-04T13:42:07.602Z",
-      "status": "awake",
+      "lastInteraction": "2025-12-04T21:11:02.876Z",
+      "status": "sleeping",
       "location": "home",
       "inventory": {
         "food": {
@@ -181,8 +181,101 @@
         "toys": {}
       },
       "stats": {
+        "timesFed": 2,
+        "timesPlayed": 2,
+        "timesWalked": 0,
+        "timesSlept": 1,
+        "totalExp": 0
+      }
+    },
+    "pet_1764882672146_bkpzs122w": {
+      "id": "pet_1764882672146_bkpzs122w",
+      "name": "Brell",
+      "type": "wolf",
+      "owners": [
+        "31366532055076@lid"
+      ],
+      "level": 1,
+      "exp": 80,
+      "expToNextLevel": 100,
+      "health": 80,
+      "maxHealth": 80,
+      "happiness": 100,
+      "hunger": 0,
+      "energy": 45,
+      "birthDate": "2025-12-04T21:11:12.146Z",
+      "lastInteraction": "2025-12-07T18:38:59.370Z",
+      "status": "awake",
+      "location": "home",
+      "inventory": {
+        "food": {},
+        "toys": {}
+      },
+      "stats": {
+        "timesFed": 3,
+        "timesPlayed": 2,
+        "timesWalked": 1,
+        "timesSlept": 0,
+        "totalExp": 0
+      }
+    },
+    "pet_1764952178546_76ga24i85": {
+      "id": "pet_1764952178546_76ga24i85",
+      "name": "Brell",
+      "type": "bird",
+      "owners": [
+        "31366532055076@lid"
+      ],
+      "level": 1,
+      "exp": 0,
+      "expToNextLevel": 100,
+      "health": 55,
+      "maxHealth": 55,
+      "happiness": 75,
+      "hunger": 85,
+      "energy": 100,
+      "birthDate": "2025-12-05T16:29:38.546Z",
+      "lastInteraction": "2025-12-05T16:29:38.546Z",
+      "status": "awake",
+      "location": "home",
+      "inventory": {
+        "food": {},
+        "toys": {}
+      },
+      "stats": {
+        "timesFed": 0,
+        "timesPlayed": 0,
+        "timesWalked": 0,
+        "timesSlept": 0,
+        "totalExp": 0
+      }
+    },
+    "pet_1765076658650_nze0uuyyk": {
+      "id": "pet_1765076658650_nze0uuyyk",
+      "name": "revientatetas",
+      "type": "wolf",
+      "owners": [
+        "157243618136231@lid"
+      ],
+      "level": 1,
+      "exp": 10,
+      "expToNextLevel": 100,
+      "health": 80,
+      "maxHealth": 80,
+      "happiness": 80,
+      "hunger": 40,
+      "energy": 100,
+      "birthDate": "2025-12-07T03:04:18.650Z",
+      "lastInteraction": "2025-12-07T03:04:33.589Z",
+      "status": "awake",
+      "location": "home",
+      "inventory": {
+        "food": {},
+        "toys": {}
+      },
+      "stats": {
         "timesFed": 1,
-        "timesPlayed": 1,
+        "timesPlayed": 0,
         "timesWalked": 0,
         "timesSlept": 0,
         "totalExp": 0
@@ -240,19 +333,64 @@
       "status": "pending",
       "createdAt": "2025-12-04T00:41:05.543Z",
       "expiresAt": 1764895265543
+    },
+    "req_1764882784425": {
+      "id": "req_1764882784425",
+      "from": "31366532055076@lid",
+      "to": "97027992080542@lid",
+      "groupId": "120363402403091432@g.us",
+      "status": "pending",
+      "createdAt": "2025-12-04T21:13:04.425Z",
+      "expiresAt": 1764969184425
+    },
+    "req_1764882825000": {
+      "id": "req_1764882825000",
+      "from": "31366532055076@lid",
+      "to": "66787295129695@lid",
+      "groupId": "120363402403091432@g.us",
+      "status": "pending",
+      "createdAt": "2025-12-04T21:13:45.000Z",
+      "expiresAt": 1764969225000
     }
   },
   "petStats": {
-    "totalPets": 6,
+    "totalPets": 9,
     "totalCouples": 1,
     "topPets": [
       {
-        "id": "pet_1764791095251_vh0nudnp9",
-        "name": "Arisu",
-        "type": "rabbit",
+        "id": "pet_1764792068583_v27erqxkr",
+        "name": "Mochi",
+        "type": "fox",
+        "level": 1,
+        "owners": [
+          "12833748193431@lid"
+        ]
+      },
+      {
+        "id": "pet_1764808799638_ia1g3ah62",
+        "name": "Brell",
+        "type": "dragon",
         "level": 1,
         "owners": [
           "166164298780822@lid"
+        ]
+      },
+      {
+        "id": "pet_1764854057515_0jd34ef89",
+        "name": "El bicho mio",
+        "type": "cat",
+        "level": 1,
+        "owners": [
+          "97027992080542@lid"
+        ]
+      },
+      {
+        "id": "pet_1764882672146_bkpzs122w",
+        "name": "Brell",
+        "type": "wolf",
+        "level": 1,
+        "owners": [
+          "31366532055076@lid"
         ]
       },
       {
@@ -262,15 +400,6 @@
         "level": 1,
         "owners": [
           "260051814117536@lid"
-        ]
-      },
-      {
-        "id": "pet_1764792068583_v27erqxkr",
-        "name": "Mochi",
-        "type": "fox",
-        "level": 1,
-        "owners": [
-          "12833748193431@lid"
         ]
       },
       {
@@ -288,7 +417,6 @@
         "type": "dog",
         "level": 1,
         "owners": [
-          "166164298780822@lid",
           "111064062640327@lid"
         ]
       }

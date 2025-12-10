@@ -4,41 +4,41 @@ const tiposGranjas = {
   1: {
     nombre: "🌾 Granja Básica",
     nivel: 1,
-    costo: 50000,           // Antes: 1,000,000,000
-    produccionPorSegundo: 0.5,  // Antes: 1,000 por segundo (¡Demasiado!)
-    capacidad: 25000,       // Antes: 5,000,000
-    mejora: 1.3             // Mejora más conservadora
+    costo: 50000,
+    produccionPorSegundo: 0.5,
+    capacidad: 25000,
+    mejora: 1.3
   },
   2: {
     nombre: "🚜 Granja Avanzada",
     nivel: 1,
-    costo: 120000,          // Antes: 2,000,000,000
-    produccionPorSegundo: 1.2,  // Antes: 2,000
-    capacidad: 60000,       // Antes: 25,000,000
+    costo: 120000,
+    produccionPorSegundo: 1.2,
+    capacidad: 60000,
     mejora: 1.4
   },
   3: {
     nombre: "🏭 Fábrica de Monedas",
     nivel: 1,
-    costo: 300000,          // Antes: 5,000,000,000
-    produccionPorSegundo: 2.5,  // Antes: 3,000
-    capacidad: 150000,      // Antes: 100,000,000
+    costo: 300000,
+    produccionPorSegundo: 2.5,
+    capacidad: 150000,
     mejora: 1.5
   },
   4: {
     nombre: "💎 Mina de Diamantes",
     nivel: 1,
-    costo: 750000,          // Antes: 10,000,000,000
-    produccionPorSegundo: 4.5,  // Antes: 6,000
-    capacidad: 375000,      // Antes: 250,000,000
+    costo: 750000,
+    produccionPorSegundo: 4.5,
+    capacidad: 375000,
     mejora: 1.6
   },
   5: {
     nombre: "🚀 Centro Espacial",
     nivel: 1,
-    costo: 2000000,         // Antes: 25,000,000,000
-    produccionPorSegundo: 10,   // Antes: 25,000
-    capacidad: 1000000,     // Antes: 2,000,000,000
+    costo: 2000000,
+    produccionPorSegundo: 10,
+    capacidad: 1000000,
     mejora: 1.7
   }
 };
@@ -54,21 +54,21 @@ let activacionesGlobales = {
   mejorar_50: {
     activo: false,
     inicio: null,
-    duracion: 3 * 60 * 60 * 1000, // 3 horas
+    duracion: 3 * 60 * 60 * 1000,
     nombre: "⭐ MEJORA -50%",
     descripcion: "Precio de mejora reducido en 50%"
   },
   comprar_50: {
     activo: false,
     inicio: null,
-    duracion: 3 * 60 * 60 * 1000, // 3 horas
+    duracion: 3 * 60 * 60 * 1000,
     nombre: "🛒 COMPRA -50%",
     descripcion: "Precio de compra reducido en 50%"
   },
   capacidad_x2: {
     activo: false,
     inicio: null,
-    duracion: 24 * 60 * 60 * 1000, // 24 horas
+    duracion: 24 * 60 * 60 * 1000,
     nombre: "📦 CAPACIDAD x2",
     descripcion: "Capacidad de todas las granjas duplicada"
   }
@@ -91,43 +91,68 @@ function verificarActivacionesExpiradas() {
   return cambios;
 }
 
-function migrarGranjasAntiguas(db) {
-  if (!db.granjas || !db.granjas.usuarios) return;
+// FUNCIÓN MEJORADA PARA CALCULAR PRODUCCIÓN
+function calcularProduccion(granja) {
+  const tipo = tiposGranjas[granja.tipo];
+  if (!tipo) return 0;
+  
+  const nivel = granja.nivel || 1;
+  const mejoraMultiplicador = granja.mejora || tipo.mejora;
+  
+  // Si la granja ya tiene producciónPorSegundo calculada y es mayor que 0, usarla
+  // (mantiene compatibilidad con granjas existentes)
+  if (granja.produccionPorSegundo && granja.produccionPorSegundo > 0) {
+    return granja.produccionPorSegundo;
+  }
+  
+  // Calcular nueva producción exponencial
+  const produccionBase = tipo.produccionPorSegundo;
+  const nuevaProduccion = produccionBase * Math.pow(mejoraMultiplicador, nivel - 1);
+  
+  return nuevaProduccion;
+}
 
-  Object.keys(db.granjas.usuarios).forEach(usuarioId => {
-    const usuarioGranjas = db.granjas.usuarios[usuarioId];
-    
-    usuarioGranjas.forEach(granja => {
-      if (granja.produccionPorSegundo === undefined) {
-        const tipo = tiposGranjas[granja.tipo];
-        if (tipo) {
-          if (granja.produccion && granja.tiempo) {
-            granja.produccionPorSegundo = granja.produccion / (granja.tiempo * 60);
-          } else {
-            granja.produccionPorSegundo = tipo.produccionPorSegundo;
-          }
-          
-          if (granja.capacidad === undefined) {
-            granja.capacidad = tipo.capacidad;
-          }
-          
-          if (granja.mejora === undefined) {
-            granja.mejora = tipo.mejora;
-          }
-          
-          if (granja.ultimaActualizacion === undefined) {
-            granja.ultimaActualizacion = Date.now();
-          }
-          
-          if (granja.acumulado === undefined) {
-            granja.acumulado = 0;
-          }
-          
-          console.log(`✅ Migrada granja de ${usuarioId}: ${tipo.nombre}`);
-        }
-      }
-    });
-  });
+// FUNCIÓN MEJORADA PARA CALCULAR CAPACIDAD
+function calcularCapacidad(granja) {
+  const tipo = tiposGranjas[granja.tipo];
+  if (!tipo) return 0;
+  
+  const nivel = granja.nivel || 1;
+  const mejoraMultiplicador = granja.mejora || tipo.mejora;
+  
+  // Si ya tiene capacidad y es mayor que 0, usarla
+  if (granja.capacidad && granja.capacidad > 0) {
+    return granja.capacidad;
+  }
+  
+  // Calcular nueva capacidad exponencial
+  const capacidadBase = tipo.capacidad;
+  const nuevaCapacidad = capacidadBase * Math.pow(mejoraMultiplicador, nivel - 1);
+  
+  return nuevaCapacidad;
+}
+
+// FUNCIÓN PARA ACTUALIZAR GRANJAS EXISTENTES
+function actualizarGranjasLegacy(granja) {
+  // Si es una granja antigua sin los cálculos correctos
+  const nivel = granja.nivel || 1;
+  
+  if (nivel > 1) {
+    const tipo = tiposGranjas[granja.tipo];
+    if (tipo) {
+      const mejoraMultiplicador = granja.mejora || tipo.mejora;
+      const produccionBase = tipo.produccionPorSegundo;
+      const capacidadBase = tipo.capacidad;
+      
+      // Recalcular producción y capacidad
+      granja.produccionPorSegundo = produccionBase * Math.pow(mejoraMultiplicador, nivel - 1);
+      granja.capacidad = capacidadBase * Math.pow(mejoraMultiplicador, nivel - 1);
+      
+      console.log(`🔄 Actualizada granja legacy nivel ${nivel}: producción=${granja.produccionPorSegundo}`);
+    }
+  }
+  
+  return granja;
 }
 
 export const command = 'granja';
@@ -148,8 +173,7 @@ export async function run(sock, msg, args) {
 
   verificarActivacionesExpiradas();
 
-  migrarGranjasAntiguas(db);
-
+  // Actualizar producción antes de cualquier acción
   actualizarProduccionUsuario(sender, db);
 
   const subcomando = args[0]?.toLowerCase() || 'info';
@@ -189,9 +213,47 @@ export async function run(sock, msg, args) {
     case 'activaciones':
       await mostrarActivaciones(sock, from);
       break;
+    case 'migrar': // COMANDO SECRETO PARA MIGRAR GRANJAS
+      await migrarGranjasUsuario(sock, from, sender, db);
+      break;
     default:
       await mostrarInfoGranjas(sock, from);
   }
+}
+
+// NUEVA FUNCIÓN: Migrar granjas de un usuario específico
+async function migrarGranjasUsuario(sock, from, sender, db) {
+  if (!db.granjas.usuarios[sender]) {
+    await sock.sendMessage(from, {
+      text: '❌ No tienes granjas para migrar.'
+    });
+    return;
+  }
+
+  const usuarioGranjas = db.granjas.usuarios[sender];
+  let granjasActualizadas = 0;
+
+  usuarioGranjas.forEach(granja => {
+    // Actualizar granjas legacy
+    const granjaActualizada = actualizarGranjasLegacy(granja);
+    
+    // Recalcular producción y capacidad
+    granja.produccionPorSegundo = calcularProduccion(granja);
+    granja.capacidad = calcularCapacidad(granja);
+    
+    granjasActualizadas++;
+  });
+
+  guardarDatabase(db);
+
+  await sock.sendMessage(from, {
+    text: `🔄 *MIGRACIÓN COMPLETADA*\n\n` +
+          `✅ Granjas actualizadas: ${granjasActualizadas}\n` +
+          `📈 Producciones recalculadas\n` +
+          `📦 Capacidades ajustadas\n\n` +
+          `💡 Tus granjas ahora funcionan con el nuevo sistema exponencial.\n` +
+          `🎯 ¡Disfruta de mayores ganancias al mejorar!`
+  });
 }
 
 async function mostrarActivaciones(sock, from) {
@@ -229,7 +291,7 @@ async function mostrarActivaciones(sock, from) {
 }
 
 async function activarEvento(sock, from, sender, db, args) {
-  const esOwner = sender.includes('166164298780822') || sender.includes('999'); // Ajusta esta condición
+  const esOwner = sender.includes('166164298780822') || sender.includes('999');
   
   if (!esOwner) {
     await sock.sendMessage(from, {
@@ -321,7 +383,7 @@ async function mostrarComandosGranjas(sock, from) {
     `🎪 *Eventos Globales:*\n` +
     `.granja eventos - Ver eventos activos\n` +
     `.granja activar <evento> - Activar evento (Owner)\n\n` +
-    `📊 *Información:*\n` +
+    `🔧 *Herramientas:*\n` +
     `.granja - Información general\n` +
     `.granja comandos - Esta lista de comandos\n\n` +
     `💡 *Las ganancias suben cada 10 segundos!*`;
@@ -345,14 +407,14 @@ async function mostrarInfoGranjas(sock, from) {
 
   const mensaje = `🌾 *SISTEMA DE GRANJAS* 🚜\n\n` +
     `💰 *Invierte y genera Pandacoins automáticamente!*\n\n` +
-    `⚡ *NUEVO: Producción en tiempo real*\n` +
-    `• Las ganancias suben *cada 10 segundos*\n` +
-    `• Ve cómo crece tu dinero en .granja info\n` +
-    `• ¡Colecta cuando quieras!\n\n` +
+    `⚡ *NUEVO: Sistema de mejoras exponencial* 🚀\n` +
+    `• Cada nivel aumenta la producción exponencialmente\n` +
+    `• Nivel 2: x1.3 | Nivel 3: x1.69 | Nivel 4: x2.197\n` +
+    `• ¡Las mejoras ahora son mucho más poderosas!\n\n` +
     `🎪 *Eventos Activos:*${mensajeEventos || ' Ninguno por ahora'}\n\n` +
     `🎯 *Mecánicas:*\n` +
     `• Cada granja produce pandacoins constantemente\n` +
-    `• Mejora las granjas para aumentar producción\n` +
+    `• Mejora las granjas para aumentar producción exponencialmente\n` +
     `• Las granjas tienen capacidad máxima\n` +
     `• ¡No pierdes producción si no colectas!\n\n` +
     `💡 Usa: .granja comandos - Para ver todos los comandos`;
@@ -364,9 +426,7 @@ async function tiendaGranjas(sock, from) {
   verificarActivacionesExpiradas();
   
   let mensaje = `🛒 *TIENDA DE GRANJAS* 🌾\n`;
-
   let descuentoCompra = activacionesGlobales.comprar_50.activo ? ' 🎪 *-50% EVENTO!*' : '';
-  
   mensaje += descuentoCompra ? `\n${descuentoCompra}\n\n` : '\n';
 
   Object.entries(tiposGranjas).forEach(([id, granja]) => {
@@ -389,14 +449,18 @@ async function tiendaGranjas(sock, from) {
 
     mensaje += `*${id}. ${granja.nombre}*\n` +
                `💰 Precio: ${precioEspecial || costo.toLocaleString() + ' 🐼'}\n` +
-               `⏰ Producción: ${produccionEspecial || produccionHora.toLocaleString() + '/hora'}\n` +
-               `📈 Por segundo: ${Math.round(granja.produccionPorSegundo).toLocaleString()} 🐼\n` +
-               `📦 Capacidad: ${granja.capacidad.toLocaleString()}\n` +
-               `⭐ Mejora: x${granja.mejora} por nivel\n\n`;
+               `⏰ Producción base: ${produccionHora.toLocaleString()}/hora\n` +
+               `📈 Por segundo: ${granja.produccionPorSegundo.toLocaleString()} 🐼\n` +
+               `📦 Capacidad base: ${granja.capacidad.toLocaleString()}\n` +
+               `🚀 *Mejora exponencial:* x${granja.mejora}^(nivel-1)\n\n`;
   });
 
-  mensaje += `💡 *Usa:* .granja comprar <número>\n` +
-             `🎯 *Ejemplo:* .granja comprar 1\n\n`;
+  mensaje += `📊 *EJEMPLO DE MEJORA EXPONENCIAL:*\n`;
+  mensaje += `Nivel 1: 100% | Nivel 2: 130% | Nivel 3: 169%\n`;
+  mensaje += `Nivel 4: 220% | Nivel 5: 286% | ¡Y sigue creciendo!\n\n`;
+
+  mensaje += `💡 *Usa:* .granja comprar <número>\n`;
+  mensaje += `🎯 *Ejemplo:* .granja comprar 1\n\n`;
 
   if (activacionesGlobales.comprar_50.activo) {
     const tiempoRestante = activacionesGlobales.comprar_50.duracion - (Date.now() - activacionesGlobales.comprar_50.inicio);
@@ -459,7 +523,7 @@ async function comprarGranja(sock, from, sender, db, args) {
   const granjaExistente = usuarioGranjas.find(g => g.tipo === granjaId);
   if (granjaExistente) {
     await sock.sendMessage(from, {
-      text: `❌ Ya tienes una ${tipoGranja.nombre}.\n\n💡 Puedes mejorarla con: .granja mejorar ${granjaId}`
+      text: `❌ Ya tienes una ${tipoGranja.nombre}.\n\n💡 Puedes mejorarla con: .granja mejorar ${usuarioGranjas.indexOf(granjaExistente) + 1}`
     });
     return;
   }
@@ -505,7 +569,8 @@ async function comprarGranja(sock, from, sender, db, args) {
           `💰 Precio: ${costo.toLocaleString()} 🐼\n` +
           `📈 Producción: ${produccionHora.toLocaleString()}/hora\n` +
           `⚡ Por segundo: ${Math.round(produccionPorSegundo).toLocaleString()} 🐼\n` +
-          `📦 Capacidad: ${capacidad.toLocaleString()}\n\n` +
+          `📦 Capacidad: ${capacidad.toLocaleString()}\n` +
+          `🚀 *Potencial máximo:* x${Math.pow(tipoGranja.mejora, 10).toFixed(1)} en nivel 10\n\n` +
           `💫 ¡Tu granja empezará a producir inmediatamente!\n` +
           `⚡ Las ganancias suben *cada 10 segundos*\n` +
           `📊 Ve el progreso con: .granja info`
@@ -535,42 +600,57 @@ async function estadoGranja(sock, from, sender, db) {
   mensaje += mensajeEventos + '\n\n';
   
   let totalAcumulado = 0;
+  let totalProduccionPorSegundo = 0;
 
   usuarioGranjas.forEach((granja, index) => {
     const tipo = tiposGranjas[granja.tipo];
     
-    let produccionPorSegundo = granja.produccionPorSegundo || tiposGranjas[granja.tipo]?.produccionPorSegundo || 0;
+    // Calcular producción actual (con mejoras exponenciales)
+    let produccionPorSegundo = calcularProduccion(granja);
+    let capacidad = calcularCapacidad(granja);
+    
+    // Aplicar eventos globales
     if (activacionesGlobales.gananciaX2.activo) {
       produccionPorSegundo *= 2;
     }
     
-    let capacidad = granja.capacidad || tiposGranjas[granja.tipo]?.capacidad || 10000000;
     if (activacionesGlobales.capacidad_x2.activo) {
       capacidad = capacidad * 2;
     }
     
     const acumulado = granja.acumulado || 0;
-    
     const produccionHora = produccionPorSegundo * 3600;
     
     const porcentajeLleno = Math.min(100, Math.round((acumulado / capacidad) * 100));
     const barraProgreso = generarBarraProgreso(porcentajeLleno);
 
+    // Calcular siguiente nivel
+    const siguienteNivel = (granja.nivel || 1) + 1;
+    const mejoraMultiplicador = granja.mejora || tipo.mejora;
+    const produccionSiguienteNivel = tipo.produccionPorSegundo * Math.pow(mejoraMultiplicador, siguienteNivel - 1);
+    const aumentoPorcentual = Math.round(((produccionSiguienteNivel / produccionPorSegundo) - 1) * 100);
+
     mensaje += `*${index + 1}. ${tipo.nombre}*\n` +
                `⭐ Nivel: ${granja.nivel || 1}\n` +
                `📈 Producción: ${produccionHora.toLocaleString()}/hora\n` +
+               `🚀 Siguiente nivel: +${aumentoPorcentual}% producción\n` +
                `💰 Acumulado: ${Math.floor(acumulado).toLocaleString()} 🐼\n` +
                `📦 Capacidad: ${capacidad.toLocaleString()}\n` +
                `📊 ${barraProgreso} ${porcentajeLleno}%\n\n`;
 
     totalAcumulado += acumulado;
+    totalProduccionPorSegundo += produccionPorSegundo;
   });
 
-  mensaje += `💰 *Total listo para colectar:* ${Math.floor(totalAcumulado).toLocaleString()} 🐼\n\n` +
+  const totalProduccionHora = totalProduccionPorSegundo * 3600;
+
+  mensaje += `💰 *Total listo para colectar:* ${Math.floor(totalAcumulado).toLocaleString()} 🐼\n` +
+             `📈 *Producción total:* ${Math.floor(totalProduccionHora).toLocaleString()}/hora\n\n` +
              `💡 *Comandos útiles:*\n` +
              `.granja colectar - Recolectar ${Math.floor(totalAcumulado).toLocaleString()} 🐼\n` +
              `.granja mejorar <número> - Mejorar granja\n` +
-             `.granja vender <número> - Vender granja\n\n` +
+             `.granja vender <número> - Vender granja\n` +
+             `🔧 .granja migrar - Optimizar granjas (solo una vez)\n\n` +
              `⚡ *Las ganancias suben cada 10 segundos!*`;
 
   await sock.sendMessage(from, { text: mensaje });
@@ -647,7 +727,10 @@ async function mejorarGranja(sock, from, sender, db, args) {
   const granja = db.granjas.usuarios[sender][granjaIndex];
   const tipo = tiposGranjas[granja.tipo];
   
-  let costoMejora = Math.floor(tipo.costo * Math.pow(2, (granja.nivel || 1) - 1) * 0.5);
+  const nivelActual = granja.nivel || 1;
+  
+  // Calcular costo de mejora (aumenta exponencialmente)
+  let costoMejora = Math.floor(tipo.costo * Math.pow(2, nivelActual - 1) * 0.5);
   
   if (activacionesGlobales.mejorar_50.activo) {
     costoMejora = Math.floor(costoMejora * 0.5);
@@ -671,12 +754,19 @@ async function mejorarGranja(sock, from, sender, db, args) {
   }
 
   user.pandacoins -= costoMejora;
-  granja.nivel = (granja.nivel || 1) + 1;
+  granja.nivel = nivelActual + 1;
   
-  let nuevaProduccion = Math.floor((granja.produccionPorSegundo || tipo.produccionPorSegundo) * (granja.mejora || tipo.mejora));
+  // CALCULAR NUEVA PRODUCCIÓN EXPONENCIAL
+  const mejoraMultiplicador = granja.mejora || tipo.mejora;
+  const produccionBase = tipo.produccionPorSegundo;
+  const nuevaProduccion = produccionBase * Math.pow(mejoraMultiplicador, granja.nivel - 1);
+  
   granja.produccionPorSegundo = nuevaProduccion;
   
-  let nuevaCapacidad = Math.floor((granja.capacidad || tipo.capacidad) * (granja.mejora || tipo.mejora));
+  // CALCULAR NUEVA CAPACIDAD EXPONENCIAL
+  const capacidadBase = tipo.capacidad;
+  const nuevaCapacidad = capacidadBase * Math.pow(mejoraMultiplicador, granja.nivel - 1);
+  
   if (activacionesGlobales.capacidad_x2.activo) {
     nuevaCapacidad = nuevaCapacidad * 2;
   }
@@ -689,6 +779,10 @@ async function mejorarGranja(sock, from, sender, db, args) {
     produccionFinal *= 2;
   }
   const nuevaProduccionHora = produccionFinal * 3600;
+  
+  // Calcular aumento porcentual
+  const produccionAnterior = produccionBase * Math.pow(mejoraMultiplicador, nivelActual - 1);
+  const aumentoPorcentual = Math.round(((nuevaProduccion / produccionAnterior) - 1) * 100);
 
   let mensajeEvento = '';
   if (activacionesGlobales.mejorar_50.activo) {
@@ -701,9 +795,11 @@ async function mejorarGranja(sock, from, sender, db, args) {
           `✨ Nuevo nivel: ${granja.nivel}\n` +
           `💰 Costo: ${costoMejora.toLocaleString()} 🐼\n` +
           `📈 Nueva producción: ${nuevaProduccionHora.toLocaleString()}/hora\n` +
+          `📊 Aumento: +${aumentoPorcentual}% más producción\n` +
           `⚡ Por segundo: ${Math.round(produccionFinal).toLocaleString()} 🐼\n` +
-          `📦 Nueva capacidad: ${granja.capacidad.toLocaleString()}\n\n` +
-          `💫 ¡Tu granja ahora es más productiva!\n` +
+          `📦 Nueva capacidad: ${granja.capacidad.toLocaleString()}\n` +
+          `🚀 Multiplicador total: x${Math.pow(mejoraMultiplicador, granja.nivel - 1).toFixed(2)}\n\n` +
+          `💫 ¡Tu granja ahora es exponencialmente más productiva!\n` +
           `🎯 Sigue mejorando para maximizar ganancias.\n` +
           `⚡ Las ganancias suben cada 10 segundos!`
   });
@@ -729,8 +825,11 @@ async function venderGranja(sock, from, sender, db, args) {
   const granja = db.granjas.usuarios[sender][granjaIndex];
   const tipo = tiposGranjas[granja.tipo];
   
+  const nivel = granja.nivel || 1;
+  
+  // Reembolso basado en nivel y producción actual
   const reembolsoBase = Math.floor(tipo.costo * 0.5);
-  const bonificacionNivel = Math.floor(reembolsoBase * 0.1 * ((granja.nivel || 1) - 1));
+  const bonificacionNivel = Math.floor(reembolsoBase * 0.15 * (nivel - 1));
   const acumuladoGranja = Math.floor(granja.acumulado || 0);
   const reembolsoTotal = reembolsoBase + bonificacionNivel + acumuladoGranja;
 
@@ -752,9 +851,9 @@ async function venderGranja(sock, from, sender, db, args) {
 
   await sock.sendMessage(from, {
     text: `🏷️ *¡GRANJA VENDIDA!* 💰\n\n` +
-          `🏭 *Granja:* ${tipo.nombre} (Nivel ${granja.nivel || 1})\n` +
+          `🏭 *Granja:* ${tipo.nombre} (Nivel ${nivel})\n` +
           `💰 Reembolso base: ${reembolsoBase.toLocaleString()} 🐼\n` +
-          `⭐ Bonificación nivel: ${bonificacionNivel.toLocaleString()} 🐼\n` +
+          `⭐ Bonificación nivel ${nivel}: ${bonificacionNivel.toLocaleString()} 🐼\n` +
           `📈 Acumulado incluido: ${acumuladoGranja.toLocaleString()} 🐼\n` +
           `💳 Total recibido: ${reembolsoTotal.toLocaleString()} 🐼\n` +
           `📊 Nuevo saldo: ${user.pandacoins.toLocaleString()} 🐼\n\n` +
@@ -780,13 +879,15 @@ function actualizarProduccionUsuario(usuarioId, db) {
   const usuarioGranjas = db.granjas.usuarios[usuarioId];
 
   usuarioGranjas.forEach(granja => {
-    let produccionPorSegundo = granja.produccionPorSegundo || tiposGranjas[granja.tipo]?.produccionPorSegundo || 0;
+    // Usar la función mejorada para calcular producción
+    let produccionPorSegundo = calcularProduccion(granja);
     
     if (activacionesGlobales.gananciaX2.activo) {
       produccionPorSegundo *= 2;
     }
     
-    let capacidad = granja.capacidad || tiposGranjas[granja.tipo]?.capacidad || 10000000;
+    // Usar la función mejorada para calcular capacidad
+    let capacidad = calcularCapacidad(granja);
     
     if (activacionesGlobales.capacidad_x2.activo) {
       capacidad = capacidad * 2;
@@ -813,19 +914,26 @@ export function actualizarProduccionGlobalGranjas() {
 
   const ahora = Date.now();
   let totalUsuariosActualizados = 0;
+  let totalGranjasActualizadas = 0;
 
   Object.keys(db.granjas.usuarios).forEach(usuarioId => {
     const usuarioGranjas = db.granjas.usuarios[usuarioId];
     let usuarioActualizado = false;
 
     usuarioGranjas.forEach(granja => {
-      let produccionPorSegundo = granja.produccionPorSegundo || tiposGranjas[granja.tipo]?.produccionPorSegundo || 0;
+      // Actualizar granjas legacy automáticamente
+      if ((granja.nivel || 1) > 1 && (!granja.produccionPorSegundo || granja.produccionPorSegundo < 1)) {
+        granja = actualizarGranjasLegacy(granja);
+        totalGranjasActualizadas++;
+      }
+      
+      let produccionPorSegundo = calcularProduccion(granja);
       
       if (activacionesGlobales.gananciaX2.activo) {
         produccionPorSegundo *= 2;
       }
       
-      let capacidad = granja.capacidad || tiposGranjas[granja.tipo]?.capacidad || 10000000;
+      let capacidad = calcularCapacidad(granja);
       
       if (activacionesGlobales.capacidad_x2.activo) {
         capacidad = capacidad * 2;
@@ -850,9 +958,13 @@ export function actualizarProduccionGlobalGranjas() {
 
   if (totalUsuariosActualizados > 0) {
     guardarDatabase(db);
+    
+    if (totalGranjasActualizadas > 0) {
+      console.log(`🔄 Actualizadas ${totalGranjasActualizadas} granjas legacy automáticamente`);
+    }
   }
 }
 
+// Configurar intervalos
 setInterval(verificarActivacionesExpiradas, 60 * 1000);
-
 setInterval(actualizarProduccionGlobalGranjas, 10 * 1000);

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 import { ownerNumber } from '../config.js';
-import { multiplicadores } from './buy.js';
+import { multiplicadores } from './buy2.js';
 
 export const command = 'spawn';
 

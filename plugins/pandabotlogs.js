@@ -1,24 +1,19 @@
+import { ownerNumber } from '../config.js';
 import { exec } from 'child_process';
 import util from 'util';                                                                                  const execPromise = util.promisify(exec);
-
-const personasPermitidas = [
-  '56953508566',
-  '5215538830665',
-  '573023181375',
-  '50589329325',
-  '267232999420158'
-];
 
 export const command = 'pandabotlogs';
 
 export async function run(sock, msg, args) {                                                                const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
 
+const sender = msg.key.participant || msg.key.remoteJid;
   const senderNumber = sender.split('@')[0];
-  const isAllowed = personasPermitidas.includes(senderNumber);
+  const metadata = await sock.groupMetadata(from);
+  const isOwner = ownerNumber.includes(`+${senderNumber}`);
 
-  if (!isAllowed) {
-    await sock.sendMessage(from, { text: '❌ No tienes permiso para usar este comando.' });
+  if (!isOwner) {
+    await sock.sendMessage(from, { text: '❌ Solo los Owners pueden usar este comando.' });
     return;
   }
 
@@ -44,4 +39,3 @@ export async function run(sock, msg, args) {                                    
   } finally {
   }
 }
-

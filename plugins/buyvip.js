@@ -11,7 +11,7 @@ export async function run(sock, msg, args) {
   db.users = db.users || {};
   const user = db.users[sender] || { pandacoins: 0 };
   
-  const ticketCost = 50000;
+  const ticketCost = 1000000;
   const subCommand = args[0]?.toLowerCase();
 
   if (subCommand === 'ticket') {

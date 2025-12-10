@@ -1,48 +1,13 @@
 {
   "characters": [
     {
-      "nombre": "Arroz callate puta 🌈 🚽 👾 🇨🇱 ☯️ 🌭 🍬 🇧🇷 🇨🇴 🪳 💀 🌮 🫓 💧 💤 💩 🦆 🎄 🎅 ❄️ 🔥 🌟 ⚡ 🌙 ☃️ 🎁 🧦 🐉 👑 💎 🦄 🎯 🛡️ 🗡️ 🏆 🎨",
-      "calidad": "común",
-      "precio": 8.51523814466519e+21,
+      "nombre": "Novia De Lukas 💀",
+      "calidad": "OG",
+      "precio": 1999999999999980,
       "efectos": [
-        "🌈",
-        "🚽",
-        "👾",
-        "🇨🇱",
-        "☯️",
-        "🌭",
-        "🍬",
-        "🇧🇷",
-        "🇨🇴",
-        "🪳",
-        "💀",
-        "🌮",
-        "🫓",
-        "💧",
-        "💤",
-        "💩",
-        "🦆",
-        "🎄",
-        "🎅",
-        "❄️",
-        "🔥",
-        "🌟",
-        "⚡",
-        "🌙",
-        "☃️",
-        "🎁",
-        "🧦",
-        "🐉",
-        "👑",
-        "💎",
-        "🦄",
-        "🎯",
-        "🛡️",
-        "🗡️",
-        "🏆",
-        "🎨"
+        "💀"
       ],
-      "base": "Arroz callate puta"
+      "descripcion": "💗"
     },
     {
       "nombre": "Novia De Lukas 🇧🇷",
@@ -50,15 +15,6 @@
       "precio": 1499999999999985,
       "efectos": [
         "🇧🇷"
-      ],
-      "descripcion": "💗"
-    },
-    {
-      "nombre": "Novia De Lukas 💀",
-      "calidad": "OG",
-      "precio": 1999999999999980,
-      "efectos": [
-        "💀"
       ],
       "descripcion": "💗"
     },
@@ -538,6 +494,26 @@
       "creadoEn": "2025-11-26T18:58:16.962Z"
     },
     {
+      "nombre": "Everyy BOY 🪳",
+      "calidad": "Ultra-Legendario con Efectos",
+      "precio": 8200000,
+      "efectos": [
+        "🪳"
+      ],
+      "base": "Everyy BOY",
+      "creadoEn": "2025-11-27T22:35:04.628Z"
+    },
+    {
+      "nombre": "Everyy BOY 🎯",
+      "calidad": "Ultra-Legendario con Efectos",
+      "precio": 8200000,
+      "efectos": [
+        "🎯"
+      ],
+      "base": "Everyy BOY",
+      "creadoEn": "2025-11-29T23:55:34.772Z"
+    },
+    {
       "nombre": "Everyy BOY 💧 🦆",
       "calidad": "Ultra-Legendario con Efectos",
       "precio": 8118000,
@@ -892,6 +868,17 @@
       "creadoEn": "2025-11-27T03:43:36.583Z"
     },
     {
+      "nombre": "Everything 🔥 🔥",
+      "calidad": "GOD",
+      "precio": 4000000,
+      "agregadoEn": "2025-11-21T18:23:45.465Z",
+      "efectos": [
+        "🔥",
+        "🔥"
+      ],
+      "base": "Everything"
+    },
+    {
       "nombre": "Every BOY ⚓",
       "calidad": "Ultra-Legendario con Efectos",
       "precio": 3900000,
@@ -1018,6 +1005,16 @@
       ],
       "base": "Everything",
       "creadoEn": "2025-11-21T18:24:30.948Z"
+    },
+    {
+      "nombre": "Ateney BOY 🪳",
+      "calidad": "Ultra-Legendario con Efectos",
+      "precio": 3000000,
+      "efectos": [
+        "🪳"
+      ],
+      "base": "Ateney BOY",
+      "creadoEn": "2025-12-03T13:39:39.156Z"
     },
     {
       "nombre": "Spooky Everything 🍬 💀",
@@ -1175,6 +1172,16 @@
       ],
       "base": "Everything",
       "creadoEn": "2025-11-20T14:38:07.855Z"
+    },
+    {
+      "nombre": "Garama And Madundung 🔥 👑",
+      "calidad": "Secret",
+      "precio": 2100000,
+      "efectos": [
+        "🔥",
+        "👑"
+      ],
+      "base": "Garama And Madundung"
     },
     {
       "nombre": "Everyy BOY 💤",
@@ -2084,6 +2091,27 @@
       "creadoEn": "2025-11-22T23:39:14.391Z"
     },
     {
+      "nombre": "Ateney BOY 💤",
+      "calidad": "Ultra-Legendario con Efectos",
+      "precio": 750000,
+      "efectos": [
+        "💤"
+      ],
+      "base": "Ateney BOY",
+      "creadoEn": "2025-12-03T13:41:39.034Z"
+    },
+    {
+      "nombre": "Everything 💤 ❄️",
+      "calidad": "GOD con Efectos",
+      "precio": 750000,
+      "efectos": [
+        "💤",
+        "❄️"
+      ],
+      "base": "Everything",
+      "creadoEn": "2025-12-06T20:52:22.710Z"
+    },
+    {
       "nombre": "3IATLAS 🫓",
       "calidad": "OG con Efectos",
       "precio": 735000,
@@ -2410,6 +2438,16 @@
       "efectos": [
         "🕷"
       ]
+    },
+    {
+      "nombre": "Ale 🧉 ☯️",
+      "calidad": "OG con Efectos",
+      "precio": 506000,
+      "efectos": [
+        "☯️"
+      ],
+      "base": "Ale 🧉",
+      "creadoEn": "2025-12-02T01:24:25.048Z"
     },
     {
       "nombre": "Everything 💤 🪳",
@@ -3271,6 +3309,17 @@
       ]
     },
     {
+      "nombre": "Los PandaBotsitos 💤 🎁",
+      "calidad": "GOD con Efectos",
+      "precio": 56250,
+      "efectos": [
+        "💤",
+        "🎁"
+      ],
+      "base": "Los PandaBotsitos",
+      "creadoEn": "2025-12-06T20:50:54.337Z"
+    },
+    {
       "nombre": "Everything 💧 💩",
       "calidad": "OG",
       "precio": 55000,
@@ -3935,6 +3984,14 @@
       "precio": 30000,
       "efectos": [
         "🇨🇴"
+      ]
+    },
+    {
+      "nombre": "Niragi *Chicle*",
+      "calidad": "mítico",
+      "precio": 30000,
+      "efectos": [
+        "Chicle"
       ]
     },
     {
@@ -4926,6 +4983,26 @@
       "creadoEn": "2025-11-22T19:50:35.368Z"
     },
     {
+      "nombre": "Snorlax Shiny 🇨🇴",
+      "calidad": "OG con Efectos",
+      "precio": 20000,
+      "efectos": [
+        "🇨🇴"
+      ],
+      "base": "Snorlax Shiny",
+      "creadoEn": "2025-12-03T16:48:36.524Z"
+    },
+    {
+      "nombre": "pene 🍬",
+      "calidad": "Ultra-Legendario con Efectos",
+      "precio": 20000,
+      "efectos": [
+        "🍬"
+      ],
+      "base": "pene",
+      "creadoEn": "2025-12-07T16:58:21.282Z"
+    },
+    {
       "nombre": "𝕃𝕦𝕜𝕒𝕤 🇨🇴",
       "calidad": "OG",
       "precio": 19996,
@@ -4974,6 +5051,17 @@
       "calidad": "Ultra-Legendario",
       "precio": 19000,
       "descripcion": "Personaje fusionado por un VIP de Román y MiPene"
+    },
+    {
+      "nombre": "Los PandaBotsitos 💤 ❄️",
+      "calidad": "GOD con Efectos",
+      "precio": 18750,
+      "efectos": [
+        "💤",
+        "❄️"
+      ],
+      "base": "Los PandaBotsitos",
+      "creadoEn": "2025-12-06T20:50:36.242Z"
     },
     {
       "nombre": "La Supreme Combinasion 💧 🌭",
@@ -5407,6 +5495,15 @@
       "efectos": [
         "🫓"
       ]
+    },
+    {
+      "nombre": "weavile *🕷️* *Tacos*",
+      "calidad": "común",
+      "precio": 14400,
+      "efectos": [
+        "Tacos"
+      ],
+      "descripcion": "Pokémon oficial: weavile"
     },
     {
       "nombre": "Los Kennedysitos *💧*",
@@ -6205,6 +6302,17 @@
       "efectos": [
         "💤"
       ]
+    },
+    {
+      "nombre": "Snorlax Shiny 🇨🇴 💤",
+      "calidad": "OG con Efectos",
+      "precio": 10000,
+      "efectos": [
+        "🇨🇴",
+        "💤"
+      ],
+      "base": "Snorlax Shiny",
+      "creadoEn": "2025-12-03T16:48:25.512Z"
     },
     {
       "nombre": "𝕃𝕦𝕜𝕒𝕤",
@@ -7853,6 +7961,26 @@
       "creadoEn": "2025-11-27T13:37:07.393Z"
     },
     {
+      "nombre": "Cukii 💤",
+      "calidad": "Ultra-Legendario con Efectos",
+      "precio": 5000,
+      "efectos": [
+        "💤"
+      ],
+      "base": "Cukii",
+      "creadoEn": "2025-12-03T17:11:24.087Z"
+    },
+    {
+      "nombre": "pene 💤",
+      "calidad": "Ultra-Legendario con Efectos",
+      "precio": 5000,
+      "efectos": [
+        "💤"
+      ],
+      "base": "pene",
+      "creadoEn": "2025-12-07T01:20:28.745Z"
+    },
+    {
       "nombre": "Edward Elric",
       "calidad": "mítico",
       "precio": 4900
@@ -8013,6 +8141,15 @@
       "efectos": [
         "💤"
       ]
+    },
+    {
+      "nombre": "dudunsparce-two-segment *Tacos*",
+      "calidad": "común",
+      "precio": 4800,
+      "efectos": [
+        "Tacos"
+      ],
+      "descripcion": "Pokémon oficial: dudunsparce-two-segment"
     },
     {
       "nombre": "Zenitsu",
@@ -18186,126 +18323,6 @@
       ],
       "base": "Tomi",
       "creadoEn": "2025-11-23T15:27:03.836Z"
-    },
-    {
-      "nombre": "Everyy BOY 🪳",
-      "calidad": "Ultra-Legendario con Efectos",
-      "precio": 8200000,
-      "efectos": [
-        "🪳"
-      ],
-      "base": "Everyy BOY",
-      "creadoEn": "2025-11-27T22:35:04.628Z"
-    },
-    {
-      "nombre": "Everyy BOY 🎯",
-      "calidad": "Ultra-Legendario con Efectos",
-      "precio": 8200000,
-      "efectos": [
-        "🎯"
-      ],
-      "base": "Everyy BOY",
-      "creadoEn": "2025-11-29T23:55:34.772Z"
-    },
-    {
-      "nombre": "dudunsparce-two-segment *Tacos*",
-      "calidad": "común",
-      "precio": 4800,
-      "efectos": [
-        "Tacos"
-      ],
-      "descripcion": "Pokémon oficial: dudunsparce-two-segment"
-    },
-    {
-      "nombre": "Ale 🧉 ☯️",
-      "calidad": "OG con Efectos",
-      "precio": 506000,
-      "efectos": [
-        "☯️"
-      ],
-      "base": "Ale 🧉",
-      "creadoEn": "2025-12-02T01:24:25.048Z"
-    },
-    {
-      "nombre": "Everything 🔥 🔥",
-      "calidad": "GOD",
-      "precio": 4000000,
-      "agregadoEn": "2025-11-21T18:23:45.465Z",
-      "efectos": [
-        "🔥",
-        "🔥"
-      ],
-      "base": "Everything"
-    },
-    {
-      "nombre": "Garama And Madundung 🔥 👑",
-      "calidad": "Secret",
-      "precio": 2100000,
-      "efectos": [
-        "🔥",
-        "👑"
-      ],
-      "base": "Garama And Madundung"
-    },
-    {
-      "nombre": "Ateney BOY 🪳",
-      "calidad": "Ultra-Legendario con Efectos",
-      "precio": 3000000,
-      "efectos": [
-        "🪳"
-      ],
-      "base": "Ateney BOY",
-      "creadoEn": "2025-12-03T13:39:39.156Z"
-    },
-    {
-      "nombre": "Ateney BOY 💤",
-      "calidad": "Ultra-Legendario con Efectos",
-      "precio": 750000,
-      "efectos": [
-        "💤"
-      ],
-      "base": "Ateney BOY",
-      "creadoEn": "2025-12-03T13:41:39.034Z"
-    },
-    {
-      "nombre": "Snorlax Shiny 🇨🇴 💤",
-      "calidad": "OG con Efectos",
-      "precio": 10000,
-      "efectos": [
-        "🇨🇴",
-        "💤"
-      ],
-      "base": "Snorlax Shiny",
-      "creadoEn": "2025-12-03T16:48:25.512Z"
-    },
-    {
-      "nombre": "Snorlax Shiny 🇨🇴",
-      "calidad": "OG con Efectos",
-      "precio": 20000,
-      "efectos": [
-        "🇨🇴"
-      ],
-      "base": "Snorlax Shiny",
-      "creadoEn": "2025-12-03T16:48:36.524Z"
-    },
-    {
-      "nombre": "Cukii 💤",
-      "calidad": "Ultra-Legendario con Efectos",
-      "precio": 5000,
-      "efectos": [
-        "💤"
-      ],
-      "base": "Cukii",
-      "creadoEn": "2025-12-03T17:11:24.087Z"
-    },
-    {
-      "nombre": "weavile *🕷️* *Tacos*",
-      "calidad": "común",
-      "precio": 14400,
-      "efectos": [
-        "Tacos"
-      ],
-      "descripcion": "Pokémon oficial: weavile"
     }
   ]
 }

@@ -1326,5 +1326,13 @@
     "content": "Devuelvan al ruleta rusa",
     "timestamp": 1764733025456,
     "status": "pending"
+  },
+  {
+    "id": 147,
+    "type": "sugerencia",
+    "senderJid": "33677157355747@lid",
+    "content": "hacer un grupo para la pesca",
+    "timestamp": 1765221211045,
+    "status": "pending"
   }
 ]

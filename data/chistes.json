@@ -29,6 +29,11 @@
       "id": 16,
       "senderJid": "64639895400498@lid",
       "content": "¿Que le dice una TORTUGA INSANA A OTRA TORTUGA INSANA? ola"
+    },
+    {
+      "id": 18,
+      "senderJid": "248726488645797@lid",
+      "content": "te sabes el chiste de pocoyo? No, Tampoco yo ajaja ríanse no tengo amigos"
     }
   ],
   "acceptedJokes": [
@@ -181,6 +186,11 @@
       "id": 14,
       "senderJid": "22042241953940@lid",
       "content": "¿Que le dice Mica a otra persona? Hola"
+    },
+    {
+      "id": 17,
+      "senderJid": "31366532055076@lid",
+      "content": "¿Qué le dice mi abuelo a mi abuela?, te voy a sacar la chucha vieja culia"
     }
   ]
 }
