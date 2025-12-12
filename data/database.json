@@ -3,7 +3,7 @@
     "97027992080542@lid": {
       "nombre": "Usuario_97027992080542",
       "registrado": "2025-12-04T13:07:04.548Z",
-      "pandacoins": 888732.3934300018,
+      "pandacoins": 894716.3934300018,
       "exp": 276,
       "nivel": 31,
       "inventario": {
@@ -91,15 +91,15 @@
           "trabajar_count": 0,
           "buy_count": 0,
           "apostar_count": 2,
-          "robos_exitosos": 11,
+          "robos_exitosos": 12,
           "robos_fallidos": 0,
-          "commands_used": 453,
+          "commands_used": 463,
           "cm_tiradas": 102,
           "cm_ataques": 2,
           "registered_date": 1764853625229,
           "was_broke": true,
           "comeback": false,
-          "spotify_count": 18,
+          "spotify_count": 19,
           "paja_count": 1,
           "sexo_count": 1,
           "dildear_count": 1
@@ -141,7 +141,7 @@
       ],
       "ultimoSell": 1765070644295,
       "robos": {
-        "exitosos": 18,
+        "exitosos": 19,
         "fallidos": 0
       },
       "ultimoApostar": 1764856666622,
@@ -191,7 +191,7 @@
     "166164298780822@lid": {
       "nombre": "Usuario_166164298780822",
       "registrado": "2025-12-04T13:08:05.786Z",
-      "pandacoins": 2558221.1054999977,
+      "pandacoins": 5624.355499997735,
       "exp": 14365,
       "nivel": 169,
       "inventario": {
@@ -297,13 +297,13 @@
           "apostar_count": 1,
           "robos_exitosos": 18,
           "robos_fallidos": 0,
-          "commands_used": 803,
+          "commands_used": 859,
           "cm_tiradas": 0,
           "cm_ataques": 2,
           "registered_date": 1764853687041,
           "was_broke": false,
           "comeback": false,
-          "spotify_count": 4,
+          "spotify_count": 5,
           "paja_count": 1,
           "sexo_count": 1,
           "dildear_count": 1
@@ -316,53 +316,8 @@
         "monthly": 1764860685343,
         "hourly": 1765224170415
       },
-      "personajes": [
-        "greninja-battle-bond",
-        "Ale 🧉 💤",
-        "geodude",
-        "centiskorch-gmax",
-        "Nyan Cat 💤",
-        "pene",
-        "pene",
-        "pene 🌮",
-        "pene",
-        "pene",
-        "pene",
-        "pene",
-        "pene",
-        "pene 💤",
-        "pene",
-        "calyrex-shadow",
-        "ambipom",
-        "Hitler 🇧🇷",
-        "giratina-origin",
-        "Strawberelli Flamingelli",
-        "tauros-paldea-blaze-breed",
-        "tauros-paldea-aqua-breed *🫔*",
-        "sylveon",
-        "grimmsnarl",
-        "accelgor",
-        "Las Sis *🕷️*",
-        "Karkerkar Kurkur",
-        "Santa Claus Legendario",
-        "beedrill-mega",
-        "The Spooky PandaBot 🍬 🫓",
-        "luvdisc",
-        "Las Prostitutas",
-        "Ezio Auditore",
-        "aerodactyl",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco"
-      ],
-      "ultimoSell": 1765224434613,
+      "personajes": [],
+      "ultimoSell": 1765555744107,
       "robarpsCooldown": 1765302754968,
       "inversiones": {
         "LILANCOIN": {
@@ -402,10 +357,10 @@
         "posiciones": {}
       },
       "vipExpiration": 36001765155440744,
-      "afkCooldown": 1765505973013,
+      "afkCooldown": 1765559330112,
       "afkStats": {
-        "totalTiempo": 90313573,
-        "totalSesiones": 2,
+        "totalTiempo": 91405157,
+        "totalSesiones": 3,
         "robosPrevenidos": 5,
         "mejorRacha": 1
       }
@@ -545,10 +500,10 @@
       "ultimoBuy": 1765247530677
     },
     "31366532055076@lid": {
-      "pandacoins": 63233,
+      "pandacoins": 128817,
       "robos": {
-        "exitosos": 106,
-        "fallidos": 63
+        "exitosos": 114,
+        "fallidos": 65
       },
       "achievements": {
         "unlocked": [
@@ -587,67 +542,58 @@
           "Fenix",
           "Maestro del Spin",
           "Ladrón Profesional",
-          "Sigma 🗿"
+          "Sigma 🗿",
+          "🤡 Payaso"
         ],
         "selectedTitle": "Sigma 🗿",
         "stats": {
           "minar_count": 0,
           "trabajar_count": 0,
-          "buy_count": 72,
+          "buy_count": 86,
           "apostar_count": 0,
-          "robos_exitosos": 76,
-          "robos_fallidos": 50,
-          "commands_used": 3658,
+          "robos_exitosos": 84,
+          "robos_fallidos": 52,
+          "commands_used": 3896,
           "cm_tiradas": 607,
-          "cm_ataques": 76,
+          "cm_ataques": 77,
           "registered_date": 1764854376273,
           "was_broke": true,
           "comeback": true,
           "spotify_count": 34,
           "paja_count": 11,
           "sexo_count": 13,
-          "dildear_count": 65
+          "dildear_count": 66
         }
       },
       "vip": true,
       "cooldowns": {
         "superminar": 1765155332753,
-        "ps": 1765319634648,
-        "dropvip": 1765319545885,
-        "daily": 1765324308869,
+        "ps": 1765559407096,
+        "dropvip": 1765553682780,
+        "daily": 1765557387856,
         "monthly": 1764884071703,
         "hourly": 1765058148217
       },
-      "diamantes": 200,
+      "diamantes": 230,
       "personajes": [
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "palpitoad",
-        "uxie"
+        "swanna",
+        "dragonair"
       ],
-      "robarpsCooldown": 1765324743338,
-      "ultimoSell": 1765323706878,
+      "robarpsCooldown": 1765564278923,
+      "ultimoSell": 1765563381892,
       "ultimoTransfer": 1765229438144,
       "inventario": {
         "recursos": {
-          "pescado": 17986,
-          "carne": 10130,
-          "madera": 12,
+          "pescado": 20255,
+          "carne": 11405,
+          "madera": 148,
           "oro": 809,
-          "diamantes": 2,
-          "piedras": 7659,
+          "diamantes": 3,
+          "piedras": 9173,
           "comida": 6,
-          "hierro": 2287,
-          "carbon": 4814,
-          "cuero": 178,
+          "hierro": 2296,
+          "carbon": 5366,
+          "cuero": 198,
           "tela": 0,
           "regalo": 12,
           "rubies": 2,
@@ -663,25 +609,25 @@
         },
         "especiales": {
           "pergamino": 2,
-          "pocion": 8,
+          "pocion": 11,
           "llave": 2,
           "gema": 2
         },
         "mascotas": {}
       },
       "stats": {
-        "minas": 95,
-        "pescas": 118,
-        "cazas": 118,
-        "dias_consecutivos": 4,
-        "ultimo_daily": "2025-12-09",
+        "minas": 106,
+        "pescas": 131,
+        "cazas": 131,
+        "dias_consecutivos": 5,
+        "ultimo_daily": "2025-12-12",
         "meses_consecutivos": 1,
         "dailies_este_mes": 0,
         "weeklies_este_mes": 0,
         "pescas_mes": 0,
         "cazas_mes": 0,
         "minas_mes": 0,
-        "aventuras": 20,
+        "aventuras": 22,
         "dados_pvp_perdidos": 2,
         "dados_pvp_ganados": 2,
         "dados_pvp_ganancias": 600000,
@@ -689,16 +635,16 @@
         "rifas_gastado": 3000,
         "streak_hours": 1
       },
-      "nivel": 223,
-      "exp": 11201,
+      "nivel": 233,
+      "exp": 4908,
       "inversiones": {
         "LILANCOIN": {
-          "cantidad": 22277881.813004382,
-          "inversionTotal": 16349858.952714106
-        },
-        "DRAGONTOKEN": {
           "cantidad": 0,
           "inversionTotal": 0
+        },
+        "DRAGONTOKEN": {
+          "cantidad": 2116657.7068376485,
+          "inversionTotal": 5235910.124551385
         },
         "UNISTAR": {
           "cantidad": 0,
@@ -717,7 +663,7 @@
           "inversionTotal": 0
         }
       },
-      "ultimoBuy": 1765323693540,
+      "ultimoBuy": 1765553865861,
       "afkCooldown": 1765244821293,
       "afkStats": {
         "totalTiempo": 1615533,
@@ -725,10 +671,10 @@
         "robosPrevenidos": 0,
         "mejorRacha": 0
       },
-      "vipExpiration": 1765405712917
+      "vipExpiration": 1765640057994
     },
     "125675138736203@lid": {
-      "pandacoins": 64508,
+      "pandacoins": 3173366.5072397506,
       "achievements": {
         "unlocked": [
           "first_steps",
@@ -763,7 +709,7 @@
           "apostar_count": 0,
           "robos_exitosos": 9,
           "robos_fallidos": 6,
-          "commands_used": 501,
+          "commands_used": 519,
           "cm_tiradas": 1,
           "cm_ataques": 1,
           "registered_date": 1764875789807,
@@ -779,8 +725,8 @@
       "cooldowns": {
         "superminar": 1765239539364,
         "monthly": 1764884317129,
-        "daily": 1765303207160,
-        "hourly": 1765303192012,
+        "daily": 1765564164718,
+        "hourly": 1765564171710,
         "ps": 1765227651752,
         "magicbox": 1765068241427,
         "dropvip": 1765227660255
@@ -800,7 +746,7 @@
           "piedras": 2726,
           "comida": 1,
           "hierro": 2376,
-          "carbon": 1494,
+          "carbon": 1812,
           "cuero": 33,
           "tela": 0,
           "regalo": 12,
@@ -814,12 +760,13 @@
           "espada": 10
         },
         "especiales": {
-          "pocion": 3
+          "pocion": 6,
+          "llave": 1
         },
         "mascotas": {}
       },
       "stats": {
-        "minas": 23,
+        "minas": 24,
         "pescas": 22,
         "cazas": 22,
         "aventuras": 4,
@@ -829,14 +776,14 @@
         "pescas_mes": 0,
         "cazas_mes": 0,
         "minas_mes": 0,
-        "dias_consecutivos": 4,
-        "ultimo_daily": "2025-12-09",
-        "streak_hours": 12,
+        "dias_consecutivos": 5,
+        "ultimo_daily": "2025-12-12",
+        "streak_hours": 13,
         "ventas": 518,
         "ganancias_ventas": 18974
       },
-      "nivel": 385,
-      "exp": 31085,
+      "nivel": 394,
+      "exp": 13441,
       "personajes": [
         "Chicleteira Bicicleteira",
         "palossand",
@@ -849,17 +796,17 @@
         "Tipi Topi Taco",
         "Tipi Topi Taco",
         "Tipi Topi Taco",
-        "Tipi Topi Taco"
+        "Tipi Topi Taco",
+        "La Grande Combinasion *🍬🌮*"
       ],
-      "robarpsCooldown": 1765305543061,
+      "robarpsCooldown": 1765564589259,
       "creditos": 23,
       "ultimoSell": 1765245873314,
       "ultimoAtaqueBoss": 1764886396899,
-      "vipExpiration": 1765331153194,
       "inversiones": {
         "LILANCOIN": {
-          "cantidad": 2223511649.589344,
-          "inversionTotal": 1571264396.440496
+          "cantidad": 2213511649.589344,
+          "inversionTotal": 1564197806.9907365
         },
         "DRAGONTOKEN": {
           "cantidad": 0,
@@ -889,7 +836,8 @@
         "totalSesiones": 3,
         "robosPrevenidos": 3,
         "mejorRacha": 0
-      }
+      },
+      "vipExpiration": 1765651321383
     },
     "260051814117536@lid": {
       "pandacoins": 44586,
@@ -949,7 +897,7 @@
     "97539277717625@lid": {
       "nombre": "Usuario_97539277717625",
       "registrado": "2025-12-04T13:38:19.976Z",
-      "pandacoins": 1254894,
+      "pandacoins": 1289894,
       "exp": 141,
       "nivel": 2,
       "inventario": {
@@ -1009,15 +957,17 @@
           "dildear_1",
           "thief_1",
           "coin_collector_3",
-          "sexo_1"
+          "sexo_1",
+          "collector_1"
         ],
         "progress": {},
-        "points": 155,
+        "points": 170,
         "titles": [
           "Novato",
           "Casado",
           "🍀 Suertudo",
-          "Millonario"
+          "Millonario",
+          "🤡 Payaso"
         ],
         "selectedTitle": null,
         "stats": {
@@ -1027,7 +977,7 @@
           "apostar_count": 0,
           "robos_exitosos": 8,
           "robos_fallidos": 5,
-          "commands_used": 173,
+          "commands_used": 184,
           "cm_tiradas": 0,
           "cm_ataques": 3,
           "registered_date": 1764855500736,
@@ -1044,7 +994,7 @@
         "fallidos": 14
       },
       "cooldowns": {
-        "ps": 1764945456199,
+        "ps": 1765554099890,
         "superminar": 1764891855667
       },
       "personajes": [
@@ -1064,12 +1014,14 @@
         "Tipi Topi Taco",
         "Tipi Topi Taco",
         "Tipi Topi Taco",
-        "Tipi Topi Taco"
+        "Tipi Topi Taco",
+        "pinsir-mega"
       ],
       "robarpsCooldown": 1765127588132,
-      "vip": false,
-      "diamantes": 50,
-      "ultimoSell": 1764933753560
+      "vip": true,
+      "diamantes": 80,
+      "ultimoSell": 1764933753560,
+      "vipExpiration": 1765640333216
     },
     "60645256990926@lid": {
       "achievements": {
@@ -1080,10 +1032,11 @@
           "cm_spinner_1",
           "buyer_1",
           "thief_1",
-          "coin_collector_2"
+          "coin_collector_2",
+          "collector_1"
         ],
         "progress": {},
-        "points": 90,
+        "points": 105,
         "titles": [
           "Novato",
           "Casado"
@@ -1094,11 +1047,11 @@
           "trabajar_count": 0,
           "buy_count": 1,
           "apostar_count": 0,
-          "robos_exitosos": 2,
+          "robos_exitosos": 4,
           "robos_fallidos": 14,
-          "commands_used": 104,
+          "commands_used": 150,
           "cm_tiradas": 4,
-          "cm_ataques": 4,
+          "cm_ataques": 5,
           "registered_date": 1764855700334,
           "was_broke": false,
           "comeback": false,
@@ -1108,12 +1061,12 @@
           "dildear_count": 0
         }
       },
-      "pandacoins": 48959,
+      "pandacoins": 394857,
       "robos": {
-        "exitosos": 8,
+        "exitosos": 10,
         "fallidos": 18
       },
-      "ultimoTransfer": 1765052077935,
+      "ultimoTransfer": 1765551028014,
       "personajes": [
         "Messi",
         "Burrito De Lukas",
@@ -1229,7 +1182,7 @@
           "apostar_count": 0,
           "robos_exitosos": 6,
           "robos_fallidos": 0,
-          "commands_used": 191,
+          "commands_used": 195,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764855947233,
@@ -1507,6 +1460,14 @@
           "response_short": "{\n  \"reply\": ¡De nada, Edi! Aquí estoy para lo que necesites…",
           "memory_fragments": [],
           "timestamp": 1765319853954
+        },
+        {
+          "name": "Edi Flores ✨",
+          "prompt": "cual es la canción más escuchada de ateez",
+          "response_full": "{\n  \"reply\": ¡Hola, Edi! La canción más escuchada de Ateez suele ser \"Wonderland\" o \"Inception\", dependiendo de las estadísticas y plataformas. Pero en general, \"Wonderland\" ha sido una de las más populares y queridas por los fans. ¿Quieres saber más sobre Ateez o alguna otra canción que te guste? 😊\n  \"memory_fragments\": [\"Hechos recordables con nombres\"]\n}",
+          "response_short": "{\n  \"reply\": ¡Hola, Edi! La canción más escuchada de Ateez s…",
+          "memory_fragments": [],
+          "timestamp": 1765555481518
         }
       ],
       "resumenes": [
@@ -1637,31 +1598,31 @@
           "buy_count": 12,
           "apostar_count": 0,
           "robos_exitosos": 10,
-          "robos_fallidos": 4,
-          "commands_used": 1499,
-          "cm_tiradas": 19,
+          "robos_fallidos": 6,
+          "commands_used": 1602,
+          "cm_tiradas": 20,
           "cm_ataques": 6,
           "registered_date": 1764857980364,
           "was_broke": true,
           "comeback": true,
-          "spotify_count": 25,
+          "spotify_count": 26,
           "paja_count": 8,
           "sexo_count": 3,
           "dildear_count": 7
         }
       },
-      "pandacoins": 32,
+      "pandacoins": 0,
       "inventario": {
         "recursos": {
-          "pescado": 92,
-          "carne": 49,
-          "madera": 82,
+          "pescado": 102,
+          "carne": 54,
+          "madera": 91,
           "oro": 16,
           "diamantes": 0,
           "piedras": 93,
           "comida": 5,
           "hierro": 23,
-          "carbon": 18,
+          "carbon": 30,
           "cuero": 8,
           "tela": 0,
           "esmeraldas": 2
@@ -1679,19 +1640,19 @@
         "mascotas": {}
       },
       "stats": {
-        "minas": 15,
+        "minas": 16,
         "aventuras": 2,
-        "pescas": 13,
-        "cazas": 11
+        "pescas": 14,
+        "cazas": 12
       },
       "cooldowns": {
         "ps": 1765324018142,
-        "dropvip": 1765323658211
+        "dropvip": 1765560348024
       },
       "nivel": 10,
-      "exp": 220,
+      "exp": 657,
       "personajes": [
-        "gallade"
+        "Esperma de Josexo"
       ],
       "pizzeria": {
         "registered": true,
@@ -1700,7 +1661,7 @@
       },
       "robos": {
         "exitosos": 10,
-        "fallidos": 4
+        "fallidos": 6
       },
       "inversiones": {
         "LILANCOIN": {
@@ -1708,8 +1669,8 @@
           "inversionTotal": 0
         },
         "DRAGONTOKEN": {
-          "cantidad": 15296449.105181498,
-          "inversionTotal": 30871372.146600895
+          "cantidad": 0,
+          "inversionTotal": 0
         },
         "UNISTAR": {
           "cantidad": 0,
@@ -1724,13 +1685,13 @@
           "inversionTotal": 0
         },
         "NEUTRON": {
-          "cantidad": 0,
-          "inversionTotal": 0
+          "cantidad": 6329248.400499146,
+          "inversionTotal": 25558930.9486555
         }
       },
       "ultimoTransfer": 1765239418567,
-      "robarpsCooldown": 1765325974819,
-      "ultimoSell": 1765324334846,
+      "robarpsCooldown": 1765563148745,
+      "ultimoSell": 1765560343774,
       "vip": true,
       "afkCooldown": 1765323895634,
       "afkStats": {
@@ -1740,7 +1701,7 @@
         "mejorRacha": 16
       },
       "ultimoBuy": 1765323649865,
-      "vipExpiration": 1765403211146
+      "vipExpiration": 1765640357940
     },
     "33677157355747@lid": {
       "nombre": "Usuario_33677157355747",
@@ -1805,14 +1766,17 @@
           "coin_collector_2",
           "thief_1",
           "music_starter",
-          "coin_collector_3"
+          "coin_collector_3",
+          "collector_1",
+          "coin_collector_4"
         ],
         "progress": {},
-        "points": 120,
+        "points": 235,
         "titles": [
           "Novato",
           "🍀 Suertudo",
-          "Millonario"
+          "Millonario",
+          "Magnate"
         ],
         "selectedTitle": null,
         "stats": {
@@ -1822,7 +1786,7 @@
           "apostar_count": 0,
           "robos_exitosos": 2,
           "robos_fallidos": 1,
-          "commands_used": 119,
+          "commands_used": 142,
           "cm_tiradas": 4,
           "cm_ataques": 0,
           "registered_date": 1764858051699,
@@ -1852,8 +1816,8 @@
           "inversionTotal": 0
         },
         "MOONSHOT": {
-          "cantidad": 16227856.620746491,
-          "inversionTotal": 7250941.372496019
+          "cantidad": 9594384.320556438,
+          "inversionTotal": 11372233.03389469
         },
         "SAFEGEM": {
           "cantidad": 0,
@@ -1865,14 +1829,12 @@
         }
       },
       "cooldowns": {},
-      "vip": true,
-      "vipExpiration": 1765361137239,
+      "vip": false,
       "personajes": [
         "melmetal-gmax",
         "Burrito De Lukas",
         "Las Sis *🕷️*",
         "Karkerkar Kurkur",
-        "Santa Claus Legendario",
         "The Spooky PandaBot 🍬 🫓",
         "Matias",
         "Tipi Topi Taco",
@@ -1886,7 +1848,7 @@
         "Tipi Topi Taco",
         "Tipi Topi Taco"
       ],
-      "ultimoSell": 1764964624848,
+      "ultimoSell": 1765555737038,
       "robarpsCooldown": 1765225034797
     },
     "54490619215932@lid": {
@@ -1898,10 +1860,11 @@
           "coin_collector_2",
           "music_starter",
           "thief_1",
-          "coin_collector_3"
+          "coin_collector_3",
+          "collector_1"
         ],
         "progress": {},
-        "points": 130,
+        "points": 145,
         "titles": [
           "Novato",
           "Casado",
@@ -1915,19 +1878,19 @@
           "apostar_count": 0,
           "robos_exitosos": 2,
           "robos_fallidos": 0,
-          "commands_used": 85,
+          "commands_used": 97,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764858166168,
           "was_broke": false,
           "comeback": false,
-          "spotify_count": 2,
+          "spotify_count": 10,
           "paja_count": 0,
           "sexo_count": 0,
           "dildear_count": 0
         }
       },
-      "pandacoins": 1378010.651794327,
+      "pandacoins": 1383010.651794327,
       "inventario": {
         "recursos": {
           "pescado": 19,
@@ -2008,10 +1971,10 @@
       "ultimoTransfer": 1765216458583
     },
     "232925186515150@lid": {
-      "pandacoins": 18040,
+      "pandacoins": 389169.8544154744,
       "robos": {
         "exitosos": 5,
-        "fallidos": 6
+        "fallidos": 7
       },
       "achievements": {
         "unlocked": [
@@ -2021,10 +1984,11 @@
           "cm_spinner_1",
           "music_starter",
           "coin_collector_2",
-          "coin_collector_3"
+          "coin_collector_3",
+          "collector_1"
         ],
         "progress": {},
-        "points": 115,
+        "points": 130,
         "titles": [
           "Novato",
           "Millonario"
@@ -2036,8 +2000,8 @@
           "buy_count": 0,
           "apostar_count": 0,
           "robos_exitosos": 4,
-          "robos_fallidos": 6,
-          "commands_used": 241,
+          "robos_fallidos": 7,
+          "commands_used": 254,
           "cm_tiradas": 3,
           "cm_ataques": 4,
           "registered_date": 1764859090506,
@@ -2103,16 +2067,16 @@
       ],
       "inversiones": {
         "LILANCOIN": {
-          "cantidad": 1278.1063868044305,
-          "inversionTotal": 822.1501320638241
+          "cantidad": 0,
+          "inversionTotal": 0
         },
         "DRAGONTOKEN": {
           "cantidad": 0,
           "inversionTotal": 0
         },
         "UNISTAR": {
-          "cantidad": 407622.0941125175,
-          "inversionTotal": 1149300.918697563
+          "cantidad": 0,
+          "inversionTotal": 0
         },
         "MOONSHOT": {
           "cantidad": 102342.17770621271,
@@ -2208,19 +2172,19 @@
     "12833748193431@lid": {
       "nombre": "Usuario_12833748193431",
       "registrado": "2025-12-04T15:00:45.231Z",
-      "pandacoins": 5567583.719098988,
-      "exp": 15465,
-      "nivel": 188,
+      "pandacoins": 6779113.719098988,
+      "exp": 14681,
+      "nivel": 197,
       "inventario": {
         "recursos": {
-          "pescado": 774,
-          "carne": 873,
-          "madera": 296,
+          "pescado": 873,
+          "carne": 952,
+          "madera": 400,
           "oro": 11,
           "diamantes": 1,
           "piedras": 514,
           "comida": 16,
-          "hierro": 985,
+          "hierro": 1137,
           "carbon": 483,
           "cuero": 33,
           "tela": 0,
@@ -2238,7 +2202,7 @@
           "armadura": 1
         },
         "especiales": {
-          "pocion": 7,
+          "pocion": 9,
           "llave": 2,
           "gema": 1,
           "pergamino": 3
@@ -2250,15 +2214,15 @@
         }
       },
       "stats": {
-        "pescas": 30,
-        "cazas": 28,
-        "minas": 26,
+        "pescas": 31,
+        "cazas": 29,
+        "minas": 27,
         "ventas": 3785,
         "compras": 0,
         "boss_danio": 0,
         "misiones_completadas": 0,
-        "dias_consecutivos": 4,
-        "ultimo_daily": "2025-12-09",
+        "dias_consecutivos": 5,
+        "ultimo_daily": "2025-12-12",
         "ganancias_ventas": 169680,
         "meses_consecutivos": 1,
         "dailies_este_mes": 0,
@@ -2267,7 +2231,7 @@
         "cazas_mes": 0,
         "minas_mes": 0,
         "aventuras": 11,
-        "streak_hours": 12
+        "streak_hours": 13
       },
       "misiones_activas": {},
       "logros": [],
@@ -2301,7 +2265,7 @@
           "apostar_count": 0,
           "robos_exitosos": 3,
           "robos_fallidos": 0,
-          "commands_used": 345,
+          "commands_used": 360,
           "cm_tiradas": 3,
           "cm_ataques": 0,
           "registered_date": 1764860445939,
@@ -2314,19 +2278,19 @@
         }
       },
       "cooldowns": {
-        "daily": 1765250268688,
+        "daily": 1765557341550,
         "monthly": 1764861371277,
         "superminar": 1765324402218,
-        "dropvip": 1765323654939,
+        "dropvip": 1765557398452,
         "magicbox": 1765203260565,
-        "ps": 1765324019969,
-        "hourly": 1765324288617
+        "ps": 1765557400400,
+        "hourly": 1765557339430
       },
       "vip": true,
       "diamantes": 150,
       "robarpsCooldown": 1765324337751,
       "personajes": [],
-      "ultimoSell": 1765324343348,
+      "ultimoSell": 1765557433965,
       "robos": {
         "exitosos": 3,
         "fallidos": 0
@@ -2359,7 +2323,7 @@
           "inversionTotal": 0
         }
       },
-      "afkCooldown": 1765505973013,
+      "afkCooldown": 1765550887631,
       "afkStats": {
         "totalTiempo": 167843660,
         "totalSesiones": 3,
@@ -2368,11 +2332,12 @@
       }
     },
     "157243618136231@lid": {
-      "pandacoins": 1.2669565379619598,
+      "pandacoins": 1258782.1917497711,
       "inventory": {},
       "achievements": {
         "titles": [
-          "🍀 Suertudo"
+          "🍀 Suertudo",
+          "🤡 Payaso"
         ],
         "selectedTitle": null
       },
@@ -2485,9 +2450,12 @@
         "Tipi Topi Taco",
         "Tipi Topi Taco",
         "Tipi Topi Taco",
-        "Tipi Topi Taco"
+        "Tipi Topi Taco",
+        "pansear",
+        "annihilape",
+        "brionne"
       ],
-      "vip": true,
+      "vip": false,
       "inventario": {
         "recursos": {
           "pescado": 33,
@@ -2532,12 +2500,12 @@
       "nivel": 5,
       "exp": 283,
       "robos": {
-        "exitosos": 18,
-        "fallidos": 12
+        "exitosos": 21,
+        "fallidos": 13
       },
-      "robarpsCooldown": 1765323025223,
+      "robarpsCooldown": 1765564313043,
       "ultimoSell": 1765320650859,
-      "diamantes": 200,
+      "diamantes": 230,
       "inversiones": {
         "LILANCOIN": {
           "cantidad": 0,
@@ -2565,7 +2533,7 @@
         }
       },
       "ultimoBuy": 1765322353028,
-      "ultimoApostar": 1765074702604,
+      "ultimoApostar": 1765562582887,
       "birthday": "21/09",
       "ultimoTransfer": 1765230965949,
       "afkCooldown": 1765322385721,
@@ -2574,8 +2542,7 @@
         "totalSesiones": 2,
         "robosPrevenidos": 6,
         "mejorRacha": 20
-      },
-      "vipExpiration": 1765407152591
+      }
     },
     "120363202365982961@g.us": {
       "memoria": [
@@ -2608,6 +2575,16 @@
             ".: El usuario está atento a los cambios de tema"
           ],
           "timestamp": 1764883731718
+        },
+        {
+          "name": ".",
+          "prompt": "holaaaa",
+          "response_full": "¡Holaaa! Qué bueno verte por aquí. ¿Qué andas haciendo o en qué puedo ayudarte hoy? 😊",
+          "response_short": "¡Holaaa! Qué bueno verte por aquí. ¿Qué andas haciendo o en …",
+          "memory_fragments": [
+            ".: El usuario saludó diciendo 'holaaaa'"
+          ],
+          "timestamp": 1765553121468
         }
       ],
       "resumenes": [
@@ -2870,7 +2847,7 @@
     "16445832454279@lid": {
       "nombre": "Usuario_16445832454279",
       "registrado": "2025-12-04T15:14:40.673Z",
-      "pandacoins": 27591,
+      "pandacoins": 25983,
       "exp": 206,
       "nivel": 3,
       "inventario": {
@@ -3045,7 +3022,7 @@
     "180444930768966@lid": {
       "nombre": "Usuario_180444930768966",
       "registrado": "2025-12-04T17:24:48.580Z",
-      "pandacoins": 26050,
+      "pandacoins": 39450,
       "exp": 15,
       "nivel": 1,
       "inventario": {
@@ -3102,10 +3079,11 @@
           "married",
           "social_butterfly",
           "coin_collector_1",
-          "dildear_1"
+          "dildear_1",
+          "collector_1"
         ],
         "progress": {},
-        "points": 75,
+        "points": 90,
         "titles": [
           "Novato",
           "Casado"
@@ -3118,7 +3096,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 38,
+          "commands_used": 40,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764869089304,
@@ -3865,7 +3843,7 @@
       }
     },
     "66787295129695@lid": {
-      "pandacoins": 0,
+      "pandacoins": 10000,
       "robos": {
         "exitosos": 29,
         "fallidos": 16
@@ -3883,15 +3861,17 @@
           "broke",
           "comeback_kid",
           "dildear_1",
-          "collector_1"
+          "collector_1",
+          "married"
         ],
         "progress": {},
-        "points": 235,
+        "points": 260,
         "titles": [
           "Novato",
           "🍀 Suertudo",
           "Millonario",
-          "Fenix"
+          "Fenix",
+          "Casado"
         ],
         "selectedTitle": null,
         "stats": {
@@ -3901,7 +3881,7 @@
           "apostar_count": 0,
           "robos_exitosos": 21,
           "robos_fallidos": 9,
-          "commands_used": 486,
+          "commands_used": 487,
           "cm_tiradas": 107,
           "cm_ataques": 21,
           "registered_date": 1764880360882,
@@ -4064,7 +4044,7 @@
           "apostar_count": 1,
           "robos_exitosos": 2,
           "robos_fallidos": 0,
-          "commands_used": 47,
+          "commands_used": 49,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764883450350,
@@ -4144,7 +4124,7 @@
       },
       "ultimoApostar": 1765128768781,
       "ultimoTransfer": 1765242943709,
-      "afkCooldown": 1765332704609
+      "afkCooldown": 1765552786926
     },
     "118326667809006@lid": {
       "nombre": "Usuario_118326667809006",
@@ -4428,21 +4408,21 @@
     "88863259246647@lid": {
       "nombre": "Usuario_88863259246647",
       "registrado": "2025-12-05T00:35:47.526Z",
-      "pandacoins": 179528,
-      "exp": 568,
-      "nivel": 30,
+      "pandacoins": 257267,
+      "exp": 1068,
+      "nivel": 31,
       "inventario": {
         "recursos": {
-          "pescado": 223,
-          "carne": 66,
+          "pescado": 248,
+          "carne": 88,
           "madera": 61,
           "oro": 2,
           "diamantes": 0,
-          "piedras": 50,
+          "piedras": 70,
           "comida": 12,
           "hierro": 1,
           "carbon": 40,
-          "cuero": 4,
+          "cuero": 10,
           "tela": 0,
           "plata": 0,
           "esmeraldas": 1,
@@ -4469,16 +4449,16 @@
         }
       },
       "stats": {
-        "pescas": 15,
-        "cazas": 6,
-        "minas": 9,
+        "pescas": 16,
+        "cazas": 7,
+        "minas": 10,
         "ventas": 0,
         "compras": 0,
         "boss_danio": 0,
         "misiones_completadas": 0,
         "dias_consecutivos": 1,
         "ultimo_daily": "2025-12-06",
-        "aventuras": 2
+        "aventuras": 3
       },
       "misiones_activas": {},
       "logros": [],
@@ -4488,10 +4468,11 @@
           "cm_spinner_1",
           "thief_1",
           "coin_collector_1",
-          "coin_collector_2"
+          "coin_collector_2",
+          "collector_1"
         ],
         "progress": {},
-        "points": 55,
+        "points": 70,
         "titles": [
           "Novato"
         ],
@@ -4503,7 +4484,7 @@
           "apostar_count": 0,
           "robos_exitosos": 3,
           "robos_fallidos": 1,
-          "commands_used": 100,
+          "commands_used": 104,
           "cm_tiradas": 11,
           "cm_ataques": 0,
           "registered_date": 1764894948035,
@@ -4781,7 +4762,7 @@
     "68999270371333@lid": {
       "nombre": "Usuario_68999270371333",
       "registrado": "2025-12-05T04:29:28.900Z",
-      "pandacoins": 14100,
+      "pandacoins": 19100,
       "exp": 25,
       "nivel": 1,
       "inventario": {
@@ -4837,10 +4818,11 @@
           "first_steps",
           "social_butterfly",
           "coin_collector_1",
-          "cm_spinner_1"
+          "cm_spinner_1",
+          "collector_1"
         ],
         "progress": {},
-        "points": 45,
+        "points": 60,
         "titles": [
           "Novato"
         ],
@@ -4852,7 +4834,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 23,
+          "commands_used": 30,
           "cm_tiradas": 1,
           "cm_ataques": 0,
           "registered_date": 1764908969741,
@@ -5294,10 +5276,11 @@
           "married",
           "social_butterfly",
           "cm_spinner_1",
-          "coin_collector_1"
+          "coin_collector_1",
+          "collector_1"
         ],
         "progress": {},
-        "points": 70,
+        "points": 85,
         "titles": [
           "Novato",
           "Casado"
@@ -5310,7 +5293,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 44,
+          "commands_used": 45,
           "cm_tiradas": 31,
           "cm_ataques": 0,
           "registered_date": 1765055814312,
@@ -5322,7 +5305,7 @@
           "dildear_count": 0
         }
       },
-      "pandacoins": 23000,
+      "pandacoins": 28000,
       "personajes": [
         "Burrito De Lukas",
         "Las Sis *🕷️*",
@@ -5695,7 +5678,7 @@
       ]
     },
     "259094388727968@lid": {
-      "pandacoins": 2493903,
+      "pandacoins": 2470843,
       "personajes": [
         "Las Sis *🕷️*",
         "Karkerkar Kurkur",
@@ -6151,10 +6134,11 @@
       "achievements": {
         "unlocked": [
           "first_steps",
-          "music_starter"
+          "music_starter",
+          "collector_1"
         ],
         "progress": {},
-        "points": 15,
+        "points": 30,
         "titles": [
           "Novato"
         ],
@@ -6166,7 +6150,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 2,
+          "commands_used": 4,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1765162409228,
@@ -6178,7 +6162,7 @@
           "dildear_count": 0
         }
       },
-      "pandacoins": 3000,
+      "pandacoins": 8000,
       "personajes": [
         "Las Sis *🕷️*",
         "Karkerkar Kurkur",
@@ -6199,9 +6183,9 @@
     "22042241953940@lid": {
       "nombre": "Usuario_22042241953940",
       "registrado": "2025-12-08T03:25:19.859Z",
-      "pandacoins": 708644.7770000002,
-      "exp": 13798,
-      "nivel": 152,
+      "pandacoins": 715099.7770000002,
+      "exp": 4883,
+      "nivel": 153,
       "inventario": {
         "recursos": {
           "carne": 269,
@@ -6250,7 +6234,7 @@
         "misiones_completadas": 0,
         "aventuras": 4,
         "ganancias_ventas": 936,
-        "streak_hours": 3,
+        "streak_hours": 4,
         "dias_consecutivos": 1,
         "ultimo_daily": "2025-12-08",
         "meses_consecutivos": 1,
@@ -6274,10 +6258,11 @@
           "sexo_1",
           "music_starter",
           "thief_1",
-          "cm_spinner_2"
+          "cm_spinner_2",
+          "collector_1"
         ],
         "progress": {},
-        "points": 215,
+        "points": 230,
         "titles": [
           "Novato",
           "Casado",
@@ -6292,7 +6277,7 @@
           "apostar_count": 0,
           "robos_exitosos": 1,
           "robos_fallidos": 2,
-          "commands_used": 392,
+          "commands_used": 396,
           "cm_tiradas": 112,
           "cm_ataques": 1,
           "registered_date": 1765164320676,
@@ -6325,7 +6310,7 @@
       "robarpsCooldown": 1765319380001,
       "ultimoSell": 1765224930961,
       "cooldowns": {
-        "hourly": 1765247845665,
+        "hourly": 1765558314186,
         "daily": 1765224136991,
         "monthly": 1765224167971,
         "superminar": 1765224891697,
@@ -6351,10 +6336,11 @@
           "coin_collector_1",
           "coin_collector_2",
           "coin_collector_3",
-          "married"
+          "married",
+          "collector_1"
         ],
         "progress": {},
-        "points": 140,
+        "points": 155,
         "titles": [
           "Novato",
           "Millonario",
@@ -6368,7 +6354,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 117,
+          "commands_used": 133,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1765164483021,
@@ -6380,27 +6366,18 @@
           "dildear_count": 0
         }
       },
-      "pandacoins": 5917400,
-      "robarpsCooldown": 1765321014238,
+      "pandacoins": 4105387,
+      "robarpsCooldown": 1765564706020,
       "personajes": [
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco",
-        "Tipi Topi Taco"
+        "Yugoslavia 💀"
       ],
       "vip": true,
       "vipExpiration": 5365239776308,
-      "ultimoSell": 1765321024347,
-      "afkCooldown": 1765505973013,
+      "ultimoSell": 1765563976503,
+      "afkCooldown": 1765564823158,
       "afkStats": {
-        "totalTiempo": 157632930,
-        "totalSesiones": 2,
+        "totalTiempo": 157688276,
+        "totalSesiones": 4,
         "robosPrevenidos": 1,
         "mejorRacha": 19
       }
@@ -6591,13 +6568,13 @@
     "74444718477358@lid": {
       "nombre": "Usuario_74444718477358",
       "registrado": "2025-12-08T14:02:29.437Z",
-      "pandacoins": 3989,
-      "exp": 111,
-      "nivel": 2,
+      "pandacoins": 13415,
+      "exp": 124,
+      "nivel": 3,
       "inventario": {
         "recursos": {
-          "pescado": 5,
-          "carne": 5,
+          "pescado": 11,
+          "carne": 12,
           "madera": 0,
           "oro": 0,
           "diamantes": 0,
@@ -6605,7 +6582,7 @@
           "comida": 10,
           "hierro": 0,
           "carbon": 0,
-          "cuero": 2,
+          "cuero": 5,
           "tela": 0,
           "plata": 0,
           "esmeraldas": 0,
@@ -6632,8 +6609,8 @@
         }
       },
       "stats": {
-        "pescas": 2,
-        "cazas": 3,
+        "pescas": 3,
+        "cazas": 4,
         "minas": 0,
         "ventas": 0,
         "compras": 0,
@@ -6644,10 +6621,12 @@
       "logros": [],
       "achievements": {
         "unlocked": [
-          "first_steps"
+          "first_steps",
+          "collector_1",
+          "coin_collector_1"
         ],
         "progress": {},
-        "points": 5,
+        "points": 30,
         "titles": [
           "Novato"
         ],
@@ -6659,7 +6638,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 6,
+          "commands_used": 9,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1765202549703,
@@ -6694,10 +6673,11 @@
           "first_steps",
           "social_butterfly",
           "cm_spinner_1",
-          "coin_collector_1"
+          "coin_collector_1",
+          "collector_1"
         ],
         "progress": {},
-        "points": 45,
+        "points": 60,
         "titles": [
           "Novato"
         ],
@@ -6709,8 +6689,8 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 13,
-          "cm_tiradas": 10,
+          "commands_used": 24,
+          "cm_tiradas": 15,
           "cm_ataques": 0,
           "registered_date": 1765220952648,
           "was_broke": false,
@@ -6721,7 +6701,7 @@
           "dildear_count": 0
         }
       },
-      "pandacoins": 13000,
+      "pandacoins": 18000,
       "personajes": [
         "Tipi Topi Taco",
         "Tipi Topi Taco",
@@ -6834,10 +6814,11 @@
         "unlocked": [
           "first_steps",
           "music_starter",
-          "coin_collector_1"
+          "coin_collector_1",
+          "collector_1"
         ],
         "progress": {},
-        "points": 25,
+        "points": 40,
         "titles": [
           "Novato"
         ],
@@ -6849,19 +6830,19 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 55,
+          "commands_used": 60,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1765233752271,
           "was_broke": false,
           "comeback": false,
-          "spotify_count": 19,
+          "spotify_count": 22,
           "paja_count": 0,
           "sexo_count": 0,
           "dildear_count": 0
         }
       },
-      "pandacoins": 89000,
+      "pandacoins": 94000,
       "personajes": [
         "Tipi Topi Taco",
         "Tipi Topi Taco",
@@ -6879,10 +6860,11 @@
       "achievements": {
         "unlocked": [
           "first_steps",
-          "music_starter"
+          "music_starter",
+          "collector_1"
         ],
         "progress": {},
-        "points": 15,
+        "points": 30,
         "titles": [
           "Novato"
         ],
@@ -6894,19 +6876,19 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 55,
+          "commands_used": 56,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1765235235312,
           "was_broke": false,
           "comeback": false,
-          "spotify_count": 35,
+          "spotify_count": 36,
           "paja_count": 3,
           "sexo_count": 0,
           "dildear_count": 0
         }
       },
-      "pandacoins": 3000,
+      "pandacoins": 8000,
       "personajes": [
         "Tipi Topi Taco",
         "Tipi Topi Taco",
@@ -7015,7 +6997,7 @@
     "126268414632188@lid": {
       "nombre": "Usuario_126268414632188",
       "registrado": "2025-12-08T23:43:28.117Z",
-      "pandacoins": 2050,
+      "pandacoins": 7050,
       "exp": 15,
       "nivel": 1,
       "inventario": {
@@ -7068,10 +7050,11 @@
       "logros": [],
       "achievements": {
         "unlocked": [
-          "first_steps"
+          "first_steps",
+          "collector_1"
         ],
         "progress": {},
-        "points": 5,
+        "points": 20,
         "titles": [
           "Novato"
         ],
@@ -7083,7 +7066,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 4,
+          "commands_used": 7,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1765237408643,
@@ -7157,10 +7140,11 @@
       "achievements": {
         "unlocked": [
           "first_steps",
-          "music_starter"
+          "music_starter",
+          "collector_1"
         ],
         "progress": {},
-        "points": 15,
+        "points": 30,
         "titles": [
           "Novato"
         ],
@@ -7172,19 +7156,19 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 6,
+          "commands_used": 12,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1765238389823,
           "was_broke": false,
           "comeback": false,
-          "spotify_count": 6,
+          "spotify_count": 8,
           "paja_count": 0,
           "sexo_count": 0,
           "dildear_count": 0
         }
       },
-      "pandacoins": 3000,
+      "pandacoins": 8000,
       "personajes": [
         "Tipi Topi Taco",
         "Tipi Topi Taco",
@@ -7581,7 +7565,7 @@
         "77176535785481@lid",
         "44840028995616@lid"
       ],
-      "recolectados": 128440339
+      "recolectados": 128444725
     }
   },
   "economia": {
@@ -7646,7 +7630,7 @@
   },
   "_meta": {
     "version": "2.0",
-    "savesWithoutBackup": 1,
+    "savesWithoutBackup": 23,
     "creado": "2025-12-04T13:05:46.997Z"
   },
   "ultimoBossTimestamp": 1764853624547,
@@ -7674,10 +7658,13 @@
           6,
           7,
           8,
-          9
+          9,
+          10,
+          11,
+          12
         ],
         "primerReclamo": "2025-12-04T13:31:24.302Z",
-        "ultimoReclamo": "2025-12-09T22:27:36.044Z"
+        "ultimoReclamo": "2025-12-12T15:35:39.604Z"
       },
       "166164298780822@lid": {
         "diasReclamados": [
@@ -7714,10 +7701,14 @@
           7,
           6,
           5,
-          8
+          8,
+          9,
+          10,
+          11,
+          12
         ],
         "primerReclamo": "2025-12-04T15:05:07.787Z",
-        "ultimoReclamo": "2025-12-09T22:52:32.591Z"
+        "ultimoReclamo": "2025-12-12T15:32:19.992Z"
       },
       "267232999420158@lid": {
         "diasReclamados": [
@@ -7866,10 +7857,17 @@
           2,
           3,
           4,
-          5
+          5,
+          9,
+          10,
+          11,
+          12,
+          6,
+          7,
+          8
         ],
         "primerReclamo": "2025-12-04T23:02:42.312Z",
-        "ultimoReclamo": "2025-12-05T11:22:10.103Z"
+        "ultimoReclamo": "2025-12-12T15:38:53.225Z"
       },
       "66787295129695@lid": {
         "diasReclamados": [
@@ -7969,6 +7967,13 @@
         ],
         "primerReclamo": "2025-12-09T02:19:53.506Z",
         "ultimoReclamo": "2025-12-09T02:20:37.781Z"
+      },
+      "77176535785481@lid": {
+        "diasReclamados": [
+          8
+        ],
+        "primerReclamo": "2025-12-12T15:39:17.940Z",
+        "ultimoReclamo": "2025-12-12T15:39:17.940Z"
       }
     }
   },
@@ -7996,9 +8001,18 @@
           "nivel": 6,
           "produccionPorSegundo": 1.8564650000000003,
           "capacidad": 92823.25000000001,
-          "acumulado": 92823.25000000001,
-          "ultimaActualizacion": 1765550145259,
+          "acumulado": 17006.433528109977,
+          "ultimaActualizacion": 1765564921526,
           "mejora": 1.3
+        },
+        {
+          "tipo": 5,
+          "nivel": 2,
+          "produccionPorSegundo": 17,
+          "capacidad": 1700000,
+          "acumulado": 155327.28799999994,
+          "ultimaActualizacion": 1765564921526,
+          "mejora": 1.7
         }
       ],
       "31366532055076@lid": [
@@ -8007,17 +8021,17 @@
           "nivel": 2,
           "produccionPorSegundo": 0.65,
           "capacidad": 32500,
-          "acumulado": 32500,
-          "ultimaActualizacion": 1765550145259,
+          "acumulado": 7001.166250000002,
+          "ultimaActualizacion": 1765564921526,
           "mejora": 1.3
         },
         {
           "tipo": 5,
-          "nivel": 6,
-          "produccionPorSegundo": 141.98569999999998,
-          "capacidad": 14198569.999999998,
-          "acumulado": 14198569.999999998,
-          "ultimaActualizacion": 1765550145259,
+          "nivel": 7,
+          "produccionPorSegundo": 241.37568999999996,
+          "capacidad": 24137568.999999996,
+          "acumulado": 2388734.0075647985,
+          "ultimaActualizacion": 1765564921526,
           "mejora": 1.7
         }
       ],
@@ -8028,7 +8042,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1765550145259,
+          "ultimaActualizacion": 1765564921526,
           "mejora": 1.3
         }
       ],
@@ -8039,7 +8053,7 @@
           "produccionPorSegundo": 654,
           "capacidad": 69757573,
           "acumulado": 69757573,
-          "ultimaActualizacion": 1765550145259,
+          "ultimaActualizacion": 1765564921526,
           "mejora": 1.7
         },
         {
@@ -8048,7 +8062,7 @@
           "produccionPorSegundo": 275,
           "capacidad": 25769801,
           "acumulado": 25769801,
-          "ultimaActualizacion": 1765550145259,
+          "ultimaActualizacion": 1765564921526,
           "mejora": 1.6
         },
         {
@@ -8056,8 +8070,8 @@
           "nivel": 11,
           "produccionPorSegundo": 94,
           "capacidad": 69197994,
-          "acumulado": 21541206.380000018,
-          "ultimaActualizacion": 1765550145259,
+          "acumulado": 22930175.478000052,
+          "ultimaActualizacion": 1765564921526,
           "mejora": 1.5
         },
         {
@@ -8066,7 +8080,7 @@
           "produccionPorSegundo": 48.59478203596797,
           "capacidad": 2429739.1017983984,
           "acumulado": 2429739.1017983984,
-          "ultimaActualizacion": 1765550145259,
+          "ultimaActualizacion": 1765564921526,
           "mejora": 1.4
         },
         {
@@ -8075,7 +8089,7 @@
           "produccionPorSegundo": 8.960801970185003,
           "capacidad": 448040.09850925015,
           "acumulado": 448040.09850925015,
-          "ultimaActualizacion": 1765550145259,
+          "ultimaActualizacion": 1765564921526,
           "mejora": 1.3
         }
       ],
@@ -8086,7 +8100,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1765550145259,
+          "ultimaActualizacion": 1765564921526,
           "mejora": 1.3
         }
       ],
@@ -8097,7 +8111,7 @@
           "produccionPorSegundo": 17,
           "capacidad": 1700000,
           "acumulado": 1700000,
-          "ultimaActualizacion": 1765550145259,
+          "ultimaActualizacion": 1765564921526,
           "mejora": 1.7
         }
       ],
@@ -8107,16 +8121,62 @@
           "nivel": 4,
           "produccionPorSegundo": 49.129999999999995,
           "capacidad": 4912999.999999999,
-          "acumulado": 4912999.999999999,
-          "ultimaActualizacion": 1765550145259,
+          "acumulado": 507794.9061999993,
+          "ultimaActualizacion": 1765564921526,
           "mejora": 1.7
+        },
+        {
+          "tipo": 4,
+          "nivel": 4,
+          "produccionPorSegundo": 18.432000000000006,
+          "capacidad": 1536000.0000000005,
+          "acumulado": 99059.87919600007,
+          "ultimaActualizacion": 1765564921526,
+          "mejora": 1.6
+        },
+        {
+          "tipo": 3,
+          "nivel": 4,
+          "produccionPorSegundo": 8.4375,
+          "capacidad": 506250,
+          "acumulado": 45284.18062499994,
+          "ultimaActualizacion": 1765564921526,
+          "mejora": 1.5
+        }
+      ],
+      "232925186515150@lid": [
+        {
+          "tipo": 1,
+          "nivel": 1,
+          "produccionPorSegundo": 0.5,
+          "capacidad": 25000,
+          "acumulado": 5267.371000000011,
+          "ultimaActualizacion": 1765564921526,
+          "mejora": 1.3
         }
       ]
     },
     "ultimaActualizacion": 1764891853127
   },
   "afk": {
-    "usuarios": {},
+    "usuarios": {
+      "12833748193431@lid": {
+        "usuario": "12833748193431@lid",
+        "inicio": 1765550887631,
+        "estado": "activo",
+        "grupo": "120363402403091432@g.us",
+        "robosPrevenidos": 3,
+        "ultimaActualizacion": 1765564449552
+      },
+      "99561821479092@lid": {
+        "usuario": "99561821479092@lid",
+        "inicio": 1765552786926,
+        "estado": "activo",
+        "grupo": "120363402403091432@g.us",
+        "robosPrevenidos": 2,
+        "ultimaActualizacion": 1765564430433
+      }
+    },
     "estadisticas": {
       "31366532055076@lid": {
         "totalTiempo": 1615533,
@@ -8134,8 +8194,8 @@
         "robosPrevenidos": 0
       },
       "166164298780822@lid": {
-        "totalTiempo": 3913573,
-        "sesiones": 1,
+        "totalTiempo": 5005157,
+        "sesiones": 2,
         "robosPrevenidos": 3
       },
       "214461239546098@lid": {
@@ -8159,8 +8219,8 @@
         "robosPrevenidos": 0
       },
       "258166407360658@lid": {
-        "totalTiempo": 71232930,
-        "sesiones": 1,
+        "totalTiempo": 71288276,
+        "sesiones": 3,
         "robosPrevenidos": 0
       },
       "157243618136231@lid": {

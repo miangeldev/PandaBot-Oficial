@@ -32,7 +32,7 @@ export async function run(sock, msg, args) {
     }
 
     if (!args.length) {
-        await sock.sendMessage(from, { text: '❌ Usa .sell <NombrePersonaje> para vender un personaje.' });
+        await sock.sendMessage(from, { text: '❌ Usa .sell2 <NombrePersonaje> para vender un personaje.' });
         return;
     }
 

@@ -7,6 +7,9 @@ import { prefix, ownerNumber } from './config.js';
 import { trackCommand } from './middleware/trackAchievements.js';
 import { initializeAchievements } from './data/achievementsDB.js';
 
+// ⚡ NUEVO: Importar función para desactivar AFK automáticamente
+import { desactivarAFKAutomatico } from './plugins/afk.js';
+
 class CacheManager {
   constructor() {
     this.cache = new Map();
@@ -175,6 +178,16 @@ export async function handleMessage(sock, msg) {
   const isGroup = from.endsWith('@g.us');
   const sender = msg.key.participant || msg.key.remoteJid;
   const senderNumber = normalizeNumber(sender);
+
+  // ⚡ NUEVO: Desactivar AFK automáticamente si el usuario envía mensaje
+  try {
+    const fueDesactivado = await desactivarAFKAutomatico(sender, from, sock);
+    if (fueDesactivado) {
+      console.log(chalk.cyan(`🔄 AFK desactivado automáticamente para ${senderNumber}`));
+    }
+  } catch (error) {
+    console.error(chalk.yellow('⚠️ Error al verificar AFK:'), error.message);
+  }
 
   const db = cargarDatabase();
   db.users = db.users || {};
