@@ -18918,6 +18918,15 @@
       ],
       "base": "Brell",
       "creadoEn": "2025-12-23T14:11:57.657Z"
+    },
+    {
+      "nombre": "entei *Glitch*",
+      "calidad": "común",
+      "precio": 4800,
+      "efectos": [
+        "Glitch"
+      ],
+      "descripcion": "Pokémon oficial: entei"
     }
   ]
 }

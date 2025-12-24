@@ -3,7 +3,7 @@
     "166164298780822@lid": {
       "nombre": "Usuario_166164298780822",
       "registrado": "2025-12-04T13:08:05.786Z",
-      "pandacoins": 853616.1588745117,
+      "pandacoins": 1662600.1588745117,
       "exp": 2755,
       "nivel": 191,
       "inventario": {
@@ -11,28 +11,28 @@
           "oro": 0,
           "diamantes": 154,
           "comida": 28,
-          "hierro": 0,
+          "hierro": 50,
           "tela": 0,
           "plata": 0,
           "rubies": 2,
           "regalo": 12,
           "cuero": 4,
-          "piedras": 487,
+          "piedras": 587,
           "pescado": 83,
           "carbon": 132,
           "carne": 51,
           "madera": 199
         },
         "herramientas": {
-          "pico": 6,
+          "pico": 8,
           "hacha": 4,
           "caña": 0,
-          "arco": 1,
-          "espada": 1,
+          "arco": 2,
+          "espada": 2,
           "armadura": 2
         },
         "especiales": {
-          "pocion": 3,
+          "pocion": 6,
           "llave": 2,
           "gema": 0,
           "pergamino": 2
@@ -101,10 +101,32 @@
           "comeback_kid",
           "pizzero_1",
           "pizzero_2",
-          "pizzero_3"
+          "pizzero_3",
+          "miner_1",
+          "miner_2",
+          "miner_3",
+          "worker_1",
+          "worker_2",
+          "buyer_2",
+          "buyer_3",
+          "thief_3",
+          "gambler_2",
+          "gambler_3",
+          "cm_spinner_2",
+          "cm_spinner_3",
+          "cm_attacker",
+          "music_lover",
+          "music_master",
+          "paja_1",
+          "paja_2",
+          "paja_3",
+          "sexo_2",
+          "sexo_3",
+          "dildear_2",
+          "dildear_3"
         ],
         "progress": {},
-        "points": 580,
+        "points": 1620,
         "titles": [
           "Novato",
           "Casado",
@@ -115,17 +137,27 @@
           "Ladrón Profesional",
           "🐼 Owner",
           "Fenix",
-          "Maestro Pizzero"
+          "Maestro Pizzero",
+          "Rey Minero",
+          "Empleado del Mes",
+          "Comprador Compulsivo",
+          "El Padrino",
+          "Ludópata",
+          "Maestro del Spin",
+          "DJ Master",
+          "Maestro de la Paja",
+          "Violador",
+          "Amante del dildo 🔥"
         ],
         "selectedTitle": null,
         "stats": {
           "minar_count": 1000,
           "trabajar_count": 1000,
-          "buy_count": 1000,
+          "buy_count": 1008,
           "apostar_count": 1000,
           "robos_exitosos": 1000,
           "robos_fallidos": 0,
-          "commands_used": 1000,
+          "commands_used": 1023,
           "cm_tiradas": 1000,
           "cm_ataques": 1000,
           "registered_date": 1764853687041,
@@ -138,7 +170,7 @@
         }
       },
       "cooldowns": {
-        "ps": 1766339545566,
+        "ps": 1766583497128,
         "dropvip": 1766328370261,
         "daily": 1765224146802,
         "monthly": 1764860685343,
@@ -151,10 +183,20 @@
         "Dragon Canelloni",
         "bellsprout",
         "Josexo 💧 💤",
+        "Alma",
+        "Tina Rex",
+        "mothim",
+        "Alma",
+        "Alma",
+        "Alma",
+        "Alma",
+        "Alma",
+        "Alma",
+        "Alma",
         "Alma"
       ],
       "ultimoSell": 1766447478548,
-      "robarpsCooldown": 1766534217617,
+      "robarpsCooldown": 1766583502921,
       "inversiones": {
         "LILANCOIN": {
           "cantidad": 49797299.40361585,
@@ -187,7 +229,7 @@
         "fallidos": 0
       },
       "ultimoApostar": 1766422553480,
-      "ultimoBuy": 1766433013885,
+      "ultimoBuy": 1766583609679,
       "alineacion": {
         "formacion": "4-3-3",
         "posiciones": {}
@@ -293,13 +335,13 @@
           "apostar_count": 0,
           "robos_exitosos": 4,
           "robos_fallidos": 1,
-          "commands_used": 505,
+          "commands_used": 509,
           "cm_tiradas": 12,
           "cm_ataques": 1,
           "registered_date": 1764853923387,
           "was_broke": false,
           "comeback": false,
-          "spotify_count": 13,
+          "spotify_count": 14,
           "paja_count": 0,
           "sexo_count": 4,
           "dildear_count": 2
@@ -343,10 +385,10 @@
       "creditos": 8
     },
     "31366532055076@lid": {
-      "pandacoins": 175756969.75242364,
+      "pandacoins": 875493.6162390709,
       "robos": {
-        "exitosos": 310,
-        "fallidos": 152
+        "exitosos": 311,
+        "fallidos": 155
       },
       "achievements": {
         "unlocked": [
@@ -420,17 +462,18 @@
           "🇩🇪 Fan de Hitler",
           "💞 Simp",
           "🤵‍♂️ De calle pero elegante",
-          "💔 Sad Boy"
+          "💔 Sad Boy",
+          "🎄 Navideño"
         ],
         "selectedTitle": "💔 Sad Boy",
         "stats": {
-          "minar_count": 135,
-          "trabajar_count": 12,
-          "buy_count": 3377,
-          "apostar_count": 249,
+          "minar_count": 139,
+          "trabajar_count": 14,
+          "buy_count": 3378,
+          "apostar_count": 251,
           "robos_exitosos": 244,
           "robos_fallidos": 126,
-          "commands_used": 14761,
+          "commands_used": 14829,
           "cm_tiradas": 608,
           "cm_ataques": 80,
           "registered_date": 1764854376273,
@@ -445,15 +488,15 @@
       "vip": true,
       "cooldowns": {
         "superminar": 1766522916185,
-        "ps": 1766473950941,
-        "dropvip": 1766522920565,
+        "ps": 1766583508742,
+        "dropvip": 1766581105444,
         "daily": 1766347135013,
         "monthly": 1764884071703,
-        "hourly": 1766537759392,
+        "hourly": 1766581098077,
         "magicbox": 1766114715438,
         "weekly": 1766410835804
       },
-      "diamantes": 680,
+      "diamantes": 780,
       "personajes": [
         "galvantula",
         "Trigroligre Frutonni",
@@ -2475,49 +2518,51 @@
         "Brell",
         "Brell",
         "Brell",
-        "Brell"
+        "Jesucristo",
+        "Tom ler 🇨🇱",
+        "kricketune"
       ],
-      "robarpsCooldown": 1766537732254,
-      "ultimoSell": 1766532774650,
+      "robarpsCooldown": 1766583565220,
+      "ultimoSell": 1766556183929,
       "ultimoTransfer": 1766535683309,
       "inventario": {
         "recursos": {
-          "pescado": 76534,
-          "carne": 39346,
-          "madera": 24208,
+          "pescado": 77378,
+          "carne": 39819,
+          "madera": 24823,
           "oro": 4735,
           "diamantes": 1077,
-          "piedras": 45064,
-          "comida": 36,
-          "hierro": 11340,
-          "carbon": 21281,
-          "cuero": 508,
+          "piedras": 46077,
+          "comida": 44,
+          "hierro": 11390,
+          "carbon": 21581,
+          "cuero": 512,
           "tela": 0,
           "regalo": 12,
           "rubies": 4,
           "esmeraldas": 2
         },
         "herramientas": {
-          "pico": 38,
-          "espada": 2,
+          "pico": 41,
+          "espada": 3,
           "armadura": 12,
-          "hacha": 35,
+          "hacha": 36,
           "caña": 4,
-          "arco": 5
+          "arco": 6
         },
         "especiales": {
           "pergamino": 3,
-          "pocion": 35,
-          "llave": 10,
+          "pocion": 39,
+          "llave": 11,
           "gema": 4
         },
         "mascotas": {},
         "capacidad": 200
       },
       "stats": {
-        "minas": 366,
-        "pescas": 378,
-        "cazas": 349,
+        "minas": 370,
+        "pescas": 381,
+        "cazas": 352,
         "dias_consecutivos": 10,
         "ultimo_daily": "2025-12-21",
         "meses_consecutivos": 1,
@@ -2526,21 +2571,21 @@
         "pescas_mes": 0,
         "cazas_mes": 0,
         "minas_mes": 0,
-        "aventuras": 53,
+        "aventuras": 54,
         "dados_pvp_perdidos": 2,
         "dados_pvp_ganados": 4,
         "dados_pvp_ganancias": 2351316,
         "rifas_participadas": 1,
         "rifas_gastado": 3000,
-        "streak_hours": 55,
+        "streak_hours": 56,
         "semanas_consecutivas": 2,
         "dailies_esta_semana": 0,
         "pescas_semana": 0,
         "cazas_semana": 0,
         "minas_semana": 0
       },
-      "nivel": 370,
-      "exp": 17974,
+      "nivel": 371,
+      "exp": 28095,
       "inversiones": {
         "LILANCOIN": {
           "cantidad": 0,
@@ -2567,15 +2612,15 @@
           "inversionTotal": 0
         }
       },
-      "ultimoBuy": 1766532783170,
-      "afkCooldown": 1766537796676,
+      "ultimoBuy": 1766556188407,
+      "afkCooldown": 1766581068588,
       "afkStats": {
-        "totalTiempo": 173088214,
-        "totalSesiones": 73,
+        "totalTiempo": 197939513,
+        "totalSesiones": 74,
         "robosPrevenidos": 10,
         "mejorRacha": 10
       },
-      "ultimoApostar": 1766536978794,
+      "ultimoApostar": 1766583424461,
       "id": 4,
       "vipExpiration": 1768879724740,
       "reputacion": 37,
@@ -2632,7 +2677,7 @@
       "favorito": "Brell"
     },
     "125675138736203@lid": {
-      "pandacoins": 576246141.9879526,
+      "pandacoins": 576303709.9879526,
       "achievements": {
         "unlocked": [
           "first_steps",
@@ -2664,17 +2709,18 @@
           "Femboy 🎀",
           "🏆 Top Global",
           "🤡 Payaso",
-          "🎁 Regalero"
+          "🎁 Regalero",
+          "🎄 Navideño"
         ],
         "selectedTitle": "Femboy 🎀",
         "stats": {
-          "minar_count": 13,
+          "minar_count": 14,
           "trabajar_count": 9,
           "buy_count": 90,
           "apostar_count": 0,
           "robos_exitosos": 22,
           "robos_fallidos": 14,
-          "commands_used": 2027,
+          "commands_used": 2035,
           "cm_tiradas": 66,
           "cm_ataques": 1,
           "registered_date": 1764875789807,
@@ -2688,16 +2734,16 @@
       },
       "vip": true,
       "cooldowns": {
-        "superminar": 1766462260560,
+        "superminar": 1766553687338,
         "monthly": 1764884317129,
         "daily": 1766540681386,
-        "hourly": 1766540678177,
+        "hourly": 1766553731043,
         "ps": 1766447862103,
         "magicbox": 1766340316945,
         "dropvip": 1766413306185,
         "weekly": 1766437188776
       },
-      "diamantes": 580,
+      "diamantes": 730,
       "robos": {
         "exitosos": 37,
         "fallidos": 21
@@ -2708,7 +2754,7 @@
           "pescado": 15805,
           "carne": 8471,
           "oro": 691,
-          "piedras": 8855,
+          "piedras": 9278,
           "comida": 5,
           "hierro": 4446,
           "carbon": 5136,
@@ -2737,7 +2783,7 @@
         "mascotas": {}
       },
       "stats": {
-        "minas": 59,
+        "minas": 60,
         "pescas": 52,
         "cazas": 50,
         "aventuras": 19,
@@ -2749,7 +2795,7 @@
         "minas_mes": 0,
         "dias_consecutivos": 12,
         "ultimo_daily": "2025-12-24",
-        "streak_hours": 42,
+        "streak_hours": 43,
         "ventas": 837,
         "ganancias_ventas": 146574,
         "semanas_consecutivas": 2,
@@ -2758,8 +2804,8 @@
         "cazas_semana": 0,
         "minas_semana": 0
       },
-      "nivel": 518,
-      "exp": 46788,
+      "nivel": 519,
+      "exp": 20093,
       "personajes": [
         "Presenten A La Prima De Antonella",
         "bayleef",
@@ -2796,7 +2842,7 @@
         }
       },
       "ultimoBuy": 1766451721069,
-      "afkCooldown": 1766541316872,
+      "afkCooldown": 1766553793303,
       "afkStats": {
         "totalTiempo": 346908190,
         "totalSesiones": 48,
@@ -3291,7 +3337,7 @@
           "apostar_count": 0,
           "robos_exitosos": 7,
           "robos_fallidos": 0,
-          "commands_used": 453,
+          "commands_used": 456,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1764855947233,
@@ -3752,7 +3798,7 @@
           "apostar_count": 18,
           "robos_exitosos": 30,
           "robos_fallidos": 17,
-          "commands_used": 3005,
+          "commands_used": 3009,
           "cm_tiradas": 361,
           "cm_ataques": 7,
           "registered_date": 1764857980364,
@@ -3853,12 +3899,12 @@
           "inversionTotal": 0
         },
         "MOONSHOT": {
-          "cantidad": 129297184.28155586,
-          "inversionTotal": 22124263.438102175
-        },
-        "SAFEGEM": {
           "cantidad": 0,
           "inversionTotal": 0
+        },
+        "SAFEGEM": {
+          "cantidad": 764537.0306080058,
+          "inversionTotal": 18399927.419652175
         },
         "NEUTRON": {
           "cantidad": 0,
@@ -3964,7 +4010,7 @@
           "apostar_count": 0,
           "robos_exitosos": 2,
           "robos_fallidos": 1,
-          "commands_used": 167,
+          "commands_used": 168,
           "cm_tiradas": 4,
           "cm_ataques": 0,
           "registered_date": 1764858051699,
@@ -4199,7 +4245,7 @@
           "apostar_count": 0,
           "robos_exitosos": 4,
           "robos_fallidos": 7,
-          "commands_used": 327,
+          "commands_used": 328,
           "cm_tiradas": 3,
           "cm_ataques": 4,
           "registered_date": 1764859090506,
@@ -7398,7 +7444,7 @@
           "apostar_count": 0,
           "robos_exitosos": 1,
           "robos_fallidos": 0,
-          "commands_used": 145,
+          "commands_used": 146,
           "cm_tiradas": 2,
           "cm_ataques": 0,
           "registered_date": 1764908969741,
@@ -7931,7 +7977,7 @@
           "apostar_count": 1,
           "robos_exitosos": 1,
           "robos_fallidos": 4,
-          "commands_used": 102,
+          "commands_used": 103,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1766015976177,
@@ -12513,11 +12559,11 @@
           "inversionTotal": 0
         }
       },
-      "afkCooldown": 1766474591168,
+      "afkCooldown": 1766579932469,
       "afkStats": {
-        "totalTiempo": 78644838,
-        "totalSesiones": 6,
-        "robosPrevenidos": 0,
+        "totalTiempo": 165044838,
+        "totalSesiones": 7,
+        "robosPrevenidos": 1,
         "mejorRacha": 19
       },
       "robos": {
@@ -14419,9 +14465,9 @@
     "184365883650217@lid": {
       "nombre": "Usuario_184365883650217",
       "registrado": "2025-12-18T14:29:56.705Z",
-      "pandacoins": -1660549146.687745,
-      "exp": 20871,
-      "nivel": 234,
+      "pandacoins": -1660366877.687745,
+      "exp": 17921,
+      "nivel": 235,
       "inventario": {
         "recursos": {
           "pescado": 4410,
@@ -14429,7 +14475,7 @@
           "madera": 3837,
           "oro": 672,
           "comida": 13,
-          "hierro": 910,
+          "hierro": 915,
           "carbon": 1474,
           "cuero": 21,
           "tela": 0,
@@ -14479,12 +14525,12 @@
         "dados_empatados": 1,
         "dados_ganados": 7,
         "dados_ganancias": 540,
-        "aventuras": 9,
+        "aventuras": 10,
         "dados_perdidos": 4,
         "dados_pvp_perdidos": 5,
         "dados_pvp_ganados": 2,
         "dados_pvp_ganancias": 30000,
-        "streak_hours": 12,
+        "streak_hours": 13,
         "meses_consecutivos": 1,
         "dailies_este_mes": 0,
         "weeklies_este_mes": 0,
@@ -14531,7 +14577,7 @@
           "apostar_count": 10,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 880,
+          "commands_used": 886,
           "cm_tiradas": 16,
           "cm_ataques": 0,
           "registered_date": 1766068196963,
@@ -14547,7 +14593,7 @@
         "daily": 1766454635986,
         "weekly": 1766068627633,
         "ps": 1766528359394,
-        "hourly": 1766534669228,
+        "hourly": 1766554826659,
         "monthly": 1766366492434,
         "dropvip": 1766528558934,
         "magicbox": 1766528528302
@@ -14707,15 +14753,15 @@
         }
       },
       "birthday": "08/12",
-      "robarpsCooldown": 1766538006610,
+      "robarpsCooldown": 1766554832802,
       "vipExpiration": 1766701207499
     },
     "190525286137929@lid": {
       "nombre": "Usuario_190525286137929",
       "registrado": "2025-12-18T14:51:16.075Z",
-      "pandacoins": 1643803,
-      "exp": 15093,
-      "nivel": 238,
+      "pandacoins": 1695223,
+      "exp": 2669,
+      "nivel": 239,
       "inventario": {
         "recursos": {
           "pescado": 1871,
@@ -14770,7 +14816,7 @@
         "pescas_mes": 0,
         "cazas_mes": 0,
         "minas_mes": 0,
-        "streak_hours": 20,
+        "streak_hours": 21,
         "semanas_consecutivas": 1,
         "dailies_esta_semana": 0,
         "pescas_semana": 0,
@@ -14782,8 +14828,8 @@
       "cooldowns": {
         "daily": 1766532525308,
         "monthly": 1766069639353,
-        "hourly": 1766541162736,
-        "ps": 1766541150581,
+        "hourly": 1766586361687,
+        "ps": 1766586359868,
         "weekly": 1766069791217
       },
       "achievements": {
@@ -14805,17 +14851,18 @@
           "Millonario",
           "🍀 Suertudo",
           "🤡 Payaso",
-          "🎁 Regalero"
+          "🎁 Regalero",
+          "🎄 Navideño"
         ],
         "selectedTitle": null,
         "stats": {
           "minar_count": 7,
-          "trabajar_count": 4,
+          "trabajar_count": 5,
           "buy_count": 0,
           "apostar_count": 1,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 277,
+          "commands_used": 282,
           "cm_tiradas": 21,
           "cm_ataques": 0,
           "registered_date": 1766069476338,
@@ -14855,12 +14902,13 @@
         "zygarde-10 🕷",
         "Brri Brri Bicus Dicus Bombicus",
         "Enderman",
-        "Kazooie"
+        "Kazooie",
+        "larvitar"
       ],
       "ultimoApostar": 1766071852234,
       "vip": true,
       "vipExpiration": 1766287179888,
-      "diamantes": 80,
+      "diamantes": 180,
       "pizzeria": {
         "registered": true,
         "level": 1,
@@ -14892,7 +14940,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 64,
+          "commands_used": 65,
           "cm_tiradas": 11,
           "cm_ataques": 0,
           "registered_date": 1766069672428,
@@ -14905,7 +14953,7 @@
         }
       },
       "cooldowns": {
-        "ps": 1766537139006,
+        "ps": 1766586368205,
         "weekly": 1766069818218
       },
       "personajes": [
@@ -14931,7 +14979,8 @@
         "toxtricity-low-key-gmax",
         "Pandaccini Bananini 🥟",
         "liepard",
-        "Shade"
+        "Shade",
+        "zekrom"
       ],
       "stats": {
         "semanas_consecutivas": 1,
@@ -14967,7 +15016,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 56,
+          "commands_used": 59,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1766071366284,
@@ -14979,7 +15028,7 @@
           "dildear_count": 0
         }
       },
-      "pandacoins": 19095,
+      "pandacoins": 13295,
       "personajes": [
         "Xmas Everything",
         "Rodolfo el Reno",
@@ -14991,7 +15040,7 @@
         "La Karkerkar Combinasion",
         "Tom Ass 🌮 💩"
       ],
-      "ultimoTransfer": 1766455416902
+      "ultimoTransfer": 1766585843594
     },
     "258445764771988@lid": {
       "achievements": {
@@ -15022,22 +15071,22 @@
           "apostar_count": 0,
           "robos_exitosos": 8,
           "robos_fallidos": 14,
-          "commands_used": 242,
-          "cm_tiradas": 2,
+          "commands_used": 265,
+          "cm_tiradas": 9,
           "cm_ataques": 0,
           "registered_date": 1766071632094,
           "was_broke": false,
           "comeback": false,
-          "spotify_count": 27,
+          "spotify_count": 31,
           "paja_count": 5,
           "sexo_count": 0,
           "dildear_count": 3
         }
       },
-      "pandacoins": 12143945.0759,
+      "pandacoins": 12047938.3684,
       "robos": {
-        "exitosos": 14,
-        "fallidos": 16
+        "exitosos": 16,
+        "fallidos": 17
       },
       "inversiones": {},
       "personajes": [
@@ -17947,19 +17996,19 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 408,
-          "cm_tiradas": 33,
+          "commands_used": 459,
+          "cm_tiradas": 51,
           "cm_ataques": 0,
           "registered_date": 1766182760654,
           "was_broke": true,
           "comeback": false,
           "spotify_count": 0,
           "paja_count": 0,
-          "sexo_count": 8,
+          "sexo_count": 9,
           "dildear_count": 1
         }
       },
-      "pandacoins": 316238,
+      "pandacoins": 316318,
       "personajes": [
         "Xmas Everything",
         "Rodolfo el Reno",
@@ -17973,18 +18022,18 @@
         "Hatsune Miku"
       ],
       "stats": {
-        "dados_pvp_ganados": 14,
-        "dados_pvp_ganancias": 2300,
-        "dados_pvp_perdidos": 13,
+        "dados_pvp_ganados": 17,
+        "dados_pvp_ganancias": 2600,
+        "dados_pvp_perdidos": 17,
         "semanas_consecutivas": 1,
         "dailies_esta_semana": 0,
         "pescas_semana": 0,
         "cazas_semana": 0,
         "minas_semana": 0,
-        "dados_jugados": 85,
-        "dados_ganados": 31,
-        "dados_ganancias": 1910,
-        "dados_perdidos": 33,
+        "dados_jugados": 89,
+        "dados_ganados": 34,
+        "dados_ganancias": 2190,
+        "dados_perdidos": 34,
         "dados_empatados": 21
       },
       "exp": 23,
@@ -18626,13 +18675,13 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 9,
+          "commands_used": 13,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1766347401651,
           "was_broke": false,
           "comeback": false,
-          "spotify_count": 8,
+          "spotify_count": 12,
           "paja_count": 0,
           "sexo_count": 0,
           "dildear_count": 0
@@ -19247,20 +19296,20 @@
     "246403028803664@lid": {
       "nombre": "Usuario_246403028803664",
       "registrado": "2025-12-22T18:18:18.379Z",
-      "pandacoins": 14378385.137907667,
-      "exp": 925,
+      "pandacoins": 14380051.137907667,
+      "exp": 1157,
       "nivel": 28,
       "inventario": {
         "recursos": {
           "pescado": 174,
-          "carne": 103,
-          "madera": 135,
+          "carne": 115,
+          "madera": 153,
           "oro": 0,
           "diamantes": 5,
           "piedras": 95,
           "comida": 19,
           "hierro": 17,
-          "carbon": 47,
+          "carbon": 73,
           "cuero": 13,
           "tela": 0,
           "plata": 0,
@@ -19290,8 +19339,8 @@
       },
       "stats": {
         "pescas": 14,
-        "cazas": 14,
-        "minas": 14,
+        "cazas": 15,
+        "minas": 15,
         "ventas": 0,
         "compras": 0,
         "boss_danio": 0,
@@ -19324,13 +19373,13 @@
         ],
         "selectedTitle": null,
         "stats": {
-          "minar_count": 14,
+          "minar_count": 15,
           "trabajar_count": 4,
           "buy_count": 0,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 455,
+          "commands_used": 462,
           "cm_tiradas": 26,
           "cm_ataques": 0,
           "registered_date": 1766427498677,
@@ -19442,19 +19491,19 @@
     "157243618136231@lid": {
       "nombre": "Usuario_157243618136231",
       "registrado": "2025-12-22T18:39:25.540Z",
-      "pandacoins": 365527977.3424175,
-      "exp": 12105,
-      "nivel": 183,
+      "pandacoins": 360239617.3424175,
+      "exp": 3184,
+      "nivel": 184,
       "inventario": {
         "recursos": {
-          "pescado": 288,
-          "carne": 163,
-          "madera": 214,
+          "pescado": 429,
+          "carne": 241,
+          "madera": 318,
           "oro": 0,
           "diamantes": 0,
-          "piedras": 316,
-          "comida": 11,
-          "hierro": 0,
+          "piedras": 10468,
+          "comida": 511,
+          "hierro": 5000,
           "carbon": 0,
           "cuero": 5,
           "tela": 0,
@@ -19464,15 +19513,15 @@
           "regalo": 12
         },
         "herramientas": {
-          "pico": 102,
-          "hacha": 100,
+          "pico": 402,
+          "hacha": 200,
           "caña": 1,
-          "arco": 100,
-          "espada": 101,
+          "arco": 200,
+          "espada": 201,
           "armadura": 101
         },
         "especiales": {
-          "pocion": 3,
+          "pocion": 303,
           "llave": 3,
           "gema": 0,
           "pergamino": 1
@@ -19482,12 +19531,12 @@
           "comida_premium": 0,
           "juguetes": 2
         },
-        "capacidad": 150
+        "capacidad": 250
       },
       "stats": {
-        "pescas": 4,
-        "cazas": 4,
-        "minas": 5,
+        "pescas": 5,
+        "cazas": 5,
+        "minas": 6,
         "ventas": 0,
         "compras": 0,
         "boss_danio": 0,
@@ -19505,7 +19554,7 @@
         "minas_mes": 0,
         "dias_consecutivos": 1,
         "ultimo_daily": "2025-12-23",
-        "streak_hours": 2
+        "streak_hours": 3
       },
       "misiones_activas": {},
       "logros": [],
@@ -19534,17 +19583,18 @@
           "Novato",
           "Casado",
           "Millonario",
-          "Magnate"
+          "Magnate",
+          "🎄 Navideño"
         ],
         "selectedTitle": null,
         "stats": {
-          "minar_count": 5,
-          "trabajar_count": 2,
-          "buy_count": 92,
+          "minar_count": 6,
+          "trabajar_count": 3,
+          "buy_count": 95,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 437,
+          "commands_used": 461,
           "cm_tiradas": 1,
           "cm_ataques": 0,
           "registered_date": 1766428766192,
@@ -19675,16 +19725,20 @@
         "Piccione Macchina",
         "aggron-mega",
         "exeggutor-alola",
-        "sandaconda-gmax"
+        "sandaconda-gmax",
+        "Tina Rex",
+        "mothim",
+        "kricketune",
+        "entei *Glitch*"
       ],
-      "ultimoBuy": 1766463203126,
-      "robarpsCooldown": 1766537738595,
+      "ultimoBuy": 1766583557745,
+      "robarpsCooldown": 1766583419954,
       "cooldowns": {
-        "ps": 1766444703357,
+        "ps": 1766583583035,
         "weekly": 1766503180688,
         "monthly": 1766503185137,
         "daily": 1766503193373,
-        "hourly": 1766537764918
+        "hourly": 1766582943343
       },
       "ultimoSell": 1766446450461,
       "inversiones": {
@@ -19712,7 +19766,8 @@
           "cantidad": 0,
           "inversionTotal": 0
         }
-      }
+      },
+      "diamantes": 100
     },
     "55946546028579@lid": {
       "achievements": {
@@ -19734,8 +19789,8 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 130,
-          "cm_tiradas": 24,
+          "commands_used": 211,
+          "cm_tiradas": 47,
           "cm_ataques": 0,
           "registered_date": 1766429278950,
           "was_broke": false,
@@ -19746,7 +19801,7 @@
           "dildear_count": 0
         }
       },
-      "pandacoins": 7540,
+      "pandacoins": 6880,
       "personajes": [
         "Pene De Lukas",
         "jodan con thiago q es necesitado y yo no",
@@ -19754,14 +19809,14 @@
         "Tom Ass 🌮 💩"
       ],
       "stats": {
-        "dados_jugados": 83,
-        "dados_ganados": 40,
-        "dados_ganancias": 2140,
-        "dados_empatados": 17,
-        "dados_perdidos": 26,
-        "dados_pvp_perdidos": 3,
-        "dados_pvp_ganados": 3,
-        "dados_pvp_ganancias": 300
+        "dados_jugados": 133,
+        "dados_ganados": 56,
+        "dados_ganancias": 3280,
+        "dados_empatados": 32,
+        "dados_perdidos": 45,
+        "dados_pvp_perdidos": 5,
+        "dados_pvp_ganados": 6,
+        "dados_pvp_ganancias": 600
       }
     },
     "263011298242575@lid": {
@@ -20095,19 +20150,19 @@
     "154180903825434@lid": {
       "nombre": "Usuario_154180903825434",
       "registrado": "2025-12-22T22:49:39.738Z",
-      "pandacoins": 948615.3108100002,
-      "exp": 5871,
+      "pandacoins": 984107.3108100002,
+      "exp": 8964,
       "nivel": 242,
       "inventario": {
         "recursos": {
-          "pescado": 266,
-          "carne": 267,
-          "madera": 344,
+          "pescado": 389,
+          "carne": 369,
+          "madera": 477,
           "oro": 106,
           "diamantes": 0,
           "piedras": 330,
           "comida": 11,
-          "hierro": 0,
+          "hierro": 194,
           "carbon": 108,
           "cuero": 5,
           "tela": 0,
@@ -20137,9 +20192,9 @@
         }
       },
       "stats": {
-        "pescas": 4,
-        "cazas": 5,
-        "minas": 6,
+        "pescas": 5,
+        "cazas": 6,
+        "minas": 7,
         "ventas": 0,
         "compras": 0,
         "boss_danio": 0,
@@ -20183,13 +20238,13 @@
         ],
         "selectedTitle": null,
         "stats": {
-          "minar_count": 6,
-          "trabajar_count": 4,
+          "minar_count": 7,
+          "trabajar_count": 5,
           "buy_count": 0,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 181,
+          "commands_used": 187,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1766443779978,
@@ -20459,19 +20514,19 @@
     "273310847869067@lid": {
       "nombre": "Usuario_273310847869067",
       "registrado": "2025-12-22T23:12:11.968Z",
-      "pandacoins": 5089,
-      "exp": 224,
+      "pandacoins": 0,
+      "exp": 1297,
       "nivel": 55,
       "inventario": {
         "recursos": {
-          "pescado": 2,
-          "madera": 3,
+          "pescado": 30,
+          "madera": 22,
           "oro": 0,
           "diamantes": 0,
           "piedras": 3,
           "comida": 10,
           "hierro": 0,
-          "carbon": 0,
+          "carbon": 24,
           "cuero": 1,
           "tela": 0,
           "plata": 0,
@@ -20479,12 +20534,12 @@
           "rubies": 0
         },
         "herramientas": {
-          "pico": 0,
-          "hacha": 0,
-          "caña": 0,
+          "pico": 1,
+          "hacha": 1,
+          "caña": 1,
           "arco": 0,
-          "espada": 0,
-          "armadura": 0
+          "espada": 1,
+          "armadura": 1
         },
         "especiales": {
           "pocion": 3,
@@ -20496,12 +20551,13 @@
           "comida_basica": 5,
           "comida_premium": 0,
           "juguetes": 2
-        }
+        },
+        "capacidad": 100
       },
       "stats": {
-        "pescas": 2,
+        "pescas": 3,
         "cazas": 1,
-        "minas": 1,
+        "minas": 2,
         "ventas": 2,
         "compras": 0,
         "boss_danio": 0,
@@ -20532,14 +20588,14 @@
         ],
         "selectedTitle": null,
         "stats": {
-          "minar_count": 1,
-          "trabajar_count": 1,
+          "minar_count": 2,
+          "trabajar_count": 2,
           "buy_count": 0,
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 87,
-          "cm_tiradas": 25,
+          "commands_used": 129,
+          "cm_tiradas": 37,
           "cm_ataques": 0,
           "registered_date": 1766445132561,
           "was_broke": false,
@@ -20557,7 +20613,33 @@
       },
       "personajes": [
         "moltres-galar"
-      ]
+      ],
+      "inversiones": {
+        "LILANCOIN": {
+          "cantidad": 0,
+          "inversionTotal": 0
+        },
+        "DRAGONTOKEN": {
+          "cantidad": 0,
+          "inversionTotal": 0
+        },
+        "UNISTAR": {
+          "cantidad": 0,
+          "inversionTotal": 0
+        },
+        "MOONSHOT": {
+          "cantidad": 94305.22017374069,
+          "inversionTotal": 11495.45919886282
+        },
+        "SAFEGEM": {
+          "cantidad": 0,
+          "inversionTotal": 0
+        },
+        "NEUTRON": {
+          "cantidad": 0,
+          "inversionTotal": 0
+        }
+      }
     },
     "102916039930051@lid": {
       "nombre": "Usuario_102916039930051",
@@ -20842,7 +20924,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 54,
+          "commands_used": 55,
           "cm_tiradas": 0,
           "cm_ataques": 0,
           "registered_date": 1766451249130,
@@ -20888,6 +20970,22 @@
           "response_short": "{\n \"reply\": ¡Vaya, Luciano! Aquí en PandaBot no nos andamos …",
           "memory_fragments": [],
           "timestamp": 1766465448013
+        },
+        {
+          "name": "⠀⠀⠀⠀⠀⠀⠀⠀⠀santi",
+          "prompt": "de mierda",
+          "response_full": "{\n  \"reply\": Vaya, santi, parece que estás un poquito frustrado o simplemente con ganas de ponerle sazón a la conversación. Aquí estamos para lo que necesites, ¿quieres contarme qué pasa o simplemente buscas soltar ese \"de mierda\"? 😊\n  ,\"memory_fragments\": [\"⠀⠀⠀⠀⠀⠀⠀⠀⠀santi dijo: \\\"de mierda\\\"\"]\n}",
+          "response_short": "{\n  \"reply\": Vaya, santi, parece que estás un poquito frustr…",
+          "memory_fragments": [],
+          "timestamp": 1766561692259
+        },
+        {
+          "name": "⠀⠀⠀⠀⠀⠀⠀⠀⠀santi",
+          "prompt": "hdp",
+          "response_full": "{\n  \"reply\": ¡Vaya, santi! Parece que estás con ganas de soltarte. Aquí soy para echarte una mano o simplemente para que te desahogues. Si necesitas algo, ¡dímelo y estamos en eso! 😊\n  ,\"memory_fragments\": [\"⠀⠀⠀⠀⠀⠀⠀⠀⠀santi dijo: \\\"hdp\\\"\"]\n}",
+          "response_short": "{\n  \"reply\": ¡Vaya, santi! Parece que estás con ganas de sol…",
+          "memory_fragments": [],
+          "timestamp": 1766562613753
         }
       ],
       "resumenes": [
@@ -21690,7 +21788,7 @@
     "200893521748205@lid": {
       "nombre": "Usuario_200893521748205",
       "registrado": "2025-12-24T01:00:16.630Z",
-      "pandacoins": 1800,
+      "pandacoins": 6570,
       "exp": 0,
       "nivel": 1,
       "inventario": {
@@ -21738,9 +21836,196 @@
         "compras": 0,
         "boss_danio": 0,
         "misiones_completadas": 0,
-        "dados_jugados": 3,
+        "dados_jugados": 17,
+        "dados_empatados": 2,
+        "dados_perdidos": 9,
+        "dados_ganados": 6,
+        "dados_ganancias": 470
+      },
+      "misiones_activas": {},
+      "logros": [],
+      "achievements": {
+        "unlocked": [
+          "first_steps",
+          "sexo_1"
+        ],
+        "progress": {},
+        "points": 25,
+        "titles": [
+          "Novato"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 30,
+          "cm_tiradas": 0,
+          "cm_ataques": 0,
+          "registered_date": 1766538016977,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 3,
+          "dildear_count": 0
+        }
+      }
+    },
+    "12833748193431@s.whatsapp.net": {
+      "pandacoins": 2000000,
+      "exp": 0,
+      "piedra": 0,
+      "diamantes": 0,
+      "creditos": 0,
+      "personajes": []
+    },
+    "118988445061190@lid": {
+      "achievements": {
+        "unlocked": [
+          "pizzero_1",
+          "first_steps",
+          "coin_collector_1",
+          "cm_spinner_1",
+          "gambler_1",
+          "music_starter",
+          "broke"
+        ],
+        "progress": {},
+        "points": 65,
+        "titles": [
+          "Novato",
+          "🍀 Suertudo",
+          "🤡 Payaso",
+          "🎁 Regalero",
+          "🎄 Navideño"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 7,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 73,
+          "cm_tiradas": 4,
+          "cm_ataques": 0,
+          "registered_date": 1766540989756,
+          "was_broke": true,
+          "comeback": false,
+          "spotify_count": 20,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      },
+      "pandacoins": 0,
+      "diamantes": 100,
+      "ultimoApostar": 1766585914162,
+      "ultimoTransfer": 1766585765427
+    },
+    "164510669234424@lid": {
+      "achievements": {
+        "unlocked": [
+          "first_steps",
+          "cm_spinner_1"
+        ],
+        "progress": {},
+        "points": 15,
+        "titles": [
+          "Novato"
+        ],
+        "selectedTitle": null,
+        "stats": {
+          "minar_count": 0,
+          "trabajar_count": 0,
+          "buy_count": 0,
+          "apostar_count": 0,
+          "robos_exitosos": 0,
+          "robos_fallidos": 0,
+          "commands_used": 18,
+          "cm_tiradas": 1,
+          "cm_ataques": 0,
+          "registered_date": 1766565775066,
+          "was_broke": false,
+          "comeback": false,
+          "spotify_count": 0,
+          "paja_count": 0,
+          "sexo_count": 0,
+          "dildear_count": 0
+        }
+      },
+      "pandacoins": 2690,
+      "stats": {
+        "dados_pvp_perdidos": 1,
+        "dados_jugados": 9,
+        "dados_ganados": 5,
+        "dados_ganancias": 190,
+        "dados_perdidos": 4
+      }
+    },
+    "27462541000722@lid": {
+      "nombre": "Usuario_27462541000722",
+      "registrado": "2025-12-24T08:55:27.900Z",
+      "pandacoins": 1860,
+      "exp": 0,
+      "nivel": 1,
+      "inventario": {
+        "recursos": {
+          "pescado": 0,
+          "carne": 0,
+          "madera": 0,
+          "oro": 0,
+          "diamantes": 0,
+          "piedras": 0,
+          "comida": 10,
+          "hierro": 0,
+          "carbon": 0,
+          "cuero": 0,
+          "tela": 0,
+          "plata": 0,
+          "esmeraldas": 0,
+          "rubies": 0
+        },
+        "herramientas": {
+          "pico": 0,
+          "hacha": 0,
+          "caña": 0,
+          "arco": 0,
+          "espada": 0,
+          "armadura": 0
+        },
+        "especiales": {
+          "pocion": 3,
+          "llave": 1,
+          "gema": 0,
+          "pergamino": 0
+        },
+        "mascotas": {
+          "comida_basica": 5,
+          "comida_premium": 0,
+          "juguetes": 2
+        }
+      },
+      "stats": {
+        "pescas": 0,
+        "cazas": 0,
+        "minas": 0,
+        "ventas": 0,
+        "compras": 0,
+        "boss_danio": 0,
+        "misiones_completadas": 0,
+        "dados_jugados": 12,
+        "dados_ganados": 5,
+        "dados_ganancias": 360,
+        "dados_perdidos": 6,
         "dados_empatados": 1,
-        "dados_perdidos": 2
+        "dados_pvp_ganados": 1,
+        "dados_pvp_ganancias": 100
       },
       "misiones_activas": {},
       "logros": [],
@@ -21761,10 +22046,10 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 4,
+          "commands_used": 13,
           "cm_tiradas": 0,
           "cm_ataques": 0,
-          "registered_date": 1766538016977,
+          "registered_date": 1766566528102,
           "was_broke": false,
           "comeback": false,
           "spotify_count": 0,
@@ -21773,50 +22058,6 @@
           "dildear_count": 0
         }
       }
-    },
-    "12833748193431@s.whatsapp.net": {
-      "pandacoins": 2000000,
-      "exp": 0,
-      "piedra": 0,
-      "diamantes": 0,
-      "creditos": 0,
-      "personajes": []
-    },
-    "118988445061190@lid": {
-      "achievements": {
-        "unlocked": [
-          "pizzero_1",
-          "first_steps"
-        ],
-        "progress": {},
-        "points": 20,
-        "titles": [
-          "Novato",
-          "🍀 Suertudo",
-          "🤡 Payaso",
-          "🎁 Regalero"
-        ],
-        "selectedTitle": null,
-        "stats": {
-          "minar_count": 0,
-          "trabajar_count": 0,
-          "buy_count": 0,
-          "apostar_count": 0,
-          "robos_exitosos": 0,
-          "robos_fallidos": 0,
-          "commands_used": 13,
-          "cm_tiradas": 0,
-          "cm_ataques": 0,
-          "registered_date": 1766540989756,
-          "was_broke": false,
-          "comeback": false,
-          "spotify_count": 0,
-          "paja_count": 0,
-          "sexo_count": 0,
-          "dildear_count": 0
-        }
-      },
-      "pandacoins": 5619
     }
   },
   "clanes": {
@@ -21842,14 +22083,14 @@
         "157243618136231@lid",
         "180444930768966@lid"
       ],
-      "recolectados": 145106637281
+      "recolectados": 145406853751
     },
     "admis": {
       "creador": "184365883650217@lid",
       "miembros": [
         "184365883650217@lid"
       ],
-      "recolectados": 1063136
+      "recolectados": 1243321
     }
   },
   "economia": {
@@ -21914,7 +22155,7 @@
   },
   "_meta": {
     "version": "2.0",
-    "savesWithoutBackup": 58947,
+    "savesWithoutBackup": 61208,
     "creado": "2025-12-04T13:05:46.997Z"
   },
   "ultimoBossTimestamp": 1764853624547,
@@ -21956,10 +22197,11 @@
           20,
           21,
           22,
-          23
+          23,
+          24
         ],
         "primerReclamo": "2025-12-04T13:31:24.302Z",
-        "ultimoReclamo": "2025-12-23T03:26:35.271Z"
+        "ultimoReclamo": "2025-12-24T06:02:07.743Z"
       },
       "166164298780822@lid": {
         "diasReclamados": [
@@ -22017,10 +22259,11 @@
           20,
           21,
           22,
-          23
+          23,
+          24
         ],
         "primerReclamo": "2025-12-04T15:05:07.787Z",
-        "ultimoReclamo": "2025-12-23T03:46:28.677Z"
+        "ultimoReclamo": "2025-12-24T13:29:11.675Z"
       },
       "267232999420158@lid": {
         "diasReclamados": [
@@ -22188,10 +22431,11 @@
           21,
           20,
           22,
-          23
+          23,
+          24
         ],
         "primerReclamo": "2025-12-04T19:19:36.414Z",
-        "ultimoReclamo": "2025-12-23T03:46:38.911Z"
+        "ultimoReclamo": "2025-12-24T05:21:50.776Z"
       },
       "34617215765@s.whatsapp.net": {
         "diasReclamados": [
@@ -22757,10 +23001,11 @@
           21,
           22,
           20,
-          23
+          23,
+          24
         ],
         "primerReclamo": "2025-12-19T03:18:48.560Z",
-        "ultimoReclamo": "2025-12-23T23:29:02.517Z"
+        "ultimoReclamo": "2025-12-24T14:26:26.812Z"
       },
       "138598762455066@lid": {
         "diasReclamados": [
@@ -23024,10 +23269,11 @@
           23,
           2,
           11,
-          18
+          18,
+          24
         ],
         "primerReclamo": "2025-12-24T01:40:31.419Z",
-        "ultimoReclamo": "2025-12-24T01:52:06.478Z"
+        "ultimoReclamo": "2025-12-24T12:32:06.682Z"
       },
       "51364168224954@lid": {
         "diasReclamados": [
@@ -23134,7 +23380,7 @@
           "produccionPorSegundo": 1996756.8900859514,
           "capacidad": 199675689008.59512,
           "acumulado": 199675689008.59512,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.7
         },
         {
@@ -23143,7 +23389,7 @@
           "produccionPorSegundo": 5188.146770730816,
           "capacidad": 432345564.227568,
           "acumulado": 432345564.227568,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.6
         }
       ],
@@ -23153,8 +23399,8 @@
           "nivel": 14,
           "produccionPorSegundo": 15.143755329612656,
           "capacidad": 757187.7664806328,
-          "acumulado": 134088.45830912853,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 460908.12878455385,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         },
         {
@@ -23162,8 +23408,8 @@
           "nivel": 10,
           "produccionPorSegundo": 1185.8787649699998,
           "capacidad": 118587876.49699996,
-          "acumulado": 10500212.917823693,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 36092841.61233474,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.7
         },
         {
@@ -23171,8 +23417,8 @@
           "nivel": 10,
           "produccionPorSegundo": 309.23764531200015,
           "capacidad": 25769803.77600001,
-          "acumulado": 2738105.4572341535,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 9411809.775596872,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.6
         },
         {
@@ -23180,8 +23426,8 @@
           "nivel": 13,
           "produccionPorSegundo": 324.3658447265625,
           "capacidad": 19461950.68359375,
-          "acumulado": 2872056.1776690655,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 9872244.45195556,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.5
         },
         {
@@ -23189,8 +23435,8 @@
           "nivel": 12,
           "produccionPorSegundo": 48.59478203596797,
           "capacidad": 2429739.1017983984,
-          "acumulado": 430276.3260001592,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 1479007.6549304712,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.4
         }
       ],
@@ -23201,7 +23447,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         }
       ],
@@ -23212,7 +23458,7 @@
           "produccionPorSegundo": 1.0985,
           "capacidad": 54925,
           "acumulado": 54925,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         }
       ],
@@ -23222,8 +23468,8 @@
           "nivel": 11,
           "produccionPorSegundo": 2015.9939004489993,
           "capacidad": 201599390.04489994,
-          "acumulado": 89319164.15771557,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 179933336.2692811,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.7
         },
         {
@@ -23231,8 +23477,8 @@
           "nivel": 10,
           "produccionPorSegundo": 309.23764531200015,
           "capacidad": 25769803.77600001,
-          "acumulado": 13700858.91590062,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 25769803.77600001,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.6
         },
         {
@@ -23240,8 +23486,8 @@
           "nivel": 10,
           "produccionPorSegundo": 5.3022496865000015,
           "capacidad": 265112.4843250001,
-          "acumulado": 234917.63047905054,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 265112.4843250001,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         },
         {
@@ -23249,8 +23495,8 @@
           "nivel": 7,
           "produccionPorSegundo": 9.035443199999996,
           "capacidad": 451772.15999999986,
-          "acumulado": 400317.7957228805,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 451772.15999999986,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.4
         },
         {
@@ -23258,8 +23504,8 @@
           "nivel": 8,
           "produccionPorSegundo": 42.71484375,
           "capacidad": 2562890.625,
-          "acumulado": 1892492.8989257764,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 2562890.625,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.5
         }
       ],
@@ -23270,7 +23516,7 @@
           "produccionPorSegundo": 49.129999999999995,
           "capacidad": 4912999.999999999,
           "acumulado": 4912999.999999999,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.7
         },
         {
@@ -23279,7 +23525,7 @@
           "produccionPorSegundo": 47.18592000000001,
           "capacidad": 3932160.000000001,
           "acumulado": 3932160.000000001,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.6
         },
         {
@@ -23288,7 +23534,7 @@
           "produccionPorSegundo": 12.65625,
           "capacidad": 759375,
           "acumulado": 759375,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.5
         }
       ],
@@ -23299,7 +23545,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         }
       ],
@@ -23309,8 +23555,8 @@
           "nivel": 11,
           "produccionPorSegundo": 2015.9939004489993,
           "capacidad": 201599390.04489994,
-          "acumulado": 25719169.192593828,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 116333341.304159,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.7
         },
         {
@@ -23318,8 +23564,8 @@
           "nivel": 11,
           "produccionPorSegundo": 494.7802324992003,
           "capacidad": 41231686.041600026,
-          "acumulado": 6312189.9872631915,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 28551394.746314075,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.6
         }
       ],
@@ -23330,7 +23576,7 @@
           "produccionPorSegundo": 83.52099999999999,
           "capacidad": 8352099.999999998,
           "acumulado": 8352099.999999998,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.7
         }
       ],
@@ -23341,7 +23587,7 @@
           "produccionPorSegundo": 697.5757440999998,
           "capacidad": 69757574.41,
           "acumulado": 69757574.41,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.7
         },
         {
@@ -23350,7 +23596,7 @@
           "produccionPorSegundo": 7.2,
           "capacidad": 600000,
           "acumulado": 600000,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.6
         },
         {
@@ -23359,7 +23605,7 @@
           "produccionPorSegundo": 2.5,
           "capacidad": 150000,
           "acumulado": 150000,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.5
         },
         {
@@ -23368,7 +23614,7 @@
           "produccionPorSegundo": 1.2,
           "capacidad": 60000,
           "acumulado": 60000,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.4
         },
         {
@@ -23377,7 +23623,7 @@
           "produccionPorSegundo": 5.3022496865000015,
           "capacidad": 265112.4843250001,
           "acumulado": 265112.4843250001,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         }
       ],
@@ -23388,7 +23634,7 @@
           "produccionPorSegundo": 1.4280500000000003,
           "capacidad": 71402.50000000001,
           "acumulado": 71402.50000000001,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         },
         {
@@ -23397,7 +23643,7 @@
           "produccionPorSegundo": 1.2,
           "capacidad": 60000,
           "acumulado": 60000,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.4
         },
         {
@@ -23406,7 +23652,7 @@
           "produccionPorSegundo": 2.5,
           "capacidad": 150000,
           "acumulado": 150000,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.5
         }
       ],
@@ -23416,8 +23662,8 @@
           "nivel": 8,
           "produccionPorSegundo": 410.3386729999999,
           "capacidad": 41033867.29999999,
-          "acumulado": 7173610.84929908,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 25617366.62205813,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.7
         }
       ],
@@ -23427,8 +23673,8 @@
           "nivel": 1,
           "produccionPorSegundo": 1.2,
           "capacidad": 60000,
-          "acumulado": 19615.1208,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 60000,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.4
         },
         {
@@ -23436,8 +23682,8 @@
           "nivel": 3,
           "produccionPorSegundo": 0.8450000000000001,
           "capacidad": 42250.00000000001,
-          "acumulado": 13812.314229999967,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 42250.00000000001,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         },
         {
@@ -23445,8 +23691,8 @@
           "nivel": 1,
           "produccionPorSegundo": 4.5,
           "capacidad": 375000,
-          "acumulado": 73556.70300000005,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 275821.0920000004,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.6
         }
       ],
@@ -23457,7 +23703,7 @@
           "produccionPorSegundo": 241.37568999999996,
           "capacidad": 24137568.999999996,
           "acumulado": 24137568.999999996,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.7
         },
         {
@@ -23466,7 +23712,7 @@
           "produccionPorSegundo": 18.432000000000006,
           "capacidad": 1536000.0000000005,
           "acumulado": 1536000.0000000005,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.6
         }
       ],
@@ -23477,7 +23723,7 @@
           "produccionPorSegundo": 2.4134045000000004,
           "capacidad": 120670.22500000002,
           "acumulado": 120670.22500000002,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         },
         {
@@ -23486,7 +23732,7 @@
           "produccionPorSegundo": 1.2,
           "capacidad": 60000,
           "acumulado": 60000,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.4
         }
       ],
@@ -23497,7 +23743,7 @@
           "produccionPorSegundo": 2.3519999999999994,
           "capacidad": 117599.99999999999,
           "acumulado": 117599.99999999999,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.4
         },
         {
@@ -23506,7 +23752,7 @@
           "produccionPorSegundo": 4.5,
           "capacidad": 375000,
           "acumulado": 375000,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.6
         },
         {
@@ -23515,7 +23761,7 @@
           "produccionPorSegundo": 28.9,
           "capacidad": 2889999.9999999995,
           "acumulado": 2889999.9999999995,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.7
         }
       ],
@@ -23526,7 +23772,7 @@
           "produccionPorSegundo": 1.68,
           "capacidad": 84000,
           "acumulado": 84000,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.4
         },
         {
@@ -23534,8 +23780,8 @@
           "nivel": 4,
           "produccionPorSegundo": 49.129999999999995,
           "capacidad": 4912999.999999999,
-          "acumulado": 4385770.297530017,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 4912999.999999999,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.7
         }
       ],
@@ -23545,8 +23791,8 @@
           "nivel": 7,
           "produccionPorSegundo": 241.37568999999996,
           "capacidad": 24137568.999999996,
-          "acumulado": 2793140.830387327,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 13642408.932010327,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.7
         },
         {
@@ -23554,8 +23800,8 @@
           "nivel": 8,
           "produccionPorSegundo": 120.79595520000004,
           "capacidad": 10066329.600000003,
-          "acumulado": 1397821.4401572864,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 6827314.789534923,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.6
         },
         {
@@ -23563,8 +23809,8 @@
           "nivel": 10,
           "produccionPorSegundo": 96.1083984375,
           "capacidad": 5766503.90625,
-          "acumulado": 1112143.032377931,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 5431988.918540037,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.5
         },
         {
@@ -23572,8 +23818,8 @@
           "nivel": 10,
           "produccionPorSegundo": 24.793256140799986,
           "capacidad": 1239662.8070399994,
-          "acumulado": 286901.5353000954,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 1239662.8070399994,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.4
         },
         {
@@ -23581,8 +23827,8 @@
           "nivel": 10,
           "produccionPorSegundo": 5.3022496865000015,
           "capacidad": 265112.4843250001,
-          "acumulado": 61356.344925504156,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 265112.4843250001,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         }
       ],
@@ -23592,8 +23838,8 @@
           "nivel": 1,
           "produccionPorSegundo": 1.2,
           "capacidad": 60000,
-          "acumulado": 22380.91440000001,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 8777.193600000002,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.4
         },
         {
@@ -23601,8 +23847,8 @@
           "nivel": 1,
           "produccionPorSegundo": 4.5,
           "capacidad": 375000,
-          "acumulado": 83928.42899999999,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 32914.47599999996,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.6
         }
       ],
@@ -23613,7 +23859,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         }
       ],
@@ -23623,8 +23869,8 @@
           "nivel": 1,
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
-          "acumulado": 8832.799000000014,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 25000,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         }
       ],
@@ -23635,7 +23881,7 @@
           "produccionPorSegundo": 0.65,
           "capacidad": 32500,
           "acumulado": 32500,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         }
       ],
@@ -23645,8 +23891,8 @@
           "nivel": 4,
           "produccionPorSegundo": 1.0985,
           "capacidad": 54925,
-          "acumulado": 41703.23869400026,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 54925,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         }
       ],
@@ -23657,7 +23903,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         }
       ],
@@ -23667,8 +23913,8 @@
           "nivel": 1,
           "produccionPorSegundo": 4.5,
           "capacidad": 375000,
-          "acumulado": 83427.97500000003,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 285692.3640000004,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.6
         },
         {
@@ -23676,8 +23922,8 @@
           "nivel": 1,
           "produccionPorSegundo": 10,
           "capacidad": 1000000,
-          "acumulado": 176460.95999999967,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 625937.379999999,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.7
         }
       ],
@@ -23688,7 +23934,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1766541599775,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         }
       ],
@@ -23698,8 +23944,8 @@
           "nivel": 3,
           "produccionPorSegundo": 0.8450000000000001,
           "capacidad": 42250.00000000001,
-          "acumulado": 14507.738614999958,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 42250.00000000001,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         }
       ],
@@ -23709,8 +23955,8 @@
           "nivel": 1,
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
-          "acumulado": 269.5034999999999,
-          "ultimaActualizacion": 1766541599775,
+          "acumulado": 22743.324500000057,
+          "ultimaActualizacion": 1766586547417,
           "mejora": 1.3
         }
       ]
@@ -23719,27 +23965,27 @@
   },
   "afk": {
     "usuarios": {
-      "27311780933658@lid": {
-        "usuario": "27311780933658@lid",
-        "inicio": 1766474591168,
-        "estado": "activo",
-        "grupo": "120363402403091432@g.us",
-        "robosPrevenidos": 1,
-        "ultimaActualizacion": 1766489604696
-      },
       "99561821479092@lid": {
         "usuario": "99561821479092@lid",
         "inicio": 1766536172615,
         "estado": "activo",
         "grupo": "99561821479092@lid",
-        "robosPrevenidos": 0,
-        "ultimaActualizacion": 1766536172615
+        "robosPrevenidos": 1,
+        "ultimaActualizacion": 1766581967440
+      },
+      "125675138736203@lid": {
+        "usuario": "125675138736203@lid",
+        "inicio": 1766553793303,
+        "estado": "activo",
+        "grupo": "125675138736203@lid",
+        "robosPrevenidos": 1,
+        "ultimaActualizacion": 1766555892226
       }
     },
     "estadisticas": {
       "31366532055076@lid": {
-        "totalTiempo": 171052869,
-        "sesiones": 69,
+        "totalTiempo": 195904168,
+        "sesiones": 70,
         "robosPrevenidos": 8
       },
       "125675138736203@lid": {
