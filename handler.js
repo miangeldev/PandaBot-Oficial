@@ -6,9 +6,7 @@ import { prefix, ownerNumber } from './config.js';
 import { trackCommand } from './middleware/trackAchievements.js';
 import { desactivarAFKAutomatico } from './plugins/afk.js';
 
-// =================================
-// UTILIDADES
-// =================================
+
 
 function isLink(text = '') {
   return /(?:https?:\/\/|www\.|chat\.whatsapp\.com|wa\.me\/|\.(com|net|org|gg|xyz|cl|io|me|tv|site|link)\b)/i.test(text);
@@ -28,9 +26,7 @@ function extractMessageBody(msg) {
   );
 }
 
-// =================================
-// CACHE
-// =================================
+
 
 const cache = new Map();
 const groupMetaCache = new Map();
@@ -70,9 +66,7 @@ function getJSON(file, ttl = 3000) {
   return data;
 }
 
-// =================================
-// PLUGINS
-// =================================
+
 
 const pluginsMap = new Map();
 const aliasMap = new Map();
@@ -94,9 +88,7 @@ async function loadPlugins() {
 
 await loadPlugins();
 
-// =================================
-// COOLDOWN
-// =================================
+
 
 const userCooldowns = new Map();
 const COMMAND_COOLDOWN = 1000;
@@ -109,9 +101,7 @@ function checkCooldown(sender) {
   return true;
 }
 
-// =================================
-// HANDLER
-// =================================
+
 
 export async function handleMessage(sock, msg) {
   if (msg.key.fromMe) return;
@@ -125,7 +115,7 @@ export async function handleMessage(sock, msg) {
   const senderNumber = normalizeNumber(sender);
   const isOwner = ownerNumber.includes(`+${senderNumber}`);
 
-  // 👑 reacción owner (no bloqueante)
+  
   if (isOwner) {
     sock.sendMessage(from, { react: { text: '👑', key: msg.key } }).catch(() => {});
   }
@@ -140,9 +130,7 @@ export async function handleMessage(sock, msg) {
 
   const isCommand = body.startsWith(prefix);
 
-  // =============================
-  // ANTILINK
-  // =============================
+  
 
   if (isGroup && !isCommand) {
     const antilink = getJSON('./data/antilink.json');
@@ -161,9 +149,7 @@ export async function handleMessage(sock, msg) {
   if (!isCommand) return;
   if (!checkCooldown(sender)) return;
 
-  // =============================
-  // MODO ADMIN
-  // =============================
+ 
 
   if (isGroup) {
     const modoAdmin = getJSON('./data/modoadmin.json');
@@ -173,6 +159,25 @@ export async function handleMessage(sock, msg) {
       if (!admins.includes(sender) && !isOwner) {
         return sock.sendMessage(from, { text: '🛑 *Modo Admin activo*' });
       }
+    }
+    
+    const modoOwner = getJSON('./data/modoowner.json');
+    if (modoOwner[from]) {
+      try {
+        const meta = await getGroupMetadata(sock, from);
+        const ownerId = meta.participants.find(p => p.admin === 'superadmin')?.id || meta.owner || meta.creator;
+        if (ownerId) {
+          if (!isOwner) {
+            return sock.sendMessage(from, { text: '🛑 *Modo Owner activo*' });
+          }
+        } else {
+          
+          const admins = meta.participants.filter(p => p.admin).map(p => p.id);
+          if (!isOwner) {
+            return sock.sendMessage(from, { text: '🛑 *Modo Owner activo*' });
+          }
+        }
+      } catch {}
     }
   }
 
@@ -200,9 +205,7 @@ export async function handleMessage(sock, msg) {
   } catch {}
 }
 
-// =================================
-// LIMPIEZA
-// =================================
+
 
 setInterval(() => {
   const now = Date.now();

@@ -19,7 +19,7 @@ export async function run(sock, msg, args) {
     global.cmDB[user].spins += 5;
     global.cmDB[user].lastDaily = now;
     global.guardarCM();
-    await sock.sendMessage(from, { text: `🎁 Has reclamado tus *5 giros diarios*, @+${user}!` }, { quoted: msg });
+    await sock.sendMessage(from, { text: `🎁 Has reclamado tus *5 giros diarios!` }, { quoted: msg });
   } else {
     const timeLeft = 86400000 - (now - global.cmDB[user].lastDaily);
     const mins = Math.floor(timeLeft / 60000);

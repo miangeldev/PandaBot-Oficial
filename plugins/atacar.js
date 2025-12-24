@@ -3,7 +3,7 @@ import { initializeAchievements } from '../data/achievementsDB.js';
 import { cargarDatabase } from '../data/database.js';
 
 export const command = 'atacar';
-const cooldown = 1 * 60 * 1000; // 15 minutos en milisegundos
+const cooldown = 1 * 60 * 1000;
 let attackCooldown = {};
 
 export async function run(sock, msg, args) {
@@ -11,7 +11,7 @@ export async function run(sock, msg, args) {
   const sender = msg.key.participant || msg.key.remoteJid;
   const user = sender.split('@')[0];
   
-  // ✅ Inicializar achievements si no existen
+
   const db = cargarDatabase();
   if (!db.users[sender]?.achievements) {
     initializeAchievements(sender);
@@ -58,10 +58,10 @@ export async function run(sock, msg, args) {
   global.guardarCM();
 
   await sock.sendMessage(from, {
-    text: `💣 Atacaste la aldea de *@+${target}* y le robaste *${coinsTaken.toLocaleString()} monedas*.`
+    text: `💣 Atacaste la aldea del usuario y le robaste *${coinsTaken.toLocaleString()} monedas*.`
   }, { quoted: msg });
 
-  // ✅ Trackear ataque de Coin Master
+
   trackCMAtaque(sender, sock, from);
   checkSpecialAchievements(sender, sock, from);
 }

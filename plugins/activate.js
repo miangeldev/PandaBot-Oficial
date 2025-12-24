@@ -50,7 +50,7 @@ export const aliases = ['activar', 'iniciar'];
 export const getEfectosBoost = fetchBoosts;
 
 const pedoUrls = ['https://files.catbox.moe/otuozc.mp4', 'https://files.catbox.moe/su2l4w.mp4'];
-
+const nombre = msg.pushName || 'Usuario';
 async function enviarAudioPedo(sock, from, msg) {
     const randomUrl = pedoUrls[Math.floor(Math.random() * pedoUrls.length)];
     const loadingMsg = await sock.sendMessage(from, { text: '💀' });
@@ -174,7 +174,7 @@ export async function run(sock, msg, args) {
         await sock.sendMessage(from, { text: `💥 *Boosts activados masivamente:*\n\n• Emojis (${Object.keys(multiplicadores).length}) → x2 por 10 minutos\n• Suerte general → x4 por 15 minutos` }, { quoted: msg });
         for (const emoji of efectosActivados) {
             await new Promise(resolve => setTimeout(resolve, 500));
-            await sock.sendMessage(from, { text: `🎯 *Un Owner activó ${emoji} x4!*` });
+            await sock.sendMessage(from, { text: `🎯 ${nombre} activó ${emoji} x4!*` });
         }
         await new Promise(resolve => setTimeout(resolve, 1000));
         await sock.sendMessage(from, { text: `✨ *¡Todos los efectos han sido activados!* (${efectosActivados.length} efectos)` });

@@ -18,9 +18,7 @@ export async function run(sock, msg, args) {
 
   const esOwner = ownerNumber.includes('+' + senderNumber);
 
-  /* =======================
-     DETECTAR VÍCTIMA (FIX)
-  ======================= */
+  
   let mencionado = null;
   const ctx = msg.message?.extendedTextMessage?.contextInfo;
 
@@ -42,9 +40,7 @@ export async function run(sock, msg, args) {
   const victimaNumber = mencionado.split('@')[0];
   const victimaEsOwner = ownerNumber.includes('+' + victimaNumber);
 
-  /* =======================
-     BLOQUEOS OWNER
-  ======================= */
+  
   if (esOwner) {
     return await sock.sendMessage(from, {
       text: `👑 *Eres Owner de PandaBot*\n\n` +
@@ -61,9 +57,7 @@ export async function run(sock, msg, args) {
     }, { quoted: msg });
   }
 
-  /* =======================
-     COOLDOWN
-  ======================= */
+  
   if (cooldowns[sender] && now - cooldowns[sender] < COOLDOWN_MS) {
     const restante = COOLDOWN_MS - (now - cooldowns[sender]);
     const m = Math.floor(restante / 60000);
@@ -73,9 +67,7 @@ export async function run(sock, msg, args) {
     }, { quoted: msg });
   }
 
-  /* =======================
-     AFK
-  ======================= */
+  
   if (!puedeRobar(sender)) {
     return await sock.sendMessage(from, {
       text: `❌ No puedes robar mientras estás en modo AFK.\n\n💎 Desactívalo con: *.afk off*`
@@ -90,9 +82,7 @@ export async function run(sock, msg, args) {
     }, { quoted: msg });
   }
 
-  /* =======================
-     DATABASE
-  ======================= */
+  
   const db = cargarDatabase();
   db.users ??= {};
 
@@ -106,9 +96,7 @@ export async function run(sock, msg, args) {
   const atacante = db.users[sender];
   const victima = db.users[mencionado];
 
-  /* =======================
-     PROBABILIDAD
-  ======================= */
+  
   const vip = isVip(sender);
   const probabilidad = vip ? 0.7 : 0.5;
   const exito = Math.random() < probabilidad;
@@ -134,7 +122,17 @@ export async function run(sock, msg, args) {
       `@${senderNumber} robó *${robado.toLocaleString()}* pandacoins a @${victimaNumber}.\n` +
       `📊 Robos exitosos: ${atacante.robos.exitosos}`;
 
-    trackRoboExitoso(sender, sock, from, atacante.robos.exitosos);
+    
+    try {
+      guardarDatabase(db);
+    } catch (e) {}
+
+    try {
+      initializeAchievements(sender);
+      trackRoboExitoso(sender, sock, from, atacante.robos.exitosos);
+    } catch (err) {
+      console.error('Error trackeando robo exitoso, ignorando:', err);
+    }
   } else {
     const multa = Math.min(
       Math.floor(Math.random() * Math.floor(atacante.pandacoins * 0.1)) + 1,
@@ -150,10 +148,20 @@ export async function run(sock, msg, args) {
       `💸 Multa: ${multa.toLocaleString()} pandacoins\n` +
       `📊 Robos fallidos: ${atacante.robos.fallidos}`;
 
-    trackRoboFallido(sender, sock, from, atacante.robos.fallidos);
-  }
+    
+    try {
+      guardarDatabase(db);
+    } catch (e) {}
 
-  guardarDatabase(db);
+    try {
+      initializeAchievements(sender);
+      trackRoboFallido(sender, sock, from, atacante.robos.fallidos);
+    } catch (err) {
+      console.error('Error trackeando robo fallido, ignorando:', err);
+    }
+  }
+  
+  try { guardarDatabase(db); } catch (e) {}
   cooldowns[sender] = now;
 
   await sock.sendMessage(from, {

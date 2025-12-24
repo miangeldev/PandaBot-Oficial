@@ -6,7 +6,7 @@ export const command = "mipizzeria";
 export async function run(sock, msg, args) {
   const sender = msg.key.participant || msg.key.remoteJid;
   const from = msg.key.remoteJid;
-
+  const nombre = msg.pushName || "Usuario";
   await sock.sendMessage(
     from,
     { text: '⏳ Obteniendo datos de tu pizzería...' },
@@ -49,6 +49,7 @@ export async function run(sock, msg, args) {
     const mensaje = `
 *--- 🍕 Mi Pizzería 🍕 ---*
 
+*Usuario:* ${nombre}
 *Nombre:* ${nombre_pizzeria}
 *Número de Pizzeria:* ${id}
 *Nivel:* ${local_level}

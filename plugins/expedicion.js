@@ -4,18 +4,18 @@ import { cargarDatos } from '../lib/cacheManager.js';
 export const command = 'expedicion';
 export const aliases = ['mision', 'mission'];
 
-// Configuración de expediciones por rareza (actualizada)
+
 const CONFIG_EXPEDICION = {
     duraciones: {
-        'común': 1 * 60 * 60 * 1000,           // 1 hora
-        'raro': 2 * 60 * 60 * 1000,            // 2 horas
-        'épico': 3 * 60 * 60 * 1000,           // 4 horas
-        'mítico': 3 * 60 * 60 * 1000,          // 8 horas
-        'legendario': 4 * 60 * 60 * 1000,     // 12 horas
-        'Ultra-Legendario': 2 * 60 * 60 * 1000, // 9 horas
-        'Secret': 2 * 60 * 60 * 1000,         // 8 horas
-        'OG': 3 * 60 * 60 * 1000,             // 18 horas
-        'custom': 6 * 60 * 60 * 1000           // 6 horas (por defecto)
+        'común': 1 * 60 * 60 * 1000,           
+        'raro': 2 * 60 * 60 * 1000,            
+        'épico': 3 * 60 * 60 * 1000,           
+        'mítico': 3 * 60 * 60 * 1000,          
+        'legendario': 4 * 60 * 60 * 1000,     
+        'Ultra-Legendario': 2 * 60 * 60 * 1000,
+        'Secret': 2 * 60 * 60 * 1000,         
+        'OG': 3 * 60 * 60 * 1000,             
+        'custom': 6 * 60 * 60 * 1000           
     },
     recompensas: {
         'común': { monedas: 500, probabilidadEfecto: 0.01, probabilidadItem: 0.005 },
@@ -23,7 +23,7 @@ const CONFIG_EXPEDICION = {
         'épico': { monedas: 1500, probabilidadEfecto: 0.08, probabilidadItem: 0.02 },
         'mítico': { monedas: 2000, probabilidadEfecto: 0.15, probabilidadItem: 0.04 },
         'legendario': { monedas: 5000, probabilidadEfecto: 0.25, probabilidadItem: 0.08 },
-        'Ultra-Legendario': { monedas: 15000, probabilidadEfecto: 0.35, probabilidadItem: 0.15 },
+        'Ultra-Legendario': { monedas: 50000, probabilidadEfecto: 0.35, probabilidadItem: 0.15 },
         'Secret': { monedas: 200000, probabilidadEfecto: 0.50, probabilidadItem: 0.25 },
         'OG': { monedas: 400000, probabilidadEfecto: 0.75, probabilidadItem: 0.40 },
         'GOD': { monedas: 450000, probabilidadEfecto: 0.8, probabilidadItem: 0.40 },
@@ -50,7 +50,7 @@ export async function run(sock, msg, args) {
     db.users = db.users || {};
     const user = db.users[sender] = db.users[sender] || {};
     
-    // Inicializar sistema de expediciones
+    
     user.expediciones = user.expediciones || {
         activas: [],
         completadas: 0,
@@ -136,7 +136,7 @@ async function enviarExpedicion(sock, from, msg, args, user, db) {
 
     const nombrePersonaje = args.join(' ').trim();
     
-    // Verificar límite de expediciones activas
+    
     if (user.expediciones.activas.length >= 5) {
         await sock.sendMessage(from, {
             text: `❌ Límite alcanzado. Tienes 3 expediciones activas.\n\n💡 Usa .expedicion estado para verlas o .expedicion reclamar para completarlas.`
@@ -144,7 +144,7 @@ async function enviarExpedicion(sock, from, msg, args, user, db) {
         return;
     }
 
-    // Verificar que el usuario tiene el personaje
+    
     user.personajes = user.personajes || [];
     const tienePersonaje = user.personajes.some(p => p.toLowerCase() === nombrePersonaje.toLowerCase());
     
@@ -155,7 +155,7 @@ async function enviarExpedicion(sock, from, msg, args, user, db) {
         return;
     }
 
-    // Cargar datos del personaje
+    
     const { personajes } = cargarDatos();
     const personaje = personajes.find(p => p.nombre.toLowerCase() === nombrePersonaje.toLowerCase());
     
@@ -166,7 +166,7 @@ async function enviarExpedicion(sock, from, msg, args, user, db) {
         return;
     }
 
-    // Verificar que el personaje no esté en expedición
+    
     const yaEnExpedicion = user.expediciones.activas.some(exp => exp.personaje.toLowerCase() === nombrePersonaje.toLowerCase());
     if (yaEnExpedicion) {
         await sock.sendMessage(from, {
@@ -175,12 +175,12 @@ async function enviarExpedicion(sock, from, msg, args, user, db) {
         return;
     }
 
-    // Calcular duración basada en rareza
+    
     const calidad = personaje.calidad || 'custom';
     const duracion = CONFIG_EXPEDICION.duraciones[calidad] || CONFIG_EXPEDICION.duraciones.custom;
     const recompensaBase = CONFIG_EXPEDICION.recompensas[calidad] || CONFIG_EXPEDICION.recompensas.custom;
 
-    // Crear expedición
+    
     const expedicion = {
         id: Date.now().toString(),
         personaje: personaje.nombre,
@@ -195,7 +195,7 @@ async function enviarExpedicion(sock, from, msg, args, user, db) {
 
     guardarDatabase(db);
 
-    // Formatear tiempo restante
+    
     const horas = Math.floor(duracion / (60 * 60 * 1000));
     const minutos = Math.floor((duracion % (60 * 60 * 1000)) / (60 * 1000));
 
@@ -262,39 +262,39 @@ async function reclamarExpedicion(sock, from, user, db) {
     let personajesReclamados = [];
 
     for (const expedicion of expedicionesCompletadas) {
-        // Recompensa base
+        
         totalMonedas += expedicion.recompensa.monedas;
         personajesReclamados.push(expedicion.personaje);
 
-        // Posible efecto adicional
+        
         if (Math.random() < expedicion.recompensa.probabilidadEfecto) {
             const efectos = ['🌟', '⚡', '🔥', '💎', '🎯', '🌈', '🚀', '💫'];
             const efecto = efectos[Math.floor(Math.random() * efectos.length)];
             efectosObtenidos.push(efecto);
         }
 
-        // Posible item especial
+    
         if (Math.random() < expedicion.recompensa.probabilidadItem) {
             const itemsDisponibles = CONFIG_EXPEDICION.itemsEspeciales[expedicion.calidad];
             if (itemsDisponibles && itemsDisponibles.length > 0) {
                 const item = itemsDisponibles[Math.floor(Math.random() * itemsDisponibles.length)];
                 itemsObtenidos.push(item);
                 
-                // Registrar en inventario de items
+
                 user.expediciones.itemsObtenidos = user.expediciones.itemsObtenidos || {};
                 user.expediciones.itemsObtenidos[item] = (user.expediciones.itemsObtenidos[item] || 0) + 1;
             }
         }
 
-        // Remover de expediciones activas
+        
         user.expediciones.activas = user.expediciones.activas.filter(exp => exp.id !== expedicion.id);
     }
 
-    // Actualizar estadísticas
+    
     user.expediciones.completadas = (user.expediciones.completadas || 0) + expedicionesCompletadas.length;
     user.expediciones.tiempoTotal = (user.expediciones.tiempoTotal || 0) + expedicionesCompletadas.reduce((sum, exp) => sum + exp.duracion, 0);
     
-    // Dar recompensas
+    
     user.pandacoins = (user.pandacoins || 0) + totalMonedas;
 
     guardarDatabase(db);
@@ -349,7 +349,7 @@ async function cancelarExpedicion(sock, from, user, db) {
         return;
     }
 
-    // Cancelar la expedición más reciente
+    
     const expedicionCancelada = user.expediciones.activas.pop();
     
     guardarDatabase(db);

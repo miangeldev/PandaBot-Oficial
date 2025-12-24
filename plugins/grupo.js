@@ -5,7 +5,7 @@ export const command = 'grupo';
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
 
-  // Verificamos que esté en un grupo
+  
   if (!from.endsWith('@g.us')) {
     await sock.sendMessage(from, { text: '❌ Este comando solo se puede usar en grupos.' });
     return;

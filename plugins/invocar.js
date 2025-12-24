@@ -24,7 +24,7 @@ export async function run(sock, msg, args) {
     const isAdmin = members.find(p => p.id === sender && (p.admin === 'admin' || p.admin === 'superadmin'));
 
     if (!isOwner && !isAdmin) {
-        await sock.sendMessage(from, { text: '🚫 Este comando solo puede usarlo el owner o un admin.' }, { quoted: msg });
+        await sock.sendMessage(from, { text: '🚫 Este comando solo puede usarlo el creador o un admin.' }, { quoted: msg });
         return;
     }
 

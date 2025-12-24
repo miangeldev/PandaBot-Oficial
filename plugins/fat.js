@@ -7,7 +7,7 @@ export const command = 'fat';
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   
-  // Obtenemos el mensaje citado real
+  
   const quoted = msg.quoted || (msg.message?.extendedTextMessage?.contextInfo?.quotedMessage
     ? { message: msg.message.extendedTextMessage.contextInfo.quotedMessage }
     : null);

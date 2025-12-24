@@ -25,7 +25,7 @@ function ensureAchievementStats(user) {
     };
   }
 
-  
+
   const defaults = {
     paja_count: 0,
     sexo_count: 0,

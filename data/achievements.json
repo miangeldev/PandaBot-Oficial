@@ -515,39 +515,6 @@
       "points": 30
     },
     {
-      "id": "veteran",
-      "name": "Veterano",
-      "description": "Lleva 30 días registrado",
-      "category": "especial",
-      "icon": "🎖️",
-      "requirement": {
-        "type": "days_registered",
-        "value": 30
-      },
-      "reward": {
-        "coins": 50000,
-        "title": "Veterano"
-      },
-      "points": 50
-    },
-    {
-      "id": "legend",
-      "name": "Leyenda",
-      "description": "Lleva 100 días registrado",
-      "category": "especial",
-      "icon": "👑",
-      "requirement": {
-        "type": "days_registered",
-        "value": 100
-      },
-      "reward": {
-        "coins": 200000,
-        "title": "Leyenda"
-      },
-      "points": 100,
-      "hidden": true
-    },
-    {
       "id": "command_master",
       "name": "Maestro de Comandos",
       "description": "Usa 500 comandos",
@@ -811,6 +778,456 @@
     "title": "Amante del dildo 🔥"
   },
   "points": 80
-}
+    },
+    {
+      "id": "thrift_25k",
+      "name": "Ahorro Inicial",
+      "description": "Acumula 25,000 pandacoins",
+      "category": "economia",
+      "icon": "🪙",
+      "requirement": { "type": "total_coins", "value": 25000 },
+      "reward": { "coins": 1500 },
+      "points": 8
+    },
+    {
+      "id": "thrift_250k",
+      "name": "Cuenta Creciente",
+      "description": "Acumula 250,000 pandacoins",
+      "category": "economia",
+      "icon": "💰",
+      "requirement": { "type": "total_coins", "value": 250000 },
+      "reward": { "coins": 12000 },
+      "points": 25
+    },
+    {
+      "id": "wealthy_500k",
+      "name": "Riqueza Emergente",
+      "description": "Acumula 500,000 pandacoins",
+      "category": "economia",
+      "icon": "💎",
+      "requirement": { "type": "total_coins", "value": 500000 },
+      "reward": { "coins": 20000 },
+      "points": 30
+    },
+    {
+      "id": "wealthy_2_5m",
+      "name": "Negocio Saludable",
+      "description": "Acumula 2,500,000 pandacoins",
+      "category": "economia",
+      "icon": "🏦",
+      "requirement": { "type": "total_coins", "value": 2500000 },
+      "reward": { "coins": 50000 },
+      "points": 60
+    },
+    {
+      "id": "wealthy_5m",
+      "name": "Multimillonario",
+      "description": "Acumula 5,000,000 pandacoins",
+      "category": "economia",
+      "icon": "👑",
+      "requirement": { "type": "total_coins", "value": 5000000 },
+      "reward": { "coins": 100000 },
+      "points": 80
+    },
+    {
+      "id": "cmd_50",
+      "name": "Explorador de Comandos",
+      "description": "Usa 50 comandos",
+      "category": "especial",
+      "icon": "⌨️",
+      "requirement": { "type": "commands_used", "value": 50 },
+      "reward": { "coins": 800 },
+      "points": 8
+    },
+    {
+      "id": "cmd_200",
+      "name": "Usuario Activo",
+      "description": "Usa 200 comandos",
+      "category": "especial",
+      "icon": "⚡",
+      "requirement": { "type": "commands_used", "value": 200 },
+      "reward": { "coins": 3000 },
+      "points": 15
+    },
+    {
+      "id": "cmd_1000",
+      "name": "Veterano de Comandos",
+      "description": "Usa 1,000 comandos",
+      "category": "especial",
+      "icon": "🏅",
+      "requirement": { "type": "commands_used", "value": 1000 },
+      "reward": { "coins": 80000 },
+      "points": 120
+    },
+    {
+      "id": "miner_4",
+      "name": "Minero Tenaz",
+      "description": "Mina 500 veces",
+      "category": "economia",
+      "icon": "⛏️",
+      "requirement": { "type": "minar_count", "value": 500 },
+      "reward": { "coins": 8000 },
+      "points": 30
+    },
+    {
+      "id": "miner_5",
+      "name": "Rey de la Mina",
+      "description": "Mina 2,000 veces",
+      "category": "economia",
+      "icon": "💠",
+      "requirement": { "type": "minar_count", "value": 2000 },
+      "reward": { "coins": 40000 },
+      "points": 70
+    },
+    {
+      "id": "worker_3",
+      "name": "Obrero Incansable",
+      "description": "Trabaja 500 veces",
+      "category": "economia",
+      "icon": "👷",
+      "requirement": { "type": "trabajar_count", "value": 500 },
+      "reward": { "coins": 20000 },
+      "points": 40
+    },
+    {
+      "id": "worker_4",
+      "name": "Empleado Modelo",
+      "description": "Trabaja 2,000 veces",
+      "category": "economia",
+      "icon": "🏆",
+      "requirement": { "type": "trabajar_count", "value": 2000 },
+      "reward": { "coins": 80000 },
+      "points": 90
+    },
+    {
+      "id": "buyer_4",
+      "name": "Comprador Comprometido",
+      "description": "Compra 500 personajes",
+      "category": "personajes",
+      "icon": "🛍️",
+      "requirement": { "type": "buy_count", "value": 500 },
+      "reward": { "coins": 50000 },
+      "points": 50
+    },
+    {
+      "id": "buyer_5",
+      "name": "Coleccionista Consumado",
+      "description": "Compra 2,000 personajes",
+      "category": "personajes",
+      "icon": "💳",
+      "requirement": { "type": "buy_count", "value": 2000 },
+      "reward": { "coins": 200000 },
+      "points": 120
+    },
+    {
+      "id": "gambler_4",
+      "name": "Apostador Experimentado",
+      "description": "Apuesta 500 veces",
+      "category": "juegos",
+      "icon": "🎰",
+      "requirement": { "type": "apostar_count", "value": 500 },
+      "reward": { "coins": 40000 },
+      "points": 45
+    },
+    {
+      "id": "gambler_5",
+      "name": "Mazo Maestro",
+      "description": "Apuesta 1,000 veces",
+      "category": "juegos",
+      "icon": "🃏",
+      "requirement": { "type": "apostar_count", "value": 1000 },
+      "reward": { "coins": 100000 },
+      "points": 70
+    },
+    {
+      "id": "thief_4",
+      "name": "Ladrón Audaz",
+      "description": "Completa 250 robos exitosos",
+      "category": "juegos",
+      "icon": "🥷",
+      "requirement": { "type": "robos_exitosos", "value": 250 },
+      "reward": { "coins": 50000 },
+      "points": 60
+    },
+    {
+      "id": "thief_5",
+      "name": "Saqueador Supremo",
+      "description": "Completa 500 robos exitosos",
+      "category": "juegos",
+      "icon": "🎩",
+      "requirement": { "type": "robos_exitosos", "value": 500 },
+      "reward": { "coins": 150000 },
+      "points": 100
+    },
+    {
+      "id": "cm_tiradas_1000",
+      "name": "Spin Fanático",
+      "description": "Tira 1,000 veces en Coin Master",
+      "category": "coinmaster",
+      "icon": "🎡",
+      "requirement": { "type": "cm_tiradas", "value": 1000 },
+      "reward": { "coins": 50000 },
+      "points": 60
+    },
+    {
+      "id": "cm_tiradas_2000",
+      "name": "Spin Legendario",
+      "description": "Tira 2,000 veces en Coin Master",
+      "category": "coinmaster",
+      "icon": "🌀",
+      "requirement": { "type": "cm_tiradas", "value": 2000 },
+      "reward": { "coins": 120000 },
+      "points": 100
+    },
+    {
+      "id": "cm_ataques_200",
+      "name": "Atacante Constante",
+      "description": "Realiza 200 ataques en Coin Master",
+      "category": "coinmaster",
+      "icon": "⚔️",
+      "requirement": { "type": "cm_ataques", "value": 200 },
+      "reward": { "coins": 20000 },
+      "points": 40
+    },
+    {
+      "id": "cm_ataques_500",
+      "name": "Conquistador",
+      "description": "Realiza 500 ataques en Coin Master",
+      "category": "coinmaster",
+      "icon": "🏴‍☠️",
+      "requirement": { "type": "cm_ataques", "value": 500 },
+      "reward": { "coins": 70000 },
+      "points": 75
+    },
+    {
+      "id": "collector_4",
+      "name": "Coleccionista Experto",
+      "description": "Posee 200 personajes",
+      "category": "personajes",
+      "icon": "📦",
+      "requirement": { "type": "personajes_count", "value": 200 },
+      "reward": { "coins": 60000 },
+      "points": 50
+    },
+    {
+      "id": "collector_5",
+      "name": "Museo Vivo",
+      "description": "Posee 500 personajes",
+      "category": "personajes",
+      "icon": "🏛️",
+      "requirement": { "type": "personajes_count", "value": 500 },
+      "reward": { "coins": 200000 },
+      "points": 120
+    },
+    {
+      "id": "spotify_100",
+      "name": "Melómano",
+      "description": "Usa .spotify 100 veces",
+      "category": "musica",
+      "icon": "🎧",
+      "requirement": { "type": "spotify_count", "value": 100 },
+      "reward": { "coins": 10000 },
+      "points": 20
+    },
+    {
+      "id": "hermanos_5",
+      "name": "Familia Grande",
+      "description": "Ten 5 hermanos",
+      "category": "social",
+      "icon": "👥",
+      "requirement": { "type": "hermanos_count", "value": 5 },
+      "reward": { "coins": 10000 },
+      "points": 25
+    },
+    {
+      "id": "paja_4",
+      "name": "Pajero Supremo",
+      "description": "Usa .paja 500 veces",
+      "category": "juegos",
+      "icon": "💦",
+      "requirement": { "type": "paja_count", "value": 500 },
+      "reward": { "coins": 30000 },
+      "points": 40
+    },
+    {
+      "id": "paja_5",
+      "name": "Leyenda de la Paja",
+      "description": "Usa .paja 1,000 veces",
+      "category": "juegos",
+      "icon": "🔥",
+      "requirement": { "type": "paja_count", "value": 1000 },
+      "reward": { "coins": 80000 },
+      "points": 80
+    },
+    {
+      "id": "sexo_4",
+      "name": "Amante Profesional",
+      "description": "Usa .sexo 300 veces",
+      "category": "social",
+      "icon": "🍆",
+      "requirement": { "type": "sexo_count", "value": 300 },
+      "reward": { "coins": 35000 },
+      "points": 45
+    },
+    {
+      "id": "sexo_5",
+      "name": "Experto en el Arte",
+      "description": "Usa .sexo 500 veces",
+      "category": "social",
+      "icon": "⚖️",
+      "requirement": { "type": "sexo_count", "value": 500 },
+      "reward": { "coins": 90000 },
+      "points": 90
+    },
+    {
+      "id": "dildear_4",
+      "name": "Dildero Legendario",
+      "description": "Usa .dildear 300 veces",
+      "category": "juegos",
+      "icon": "🦄",
+      "requirement": { "type": "dildear_count", "value": 300 },
+      "reward": { "coins": 40000 },
+      "points": 50
+    },
+    {
+      "id": "register_welcome",
+      "name": "Bienvenido",
+      "description": "Regístrate en el bot (primer uso)",
+      "category": "especial",
+      "icon": "👋",
+      "requirement": { "type": "register", "value": 1 },
+      "reward": { "coins": 1000 },
+      "points": 5
+    },
+    {
+      "id": "total_20m",
+      "name": "Titán Financiero",
+      "description": "Acumula 20,000,000 pandacoins",
+      "category": "economia",
+      "icon": "🏦",
+      "requirement": { "type": "total_coins", "value": 20000000 },
+      "reward": { "coins": 500000 },
+      "points": 200
+    },
+    {
+      "id": "commands_2500",
+      "name": "Comando Supremo",
+      "description": "Usa 2,500 comandos",
+      "category": "especial",
+      "icon": "🛠️",
+      "requirement": { "type": "commands_used", "value": 2500 },
+      "reward": { "coins": 200000 },
+      "points": 180
+    },
+    {
+      "id": "personajes_100",
+      "name": "Cazador de Personajes",
+      "description": "Posee 100 personajes",
+      "category": "personajes",
+      "icon": "🎴",
+      "requirement": { "type": "personajes_count", "value": 100 },
+      "reward": { "coins": 40000 },
+      "points": 55
+    },
+    {
+      "id": "buy_1000",
+      "name": "Comprador Voraz",
+      "description": "Compra 1,000 personajes",
+      "category": "personajes",
+      "icon": "🛒",
+      "requirement": { "type": "buy_count", "value": 1000 },
+      "reward": { "coins": 150000 },
+      "points": 90
+    },
+    {
+      "id": "minar_10000",
+      "name": "Explotador de Minas",
+      "description": "Mina 10,000 veces",
+      "category": "economia",
+      "icon": "⛏️",
+      "requirement": { "type": "minar_count", "value": 10000 },
+      "reward": { "coins": 300000 },
+      "points": 200
+    },
+    {
+      "id": "trabajar_10000",
+      "name": "Trabajo Sin Fin",
+      "description": "Trabaja 10,000 veces",
+      "category": "economia",
+      "icon": "👷",
+      "requirement": { "type": "trabajar_count", "value": 10000 },
+      "reward": { "coins": 300000 },
+      "points": 200
+    },
+    {
+      "id": "cm_ultimate",
+      "name": "Maestro del Coin Master",
+      "description": "Tira 10,000 veces en Coin Master",
+      "category": "coinmaster",
+      "icon": "🎡",
+      "requirement": { "type": "cm_tiradas", "value": 10000 },
+      "reward": { "coins": 500000 },
+      "points": 250
+    },
+    {
+      "id": "rich_goal",
+      "name": "Meta de Riqueza",
+      "description": "Alcanza 123,456,789 pandacoins",
+      "category": "economia",
+      "icon": "🔢",
+      "requirement": { "type": "total_coins", "value": 123456789 },
+      "reward": { "coins": 25000 },
+      "points": 60
+    },
+    {
+      "id": "party_hermanos_10",
+      "name": "Clan Monumental",
+      "description": "Ten 10 hermanos",
+      "category": "social",
+      "icon": "🎪",
+      "requirement": { "type": "hermanos_count", "value": 10 },
+      "reward": { "coins": 30000 },
+      "points": 60
+    },
+    {
+      "id": "collector_legend",
+      "name": "Leyenda Coleccionista",
+      "description": "Posee 1,000 personajes",
+      "category": "personajes",
+      "icon": "🏛️",
+      "requirement": { "type": "personajes_count", "value": 1000 },
+      "reward": { "coins": 1000000 },
+      "points": 500
+    },
+    {
+      "id": "commands_10000",
+      "name": "Comandante",
+      "description": "Usa 10,000 comandos",
+      "category": "especial",
+      "icon": "🧭",
+      "requirement": { "type": "commands_used", "value": 10000 },
+      "reward": { "coins": 1000000 },
+      "points": 500
+    },
+    {
+      "id": "spotify_500",
+      "name": "Adicto a la Música",
+      "description": "Usa .spotify 500 veces",
+      "category": "musica",
+      "icon": "🎵",
+      "requirement": { "type": "spotify_count", "value": 500 },
+      "reward": { "coins": 50000 },
+      "points": 60
+    },
+    {
+      "id": "coin_hoarder_100m",
+      "name": "Acaparador",
+      "description": "Acumula 1,000,000,000 pandacoins",
+      "category": "economia",
+      "icon": "💼",
+      "requirement": { "type": "total_coins", "value": 1000000000 },
+      "reward": { "coins": 2000000 },
+      "points": 1000
+    }
   ]
 }

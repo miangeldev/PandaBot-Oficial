@@ -91,7 +91,7 @@ function verificarActivacionesExpiradas() {
   return cambios;
 }
 
-// FUNCIÓN MEJORADA PARA CALCULAR PRODUCCIÓN
+
 function calcularProduccion(granja) {
   const tipo = tiposGranjas[granja.tipo];
   if (!tipo) return 0;
@@ -99,20 +99,19 @@ function calcularProduccion(granja) {
   const nivel = granja.nivel || 1;
   const mejoraMultiplicador = granja.mejora || tipo.mejora;
   
-  // Si la granja ya tiene producciónPorSegundo calculada y es mayor que 0, usarla
-  // (mantiene compatibilidad con granjas existentes)
+  
   if (granja.produccionPorSegundo && granja.produccionPorSegundo > 0) {
     return granja.produccionPorSegundo;
   }
   
-  // Calcular nueva producción exponencial
+  
   const produccionBase = tipo.produccionPorSegundo;
   const nuevaProduccion = produccionBase * Math.pow(mejoraMultiplicador, nivel - 1);
   
   return nuevaProduccion;
 }
 
-// FUNCIÓN MEJORADA PARA CALCULAR CAPACIDAD
+
 function calcularCapacidad(granja) {
   const tipo = tiposGranjas[granja.tipo];
   if (!tipo) return 0;
@@ -120,21 +119,21 @@ function calcularCapacidad(granja) {
   const nivel = granja.nivel || 1;
   const mejoraMultiplicador = granja.mejora || tipo.mejora;
   
-  // Si ya tiene capacidad y es mayor que 0, usarla
+  
   if (granja.capacidad && granja.capacidad > 0) {
     return granja.capacidad;
   }
   
-  // Calcular nueva capacidad exponencial
+ 
   const capacidadBase = tipo.capacidad;
   const nuevaCapacidad = capacidadBase * Math.pow(mejoraMultiplicador, nivel - 1);
   
   return nuevaCapacidad;
 }
 
-// FUNCIÓN PARA ACTUALIZAR GRANJAS EXISTENTES
+
 function actualizarGranjasLegacy(granja) {
-  // Si es una granja antigua sin los cálculos correctos
+
   const nivel = granja.nivel || 1;
   
   if (nivel > 1) {
@@ -144,7 +143,7 @@ function actualizarGranjasLegacy(granja) {
       const produccionBase = tipo.produccionPorSegundo;
       const capacidadBase = tipo.capacidad;
       
-      // Recalcular producción y capacidad
+      
       granja.produccionPorSegundo = produccionBase * Math.pow(mejoraMultiplicador, nivel - 1);
       granja.capacidad = capacidadBase * Math.pow(mejoraMultiplicador, nivel - 1);
       
@@ -173,7 +172,7 @@ export async function run(sock, msg, args) {
 
   verificarActivacionesExpiradas();
 
-  // Actualizar producción antes de cualquier acción
+ 
   actualizarProduccionUsuario(sender, db);
 
   const subcomando = args[0]?.toLowerCase() || 'info';
@@ -213,7 +212,7 @@ export async function run(sock, msg, args) {
     case 'activaciones':
       await mostrarActivaciones(sock, from);
       break;
-    case 'migrar': // COMANDO SECRETO PARA MIGRAR GRANJAS
+    case 'migrar': 
       await migrarGranjasUsuario(sock, from, sender, db);
       break;
     default:
@@ -221,7 +220,7 @@ export async function run(sock, msg, args) {
   }
 }
 
-// NUEVA FUNCIÓN: Migrar granjas de un usuario específico
+
 async function migrarGranjasUsuario(sock, from, sender, db) {
   if (!db.granjas.usuarios[sender]) {
     await sock.sendMessage(from, {
@@ -605,11 +604,11 @@ async function estadoGranja(sock, from, sender, db) {
   usuarioGranjas.forEach((granja, index) => {
     const tipo = tiposGranjas[granja.tipo];
     
-    // Calcular producción actual (con mejoras exponenciales)
+
     let produccionPorSegundo = calcularProduccion(granja);
     let capacidad = calcularCapacidad(granja);
     
-    // Aplicar eventos globales
+  
     if (activacionesGlobales.gananciaX2.activo) {
       produccionPorSegundo *= 2;
     }
@@ -624,16 +623,24 @@ async function estadoGranja(sock, from, sender, db) {
     const porcentajeLleno = Math.min(100, Math.round((acumulado / capacidad) * 100));
     const barraProgreso = generarBarraProgreso(porcentajeLleno);
 
-    // Calcular siguiente nivel
+   
     const siguienteNivel = (granja.nivel || 1) + 1;
     const mejoraMultiplicador = granja.mejora || tipo.mejora;
     const produccionSiguienteNivel = tipo.produccionPorSegundo * Math.pow(mejoraMultiplicador, siguienteNivel - 1);
     const aumentoPorcentual = Math.round(((produccionSiguienteNivel / produccionPorSegundo) - 1) * 100);
 
+    
+    const nivelActual = granja.nivel || 1;
+    let costoMejora = Math.floor(tipo.costo * Math.pow(2, nivelActual - 1) * 0.5);
+    if (activacionesGlobales.mejorar_50.activo) {
+      costoMejora = Math.floor(costoMejora * 0.5);
+    }
+
     mensaje += `*${index + 1}. ${tipo.nombre}*\n` +
                `⭐ Nivel: ${granja.nivel || 1}\n` +
                `📈 Producción: ${produccionHora.toLocaleString()}/hora\n` +
                `🚀 Siguiente nivel: +${aumentoPorcentual}% producción\n` +
+               `💸 Precio mejora: ${costoMejora.toLocaleString()} 🐼\n` +
                `💰 Acumulado: ${Math.floor(acumulado).toLocaleString()} 🐼\n` +
                `📦 Capacidad: ${capacidad.toLocaleString()}\n` +
                `📊 ${barraProgreso} ${porcentajeLleno}%\n\n`;
@@ -729,7 +736,7 @@ async function mejorarGranja(sock, from, sender, db, args) {
   
   const nivelActual = granja.nivel || 1;
   
-  // Calcular costo de mejora (aumenta exponencialmente)
+
   let costoMejora = Math.floor(tipo.costo * Math.pow(2, nivelActual - 1) * 0.5);
   
   if (activacionesGlobales.mejorar_50.activo) {
@@ -756,14 +763,14 @@ async function mejorarGranja(sock, from, sender, db, args) {
   user.pandacoins -= costoMejora;
   granja.nivel = nivelActual + 1;
   
-  // CALCULAR NUEVA PRODUCCIÓN EXPONENCIAL
+
   const mejoraMultiplicador = granja.mejora || tipo.mejora;
   const produccionBase = tipo.produccionPorSegundo;
   const nuevaProduccion = produccionBase * Math.pow(mejoraMultiplicador, granja.nivel - 1);
   
   granja.produccionPorSegundo = nuevaProduccion;
   
-  // CALCULAR NUEVA CAPACIDAD EXPONENCIAL
+
   const capacidadBase = tipo.capacidad;
   const nuevaCapacidad = capacidadBase * Math.pow(mejoraMultiplicador, granja.nivel - 1);
   
@@ -780,7 +787,7 @@ async function mejorarGranja(sock, from, sender, db, args) {
   }
   const nuevaProduccionHora = produccionFinal * 3600;
   
-  // Calcular aumento porcentual
+
   const produccionAnterior = produccionBase * Math.pow(mejoraMultiplicador, nivelActual - 1);
   const aumentoPorcentual = Math.round(((nuevaProduccion / produccionAnterior) - 1) * 100);
 
@@ -827,7 +834,7 @@ async function venderGranja(sock, from, sender, db, args) {
   
   const nivel = granja.nivel || 1;
   
-  // Reembolso basado en nivel y producción actual
+
   const reembolsoBase = Math.floor(tipo.costo * 0.5);
   const bonificacionNivel = Math.floor(reembolsoBase * 0.15 * (nivel - 1));
   const acumuladoGranja = Math.floor(granja.acumulado || 0);

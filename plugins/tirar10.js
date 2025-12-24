@@ -10,8 +10,9 @@ export async function run(sock, msg, args) {
   }
 
   const data = global.cmDB[user];
+  const nombre = msg.pushName || 'Usuario';
   if (data.spins < 30) {
-    await sock.sendMessage(from, { text: `⚠️ *@${user}*, necesitas al menos *30 giros* para usar este comando.` }, { quoted: msg, mentions: [sender] });
+    await sock.sendMessage(from, { text: `⚠️ *@${nombre}*, necesitas al menos *30 giros* para usar este comando.` }, { quoted: msg, mentions: [sender] });
     return;
   }
 

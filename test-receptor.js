@@ -27,7 +27,7 @@ async function testReceptor() {
     
     sock.ev.on('creds.update', saveCreds);
     
-    // 1. ESCUCHAR MENSAJES - SIN FILTROS
+   
     sock.ev.on('messages.upsert', ({ messages, type }) => {
       console.log(`\n📥 📥 📥 MENSAJE RECIBIDO 📥 📥 📥`);
       console.log(`Tipo: ${type}`);
@@ -57,7 +57,7 @@ async function testReceptor() {
       });
     });
     
-    // 2. ESCUCHAR CONEXIÓN
+
     sock.ev.on('connection.update', (update) => {
       console.log(`\n🔗 Estado conexión: ${update.connection}`);
       

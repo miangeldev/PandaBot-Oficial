@@ -25,25 +25,25 @@ export async function run(sock, msg, args) {
         return;
     }
 
-    // 🔥 USAR CACHÉ EN LUGAR DE CARGAR DIRECTAMENTE DEL ARCHIVO
+    
     const { personajes } = cargarDatos();
 
-    // Contar personajes por tipo
+    
     const userCharacters = user.personajes
         .map(pName => personajes.find(p => p.nombre === pName))
         .filter(p => p !== undefined);
 
-    // Separar personajes normales de lucky blocks
+    
     const personajesNormales = userCharacters.filter(p => !p.nombre.toLowerCase().includes("lucky block"));
     const luckyBlocks = userCharacters.filter(p => p.nombre.toLowerCase().includes("lucky block"));
 
-    // Ordenar por precio (más caro primero)
+    
     personajesNormales.sort((a, b) => b.precio - a.precio);
     luckyBlocks.sort((a, b) => b.precio - a.precio);
 
     let texto = `🐼 *Tus Personajes* 🐼\n\n`;
 
-    // Mostrar estadísticas
+    
     const valorTotal = userCharacters.reduce((sum, p) => sum + p.precio, 0);
     const alineados = Object.values(user.alineacion?.posiciones || {}).length;
     
@@ -53,24 +53,24 @@ export async function run(sock, msg, args) {
     texto += `• Alineados: ${alineados}\n`;
     texto += `• Lucky Blocks: ${luckyBlocks.length}\n\n`;
 
-    // Mostrar personajes normales (máximo 15 para no saturar)
+    
     if (personajesNormales.length > 0) {
         texto += `🎯 *Personajes (${personajesNormales.length}):*\n`;
         
-        const mostrar = personajesNormales.slice(0, 15);
+        const mostrar = personajesNormales.slice(0, 50);
         mostrar.forEach((p, index) => {
             const efectosText = p.efectos && p.efectos.length > 0 ? ` ${p.efectos.join(' ')}` : '';
             const alineado = user.alineacion && Object.values(user.alineacion.posiciones || {}).includes(p.nombre) ? ' ⚽' : '';
             texto += `${index + 1}. *${p.nombre}* (${p.calidad})${efectosText} – 💰 ${p.precio.toLocaleString()} 🐼${alineado}\n`;
         });
 
-        if (personajesNormales.length > 15) {
-            texto += `\n... y ${personajesNormales.length - 15} personajes más\n`;
+        if (personajesNormales.length > 50) {
+            texto += `\n... y ${personajesNormales.length - 50} personajes más\n`;
             texto += `💡 Usa \`.misps <nombre>\` para buscar un personaje específico`;
         }
     }
 
-    // Mostrar lucky blocks
+ 
     if (luckyBlocks.length > 0) {
         texto += `\n🎁 *Lucky Blocks (${luckyBlocks.length}):*\n`;
         luckyBlocks.forEach((lb, index) => {
@@ -80,7 +80,7 @@ export async function run(sock, msg, args) {
         texto += `\n💡 Usa \`.open <nombre>\` para abrir tus Lucky Blocks`;
     }
 
-    // Búsqueda específica si se proporciona argumento
+   
     if (args.length > 0) {
         const busqueda = args.join(' ').toLowerCase();
         const encontrados = userCharacters.filter(p => 
@@ -102,5 +102,5 @@ export async function run(sock, msg, args) {
         }
     }
 
-    await sock.sendMessage(from, { text: texto });
+    await sock.sendMessage(from, { text: texto }, { quoted: msg });
 }

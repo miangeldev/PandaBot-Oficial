@@ -48,7 +48,7 @@ export async function run(sock, msg, args) {
   global.guardarCM();
 
   await sock.sendMessage(from, {
-    text: `🦹 Robaste a *@${targetNumber}* y obtuviste *${coinsTaken.toLocaleString()} monedas*.`,
+    text: `🦹 Robaste al usuario y obtuviste *${coinsTaken.toLocaleString()} monedas*.`,
     mentions: [targetJid]
   }, { quoted: msg });
 }

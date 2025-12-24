@@ -11,6 +11,10 @@ export async function run(sock, msg) {
   try {
     console.log('[HD] Comando ejecutado');
 
+    
+    const loadingMsg = await sock.sendMessage(from, { text: '⌛ Procesando HD...'}, { quoted: msg }).catch(() => null);
+    try { if (loadingMsg) await sock.sendMessage(from, { react: { text: '⏳', key: loadingMsg.key } }).catch(() => {}); } catch {};
+
     const quoted =
       msg.message?.extendedTextMessage?.contextInfo?.quotedMessage;
 
@@ -83,10 +87,16 @@ export async function run(sock, msg) {
       );
     }
 
+
+    try { if (loadingMsg) await sock.sendMessage(from, { delete: loadingMsg.key }).catch(() => {}); } catch {}
+
     console.log('[HD] Enviado correctamente');
 
   } catch (err) {
     console.error('[HD ERROR]', err);
+
+    try { if (typeof loadingMsg !== 'undefined' && loadingMsg) await sock.sendMessage(from, { delete: loadingMsg.key }).catch(() => {}); } catch {}
+
     await sock.sendMessage(
       from,
       { text: `❌ Error HD:\n${err.message || err}` },

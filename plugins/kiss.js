@@ -3,9 +3,9 @@ export const command = 'kiss';
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
 
-  // Detectar si hay mención o respuesta
-  let who;
+
   const mentions = msg.message?.extendedTextMessage?.contextInfo?.mentionedJid || [];
+  let who;
 
   if (mentions.length > 0) {
     who = mentions[0];
@@ -15,21 +15,20 @@ export async function run(sock, msg, args) {
     who = msg.key.participant || msg.key.remoteJid;
   }
 
-  // Conseguir nombres
-  const name2 = msg.pushName || 'Alguien';
-  let name = who && who !== msg.key.participant ? who : null;
+  const senderJid = msg.key.participant || msg.key.remoteJid;
+  const senderNumber = (senderJid || '').split('@')[0];
+  const targetNumber = who ? who.split('@')[0] : null;
 
-  // Mensaje
   let str;
-  if (mentions.length > 0) {
-    str = `\`${name2}\` le dio besos a \`${name}\` ( ˘ ³˘)♥.`;
-  } else if (msg.message?.extendedTextMessage?.contextInfo?.quotedMessage) {
-    str = `\`${name2}\` besó a \`${name}\` 💋.`;
+  if (who && who !== senderJid) {
+    str = `@${senderNumber} le dio besos a @${targetNumber} ( ˘ ³˘)♥.`;
+  } else if (msg.message?.extendedTextMessage?.contextInfo?.quotedMessage && who) {
+    str = `@${senderNumber} besó a @${targetNumber} 💋.`;
   } else {
-    str = `\`${name2}\` se besó a sí mismo ( ˘ ³˘)♥`;
+    str = `@${senderNumber} se besó a sí mismo ( ˘ ³˘)♥`;
   }
 
-  // Lista de videos
+ 
   const videos = [
     'https://telegra.ph/file/d6ece99b5011aedd359e8.mp4',
     'https://telegra.ph/file/ba841c699e9e039deadb3.mp4',
@@ -45,11 +44,16 @@ export async function run(sock, msg, args) {
   const video = videos[Math.floor(Math.random() * videos.length)];
 
   try {
+
+    const mentionList = [];
+    if (senderJid) mentionList.push(senderJid);
+    if (who && who !== senderJid) mentionList.push(who);
+
     await sock.sendMessage(from, {
       video: { url: video },
       gifPlayback: true,
       caption: str,
-      mentions: who ? [who] : []
+      mentions: mentionList
     }, { quoted: msg });
   } catch (e) {
     console.error('❌ Error al enviar kiss:', e);

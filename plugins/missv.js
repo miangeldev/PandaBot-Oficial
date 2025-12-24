@@ -16,7 +16,7 @@ export async function run(sock, msg) {
       return;
     }
 
-    const servicios = response.servicios_contratados; // La respuesta es un objeto con esta clave
+    const servicios = response.servicios_contratados;
     
     if (servicios.length === 0) {
       await sock.sendMessage(from, { text: '❌ No tienes servicios contratados aún.' }, { quoted: loadingMsg });

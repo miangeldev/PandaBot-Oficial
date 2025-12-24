@@ -105,8 +105,8 @@ export async function run(sock, msg, args) {
   
   const paquetes = [
     { id: 'paquete_inicio', emoji: '🎒', nombre: 'paquete_inicio', precio: 500, desc: 'Pico + Hacha + 5 Comida (Ahorras 200)' },
-    { id: 'paquete_cazador', emoji: '🏹', nombre: 'Paquete Cazador', precio: 1500, desc: 'Arco + Espada + 3 Pociones (Ahorras 500)', nivel: 5 },
-    { id: 'paquete_minero', emoji: '⛏️', nombre: 'Paquete Minero', precio: 2000, desc: '2 Picos + 100 Piedras + 50 Hierro (Ahorras 800)', nivel: 7 }
+    { id: 'paquete_cazador', emoji: '🏹', nombre: 'paquete_cazador', precio: 1500, desc: 'Arco + Espada + 3 Pociones (Ahorras 500)', nivel: 5 },
+    { id: 'paquete_minero', emoji: '⛏️', nombre: 'paquete_minero', precio: 2000, desc: '2 Picos + 100 Piedras + 50 Hierro (Ahorras 800)', nivel: 7 }
   ];
   
   paquetes.forEach(item => {
@@ -117,7 +117,7 @@ export async function run(sock, msg, args) {
     response += `   ${item.desc} ${nivelReq}\n`;
   });
   const mejoras = [
-    { id: 'mejora_inventario', emoji: '🎒', nombre: 'Mejora Inventario', precio: 1000, desc: 'Aumenta la capacidad de inventario' }
+    { id: 'mejora_inventario', emoji: '🎒', nombre: 'mejora_inventario', precio: 1000, desc: 'Aumenta la capacidad de inventario' }
   ];
 
   mejoras.forEach(item => {

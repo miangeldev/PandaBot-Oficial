@@ -11,8 +11,8 @@ export async function run(sock, msg, args) {
   const sender = msg.key.participant || msg.key.remoteJid;
   const user = sender.split('@')[0];
   const now = Date.now();
-  
-  // ✅ Inicializar achievements si no existen
+  const nombre = msg.pushName || 'Usuario';
+
   const db = cargarDatabase();
   if (!db.users[sender]?.achievements) {
     initializeAchievements(sender);
@@ -26,7 +26,7 @@ export async function run(sock, msg, args) {
 
   cooldowns[user] = now;
 
-  // Inicializar datos si no existen
+
   if (!global.cmDB[user]) {
     global.cmDB[user] = {
       spins: 5,
@@ -41,7 +41,7 @@ export async function run(sock, msg, args) {
 
   if (data.spins <= 0) {
     await sock.sendMessage(from, {
-      text: `⚠️ *@${user}*, no tienes más giros. Usa *.dailycm* para reclamar más.`,
+      text: `⚠️ *@${nombre}*, no tienes más giros. Usa *.dailycm* para reclamar más.`,
       mentions: [sender]
     }, { quoted: msg });
     return;
@@ -95,6 +95,8 @@ export async function run(sock, msg, args) {
   const reply = `
 🎰 *Coin Master - TIRADA DE SLOT* 🎰
 
+Usuario: *@${nombre}*
+
 🎲 Resultado:
 ${resultText}
 
@@ -110,7 +112,7 @@ ${rewardMessages}
 
   await sock.sendMessage(from, { text: reply }, { quoted: msg });
 
-  // ✅ Trackear tirada de Coin Master
+
   trackCMTirada(sender, sock, from);
   checkSpecialAchievements(sender, sock, from);
 }

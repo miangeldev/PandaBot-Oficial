@@ -4,7 +4,7 @@ export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
   const user = sender.split('@')[0];
-
+  const nombre = msg.pushName || 'Usuario';
   if (!global.cmDB[user]) {
     global.cmDB[user] = { spins: 5, coins: 300, shields: 1, villageLevel: 1, creditos: 1 };
   }
@@ -12,7 +12,7 @@ export async function run(sock, msg, args) {
   const data = global.cmDB[user];
 
   if (data.spins < 10) {
-    await sock.sendMessage(from, { text: `⚠️ *@${user}*, necesitas al menos *10 giros* para usar este comando.` }, { quoted: msg });
+    await sock.sendMessage(from, { text: `⚠️ *@${nombre}*, necesitas al menos *10 giros* para usar este comando.` }, { quoted: msg });
     return;
   }
 

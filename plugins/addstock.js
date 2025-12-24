@@ -18,7 +18,7 @@ export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
   const senderId = sender.split('@')[0];
-
+  const nombreowner = msg.pushName || 'Usuario';
   if (!ownerNumber.includes(`+${senderId}`)) {
     await sock.sendMessage(from, {
       text: '❌ Este comando solo puede ser usado por los owners.'
@@ -44,7 +44,7 @@ stock[nombre] = {
   guardarStock(stock);
 
   await sock.sendMessage(from, {
-    text: `✅ Se ha definido un stock de *${cantidad}* unidades para *${nombre}*.`
+    text: `✅ ${nombreowner} ha definido un stock de *${cantidad}* unidades para *${nombre}*.`
   }, { quoted: msg });
 }
 export function migrarStockPlano() {
