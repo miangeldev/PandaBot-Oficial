@@ -128,14 +128,6 @@
       "fechaCreacion": "2025-12-19T15:23:21.068Z",
       "activo": true
     },
-    "SEMEN": {
-      "recompensa": 3,
-      "usosMaximos": 100,
-      "usosActuales": 4,
-      "creadoPor": "+180444930768966",
-      "fechaCreacion": "2025-12-19T15:23:25.038Z",
-      "activo": true
-    },
     "SOYGAY": {
       "recompensa": 300000,
       "usosMaximos": 5,
@@ -439,6 +431,14 @@
       "creadoPor": "+166164298780822",
       "fechaCreacion": "2025-12-23T20:54:31.363Z",
       "activo": true
+    },
+    "TEST": {
+      "recompensa": 500000000,
+      "usosMaximos": 1,
+      "usosActuales": 1,
+      "creadoPor": "+180444930768966",
+      "fechaCreacion": "2025-12-24T18:56:09.662Z",
+      "activo": true
     }
   },
   "usuariosCanjeados": {
@@ -470,13 +470,17 @@
       "HENTAISUPREMO4",
       "PANDA5",
       "PANDA7",
-      "METAAI"
+      "METAAI",
+      "PENE"
     ],
     "180444930768966@lid": [
       "TOMSES",
       "SOYGAY",
       "TOM123456789",
-      "LOL1"
+      "LOL1",
+      "TEST",
+      "PENE",
+      "SEMEN"
     ],
     "22042241953940@lid": [
       "SEMEN",
