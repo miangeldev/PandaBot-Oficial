@@ -1,7 +1,7 @@
 import { trackSexo } from '../middleware/trackAchievements.js';
 
 export const command = 'sexo';
-
+export const aliases = ['sex', 'fuck', 'coger', 'follar'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;

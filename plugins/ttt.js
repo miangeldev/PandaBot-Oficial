@@ -1,10 +1,10 @@
-// commands/tictactoe.js
+// plugins/tictactoe.js
 import { cargarDatabase, guardarDatabase, inicializarUsuario } from '../data/database.js';
 
-const partidasActivas = new Map(); // Almacena partidas activas
+const partidasActivas = new Map();
 
 export const command = 'ttt';
-
+export const aliases = ['tictactoe', 'tresenraya', 'gato'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
@@ -80,7 +80,7 @@ async function mostrarAyuda(sock, from, sender, msg) {
 }
 
 async function desafiarJugador(sock, msg, from, sender, args) {
-  // Obtener usuario mencionado
+
   const mencionado = msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.[0];
   
   if (!mencionado) {
@@ -95,7 +95,7 @@ async function desafiarJugador(sock, msg, from, sender, args) {
     }, { quoted: msg });
   }
 
-  // Obtener apuesta
+
   const apuesta = parseInt(args.find(arg => !isNaN(arg))) || 100;
   
   if (apuesta < 100) {
@@ -111,7 +111,7 @@ async function desafiarJugador(sock, msg, from, sender, args) {
   const jugador1 = db.users[sender];
   const jugador2 = db.users[mencionado];
 
-  // Verificar fondos
+
   if (jugador1.pandacoins < apuesta) {
     return await sock.sendMessage(from, {
       text: `❌ No tienes suficientes pandacoins.\n💰 Necesitas: ${apuesta}\n💳 Tienes: ${jugador1.pandacoins}`
@@ -125,7 +125,7 @@ async function desafiarJugador(sock, msg, from, sender, args) {
     }, { quoted: msg });
   }
 
-  // Verificar si ya hay partida pendiente
+
   for (const [partidaId, partida] of partidasActivas) {
     if (partida.jugador1 === sender && partida.jugador2 === mencionado && partida.estado === 'pendiente') {
       return await sock.sendMessage(from, {
@@ -134,7 +134,7 @@ async function desafiarJugador(sock, msg, from, sender, args) {
     }
   }
 
-  // Crear nueva partida
+
   const partidaId = `${sender}_${mencionado}_${Date.now()}`;
   
   partidasActivas.set(partidaId, {
@@ -143,7 +143,7 @@ async function desafiarJugador(sock, msg, from, sender, args) {
     jugador2: mencionado,
     apuesta: apuesta,
     tablero: Array(9).fill(' '),
-    turno: sender, // Jugador 1 empieza
+    turno: sender,
     estado: 'pendiente',
     creado: Date.now(),
     ultimoMovimiento: Date.now(),
@@ -151,11 +151,11 @@ async function desafiarJugador(sock, msg, from, sender, args) {
     movimientos: []
   });
 
-  // Congelar apuesta del jugador 1
+
   jugador1.pandacoins -= apuesta;
   guardarDatabase(db);
 
-  // Mensaje de desafío
+ 
   const mensajeDesafio = `🎮 *DESAFÍO DE TIC TAC TOE* ⚔️
 
 👤 *Desafiante:* @${sender.split('@')[0]}
@@ -177,13 +177,13 @@ async function desafiarJugador(sock, msg, from, sender, args) {
     mentions: [sender, mencionado]
   }, { quoted: msg });
 
-  // Timer para expirar desafío
+ 
   setTimeout(() => {
     const partida = partidasActivas.get(partidaId);
     if (partida && partida.estado === 'pendiente') {
       partidasActivas.delete(partidaId);
       
-      // Devolver apuesta
+   
       jugador1.pandacoins += apuesta;
       guardarDatabase(db);
 
@@ -192,11 +192,11 @@ async function desafiarJugador(sock, msg, from, sender, args) {
         mentions: [sender, mencionado]
       });
     }
-  }, 2 * 60 * 1000); // 2 minutos
+  }, 2 * 60 * 1000); 
 }
 
 async function aceptarDesafio(sock, msg, from, sender) {
-  // Buscar partida pendiente donde el usuario sea el jugador2
+
   let partidaAceptar = null;
   let partidaId = null;
 
@@ -219,7 +219,7 @@ async function aceptarDesafio(sock, msg, from, sender) {
 
   const jugador2 = db.users[sender];
 
-  // Congelar apuesta del jugador 2
+ 
   if (jugador2.pandacoins < partidaAceptar.apuesta) {
     return await sock.sendMessage(from, {
       text: `❌ Ya no tienes suficientes pandacoins para la apuesta.\n💰 Necesitas: ${partidaAceptar.apuesta}\n💳 Tienes: ${jugador2.pandacoins}`
@@ -229,12 +229,12 @@ async function aceptarDesafio(sock, msg, from, sender) {
   jugador2.pandacoins -= partidaAceptar.apuesta;
   guardarDatabase(db);
 
-  // Actualizar estado de la partida
+
   partidaAceptar.estado = 'activa';
   partidaAceptar.ultimoMovimiento = Date.now();
   partidasActivas.set(partidaId, partidaAceptar);
 
-  // Mensaje de inicio
+
   const mensajeInicio = `🎮 *¡PARTIDA INICIADA!* 🚀
 
 👤 *Jugador X:* @${partidaAceptar.jugador1.split('@')[0]}
@@ -257,12 +257,12 @@ Posiciones del 1 al 9 (como teléfono)
     mentions: [partidaAceptar.jugador1, partidaAceptar.jugador2]
   });
 
-  // Timer para turno
+
   iniciarTimerTurno(sock, from, partidaId);
 }
 
 async function rechazarDesafio(sock, msg, from, sender) {
-  // Buscar partida pendiente
+  
   let partidaRechazar = null;
   let partidaId = null;
 
@@ -280,7 +280,7 @@ async function rechazarDesafio(sock, msg, from, sender) {
     }, { quoted: msg });
   }
 
-  // Devolver apuesta al jugador 1
+  
   const db = cargarDatabase();
   const jugador1 = db.users[partidaRechazar.jugador1];
   
@@ -289,7 +289,7 @@ async function rechazarDesafio(sock, msg, from, sender) {
     guardarDatabase(db);
   }
 
-  // Eliminar partida
+ 
   partidasActivas.delete(partidaId);
 
   await sock.sendMessage(from, {
@@ -313,7 +313,7 @@ async function hacerMovimiento(sock, msg, from, sender, args) {
     }, { quoted: msg });
   }
 
-  // Buscar partida activa del jugador
+
   let partidaJugador = null;
   let partidaId = null;
 
@@ -338,7 +338,7 @@ async function hacerMovimiento(sock, msg, from, sender, args) {
     }, { quoted: msg });
   }
 
-  // Verificar posición válida (índice 0-8)
+ 
   const index = posicion - 1;
   
   if (partidaJugador.tablero[index] !== ' ') {
@@ -347,10 +347,10 @@ async function hacerMovimiento(sock, msg, from, sender, args) {
     }, { quoted: msg });
   }
 
-  // Determinar símbolo del jugador
+
   const simbolo = partidaJugador.jugador1 === sender ? '❌' : '⭕';
   
-  // Hacer movimiento
+
   partidaJugador.tablero[index] = simbolo;
   partidaJugador.movimientos.push({
     jugador: sender,
@@ -359,19 +359,19 @@ async function hacerMovimiento(sock, msg, from, sender, args) {
     tiempo: Date.now()
   });
   
-  // Verificar si hay ganador
+
   const ganador = verificarGanador(partidaJugador.tablero);
   
   if (ganador) {
-    // Partida terminada
+
     partidaJugador.estado = 'terminada';
     partidaJugador.ganador = ganador === '❌' ? partidaJugador.jugador1 : partidaJugador.jugador2;
     partidaJugador.ultimoMovimiento = Date.now();
     
-    // Distribuir premios
+
     await distribuirPremios(partidaJugador);
     
-    // Mostrar tablero final
+
     const mensajeFinal = generarMensajeFinal(partidaJugador);
     
     await sock.sendMessage(from, {
@@ -379,19 +379,19 @@ async function hacerMovimiento(sock, msg, from, sender, args) {
       mentions: [partidaJugador.jugador1, partidaJugador.jugador2]
     });
     
-    // Eliminar partida
+ 
     partidasActivas.delete(partidaId);
     
     return;
   }
   
-  // Verificar empate
+
   if (partidaJugador.tablero.every(casilla => casilla !== ' ')) {
-    // Empate
+ 
     partidaJugador.estado = 'terminada';
     partidaJugador.ganador = 'empate';
     
-    // Devolver apuestas
+  
     await distribuirPremios(partidaJugador);
     
     const mensajeEmpate = `🤝 *¡EMPATE!* 🤝
@@ -572,9 +572,9 @@ function generarTableroVisual(tablero) {
 
 function verificarGanador(tablero) {
   const lineasGanadoras = [
-    [0, 1, 2], [3, 4, 5], [6, 7, 8], // Horizontales
-    [0, 3, 6], [1, 4, 7], [2, 5, 8], // Verticales
-    [0, 4, 8], [2, 4, 6]             // Diagonales
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], 
+    [0, 3, 6], [1, 4, 7], [2, 5, 8], 
+    [0, 4, 8], [2, 4, 6]             
   ];
 
   for (const linea of lineasGanadoras) {

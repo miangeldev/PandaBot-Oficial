@@ -1,4 +1,4 @@
-// commands/minar.js
+// plugin importante
 import fs from 'fs';
 import path from 'path';
 import { cargarDatabase, guardarDatabase, inicializarUsuario } from '../data/database.js';
@@ -6,7 +6,7 @@ import { trackMinar, checkSpecialAchievements } from '../middleware/trackAchieve
 import { initializeAchievements } from '../data/achievementsDB.js';
 
 export const command = 'minar';
-
+export const aliases = ['mine', 'mina'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
@@ -17,7 +17,7 @@ export async function run(sock, msg, args) {
   const cooldowns = JSON.parse(fs.readFileSync(cdPath));
   const lastTime = cooldowns[sender]?.minar || 0;
   const now = Date.now();
-  const cooldownTime = 10 * 60 * 1000; // 10 minutos
+  const cooldownTime = 10 * 60 * 1000;
 
   if (now - lastTime < cooldownTime) {
     const minutesLeft = Math.ceil((cooldownTime - (now - lastTime)) / 60000);

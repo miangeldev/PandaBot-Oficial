@@ -1,5 +1,5 @@
 export const command = 'dar';
-
+export const aliases = ['give'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const quotedMessage = msg.message?.extendedTextMessage?.contextInfo?.quotedMessage;

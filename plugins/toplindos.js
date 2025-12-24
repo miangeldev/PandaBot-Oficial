@@ -1,5 +1,5 @@
 export const command = 'toplindos';
-
+export const aliases = ['topcute', 'toplindas'];
 export async function run(sock, msg) {
   const from = msg.key.remoteJid;
   const isGroup = from.endsWith('@g.us');

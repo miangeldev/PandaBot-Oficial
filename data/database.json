@@ -1,195 +1,5 @@
 {
   "users": {
-    "97027992080542@lid": {
-      "nombre": "Usuario_97027992080542",
-      "registrado": "2025-12-04T13:07:04.548Z",
-      "pandacoins": 339776.39343000203,
-      "exp": 1287,
-      "nivel": 31,
-      "inventario": {
-        "recursos": {
-          "pescado": 19,
-          "carne": 4,
-          "madera": 14,
-          "diamantes": 0,
-          "piedras": 33,
-          "comida": 10,
-          "hierro": 14,
-          "carbon": 3,
-          "cuero": 2,
-          "tela": 0,
-          "plata": 0,
-          "esmeraldas": 0,
-          "rubies": 0,
-          "oro": 0
-        },
-        "herramientas": {
-          "pico": 0,
-          "hacha": 0,
-          "caña": 0,
-          "arco": 0,
-          "espada": 0,
-          "armadura": 0
-        },
-        "especiales": {
-          "pocion": 3,
-          "llave": 1,
-          "gema": 0,
-          "pergamino": 0
-        },
-        "mascotas": {
-          "comida_basica": 5,
-          "comida_premium": 0,
-          "juguetes": 2
-        }
-      },
-      "stats": {
-        "pescas": 2,
-        "cazas": 2,
-        "minas": 7,
-        "ventas": 1,
-        "compras": 0,
-        "boss_danio": 0,
-        "misiones_completadas": 0,
-        "ganancias_ventas": 240,
-        "dias_consecutivos": 1,
-        "ultimo_daily": "2025-12-08"
-      },
-      "misiones_activas": {},
-      "logros": [],
-      "achievements": {
-        "unlocked": [
-          "first_steps",
-          "social_butterfly",
-          "coin_collector_1",
-          "gambler_1",
-          "music_starter",
-          "sexo_1",
-          "dildear_1",
-          "cm_spinner_1",
-          "married",
-          "coin_collector_2",
-          "thief_1",
-          "coin_collector_3",
-          "coin_collector_4",
-          "cm_spinner_2",
-          "broke",
-          "collector_1",
-          "comeback_kid",
-          "command_master"
-        ],
-        "progress": {},
-        "points": 450,
-        "titles": [
-          "Novato",
-          "🍀 Suertudo",
-          "Casado",
-          "Millonario",
-          "Magnate",
-          "Fenix",
-          "🤡 Payaso"
-        ],
-        "selectedTitle": "Fenix",
-        "stats": {
-          "minar_count": 0,
-          "trabajar_count": 0,
-          "buy_count": 0,
-          "apostar_count": 3,
-          "robos_exitosos": 22,
-          "robos_fallidos": 0,
-          "commands_used": 555,
-          "cm_tiradas": 102,
-          "cm_ataques": 2,
-          "registered_date": 1764853625229,
-          "was_broke": true,
-          "comeback": true,
-          "spotify_count": 24,
-          "paja_count": 1,
-          "sexo_count": 1,
-          "dildear_count": 1
-        }
-      },
-      "cooldowns": {
-        "ps": 1765127299058,
-        "dropvip": 1765908021428,
-        "magicbox": 1765581070429,
-        "daily": 1765224471022,
-        "superminar": 1765581057838
-      },
-      "personajes": [
-        "Goofy",
-        "Santa PandaBot",
-        "Burrito De Lukas",
-        "Burrito De Lukas",
-        "Goofy",
-        "xatu",
-        "Agarrini La Palini",
-        "Xmas Everything",
-        "Rodolfo el Reno",
-        "Xmas Nyan Cat",
-        "Xmas Lukas",
-        "Santa PandaBot",
-        "Pene De Lukas",
-        "jodan con thiago q es necesitado y yo no",
-        "La Karkerkar Combinasion",
-        "Tom Ass 🌮 💩"
-      ],
-      "ultimoSell": 1765581086561,
-      "robos": {
-        "exitosos": 29,
-        "fallidos": 0
-      },
-      "ultimoApostar": 1765592267082,
-      "vip": true,
-      "creditos": 7,
-      "robarpsCooldown": 1765582279209,
-      "alineacion": {
-        "formacion": "4-4-2",
-        "posiciones": {
-          "POR": "Goofy",
-          "LI": "Burrito De Lukas",
-          "LD": "Burrito De Lukas",
-          "DFC1": "Goofy",
-          "ED": "Santa PandaBot"
-        }
-      },
-      "inversiones": {
-        "LILANCOIN": {
-          "cantidad": 14617854.85002103,
-          "inversionTotal": 9662937.100800227
-        },
-        "DRAGONTOKEN": {
-          "cantidad": 0,
-          "inversionTotal": 0
-        },
-        "UNISTAR": {
-          "cantidad": 0,
-          "inversionTotal": 0
-        },
-        "MOONSHOT": {
-          "cantidad": 0,
-          "inversionTotal": 0
-        },
-        "SAFEGEM": {
-          "cantidad": 0,
-          "inversionTotal": 0
-        },
-        "NEUTRON": {
-          "cantidad": 0,
-          "inversionTotal": 0
-        }
-      },
-      "vipExpiration": 37765242412153,
-      "diamantes": 130,
-      "afkCooldown": 1765664252977,
-      "afkStats": {
-        "totalTiempo": 70692337,
-        "totalSesiones": 1,
-        "robosPrevenidos": 0,
-        "mejorRacha": 19
-      },
-      "id": 1
-    },
     "166164298780822@lid": {
       "nombre": "Usuario_166164298780822",
       "registrado": "2025-12-04T13:08:05.786Z",
@@ -309,22 +119,22 @@
         ],
         "selectedTitle": null,
         "stats": {
-          "minar_count": 1,
-          "trabajar_count": 5,
-          "buy_count": 25,
-          "apostar_count": 7,
-          "robos_exitosos": 45,
+          "minar_count": 1000,
+          "trabajar_count": 1000,
+          "buy_count": 1000,
+          "apostar_count": 1000,
+          "robos_exitosos": 1000,
           "robos_fallidos": 0,
-          "commands_used": 2224,
-          "cm_tiradas": 4,
-          "cm_ataques": 2,
+          "commands_used": 1000,
+          "cm_tiradas": 1000,
+          "cm_ataques": 1000,
           "registered_date": 1764853687041,
           "was_broke": true,
           "comeback": true,
-          "spotify_count": 17,
-          "paja_count": 1,
-          "sexo_count": 2,
-          "dildear_count": 2
+          "spotify_count": 500,
+          "paja_count": 1000,
+          "sexo_count": 1000,
+          "dildear_count": 1000
         }
       },
       "cooldowns": {
@@ -373,7 +183,7 @@
       },
       "vip": true,
       "robos": {
-        "exitosos": 50,
+        "exitosos": 1000,
         "fallidos": 0
       },
       "ultimoApostar": 1766422553480,
@@ -391,7 +201,7 @@
         "mejorRacha": 1
       },
       "diamantes": 50,
-      "id": 2
+      "id": 1
     },
     "248726488645797@lid": {
       "nombre": "Usuario_248726488645797",

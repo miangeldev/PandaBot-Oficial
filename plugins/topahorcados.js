@@ -1,7 +1,7 @@
 import { cargarDatabase } from '../data/database.js';
 
 export const command = 'topahorcados';
-
+export const aliases = ['tophangman', 'topforca'];
 export async function run(sock, msg) {
   const from = msg.key.remoteJid;
   const db = cargarDatabase();

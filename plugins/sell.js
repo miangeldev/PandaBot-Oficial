@@ -30,25 +30,25 @@ export async function run(sock, msg, args) {
     }, { quoted: msg });
   }
 
-  // Precios de venta (80% del precio de compra)
+ 
   const preciosVenta = {
-    // Recursos
-    pescado: 40,      // Compra: 50
-    carne: 56,        // Compra: 70
-    madera: 32,       // Compra: 40
-    oro: 240,         // Compra: 300
-    diamantes: 400,   // Compra: 500
-    piedras: 24,      // Compra: 30
-    comida: 40,       // Compra: 50
-    hierro: 120,      // Compra: 150
-    carbon: 32,       // Compra: 40
-    cuero: 48,        // Compra: 60
-    tela: 36,         // Compra: 45
-    plata: 120,       // Compra: 150
-    esmeraldas: 640,  // Compra: 800
-    rubies: 800,      // Compra: 1000
+   
+    pescado: 40,     
+    carne: 56,        
+    madera: 32,      
+    oro: 240,        
+    diamantes: 400,   
+    piedras: 24,     
+    comida: 40,      
+    hierro: 120,      
+    carbon: 32,      
+    cuero: 48,        
+    tela: 36,         
+    plata: 120,       
+    esmeraldas: 640,  
+    rubies: 800,      
     
-    // Herramientas (50% del precio)
+   
     pico: 250,
     hacha: 150,
     caña: 100,
@@ -57,7 +57,7 @@ export async function run(sock, msg, args) {
     armadura: 750
   };
 
-  // Verificar si el recurso existe
+
   if (!preciosVenta[recurso]) {
     const recursosValidos = Object.keys(preciosVenta).join(', ');
     return await sock.sendMessage(from, {
@@ -65,11 +65,11 @@ export async function run(sock, msg, args) {
     }, { quoted: msg });
   }
 
-  // Verificar si tiene el recurso
+ 
   let cantidadActual = 0;
   let categoria = '';
   
-  // Buscar en diferentes categorías
+ 
   if (user.inventario?.recursos?.[recurso] > 0) {
     categoria = 'recursos';
     cantidadActual = user.inventario.recursos[recurso];
@@ -88,11 +88,11 @@ export async function run(sock, msg, args) {
     }, { quoted: msg });
   }
 
-  // Calcular ganancia
+ 
   const precioUnitario = preciosVenta[recurso];
   const gananciaTotal = precioUnitario * cantidad;
 
-  // Actualizar inventario
+  
   if (categoria === 'recursos') {
     user.inventario.recursos[recurso] -= cantidad;
     if (user.inventario.recursos[recurso] <= 0) {
@@ -105,18 +105,18 @@ export async function run(sock, msg, args) {
     }
   }
 
-  // Agregar dinero
+
   user.pandacoins += gananciaTotal;
   
-  // Registrar estadística
+  
   user.stats = user.stats || {};
   user.stats.ventas = (user.stats.ventas || 0) + cantidad;
   user.stats.ganancias_ventas = (user.stats.ganancias_ventas || 0) + gananciaTotal;
 
-  // Guardar cambios
+
   guardarDatabase(db);
 
-  // Emojis para los recursos
+
   const emojis = {
     pescado: '🐟', carne: '🥩', madera: '🪵', oro: '💰',
     diamantes: '💎', piedras: '🪨', comida: '🍖', hierro: '⚙️',
@@ -128,7 +128,7 @@ export async function run(sock, msg, args) {
 
   const emoji = emojis[recurso] || '📦';
 
-  // Mensaje de respuesta
+ 
   let respuesta = `🏪 *VENTA EXITOSA!*\n\n`;
   respuesta += `${emoji} *Recurso:* ${recurso}\n`;
   respuesta += `📦 *Cantidad vendida:* ${cantidad}\n`;
@@ -137,7 +137,7 @@ export async function run(sock, msg, args) {
   respuesta += `📊 *Quedan:* ${cantidadActual - cantidad}\n`;
   respuesta += `💳 *Saldo total:* ${user.pandacoins.toLocaleString()} 🪙\n\n`;
   
-  // Consejos según el recurso
+
   respuesta += `💡 *Consejo:* `;
   if (recurso === 'oro' || recurso === 'diamantes') {
     respuesta += `Estos recursos son valiosos, considera guardarlos para crafting.\n`;

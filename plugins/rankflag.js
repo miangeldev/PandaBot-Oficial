@@ -1,7 +1,7 @@
 import { loadWins } from '../utils/banderas_db.js';
 
-export const command = 'ranking';
-
+export const command = 'rankflag';
+export const aliases = ['topadivinabandera', 'topflagquiz'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const wins = loadWins();

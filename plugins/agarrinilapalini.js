@@ -3,15 +3,15 @@ export const command = 'agarrinilapalini';
 export async function run(sock, msg, args) {                                                                                           const from = msg.key.remoteJid;
 
   try {
-    // Lista de enlaces de videos
+
     const videosMiloJ = [
       'http://localhost:8000/upload/lucasgomezc_2025-08-05-21-16-11_1754442971525.mp4'
     ];
 
-    // Elegir uno aleatorio
+
     const randomVideo = videosMiloJ[Math.floor(Math.random() * videosMiloJ.length)];
 
-    // Enviar el video
+ 
     await sock.sendMessage(from, {
       video: { url: randomVideo },
       caption: ''

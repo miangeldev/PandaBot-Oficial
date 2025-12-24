@@ -1,5 +1,5 @@
 export const command = 'facherometro';
-
+export const aliases = ['fachero'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const mentions = msg.message.extendedTextMessage?.contextInfo?.mentionedJid || [];

@@ -7,43 +7,43 @@ import axios from 'axios';
 import { efectosBoost, expiraciones, suerteTimeouts, getSuerteMultiplicador, getEfectosBoost as fetchBoosts } from '../lib/boostState.js';
 
 export const multiplicadores = {
-    '🌈': 8,      // Rainbow (Legendario)
-    '🚽': 14,     // Toilet (Mítico)
-    '👾': 5,      // Alien (Épico)
-    '🇨🇱': 3,     // Chile
-    '☯️': 2.5,    // Yin Yang
-    '🌭': 2,      // Hot Dog
-    '🍬': 2,      // Candy
-    '🇧🇷': 2,     // Brasil
-    '🇨🇴': 2,     // Colombia
-    '🪳': 2,      // Cucaracha
-    '💀': 1.5,    // Calavera
-    '🌮': 1.5,    // Taco
-    '🫓': 1.5,    // Pan
-    '💧': 1.1,    // Gota
-    '💤': 0.5,    // Sueño (nerf)
-    '💩': 0.1,    // Caca (maldición)
-    '🦆': 1.8,    // Pato
-    '🎄': 6,      // Árbol Navideño (Épico)
-    '🎅': 12,     // Santa Claus (Mítico)
-    '❄️': 3,      // Nieve (Raro)
-    '🔥': 4,      // Fuego (Épico)
-    '🌟': 7,      // Estrella Brillante (Legendario)
-    '⚡': 5,      // Rayo (Épico)
-    '🌙': 3,      // Luna (Raro)
-    '☃️': 8,      // Muñeco de Nieve (Legendario)
-    '🎁': 9,      // Regalo (Legendario)
-    '🧦': 2,      // Calcetín Navideño (Común)
-    '🐉': 10,     // Dragón (Mítico)
-    '👑': 8,      // Corona (Legendario)
-    '💎': 9,      // Diamante (Legendario)
-    '🦄': 6,      // Unicornio (Épico)
-    '⚓': 3,      // Ancla (Raro)
-    '🎯': 4,      // Diana (Épico)
-    '🛡️': 5,      // Escudo (Épico)
-    '🗡️': 4,      // Espada (Épico)
-    '🏆': 7,      // Trofeo (Legendario)
-    '🎨': 3       // Paleta de Arte (Raro)
+    '🌈': 8,      
+    '🚽': 14,     
+    '👾': 5,     
+    '🇨🇱': 3,
+    '☯️': 2.5, 
+    '🌭': 2, 
+    '🍬': 2, 
+    '🇧🇷': 2,
+    '🇨🇴': 2, 
+    '🪳': 2,  
+    '💀': 1.5,
+    '🌮': 1.5, 
+    '🫓': 1.5,   
+    '💧': 1.1,   
+    '💤': 0.5,    
+    '💩': 0.1,    
+    '🦆': 1.8,    
+    '🎄': 6,      
+    '🎅': 12,    
+    '❄️': 3,    
+    '🔥': 4,      
+    '🌟': 7,     
+    '⚡': 5,    
+    '🌙': 3,    
+    '☃️': 8,      
+    '🎁': 9,     
+    '🧦': 2,    
+    '🐉': 10,     
+    '👑': 8,      
+    '💎': 9,      
+    '🦄': 6,      
+    '⚓': 3,      
+    '🎯': 4,     
+    '🛡️': 5,      
+    '🗡️': 4,      
+    '🏆': 7,      
+    '🎨': 3
 };
 export const command = 'activate';
 export const aliases = ['activar', 'iniciar'];

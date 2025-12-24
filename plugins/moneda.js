@@ -1,5 +1,5 @@
 export const command = 'moneda';
-
+export const aliases = ['coin', 'flipcoin'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const resultado = Math.random() > 0.5 ? '🪙 Cara' : '🪙 Cruz';

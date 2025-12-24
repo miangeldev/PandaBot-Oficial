@@ -1,5 +1,5 @@
 export const command = 'luck';
-
+export const aliases = ['luckrate', 'suerterometro'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const mentions = msg.message.extendedTextMessage?.contextInfo?.mentionedJid || [];

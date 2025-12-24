@@ -1,9 +1,10 @@
-// commands/talar.js
+// plugins/talar.js
 import fs from 'fs';
 import path from 'path';
 import { cargarDatabase, guardarDatabase, inicializarUsuario } from '../data/database.js';
 
 export const command = 'talar';
+export const aliases = ['cut', 'forest', 'lumber'];
 
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;

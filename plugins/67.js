@@ -1,5 +1,5 @@
 export const command = '67';
-export const aliases = ['sixseven']
+export const aliases = ['sixseven', 'seisiete'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
 

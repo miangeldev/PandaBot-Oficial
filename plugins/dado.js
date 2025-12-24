@@ -1,5 +1,5 @@
 export const command = 'dado';
-
+export const aliases = ['dice'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const num = Math.floor(Math.random() * 6) + 1;

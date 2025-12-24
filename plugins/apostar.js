@@ -4,7 +4,7 @@ import { trackApostar, checkSpecialAchievements } from '../middleware/trackAchie
 import { initializeAchievements } from '../data/achievementsDB.js';
 
 export const command = 'apostar';
-
+export const aliases = ['bet', 'betear'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;

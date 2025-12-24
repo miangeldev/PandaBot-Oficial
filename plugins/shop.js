@@ -1,4 +1,4 @@
-// commands/shop.js
+// plugins/shop.js
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 
 export const command = 'shop';
@@ -16,7 +16,7 @@ export async function run(sock, msg, args) {
     }, { quoted: msg });
   }
 
-  // Categorías de la tienda
+  
   let response = `🛒 *TIENDA PANDABOT* 🛒\n\n`;
   response += `💰 *Tu saldo:* ${user.pandacoins?.toLocaleString() || 0} 🪙\n`;
   response += `👤 *Nivel:* ${user.nivel || 1}\n\n`;
@@ -24,7 +24,7 @@ export async function run(sock, msg, args) {
   response += `📌 *Usa:* .comprar <item> <cantidad>\n`;
   response += `📌 *Ejemplo:* .comprar pico 1\n\n`;
   
-  // SECCIÓN 1: HERRAMIENTAS (Mejoran eficiencia)
+
   response += `⚒️ *HERRAMIENTAS*\n`;
   response += `━━━━━━━━━━━━━━━━━━━\n`;
   
@@ -45,7 +45,7 @@ export async function run(sock, msg, args) {
     response += `   ${item.desc} ${nivelReq}\n`;
   });
   
-  // SECCIÓN 2: RECURSOS PARA CRAFTING
+
   response += `\n📦 *RECURSOS*\n`;
   response += `━━━━━━━━━━━━━━━━━━━\n`;
   
@@ -62,7 +62,7 @@ export async function run(sock, msg, args) {
     response += `   ${item.desc}\n`;
   });
   
-  // SECCIÓN 3: OBJETOS ESPECIALES
+
   response += `\n✨ *OBJETOS ESPECIALES*\n`;
   response += `━━━━━━━━━━━━━━━━━━━\n`;
   
@@ -81,7 +81,7 @@ export async function run(sock, msg, args) {
     response += `   ${item.desc} ${nivelReq}\n`;
   });
   
-  // SECCIÓN 4: MASCOTAS
+  
   response += `\n🐾 *MASCOTAS*\n`;
   response += `━━━━━━━━━━━━━━━━━━━\n`;
   
@@ -99,12 +99,12 @@ export async function run(sock, msg, args) {
     response += `   ${item.desc} ${nivelReq}\n`;
   });
   
-  // SECCIÓN 5: PAQUETES ESPECIALES
+ 
   response += `\n🎁 *PAQUETES ESPECIALES*\n`;
   response += `━━━━━━━━━━━━━━━━━━━\n`;
   
   const paquetes = [
-    { id: 'paquete_inicio', emoji: '🎒', nombre: 'Paquete Inicial', precio: 500, desc: 'Pico + Hacha + 5 Comida (Ahorras 200)' },
+    { id: 'paquete_inicio', emoji: '🎒', nombre: 'paquete_inicio', precio: 500, desc: 'Pico + Hacha + 5 Comida (Ahorras 200)' },
     { id: 'paquete_cazador', emoji: '🏹', nombre: 'Paquete Cazador', precio: 1500, desc: 'Arco + Espada + 3 Pociones (Ahorras 500)', nivel: 5 },
     { id: 'paquete_minero', emoji: '⛏️', nombre: 'Paquete Minero', precio: 2000, desc: '2 Picos + 100 Piedras + 50 Hierro (Ahorras 800)', nivel: 7 }
   ];
@@ -116,17 +116,10 @@ export async function run(sock, msg, args) {
     response += `${icono} ${item.emoji} *${item.nombre}* - ${item.precio.toLocaleString()} 🪙\n`;
     response += `   ${item.desc} ${nivelReq}\n`;
   });
-  
-  // SECCIÓN 6: MEJORAS
-  response += `\n⬆️ *MEJORAS*\n`;
-  response += `━━━━━━━━━━━━━━━━━━━\n`;
-  
   const mejoras = [
-    { id: 'mejora_inventario', emoji: '🎒', nombre: 'Inventario +50', precio: 1000, desc: 'Aumenta capacidad de inventario' },
-    { id: 'mejora_cooldown', emoji: '⏱️', nombre: 'Cooldown -20%', precio: 2000, desc: 'Reduce tiempos de espera', nivel: 5 },
-    { id: 'mejora_suerte', emoji: '🍀', nombre: 'Suerte +15%', precio: 3000, desc: 'Aumenta probabilidad de rarezas', nivel: 8 }
+    { id: 'mejora_inventario', emoji: '🎒', nombre: 'Mejora Inventario', precio: 1000, desc: 'Aumenta la capacidad de inventario' }
   ];
-  
+
   mejoras.forEach(item => {
     const disponible = !item.nivel || user.nivel >= item.nivel;
     const icono = disponible ? '✅' : '🔒';
@@ -135,7 +128,7 @@ export async function run(sock, msg, args) {
     response += `   ${item.desc} ${nivelReq}\n`;
   });
   
-  // INFORMACIÓN ADICIONAL
+
   response += `\n📋 *INFORMACIÓN*\n`;
   response += `━━━━━━━━━━━━━━━━━━━\n`;
   response += `💡 *Tips de compra:*\n`;
@@ -143,8 +136,7 @@ export async function run(sock, msg, args) {
   response += `• Los paquetes ofrecen descuentos\n`;
   response += `• Sube de nivel para desbloquear más items\n`;
   response += `• Vende recursos que no uses (.vender)\n\n`;
-  response += `🔄 *Actualizado cada:* 24 horas\n`;
-  response += `📞 *Soporte:* .soporte`;
+  
 
   await sock.sendMessage(from, { text: response }, { quoted: msg });
 }

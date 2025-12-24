@@ -1,7 +1,7 @@
 import { loadWins, saveWins, loadCooldowns, saveCooldowns } from '../utils/banderas_db.js';
 
 export const command = 'adivinabandera';
-
+export const aliases = ['flagquiz', 'guessflag'];
 const COOLDOWN_MINUTOS = 0;
 const INTENTOS_MAXIMOS = 3;
 

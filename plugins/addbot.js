@@ -17,7 +17,7 @@ function saveRequests(requests) {
 }
 
 export const command = 'addbot';
-export const aliases = ['unete', 'join']; // 🔧 CORRECCIÓN: Cambié 'command' por 'aliases'
+export const aliases = ['unete', 'join'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
@@ -26,7 +26,6 @@ export async function run(sock, msg, args) {
   const subCommand = args[0]?.toLowerCase();
   const requestId = parseInt(args[1]);
 
-  // 🔧 CORRECCIÓN: Manejo de comandos de administración
   if (subCommand === 'aceptar' || subCommand === 'rechazar') {
     if (!owners.includes(senderNumber)) {
       await sock.sendMessage(from, { 
@@ -47,13 +46,11 @@ export async function run(sock, msg, args) {
 
     if (subCommand === 'aceptar') {
       try {
-        // 🔧 CORRECCIÓN: Extraer el código de invitación correctamente
         const groupLink = request.groupLink;
-        const inviteCode = groupLink.split('/').pop(); // Obtener la última parte del enlace
+        const inviteCode = groupLink.split('/').pop();
         
         console.log(`🔗 Intentando unirse al grupo con código: ${inviteCode}`);
         
-        // 🔧 CORRECCIÓN: Usar groupAcceptInvite en lugar de groupJoin
         await sock.groupAcceptInvite(inviteCode);
         
         request.status = 'accepted';
@@ -64,7 +61,6 @@ export async function run(sock, msg, args) {
           text: `✅ Solicitud #${requestId} aceptada. El bot se unió al grupo exitosamente.` 
         });
         
-        // Notificar al usuario que hizo la solicitud
         try {
           await sock.sendMessage(request.senderJid, { 
             text: `🎉 ¡Tu solicitud ha sido aprobada! PandaBot se unió a tu grupo.\n\n💡 Recuerda hacer al bot admin para que funcione correctamente.` 
@@ -80,7 +76,6 @@ export async function run(sock, msg, args) {
         });
       }
     } else {
-      // Rechazar solicitud
       request.status = 'rejected';
       request.rejectedAt = Date.now();
       saveRequests(requests);
@@ -89,7 +84,6 @@ export async function run(sock, msg, args) {
         text: `❌ Solicitud #${requestId} rechazada.` 
       });
       
-      // Notificar al usuario
       try {
         await sock.sendMessage(request.senderJid, { 
           text: `💔 Tu solicitud para que PandaBot se una a tu grupo ha sido rechazada.\n\n📋 Posibles razones:\n• El grupo no cumple los requisitos\n• Límite de grupos alcanzado\n• Solicitud duplicada` 
@@ -101,7 +95,7 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // 🔧 CORRECCIÓN: Manejo de nueva solicitud
+
   const groupLink = args[0];
   const linkRegex = /https:\/\/chat\.whatsapp\.com\/[a-zA-Z0-9]{22}/;
 
@@ -112,7 +106,7 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // Verificar si ya existe una solicitud pendiente para este grupo
+
   const requests = loadRequests();
   const existingRequest = requests.find(r => 
     r.groupLink === groupLink && r.status === 'pending'
@@ -125,7 +119,7 @@ export async function run(sock, msg, args) {
     return;
   }
 
-  // Crear nueva solicitud
+
   const newRequestId = requests.length > 0 ? Math.max(...requests.map(r => r.id)) + 1 : 1;
 
   const newRequest = {
@@ -141,7 +135,7 @@ export async function run(sock, msg, args) {
   requests.push(newRequest);
   saveRequests(requests);
 
-  // Notificar a los owners
+
   const notificationText = `
 🔔 *NUEVA SOLICITUD DE GRUPO*
 
@@ -158,7 +152,7 @@ export async function run(sock, msg, args) {
 .addbot rechazar ${newRequestId}
 `;
 
-  // Enviar notificación a todos los owners
+
   for (const owner of owners) {
     try {
       await sock.sendMessage(`${owner}@s.whatsapp.net`, { 
@@ -169,44 +163,9 @@ export async function run(sock, msg, args) {
     }
   }
 
-  // Confirmar al usuario
+  
   await sock.sendMessage(from, { 
     text: `✅ Tu solicitud ha sido enviada con el ID *#${newRequestId}*.\n\n📞 Los administradores revisarán tu solicitud y te notificarán la decisión.\n\n⏳ Por favor ten paciencia.` 
   });
 }
 
-// 🔧 CORRECCIÓN: Comando adicional para ver solicitudes
-export const command2 = 'requests';
-export const aliases2 = ['solicitudes', 'verrequests'];
-export async function run2(sock, msg, args) {
-  const from = msg.key.remoteJid;
-  const sender = msg.key.participant || msg.key.remoteJid;
-  const senderNumber = sender.split('@')[0];
-
-  if (!owners.includes(senderNumber)) {
-    await sock.sendMessage(from, { 
-      text: '❌ Solo los dueños del bot pueden usar este comando.' 
-    });
-    return;
-  }
-
-  const requests = loadRequests();
-  const pendingRequests = requests.filter(r => r.status === 'pending');
-  const acceptedRequests = requests.filter(r => r.status === 'accepted');
-  const rejectedRequests = requests.filter(r => r.status === 'rejected');
-
-  let response = `📋 *SOLICITUDES DE GRUPO*\n\n`;
-  response += `⏳ Pendientes: ${pendingRequests.length}\n`;
-  response += `✅ Aceptadas: ${acceptedRequests.length}\n`;
-  response += `❌ Rechazadas: ${rejectedRequests.length}\n\n`;
-
-  if (pendingRequests.length > 0) {
-    response += `🆕 *SOLICITUDES PENDIENTES:*\n`;
-    pendingRequests.forEach(req => {
-      const timeAgo = Math.floor((Date.now() - req.timestamp) / (1000 * 60));
-      response += `#${req.id} - ${req.senderName} - ${timeAgo}min\n`;
-    });
-  }
-
-  await sock.sendMessage(from, { text: response });
-}

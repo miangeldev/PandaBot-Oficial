@@ -2,13 +2,13 @@ import { trackProgress } from '../data/achievementsDB.js';
 import { cargarDatabase } from '../data/database.js';
 
 export const command = 'paja';
-
+export const aliases = ['pajear'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
   const who = sender;
 
-  // DEBUG: Ver stats antes
+  
   const dbBefore = cargarDatabase();
   const userBefore = dbBefore.users[sender];
   const pajaCountBefore = userBefore?.achievements?.stats?.paja_count || 0;
@@ -39,12 +39,12 @@ export async function run(sock, msg, args) {
     });
   }
 
-  // 🔥 LLAMADA DIRECTA A trackProgress
+  
   console.log(`🟡 paja.js - Llamando trackProgress directamente...`);
   trackProgress(sender, 'paja_count', 1, sock, from);
   console.log(`🟡 paja.js - trackProgress llamado`);
 
-  // DEBUG: Ver stats después
+ 
   setTimeout(() => {
     const dbAfter = cargarDatabase();
     const userAfter = dbAfter.users[sender];

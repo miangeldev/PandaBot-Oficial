@@ -1,5 +1,5 @@
 export const command = 'pp'
-
+export const aliases = ['pilin', 'ppsize', 'ppmeter']
 export async function run(sock, msg, args){
 const from = msg.key.remoteJid
 const tamaño = '8' + '='.repeat(Math.floor(Math.random() * 10)) + 'D';

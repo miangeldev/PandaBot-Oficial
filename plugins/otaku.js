@@ -1,5 +1,5 @@
 export const command = 'otaku';
-
+export const aliases = ['otakumetro', 'otakurate'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const mentions = msg.message.extendedTextMessage?.contextInfo?.mentionedJid || [];

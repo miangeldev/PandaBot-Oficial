@@ -1,5 +1,5 @@
 export const command = 'formartrio';
-
+export const aliases = ['trio', 'trío', 'threesome'];
 const emoji = '👀';
 
 export async function run(sock, msg, args) {

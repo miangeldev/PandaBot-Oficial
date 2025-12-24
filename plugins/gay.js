@@ -1,5 +1,5 @@
 export const command = 'gay';
-
+export const aliases = ['gaymetro', 'gayrate'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const mentions = msg.message.extendedTextMessage?.contextInfo?.mentionedJid || [];

@@ -2,7 +2,7 @@ import fs from 'fs';
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 
 export const command = 'ahorcado';
-
+export const aliases = ['hangman', 'forca'];
 const words = [
   'perro', 'pandabot', 'casa', 'comida', 'gato', 'whatsapp', 'ahorcado', 'tren',
   'bicicleta', 'tralalero', 'zorro', 'libro', 'pie', 'termux', 'palabra', 'suerte',

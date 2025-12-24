@@ -1,7 +1,7 @@
 import { cargarDatabase, guardarDatabase } from '../data/database.js';
 
 export const command = 'buy';
-export const aliases = ['comprar']
+export const aliases = ['comprar', 'compra'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
@@ -30,9 +30,18 @@ export async function run(sock, msg, args) {
     }, { quoted: msg });
   }
 
-  // Definir todos los items disponibles
+  // Asegurar estructura de inventario y valores por defecto
+  user.pandacoins = user.pandacoins || 0;
+  user.inventario = user.inventario || {};
+  user.inventario.herramientas = user.inventario.herramientas || {};
+  user.inventario.recursos = user.inventario.recursos || {};
+  user.inventario.especiales = user.inventario.especiales || {};
+  user.inventario.mascotas = user.inventario.mascotas || {};
+  user.inventario.capacidad = user.inventario.capacidad || 100;
+
+
   const todosLosItems = {
-    // HERRAMIENTAS
+  
     pico: { tipo: 'herramienta', emoji: '⛏️', nombre: 'Pico', precio: 500, desc: 'Mejora la minería', nivel: 1 },
     hacha: { tipo: 'herramienta', emoji: '🪓', nombre: 'Hacha', precio: 300, desc: 'Mejora la tala', nivel: 1 },
     caña: { tipo: 'herramienta', emoji: '🎣', nombre: 'Caña de Pescar', precio: 200, desc: 'Mejora la pesca', nivel: 1 },
@@ -40,25 +49,25 @@ export async function run(sock, msg, args) {
     espada: { tipo: 'herramienta', emoji: '⚔️', nombre: 'Espada', precio: 1200, desc: 'Mejora la caza', nivel: 5 },
     armadura: { tipo: 'herramienta', emoji: '🛡️', nombre: 'Armadura', precio: 1500, desc: 'Mejora defensa', nivel: 8 },
     
-    // RECURSOS
+  
     comida: { tipo: 'recurso', emoji: '🍖', nombre: 'Comida', precio: 50, desc: 'Para mascotas' },
     piedras: { tipo: 'recurso', emoji: '🪨', nombre: 'Piedras', precio: 30, desc: 'Para construcción' },
     madera: { tipo: 'recurso', emoji: '🪵', nombre: 'Madera', precio: 40, desc: 'Para construcción' },
     hierro: { tipo: 'recurso', emoji: '⚙️', nombre: 'Hierro', precio: 150, desc: 'Para herramientas' },
     oro: { tipo: 'recurso', emoji: '💰', nombre: 'Oro', precio: 300, desc: 'Para objetos especiales' },
     
-    // ESPECIALES
+  
     pocion: { tipo: 'especial', emoji: '🧪', nombre: 'Poción de Vida', precio: 300, desc: 'Cura 50 HP', nivel: 2 },
     llave: { tipo: 'especial', emoji: '🔑', nombre: 'Llave Mágica', precio: 1000, desc: 'Abre cofres', nivel: 4 },
     gema: { tipo: 'especial', emoji: '💎', nombre: 'Gema Brillante', precio: 500, desc: 'Para encantamientos', nivel: 6 },
     pergamino: { tipo: 'especial', emoji: '📜', nombre: 'Pergamino Mágico', precio: 2000, desc: 'Aprende habilidades', nivel: 10 },
     
-    // MASCOTAS
+  
     comida_basica: { tipo: 'mascota', emoji: '🍎', nombre: 'Comida Básica', precio: 80, desc: 'Para mascotas' },
     comida_premium: { tipo: 'mascota', emoji: '🍗', nombre: 'Comida Premium', precio: 200, desc: 'Para mascotas', nivel: 3 },
     juguete: { tipo: 'mascota', emoji: '🧸', nombre: 'Juguete', precio: 150, desc: 'Para mascotas' },
     
-    // PAQUETES
+  
     paquete_inicio: { 
       tipo: 'paquete', 
       emoji: '🎒', 
@@ -67,12 +76,30 @@ export async function run(sock, msg, args) {
       desc: 'Pico + Hacha + 5 Comida',
       contenido: { pico: 1, hacha: 1, comida: 5 }
     },
+    paquete_cazador: {
+      tipo: 'paquete',
+      emoji: '🏹',
+      nombre: 'Paquete Cazador',
+      precio: 1500,
+      desc: 'Arco + Espada + 3 Pociones',
+      nivel: 5,
+      contenido: { arco: 1, espada: 1, pocion: 3 }
+    },
+    paquete_minero: {
+      tipo: 'paquete',
+      emoji: '⛏️',
+      nombre: 'Paquete Minero',
+      precio: 2000,
+      desc: '2 Picos + 100 Piedras + 50 Hierro',
+      nivel: 7,
+      contenido: { pico: 2, piedras: 100, hierro: 50 }
+    },
     
-    // MEJORAS
+   
     mejora_inventario: { tipo: 'mejora', emoji: '🎒', nombre: 'Inventario +50', precio: 1000, desc: 'Aumenta capacidad' }
   };
 
-  // Buscar el item
+  
   const item = todosLosItems[itemId];
   
   if (!item) {
@@ -81,14 +108,14 @@ export async function run(sock, msg, args) {
     }, { quoted: msg });
   }
 
-  // Verificar nivel requerido
+ 
   if (item.nivel && user.nivel < item.nivel) {
     return await sock.sendMessage(from, {
       text: `❌ Necesitas nivel ${item.nivel} para comprar ${item.nombre}.\n👤 Tu nivel actual: ${user.nivel}`
     }, { quoted: msg });
   }
 
-  // Calcular costo total
+  
   const costoTotal = item.precio * cantidad;
   
   if (user.pandacoins < costoTotal) {
@@ -97,23 +124,41 @@ export async function run(sock, msg, args) {
     }, { quoted: msg });
   }
 
-  // Realizar la compra
+ 
   user.pandacoins -= costoTotal;
   
-  // Manejar diferentes tipos de items
+
   let mensajeItems = '';
   
   if (item.tipo === 'paquete') {
-    // Paquetes especiales
+
     for (const [subItem, subCantidad] of Object.entries(item.contenido)) {
       const totalCantidad = subCantidad * cantidad;
-      
-      if (todosLosItems[subItem].tipo === 'herramienta') {
+      const catalog = todosLosItems[subItem] || {};
+      const tipoSub = catalog.tipo;
+
+      if (tipoSub === 'herramienta') {
         user.inventario.herramientas[subItem] = (user.inventario.herramientas[subItem] || 0) + totalCantidad;
-        mensajeItems += `• ${todosLosItems[subItem].emoji} ${todosLosItems[subItem].nombre}: +${totalCantidad}\n`;
-      } else if (todosLosItems[subItem].tipo === 'recurso') {
+        mensajeItems += `• ${catalog.emoji || ''} ${catalog.nombre || subItem}: +${totalCantidad}\n`;
+      } else if (tipoSub === 'recurso') {
         user.inventario.recursos[subItem] = (user.inventario.recursos[subItem] || 0) + totalCantidad;
-        mensajeItems += `• ${todosLosItems[subItem].emoji} ${todosLosItems[subItem].nombre}: +${totalCantidad}\n`;
+        mensajeItems += `• ${catalog.emoji || ''} ${catalog.nombre || subItem}: +${totalCantidad}\n`;
+      } else if (tipoSub === 'especial') {
+        user.inventario.especiales[subItem] = (user.inventario.especiales[subItem] || 0) + totalCantidad;
+        mensajeItems += `• ${catalog.emoji || ''} ${catalog.nombre || subItem}: +${totalCantidad}\n`;
+      } else if (tipoSub === 'mascota') {
+        user.inventario.mascotas[subItem] = (user.inventario.mascotas[subItem] || 0) + totalCantidad;
+        mensajeItems += `• ${catalog.emoji || ''} ${catalog.nombre || subItem}: +${totalCantidad}\n`;
+      } else if (tipoSub === 'mejora') {
+
+        if (subItem === 'mejora_inventario') {
+          user.inventario.capacidad = (user.inventario.capacidad || 100) + 50 * cantidad;
+          mensajeItems += `• 🎒 Capacidad de inventario: +${50 * cantidad} slots\n`;
+        }
+      } else {
+
+        user.inventario.recursos[subItem] = (user.inventario.recursos[subItem] || 0) + totalCantidad;
+        mensajeItems += `• ${catalog.emoji || ''} ${catalog.nombre || subItem}: +${totalCantidad}\n`;
       }
     }
   } else if (item.tipo === 'herramienta') {
@@ -129,17 +174,17 @@ export async function run(sock, msg, args) {
     user.inventario.mascotas[itemId] = (user.inventario.mascotas[itemId] || 0) + cantidad;
     mensajeItems = `• ${item.emoji} ${item.nombre}: +${cantidad}`;
   } else if (item.tipo === 'mejora') {
-    // Las mejoras se aplican directamente
+  
     if (itemId === 'mejora_inventario') {
       user.inventario.capacidad = (user.inventario.capacidad || 100) + 50;
       mensajeItems = `• 🎒 Capacidad de inventario: +50 slots`;
     }
   }
 
-  // Guardar cambios
+  
   guardarDatabase(db);
 
-  // Mensaje de confirmación
+ 
   let respuesta = `🛒 *COMPRA EXITOSA!*\n\n`;
   respuesta += `${item.emoji} *Item:* ${item.nombre}\n`;
   

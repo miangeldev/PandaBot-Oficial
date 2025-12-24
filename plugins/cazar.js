@@ -1,10 +1,10 @@
-// commands/cazar.js
+// plugins/cazar.js
 import fs from 'fs';
 import path from 'path';
 import { cargarDatabase, guardarDatabase, inicializarUsuario } from '../data/database.js';
 
 export const command = 'cazar';
-
+export const aliases = ['hunt', 'caceria', 'caza'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
@@ -15,7 +15,7 @@ export async function run(sock, msg, args) {
   const cooldowns = JSON.parse(fs.readFileSync(cdPath));
   const lastTime = cooldowns[sender]?.cazar || 0;
   const now = Date.now();
-  const cooldownTime = 5 * 60 * 1000; // 5 minutos
+  const cooldownTime = 5 * 60 * 1000;
 
   if (now - lastTime < cooldownTime) {
     const minutesLeft = Math.ceil((cooldownTime - (now - lastTime)) / 60000);
@@ -29,7 +29,7 @@ export async function run(sock, msg, args) {
   inicializarUsuario(sender, db);
   const user = db.users[sender];
   
-  // Animales disponibles para cazar
+  
   const animales = [
     { nombre: '🐇 Conejo', carne: 1, cuero: 0, monedas: 100, exp: 20, probabilidad: 0.4 },
     { nombre: '🦌 Ciervo', carne: 2, cuero: 1, monedas: 200, exp: 40, probabilidad: 0.3 },
@@ -50,7 +50,7 @@ export async function run(sock, msg, args) {
     }
   }
   
-  // Bonus por nivel y herramientas
+  
   const nivelBonus = Math.floor(user.nivel * 0.3);
   const tieneArco = user.inventario?.herramientas?.arco > 0;
   const tieneEspada = user.inventario?.herramientas?.espada > 0;
@@ -60,7 +60,7 @@ export async function run(sock, msg, args) {
   let monedasGanadas = animalCazado.monedas + (nivelBonus * 30);
   let expGanada = animalCazado.exp + nivelBonus;
   
-  // Bonus de herramientas
+ 
   if (tieneArco) {
     carneGanada = Math.floor(carneGanada * 1.4);
     monedasGanadas = Math.floor(monedasGanadas * 1.2);
@@ -70,29 +70,29 @@ export async function run(sock, msg, args) {
     expGanada = Math.floor(expGanada * 1.3);
   }
   
-  // Actualizar recursos
+ 
   user.inventario.recursos.carne = (user.inventario.recursos.carne || 0) + carneGanada;
   user.inventario.recursos.cuero = (user.inventario.recursos.cuero || 0) + cueroGanado;
   user.pandacoins += monedasGanadas;
   user.exp += expGanada;
   user.stats.cazas = (user.stats.cazas || 0) + 1;
   
-  // Verificar subida de nivel
+
   const expParaSubir = user.nivel * 100;
   if (user.exp >= expParaSubir) {
     user.nivel += 1;
     user.exp = user.exp - expParaSubir;
-    user.pandacoins += 1000; // Bonus mayor por cazar
+    user.pandacoins += 1000; 
   }
   
   guardarDatabase(db);
   
-  // Actualizar cooldown
+ 
   cooldowns[sender] = cooldowns[sender] || {};
   cooldowns[sender].cazar = now;
   fs.writeFileSync(cdPath, JSON.stringify(cooldowns, null, 2));
   
-  // Mensaje de respuesta
+ 
   let respuesta = `🏹 *¡CAZA EXITOSA!*\n\n`;
   respuesta += `${animalCazado.nombre}\n`;
   respuesta += `📊 *Dificultad:* ${animalCazado.probabilidad * 100}% de aparecer\n\n`;

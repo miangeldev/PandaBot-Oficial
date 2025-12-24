@@ -1,10 +1,10 @@
-// commands/dados.js
+// plugins/dados.js
 import { cargarDatabase, guardarDatabase, inicializarUsuario } from '../data/database.js';
 
 const partidasDados = new Map();
 
 export const command = 'dados';
-
+export const aliases = ['dicegame', 'tirardados', 'juegodados'];
 export async function run(sock, msg, args) {
   const from = msg.key.remoteJid;
   const sender = msg.key.participant || msg.key.remoteJid;
@@ -47,7 +47,7 @@ async function mostrarAyudaDados(sock, from, msg) {
   const ayuda = `🎲 *JUEGO DE DADOS* 🎯
 
 🎮 *COMANDOS:*
-• .dados <apuesta> - Jugar contra la banca
+• .dados jugar <apuesta> - Jugar contra la banca
 • .dados vs @usuario <apuesta> - Desafiar a un jugador
 • .dados aceptar - Aceptar desafío
 • .dados rechazar - Rechazar desafío
@@ -75,7 +75,7 @@ async function mostrarAyudaDados(sock, from, msg) {
 }
 
 async function jugarDados(sock, msg, from, sender, args) {
-  // Obtener apuesta
+
   const apuesta = parseInt(args[0]) || 100;
   
   if (apuesta < 50) {
@@ -95,24 +95,24 @@ async function jugarDados(sock, msg, from, sender, args) {
     }, { quoted: msg });
   }
 
-  // Congelar apuesta
+
   user.pandacoins -= apuesta;
   guardarDatabase(db);
 
-  // Emojis de dados
+
   const dadosEmoji = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'];
   
-  // Tirar dados
+
   const dadoJugador = Math.floor(Math.random() * 6) + 1;
   const dadoBanca = Math.floor(Math.random() * 6) + 1;
   
-  // Determinar resultado
+  
   let resultado = '';
   let multiplicador = 1.0;
   let ganancias = 0;
   
   if (dadoJugador > dadoBanca) {
-    // Calcular multiplicador basado en diferencia
+ 
     const diferencia = dadoJugador - dadoBanca;
     
     if (dadoJugador === 6 && dadoBanca <= 3) {
@@ -140,13 +140,13 @@ async function jugarDados(sock, msg, from, sender, args) {
   } else {
     resultado = `🤝 *¡EMPATE!*`;
     multiplicador = 1.0;
-    ganancias = apuesta; // Recupera apuesta
+    ganancias = apuesta;
   }
 
-  // Actualizar dinero del jugador
+  
   user.pandacoins += ganancias;
   
-  // Actualizar estadísticas
+ 
   user.stats = user.stats || {};
   user.stats.dados_jugados = (user.stats.dados_jugados || 0) + 1;
   
@@ -161,7 +161,7 @@ async function jugarDados(sock, msg, from, sender, args) {
   
   guardarDatabase(db);
 
-  // Mensaje de resultado
+
   const respuesta = `🎲 *JUEGO DE DADOS* 🎯
 
 👤 *Jugador:* @${sender.split('@')[0]}
@@ -187,7 +187,7 @@ ${dadoJugador > dadoBanca ? '🎊 ¡Felicidades!' : dadoJugador < dadoBanca ? '�
 }
 
 async function desafiarDados(sock, msg, from, sender, args) {
-  // Buscar usuario mencionado
+
   const mencionado = msg.message?.extendedTextMessage?.contextInfo?.mentionedJid?.[0];
   
   if (!mencionado) {
@@ -202,7 +202,7 @@ async function desafiarDados(sock, msg, from, sender, args) {
     }, { quoted: msg });
   }
 
-  // Obtener apuesta
+
   const apuesta = parseInt(args.find(arg => !isNaN(arg))) || 100;
   
   if (apuesta < 50) {
@@ -218,7 +218,7 @@ async function desafiarDados(sock, msg, from, sender, args) {
   const jugador1 = db.users[sender];
   const jugador2 = db.users[mencionado];
   
-  // Verificar fondos
+  
   if (jugador1.pandacoins < apuesta) {
     return await sock.sendMessage(from, {
       text: `❌ No tienes suficientes pandacoins.\n💰 Necesitas: ${apuesta}\n💳 Tienes: ${jugador1.pandacoins}`
@@ -232,7 +232,7 @@ async function desafiarDados(sock, msg, from, sender, args) {
     }, { quoted: msg });
   }
   
-  // Crear partida pendiente
+ 
   const partidaId = `dados_${sender}_${mencionado}_${Date.now()}`;
   
   partidasDados.set(partidaId, {
@@ -244,11 +244,11 @@ async function desafiarDados(sock, msg, from, sender, args) {
     creado: Date.now()
   });
   
-  // Congelar apuesta del jugador 1
+
   jugador1.pandacoins -= apuesta;
   guardarDatabase(db);
   
-  // Mensaje de desafío
+ 
   const mensajeDesafio = `🎲 *DESAFÍO DE DADOS* ⚔️
 
 👤 *Desafiante:* @${sender.split('@')[0]}
@@ -272,13 +272,13 @@ async function desafiarDados(sock, msg, from, sender, args) {
     mentions: [sender, mencionado]
   }, { quoted: msg });
   
-  // Timer para expirar desafío
+
   setTimeout(() => {
     const partida = partidasDados.get(partidaId);
     if (partida && partida.estado === 'pendiente') {
       partidasDados.delete(partidaId);
       
-      // Devolver apuesta
+  
       jugador1.pandacoins += apuesta;
       guardarDatabase(db);
       
@@ -291,7 +291,7 @@ async function desafiarDados(sock, msg, from, sender, args) {
 }
 
 async function aceptarDesafioDados(sock, msg, from, sender) {
-  // Buscar partida pendiente
+
   let partida = null;
   let partidaId = null;
   
@@ -314,7 +314,7 @@ async function aceptarDesafioDados(sock, msg, from, sender) {
   
   const jugador2 = db.users[sender];
   
-  // Congelar apuesta
+
   if (jugador2.pandacoins < partida.apuesta) {
     return await sock.sendMessage(from, {
       text: `❌ Ya no tienes suficientes pandacoins.\n💰 Necesitas: ${partida.apuesta}\n💳 Tienes: ${jugador2.pandacoins}`
@@ -323,16 +323,16 @@ async function aceptarDesafioDados(sock, msg, from, sender) {
   
   jugador2.pandacoins -= partida.apuesta;
   
-  // Actualizar partida
+
   partida.estado = 'activa';
   partidasDados.set(partidaId, partida);
   
   guardarDatabase(db);
   
-  // Jugar la partida
+
   await jugarPartidaDados(sock, from, partida);
   
-  // Eliminar partida
+
   partidasDados.delete(partidaId);
 }
 
@@ -340,12 +340,12 @@ async function jugarPartidaDados(sock, from, partida) {
   const db = cargarDatabase();
   const dadosEmoji = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'];
   
-  // Tirar dados hasta que haya un ganador
+
   let ganador = null;
   let dado1 = 0, dado2 = 0;
   let rondas = [];
   
-  for (let i = 0; i < 5; i++) { // Máximo 5 rondas para evitar loop infinito
+  for (let i = 0; i < 5; i++) {
     dado1 = Math.floor(Math.random() * 6) + 1;
     dado2 = Math.floor(Math.random() * 6) + 1;
     
@@ -364,23 +364,23 @@ async function jugarPartidaDados(sock, from, partida) {
       ganador = partida.jugador2;
       break;
     }
-    // Si empate, sigue el loop
+
   }
   
-  // Si después de 5 rondas sigue empate, ganador aleatorio
+ 
   if (!ganador) {
     ganador = Math.random() < 0.5 ? partida.jugador1 : partida.jugador2;
   }
   
   const perdedor = ganador === partida.jugador1 ? partida.jugador2 : partida.jugador1;
   
-  // Transferir dinero
+
   const ganadorUser = db.users[ganador];
   const perdedorUser = db.users[perdedor];
   
   ganadorUser.pandacoins += partida.apuesta * 2;
   
-  // Actualizar estadísticas
+ 
   ganadorUser.stats = ganadorUser.stats || {};
   ganadorUser.stats.dados_pvp_ganados = (ganadorUser.stats.dados_pvp_ganados || 0) + 1;
   ganadorUser.stats.dados_pvp_ganancias = (ganadorUser.stats.dados_pvp_ganancias || 0) + partida.apuesta;
@@ -390,7 +390,7 @@ async function jugarPartidaDados(sock, from, partida) {
   
   guardarDatabase(db);
   
-  // Construir mensaje de rondas
+
   let rondasTexto = '';
   rondas.forEach((r, index) => {
     const resultado = r.dado1 > r.dado2 ? '⚡ Gana J1' : 
@@ -398,7 +398,7 @@ async function jugarPartidaDados(sock, from, partida) {
     rondasTexto += `R${r.ronda}: ${r.emoji1} ${r.dado1} vs ${r.emoji2} ${r.dado2} - ${resultado}\n`;
   });
   
-  // Mensaje de resultado
+
   const respuesta = `🎲 *PARTIDA DE DADOS PVP* ⚔️
 
 👤 *Jugador 1:* @${partida.jugador1.split('@')[0]}
@@ -425,7 +425,7 @@ ${ganador === partida.jugador1 ? '⚡ ¡El desafiante triunfa!' : '✨ ¡El reta
 }
 
 async function rechazarDesafioDados(sock, msg, from, sender) {
-  // Buscar partida pendiente
+
   let partida = null;
   let partidaId = null;
   
@@ -443,7 +443,7 @@ async function rechazarDesafioDados(sock, msg, from, sender) {
     }, { quoted: msg });
   }
   
-  // Devolver apuesta al jugador 1
+ 
   const db = cargarDatabase();
   const jugador1 = db.users[partida.jugador1];
   
@@ -452,7 +452,7 @@ async function rechazarDesafioDados(sock, msg, from, sender) {
     guardarDatabase(db);
   }
   
-  // Eliminar partida
+
   partidasDados.delete(partidaId);
   
   await sock.sendMessage(from, {
@@ -470,7 +470,7 @@ async function mostrarRankingDados(sock, from, msg) {
     }, { quoted: msg });
   }
   
-  // Obtener todos los usuarios con estadísticas de dados
+  
   const usuariosConStats = Object.entries(db.users)
     .filter(([_, user]) => user.stats?.dados_jugados)
     .map(([id, user]) => ({
@@ -483,7 +483,7 @@ async function mostrarRankingDados(sock, from, msg) {
       pvpGanancias: user.stats.dados_pvp_ganancias || 0
     }));
   
-  // Ordenar por ganancias totales
+ 
   usuariosConStats.sort((a, b) => {
     const totalA = (a.ganancias || 0) + (a.pvpGanancias || 0);
     const totalB = (b.ganancias || 0) + (b.pvpGanancias || 0);
@@ -518,7 +518,7 @@ async function mostrarRankingDados(sock, from, msg) {
   await sock.sendMessage(from, { text: rankingTexto }, { quoted: msg });
 }
 
-// Limpiar partidas antiguas
+
 setInterval(() => {
   const ahora = Date.now();
   
@@ -526,7 +526,7 @@ setInterval(() => {
     if (partida.estado === 'pendiente' && (ahora - partida.creado) > 5 * 60 * 1000) {
       partidasDados.delete(partidaId);
       
-      // Devolver apuesta si aún existe
+  
       const db = cargarDatabase();
       const jugador1 = db.users[partida.jugador1];
       

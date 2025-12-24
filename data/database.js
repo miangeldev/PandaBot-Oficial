@@ -21,11 +21,9 @@ function ensureMeta(data) {
   }
 }
 
-// 🔥 SISTEMA BOSS GLOBAL - Función para inicializar boss automático
 export function iniciarSistemaBossAutomatico(data) {
   if (!data) return;
 
-  // Inicializar estructura del boss si no existe
   if (!data.bossGlobal) {
     data.bossGlobal = {
       activo: false,
@@ -42,11 +40,9 @@ export function iniciarSistemaBossAutomatico(data) {
     logEvento('🐉 Sistema boss global inicializado');
   }
 
-  // Verificar y crear boss automático cada 24h
   const ahora = Date.now();
   const ultimoBoss = data.ultimoBossTimestamp || 0;
 
-  // Si no hay boss activo y han pasado 24 horas desde el último
   if ((!data.bossGlobal.activo || data.bossGlobal.derrotado) &&
       (ahora - ultimoBoss >= 24 * 60 * 60 * 1000)) {
 
@@ -78,13 +74,12 @@ export function iniciarSistemaBossAutomatico(data) {
     data.ultimoBossTimestamp = ahora;
     logEvento(`🐉 Nuevo boss automático creado: ${bossElegido}`);
 
-    return true; // Indica que se creó un nuevo boss
+    return true;
   }
 
   return false;
 }
 
-// 🔥 SISTEMA ECONÓMICO COMPLETO
 export function inicializarSistemaEconomico(data) {
   if (!data) return;
   
@@ -122,33 +117,27 @@ export function inicializarSistemaEconomico(data) {
           pergamino: 2000
         }
       },
-      impuestos: 0.10, // 10% de impuesto en transacciones
-      inflacion: 1.0, // Multiplicador de precios
+      impuestos: 0.10,
+      inflacion: 1.0,
       ultimaActualizacion: Date.now()
     };
     logEvento('💰 Sistema económico inicializado');
   }
   
-  // Inicializar estructura de usuarios si no existe
   if (!data.users) data.users = {};
 }
 
-// 🔥 FUNCIÓN PARA INICIALIZAR USUARIO
 export function inicializarUsuario(userId, data) {
   if (!data.users[userId]) {
     data.users[userId] = {
-      // Datos básicos
       nombre: `Usuario_${userId.split('@')[0]}`,
       registrado: new Date().toISOString(),
       
-      // Economía
-      pandacoins: 1000, // Dinero inicial
+      pandacoins: 1000,
       exp: 0,
       nivel: 1,
       
-      // Inventario organizado
       inventario: {
-        // RECURSOS (para crafting y venta)
         recursos: {
           pescado: 0,
           carne: 0,
@@ -156,7 +145,7 @@ export function inicializarUsuario(userId, data) {
           oro: 0,
           diamantes: 0,
           piedras: 0,
-          comida: 10, // Comida inicial
+          comida: 10,
           hierro: 0,
           carbon: 0,
           cuero: 0,
@@ -166,7 +155,6 @@ export function inicializarUsuario(userId, data) {
           rubies: 0
         },
         
-        // HERRAMIENTAS (mejoran la eficiencia)
         herramientas: {
           pico: 0,
           hacha: 0,
@@ -176,15 +164,13 @@ export function inicializarUsuario(userId, data) {
           armadura: 0
         },
         
-        // ESPECIALES (para misiones y eventos)
         especiales: {
-          pocion: 3, // Pociones iniciales
-          llave: 1,  // Llave inicial
+          pocion: 3,
+          llave: 1,
           gema: 0,
           pergamino: 0
         },
         
-        // MASCOTAS
         mascotas: {
           comida_basica: 5,
           comida_premium: 0,
@@ -192,7 +178,6 @@ export function inicializarUsuario(userId, data) {
         }
       },
       
-      // Estadísticas
       stats: {
         pescas: 0,
         cazas: 0,
@@ -203,10 +188,8 @@ export function inicializarUsuario(userId, data) {
         misiones_completadas: 0
       },
       
-      // Misiones activas
       misiones_activas: {},
       
-      // Logros
       logros: []
     };
     logEvento(`👤 Usuario ${userId} inicializado`);
@@ -217,7 +200,6 @@ export function inicializarUsuario(userId, data) {
 
 export function cargarDatabase() {
   if (!fs.existsSync(dbFile)) {
-    // Crear base de datos inicial
     const initialData = {
       users: {},
       clanes: {},
@@ -238,7 +220,6 @@ export function cargarDatabase() {
     const data = JSON.parse(fs.readFileSync(dbFile));
     ensureMeta(data);
     
-    // 🔥 Inicializar sistemas
     inicializarSistemaEconomico(data);
     iniciarSistemaBossAutomatico(data);
     
@@ -300,7 +281,6 @@ export function guardarPersonajes(personajes) {
   logEvento('📁 Personajes guardados.');
 }
 
-// 🔥 Función auxiliar para crear boss manualmente (para admins)
 export function crearBossManual(data, nombre, vida = 500, ataquesNecesarios = 50, recompensa = 2000) {
   if (!data) return false;
 
@@ -323,7 +303,6 @@ export function crearBossManual(data, nombre, vida = 500, ataquesNecesarios = 50
   return true;
 }
 
-// 🔥 Función para obtener estadísticas del boss
 export function obtenerEstadisticasBoss(data) {
   if (!data || !data.bossGlobal) {
     return null;
@@ -343,9 +322,6 @@ export function obtenerEstadisticasBoss(data) {
   };
 }
 
-// 🔥 FUNCIONES ECONÓMICAS NUEVAS
-
-// Obtener precio de un recurso
 export function obtenerPrecioRecurso(data, recurso) {
   if (!data.economia || !data.economia.precios.recursos[recurso]) {
     return 0;
@@ -371,7 +347,6 @@ export function agregarRecurso(data, userId, recurso, cantidad) {
   return true;
 }
 
-// Remover recurso de usuario
 export function removerRecurso(data, userId, recurso, cantidad) {
   if (!data.users[userId] || !data.users[userId].inventario?.recursos) return false;
   
@@ -382,7 +357,6 @@ export function removerRecurso(data, userId, recurso, cantidad) {
   return true;
 }
 
-// Obtener inventario de usuario
 export function obtenerInventarioUsuario(data, userId) {
   if (!data.users[userId]) return null;
   

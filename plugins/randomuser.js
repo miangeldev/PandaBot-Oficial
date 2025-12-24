@@ -1,9 +1,9 @@
 export const command = 'randomuser';
-
+export const aliases = ['usuariorandom', 'usuariocasual'];
 export async function run(sock, msg) {
   const from = msg.key.remoteJid;
 
-  // Verifica que sea un grupo
+ 
   if (!from.endsWith('@g.us')) {
     await sock.sendMessage(from, {
       text: `❌ Este comando solo funciona en grupos.`
@@ -11,7 +11,7 @@ export async function run(sock, msg) {
     return;
   }
 
-  // Obtiene los participantes del grupo
+  
   let metadata;
   try {
     metadata = await sock.groupMetadata(from);
@@ -23,7 +23,7 @@ export async function run(sock, msg) {
   }
 
   const participantes = metadata.participants
-    .filter(p => !p.admin) // opcional: excluir admins
+    .filter(p => !p.admin)
     .map(p => p.id);
 
   if (participantes.length === 0) {
@@ -33,7 +33,7 @@ export async function run(sock, msg) {
     return;
   }
 
-  // Selecciona uno al azar
+ 
   const elegido = participantes[Math.floor(Math.random() * participantes.length)];
 
   await sock.sendMessage(from, {

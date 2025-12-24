@@ -11,17 +11,17 @@ function loadJokes() {
 }
 
 export const command = 'chisterandom';
-
+export const aliases = ['chistealeatorio'];
 export async function run(sock, msg) {
   const from = msg.key.remoteJid;
   const jokes = loadJokes();
 
-  // --- LÍNEA CORREGIDA ---
+  
   if (!jokes.acceptedJokes || jokes.acceptedJokes.length === 0) {
     await sock.sendMessage(from, { text: '❌ Aún no hay chistes aprobados en la lista.' });
     return;
   }
-  // --- FIN DE LA CORRECCIÓN ---
+  
 
   const randomJoke = jokes.acceptedJokes[Math.floor(Math.random() * jokes.acceptedJokes.length)];
   const senderNumber = randomJoke.senderJid.split('@')[0];

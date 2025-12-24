@@ -48,129 +48,126 @@ export async function run(sock, msg, args) {
 
 🌻 🅙⃞𝘂𝗲᪲𝗴𝗼𝘀᳟::
 
-- .8ball <pregunta>
+- .8ball <pregunta> | .bolaocho
 > Haces una pregunta al bot y él te responderá con distintas frases.
 
-- .abrazo @usuario
+- .abrazo @usuario | .abrazar
 > Abrazas al usuario mencionado.
 
-- .67
+- .67 | .seisiete | .sixseven
 > ¡Six seven!
 
-- .adivinabandera
+- .adivinabandera | .flagquiz | .guessflag
 > Juegas a adivinar la bandera que el bot te muestre, simplemente respondes con el nombre de la bandera.
 
-- .ahorcado
+- .ahorcado | .hangman | .forca
 > Juegas al ahorcado en el bot, usa .ahorcado iniciar para comenzar una partida, luego .ahorcado <letra> para ir colocando letras en la palabra.
 
 - .cagar
 > Defecas.
 
-- .dado:
+- .dado | .dice
 > Lanzas un dado, PandaBot muestra el resultado.
 
-- .dar <cosa> (citando mensaje)
+- .dar <cosa> (citando mensaje) | .give
 > Le das lo que quieras al usuario del mensaje citado.😳
 
 - .dildear @usuario
 > Dildeas al usuario mencionado.
 
-- .facherometro @usuario
+- .facherometro @usuario | .fachero
 > PandaBot muestra qué tan fachero es el usuario mencionado.
 
-- .gay @usuario
+- .gay @usuario | .gaymetro | .gayrate
 > PandaBot muestra qué tan gay es el usuario mencionado.
 
 - .impostor
 > Clásico juego del impostor, pruébalo con más amigos, mientras más usuarios dentro de la partida, más emocionante se vuelve.
 
-- .inteligencia @usuario
+- .inteligencia @usuario | .inteligentometro | .intellrate
 > PandaBot muestra qué tan inteligente es el usuario mencionado.
 
-- .luck @usuario
+- .luck @usuario | .luckrate | .suerterometro
 > PandaBot muestra qué tanta suerte tiene el usuario mencionado.
 
 - .manuela
 > Te pajeas.
 
-- .moneda
+- .moneda | .coin | .flipcoin
 > Lanzas una moneda, puede caer en Cara o en Cruz.
 
-- .otaku @usuario
+- .otaku @usuario | .otakumetro | .otakurate
 > PandaBot muestra qué tan otaku es el usuario mencionado.
 
-- .paja @usuario
+- .paja @usuario | .pajear
 > Le dedicas una paja al usuario mencionado.
 
-- .pajer@ @usuario
+- .pajer@ @usuario | .pajerometro | .pajerrate
 > El bot muestra qué tan pajero es el usuario mencionado.
 
-- .pp
+- .pp | .pilin | .ppsize | .ppmeter
 > El bot muestra el tamaño de tu pilin.
 
-- .randomuser
+- .randomuser | .usuariorandom | .usuariocasual
 > El bot menciona a un usuario al azar del grupo.
 
-- .simprate @usuario
+- .simprate @usuario | .simpmeter | .simpometro
 > PandaBot muestra qué tan SIMP es el usuario mencionado.
 
-- .topahorcados
+- .topahorcados | .tophangman | .topforca
 > Revisas el ranking de usuarios con más victorias en *.ahorcado*.
 
-- .ranking
+- .rankflag | .topadivinabandera | .topflagquiz
 > Revisas el ranking de usuarios con más victorias en *.adivinabandera*.
 
-- .toplindos
+- .toplindos | .topcute | .toplindas
 > PandaBot muestra un top 10 de las personas más lindas del grupo.
 
-- .trio @usuario1 @usuario2
+- .trio @usuario1 @usuario2 | .trío | .threesome | .formartrio
 > Formas un trío junto a otros 2 usuarios.
 
-- .sexo @usuario
+- .sexo @usuario | .sex | .fuck | .coger | .follar
 > Tienes sexo con el usuario mencionado.
 
-- .makechiste <chiste>
+- .makechiste <chiste> | .crearchiste
 > Creas un chiste que se mostrará en .chisterandom, tu chiste debe ser aceptado por el creador del bot. No envíes chistes sin sentido o cosas obsenas.
 
-- .chisterandom
+- .chisterandom | .chistealeatorio
 > El bot envía un chiste aleatorio de la lista.
 
 🐼 🅡⃞𝗽𝗴::
 
-- .adviento <1-24>
-> Reclamas una recompensa del calendario de adviento de PandaBot.
-
-- .minar
+- .minar | .mine | .mina
 > Minas recursos para progresar en el bot, puedes obtener logros usando este comando muchas veces.
 
-- .sell <recurso> <cantidad>
+- .sell <recurso> <cantidad> | .vender
 > Vendes recursos de tu inventario, ganas Pandacoins.
 
-- .shop
+- .shop | .tienda | .tiendita | .kiosco
 > Revisas la tienda de recursos, algunos paquetes no están disponibles por el momento.
 
-- .buy
+- .buy | .comprar | .compra
 > Compras una herramienta o recurso, sirven para actividades como *.talar* o *.minar*.
 
-- .cazar
+- .cazar | .hunt | .caceria | .caza
 > Sales de caza en PandaBot, esto te servirá para conseguir recursos que podrás vender
 
-- .talar
+- .talar | .cut | .forest | .lumber
 > Talas principalmente madera pero también Obtienes otros recursos, los puedes vender igualmente. Si tienes un hacha, tus probabilidades de obtener mejores recompensas aumentan.
 
-- .pescar
+- .pescar | .fish | .fishing
 > Pescas para progresar en el bot, si tienes una caña de pescar en tu inventario aumentas tus probabilidades de obtener mejores cosas, las recompensas de este comando se pueden vender.
 
-- .inv
+- .inv | .inventario | .inventory | .miscosas
 > Revisas tu inventario de herramientas y recursos. (Comando importante)
 
-- .apostar <cantidad> <bajo/medio/alto>
+- .apostar <cantidad> <bajo/medio/alto> | .bet | .betear
 > Apuestas Pandacoins en el bot, si tu apuesta es en *bajo* recibes x1.2 Pandacoins de las que apostaste, si tu apuesta es en *medio* recibes x2 de las Pandacoins que apostaste, y si tu apuesta es en *alto* recibes x3 de las Pandacoins que apostaste.
 
-- .dados <apuesta>
+- .dados <apuesta> | .dicegame | .tirardados | .juegodados
 > Juegas a los dados contra la casa, el ganador se lleva las Pandacoins apostadas. Para jugar contra un usuario del grupo, usa *.dados vs @usuario*. Para ver todas las funciones usa *.dados*.
 
-- .ttt
+- .ttt | .tictactoe | .tresenraya | .gato
 > Juegas al famoso *Tic Tac Toe* en PandaBot. Usa *.ttt help* para más información.
 
 - .daily

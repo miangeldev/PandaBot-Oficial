@@ -25,7 +25,7 @@ function ensureAchievementStats(user) {
     };
   }
 
-  // Campos nuevos futuros
+  
   const defaults = {
     paja_count: 0,
     sexo_count: 0,
@@ -121,25 +121,19 @@ export function getAllAchievements() {
   return data.achievements;
 }
 
-/**
- * Obtener logros por categoría
- */
+
 export function getAchievementsByCategory(category) {
   const achievements = getAllAchievements();
   return achievements.filter(a => a.category === category);
 }
 
-/**
- * Obtener un logro específico
- */
+
 export function getAchievement(achievementId) {
   const achievements = getAllAchievements();
   return achievements.find(a => a.id === achievementId);
 }
 
-/**
- * Verificar si un usuario tiene un logro
- */
+
 export function hasAchievement(userJid, achievementId) {
   const db = cargarDatabase();
   const achievements = db.users[userJid]?.achievements;
@@ -149,21 +143,19 @@ export function hasAchievement(userJid, achievementId) {
   return achievements.unlocked.includes(achievementId);
 }
 
-/**
- * Desbloquear un logro para un usuario
- */
+
 export function unlockAchievement(userJid, achievementId, sock = null, from = null) {
   const db = cargarDatabase();
   const user = db.users[userJid];
   
   if (!user || !user.achievements) {
     initializeAchievements(userJid);
-    // Recargar después de inicializar
+
     const dbUpdated = cargarDatabase();
     user.achievements = dbUpdated.users[userJid].achievements;
   }
 
-  // Verificar si ya tiene el logro
+
   if (hasAchievement(userJid, achievementId)) {
     return { success: false, reason: 'already_unlocked' };
   }
@@ -174,25 +166,25 @@ export function unlockAchievement(userJid, achievementId, sock = null, from = nu
     return { success: false, reason: 'not_found' };
   }
 
-  // Desbloquear logro
+
   user.achievements.unlocked.push(achievementId);
   user.achievements.points += achievement.points;
 
-  // Añadir título si tiene
+
   if (achievement.reward?.title) {
     if (!user.achievements.titles.includes(achievement.reward.title)) {
       user.achievements.titles.push(achievement.reward.title);
     }
   }
 
-  // Dar recompensas
+
   if (achievement.reward?.coins) {
     user.pandacoins = (user.pandacoins || 0) + achievement.reward.coins;
   }
 
   guardarDatabase(db);
 
-  // Enviar notificación si sock está disponible
+
   if (sock && from) {
     sendAchievementNotification(sock, from, userJid, achievement);
   }
@@ -204,9 +196,7 @@ export function unlockAchievement(userJid, achievementId, sock = null, from = nu
   };
 }
 
-/**
- * Enviar notificación de logro desbloqueado
- */
+
 async function sendAchievementNotification(sock, from, userJid, achievement) {
   const mensaje = `
 ╭━━━━━━━━━━━━━━━━━━━━━━╮
@@ -234,9 +224,7 @@ ${achievement.reward?.title ? `👑 Título: "${achievement.reward.title}"` : ''
   }
 }
 
-/**
- * Actualizar progreso y verificar logros
- */
+
 export function trackProgress(userJid, actionType, value = 1, sock = null, from = null) {
   const db = cargarDatabase();
   db.users = db.users || {};
@@ -247,17 +235,17 @@ export function trackProgress(userJid, actionType, value = 1, sock = null, from 
     return;
   }
 
-  // ✅ INICIALIZAR ACHIEVEMENTS SI NO EXISTEN
+
   if (!user.achievements) {
     initializeAchievements(userJid);
-    // Recargar el usuario después de inicializar
+    // recargar user
     const dbUpdated = cargarDatabase();
     user.achievements = dbUpdated.users[userJid].achievements;
   }
 
   ensureAchievementStats(user);
   const stats = user.achievements.stats;
-  // Actualizar estadística
+
 if (stats[actionType] !== undefined) {
     stats[actionType] += value;
   } else {
@@ -266,13 +254,11 @@ if (stats[actionType] !== undefined) {
 
   guardarDatabase(db);
 
-  // Verificar logros que se puedan haber completado
+
   checkAchievements(userJid, sock, from);
 }
 
-/**
- * Verificar todos los logros de un usuario
- */
+
 export function checkAchievements(userJid, sock = null, from = null) {
   const db = cargarDatabase();
   const user = db.users[userJid];
