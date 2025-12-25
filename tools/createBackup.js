@@ -33,7 +33,7 @@ function cleanupBackups(backupsDir, maxBackups, filterFn) {
 }
 
 export function createDatabaseBackup({
-  databasePath = './database.json',
+  databasePath = './data/database.json',
   backupsDir = './backups',
   filenameFormatter,
   filenamePrefix = 'backup',

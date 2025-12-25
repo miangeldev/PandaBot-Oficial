@@ -732,7 +732,7 @@
           "apostar_count": 255,
           "robos_exitosos": 244,
           "robos_fallidos": 126,
-          "commands_used": 15030,
+          "commands_used": 15028,
           "cm_tiradas": 621,
           "cm_ataques": 81,
           "registered_date": 1764854376273,
@@ -2782,7 +2782,7 @@
         "Brell",
         "Atenea 👾 💧 🇨🇴"
       ],
-      "robarpsCooldown": 1766627185786,
+      "robarpsCooldown": 1766626789351,
       "ultimoSell": 1766626482516,
       "ultimoTransfer": 1766535683309,
       "inventario": {
@@ -21342,7 +21342,7 @@
           "apostar_count": 0,
           "robos_exitosos": 0,
           "robos_fallidos": 0,
-          "commands_used": 242,
+          "commands_used": 241,
           "cm_tiradas": 42,
           "cm_ataques": 0,
           "registered_date": 1766445132561,
@@ -23242,7 +23242,7 @@
   },
   "_meta": {
     "version": "2.0",
-    "savesWithoutBackup": 10,
+    "savesWithoutBackup": 24,
     "creado": "2025-12-04T13:05:46.997Z"
   },
   "ultimoBossTimestamp": 1764853624547,
@@ -24664,13 +24664,12 @@
         "activo": true,
         "palabra": "bicicleta",
         "adivinada": "_i_i_l__a",
-        "intentos": 4,
+        "intentos": 5,
         "letrasUsadas": [
           "a",
           "u",
           "i",
-          "l",
-          "r"
+          "l"
         ]
       }
     }
@@ -24683,8 +24682,8 @@
           "nivel": 24,
           "produccionPorSegundo": 1996756.8900859514,
           "capacidad": 199675689008.59512,
-          "acumulado": 36345186559.8456,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 36284175653.06901,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         },
         {
@@ -24692,8 +24691,8 @@
           "nivel": 16,
           "produccionPorSegundo": 5188.146770730816,
           "capacidad": 432345564.227568,
-          "acumulado": 94435213.02884008,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 94276689.20426041,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.6
         }
       ],
@@ -24703,8 +24702,8 @@
           "nivel": 14,
           "produccionPorSegundo": 15.143755329612656,
           "capacidad": 757187.7664806328,
-          "acumulado": 55401.157310088485,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 54938.43986599217,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         },
         {
@@ -24712,8 +24711,8 @@
           "nivel": 10,
           "produccionPorSegundo": 1185.8787649699998,
           "capacidad": 118587876.49699996,
-          "acumulado": 4338359.579827999,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 4302125.05416434,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         },
         {
@@ -24721,8 +24720,8 @@
           "nivel": 10,
           "produccionPorSegundo": 309.23764531200015,
           "capacidad": 25769803.77600001,
-          "acumulado": 1131299.5397271554,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 1121850.7834746467,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.6
         },
         {
@@ -24730,8 +24729,8 @@
           "nivel": 13,
           "produccionPorSegundo": 324.3658447265625,
           "capacidad": 19461950.68359375,
-          "acumulado": 1186643.788055422,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 1176732.7896698017,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.5
         },
         {
@@ -24739,8 +24738,8 @@
           "nivel": 12,
           "produccionPorSegundo": 48.59478203596797,
           "capacidad": 2429739.1017983984,
-          "acumulado": 177776.7208612837,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 176291.90729617464,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.4
         }
       ],
@@ -24751,7 +24750,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ],
@@ -24762,7 +24761,7 @@
           "produccionPorSegundo": 1.0985,
           "capacidad": 54925,
           "acumulado": 54925,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ],
@@ -24772,8 +24771,8 @@
           "nivel": 11,
           "produccionPorSegundo": 2015.9939004489993,
           "capacidad": 201599390.04489994,
-          "acumulado": 36198690.54196297,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 36137091.848334745,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         },
         {
@@ -24781,8 +24780,8 @@
           "nivel": 10,
           "produccionPorSegundo": 5.3022496865000015,
           "capacidad": 265112.4843250001,
-          "acumulado": 95205.8910173712,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 95043.8807782002,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         },
         {
@@ -24790,8 +24789,8 @@
           "nivel": 7,
           "produccionPorSegundo": 9.035443199999996,
           "capacidad": 451772.15999999986,
-          "acumulado": 162238.19538017284,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 161962.11741319686,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.4
         },
         {
@@ -24799,8 +24798,8 @@
           "nivel": 8,
           "produccionPorSegundo": 42.71484375,
           "capacidad": 2562890.625,
-          "acumulado": 766977.2265234339,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 765672.0744726526,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.5
         },
         {
@@ -24808,8 +24807,8 @@
           "nivel": 1,
           "produccionPorSegundo": 4.5,
           "capacidad": 750000,
-          "acumulado": 79907.09400000004,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 79769.59650000003,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.6
         }
       ],
@@ -24820,7 +24819,7 @@
           "produccionPorSegundo": 49.129999999999995,
           "capacidad": 4912999.999999999,
           "acumulado": 4912999.999999999,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         },
         {
@@ -24829,7 +24828,7 @@
           "produccionPorSegundo": 47.18592000000001,
           "capacidad": 3932160.000000001,
           "acumulado": 3932160.000000001,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.6
         },
         {
@@ -24838,7 +24837,7 @@
           "produccionPorSegundo": 12.65625,
           "capacidad": 759375,
           "acumulado": 759375,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.5
         }
       ],
@@ -24849,7 +24848,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ],
@@ -24859,8 +24858,8 @@
           "nivel": 11,
           "produccionPorSegundo": 2015.9939004489993,
           "capacidad": 201599390.04489994,
-          "acumulado": 1618869.3099812528,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 1557270.6163530336,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         },
         {
@@ -24868,8 +24867,8 @@
           "nivel": 11,
           "produccionPorSegundo": 494.7802324992003,
           "capacidad": 41231686.041600026,
-          "acumulado": 397314.9588398803,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 382196.9488358672,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.6
         }
       ],
@@ -24880,7 +24879,7 @@
           "produccionPorSegundo": 83.52099999999999,
           "capacidad": 8352099.999999998,
           "acumulado": 8352099.999999998,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         }
       ],
@@ -24891,7 +24890,7 @@
           "produccionPorSegundo": 697.5757440999998,
           "capacidad": 69757574.41,
           "acumulado": 69757574.41,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         },
         {
@@ -24899,8 +24898,8 @@
           "nivel": 9,
           "produccionPorSegundo": 193.2735283200001,
           "capacidad": 16106127.360000009,
-          "acumulado": 1317695.7097866854,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 1311790.2371288678,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.6
         },
         {
@@ -24908,8 +24907,8 @@
           "nivel": 7,
           "produccionPorSegundo": 28.4765625,
           "capacidad": 1708593.75,
-          "acumulado": 254890.8911718747,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 254020.78980468723,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.5
         },
         {
@@ -24918,7 +24917,7 @@
           "produccionPorSegundo": 1.2,
           "capacidad": 60000,
           "acumulado": 60000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.4
         },
         {
@@ -24927,7 +24926,7 @@
           "produccionPorSegundo": 5.3022496865000015,
           "capacidad": 265112.4843250001,
           "acumulado": 265112.4843250001,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ],
@@ -24938,7 +24937,7 @@
           "produccionPorSegundo": 1.4280500000000003,
           "capacidad": 71402.50000000001,
           "acumulado": 71402.50000000001,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         },
         {
@@ -24947,7 +24946,7 @@
           "produccionPorSegundo": 1.2,
           "capacidad": 60000,
           "acumulado": 60000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.4
         },
         {
@@ -24956,7 +24955,7 @@
           "produccionPorSegundo": 2.5,
           "capacidad": 150000,
           "acumulado": 150000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.5
         }
       ],
@@ -24967,7 +24966,7 @@
           "produccionPorSegundo": 1.2,
           "capacidad": 60000,
           "acumulado": 60000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.4
         },
         {
@@ -24976,7 +24975,7 @@
           "produccionPorSegundo": 0.8450000000000001,
           "capacidad": 42250.00000000001,
           "acumulado": 42250.00000000001,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         },
         {
@@ -24985,7 +24984,7 @@
           "produccionPorSegundo": 4.5,
           "capacidad": 375000,
           "acumulado": 375000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.6
         }
       ],
@@ -24996,7 +24995,7 @@
           "produccionPorSegundo": 241.37568999999996,
           "capacidad": 24137568.999999996,
           "acumulado": 24137568.999999996,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         },
         {
@@ -25005,7 +25004,7 @@
           "produccionPorSegundo": 18.432000000000006,
           "capacidad": 1536000.0000000005,
           "acumulado": 1536000.0000000005,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.6
         }
       ],
@@ -25016,7 +25015,7 @@
           "produccionPorSegundo": 2.4134045000000004,
           "capacidad": 120670.22500000002,
           "acumulado": 120670.22500000002,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         },
         {
@@ -25025,7 +25024,7 @@
           "produccionPorSegundo": 1.2,
           "capacidad": 60000,
           "acumulado": 60000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.4
         }
       ],
@@ -25036,7 +25035,7 @@
           "produccionPorSegundo": 2.3519999999999994,
           "capacidad": 117599.99999999999,
           "acumulado": 117599.99999999999,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.4
         },
         {
@@ -25045,7 +25044,7 @@
           "produccionPorSegundo": 4.5,
           "capacidad": 375000,
           "acumulado": 375000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.6
         },
         {
@@ -25054,7 +25053,7 @@
           "produccionPorSegundo": 28.9,
           "capacidad": 2889999.9999999995,
           "acumulado": 2889999.9999999995,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         }
       ],
@@ -25064,8 +25063,8 @@
           "nivel": 2,
           "produccionPorSegundo": 1.68,
           "capacidad": 84000,
-          "acumulado": 18378.679200000042,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 18327.34680000004,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.4
         },
         {
@@ -25073,8 +25072,8 @@
           "nivel": 4,
           "produccionPorSegundo": 49.129999999999995,
           "capacidad": 4912999.999999999,
-          "acumulado": 537466.9696999969,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 535965.8025499969,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         }
       ],
@@ -25084,8 +25083,8 @@
           "nivel": 7,
           "produccionPorSegundo": 241.37568999999996,
           "capacidad": 24137568.999999996,
-          "acumulado": 4870756.496239185,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 4863381.262031235,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         },
         {
@@ -25093,8 +25092,8 @@
           "nivel": 8,
           "produccionPorSegundo": 120.79595520000004,
           "capacidad": 10066329.600000003,
-          "acumulado": 2437559.8201700337,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 2433868.8997588977,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.6
         },
         {
@@ -25102,8 +25101,8 @@
           "nivel": 10,
           "produccionPorSegundo": 96.1083984375,
           "capacidad": 5766503.90625,
-          "acumulado": 1939385.8844384728,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 1936449.2923242152,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.5
         },
         {
@@ -25111,8 +25110,8 @@
           "nivel": 10,
           "produccionPorSegundo": 24.793256140799986,
           "capacidad": 1239662.8070399994,
-          "acumulado": 500306.85944688023,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 499549.30150549806,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.4
         },
         {
@@ -25120,8 +25119,8 @@
           "nivel": 10,
           "produccionPorSegundo": 5.3022496865000015,
           "capacidad": 265112.4843250001,
-          "acumulado": 106994.8970635863,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 106832.88682441528,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ],
@@ -25131,8 +25130,8 @@
           "nivel": 1,
           "produccionPorSegundo": 1.2,
           "capacidad": 60000,
-          "acumulado": 17903.898000000012,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 17867.232000000015,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.4
         },
         {
@@ -25140,8 +25139,8 @@
           "nivel": 1,
           "produccionPorSegundo": 4.5,
           "capacidad": 375000,
-          "acumulado": 67139.61749999998,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 67002.11999999997,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.6
         },
         {
@@ -25149,8 +25148,8 @@
           "nivel": 1,
           "produccionPorSegundo": 10,
           "capacidad": 1000000,
-          "acumulado": 149199.14999999973,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 148893.59999999974,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         }
       ],
@@ -25161,7 +25160,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ],
@@ -25172,7 +25171,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ],
@@ -25182,8 +25181,8 @@
           "nivel": 2,
           "produccionPorSegundo": 0.65,
           "capacidad": 32500,
-          "acumulado": 268.26605,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 248.40529999999995,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ],
@@ -25194,7 +25193,7 @@
           "produccionPorSegundo": 1.0985,
           "capacidad": 54925,
           "acumulado": 54925,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ],
@@ -25205,7 +25204,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ],
@@ -25216,7 +25215,7 @@
           "produccionPorSegundo": 4.5,
           "capacidad": 375000,
           "acumulado": 375000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.6
         },
         {
@@ -25225,7 +25224,7 @@
           "produccionPorSegundo": 10,
           "capacidad": 1000000,
           "acumulado": 1000000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         }
       ],
@@ -25236,7 +25235,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ],
@@ -25246,8 +25245,8 @@
           "nivel": 3,
           "produccionPorSegundo": 0.8450000000000001,
           "capacidad": 42250.00000000001,
-          "acumulado": 17221.40842500001,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 17195.589450000007,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ],
@@ -25258,7 +25257,7 @@
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
           "acumulado": 25000,
-          "ultimaActualizacion": 1766627203306,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ],
@@ -25268,8 +25267,8 @@
           "nivel": 8,
           "produccionPorSegundo": 410.3386729999999,
           "capacidad": 41033867.29999999,
-          "acumulado": 306870.1010416739,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 294332.2028881589,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.7
         }
       ],
@@ -25279,8 +25278,8 @@
           "nivel": 1,
           "produccionPorSegundo": 0.5,
           "capacidad": 25000,
-          "acumulado": 355.80000000000007,
-          "ultimaActualizacion": 1766627203306,
+          "acumulado": 340.5225,
+          "ultimaActualizacion": 1766627172751,
           "mejora": 1.3
         }
       ]

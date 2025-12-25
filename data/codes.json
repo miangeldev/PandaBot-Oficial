@@ -439,6 +439,14 @@
       "creadoPor": "+180444930768966",
       "fechaCreacion": "2025-12-24T18:56:09.662Z",
       "activo": true
+    },
+    "REACT": {
+      "recompensa": 100000000,
+      "usosMaximos": 100,
+      "usosActuales": 1,
+      "creadoPor": "+166164298780822",
+      "fechaCreacion": "2025-12-25T01:06:09.660Z",
+      "activo": true
     }
   },
   "usuariosCanjeados": {
@@ -453,7 +461,8 @@
       "PENEEE",
       "THESPOOKYPANDABOT",
       "XNXX",
-      "DEJOLASPUSSYSCONMISEMEN1"
+      "DEJOLASPUSSYSCONMISEMEN1",
+      "REACT"
     ],
     "68999270371333@lid": [
       "PANDABOT"
